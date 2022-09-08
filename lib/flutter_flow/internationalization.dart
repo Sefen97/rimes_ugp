@@ -176,6 +176,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' (10)',
       'ar': '(10)',
     },
+    'vi54d50v': {
+      'en': 'search',
+      'ar': '',
+    },
+    'uk6q8t6w': {
+      'en': 'Filter',
+      'ar': '',
+    },
     'hjhci0rr': {
       'en': 'My Account',
       'ar': 'حسابي',
