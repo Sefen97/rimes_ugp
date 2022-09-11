@@ -16,6 +16,7 @@ class RimesApiGroup {
       AdmainDashboardRequestCall();
   static AllActivityRequestCall allActivityRequestCall =
       AllActivityRequestCall();
+  static AllLeadsCall allLeadsCall = AllLeadsCall();
 }
 
 class LoginRequestCall {
@@ -101,6 +102,70 @@ class AllActivityRequestCall {
     return ApiManager.instance.makeApiCall(
       callName: 'AllActivityRequest',
       apiUrl: '${RimesApiGroup.baseUrl}/api/activity/all',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class AllLeadsCall {
+  Future<ApiCallResponse> call({
+    int? pageSize = 10,
+    int? userId = 10,
+    int? subscriberId = 2,
+  }) {
+    final body = '''
+{
+  "filter": {
+    "start": "",
+    "length": "",
+    "sortColumn": "",
+    "direction": "",
+    "searchValue": "",
+    "skip": 0,
+    "pageSize": ${pageSize}
+  },
+  "contactTypeId_search": 0,
+  "ratingId_search": 0,
+  "priorityId_search": 0,
+  "leadSourceId_search": 0,
+  "employeeId_search": 0,
+  "leaToDate_search": "2022-09-11T10:23:24.514Z",
+  "leaFromDate_search": "2020-09-11T10:23:24.514Z",
+  "communityId_search": 0,
+  "community": 0,
+  "subCommunity": 0,
+  "category": 0,
+  "type": 0,
+  "userId": ${userId},
+  "accessTypeId": 1,
+  "languageId": 0,
+  "building": 0,
+  "unitNo": "",
+  "contactId": 0,
+  "city": 0,
+  "bed": 0,
+  "area": 0,
+  "price": 0,
+  "name": "",
+  "subscriberId": ${subscriberId},
+  "limit": 0,
+  "leadType": 0,
+  "team": [],
+  "bedroom": 0,
+  "dateType": 0,
+  "fromDate_report": "2020-09-11T10:23:24.514Z",
+  "toDate_report": "2022-09-11T10:23:24.514Z"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllLeads',
+      apiUrl: '${RimesApiGroup.baseUrl}api/saleslead/all',
       callType: ApiCallType.POST,
       headers: {
         ...RimesApiGroup.headers,

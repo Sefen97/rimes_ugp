@@ -49,6 +49,33 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
+  // ForgetPassword
+  {
+    'pd1p6aja': {
+      'en': 'Forgot your password?',
+      'ar': 'نسيت رقمك السري؟',
+    },
+    'r3d8zynj': {
+      'en': 'Please enter your email address to ',
+      'ar': 'الرجاء إدخال عنوان بريدك الإلكتروني إلى',
+    },
+    '0bg79id7': {
+      'en': 'receive a verification code',
+      'ar': 'تلقي رمز التحقق',
+    },
+    'fih0k0aq': {
+      'en': 'Email Address',
+      'ar': 'عنوان البريد الالكترونى',
+    },
+    '524qdmoo': {
+      'en': 'Send',
+      'ar': 'إرسال',
+    },
+    '5zzhsopk': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // LoginScreen
   {
     '0fjvw330': {
@@ -92,50 +119,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // ForgetPassword
-  {
-    'pd1p6aja': {
-      'en': 'Forgot your password?',
-      'ar': 'نسيت رقمك السري؟',
-    },
-    'r3d8zynj': {
-      'en': 'Please enter your email address to ',
-      'ar': 'الرجاء إدخال عنوان بريدك الإلكتروني إلى',
-    },
-    '0bg79id7': {
-      'en': 'receive a verification code',
-      'ar': 'تلقي رمز التحقق',
-    },
-    'fih0k0aq': {
-      'en': 'Email Address',
-      'ar': 'عنوان البريد الالكترونى',
-    },
-    '524qdmoo': {
-      'en': 'Send',
-      'ar': 'إرسال',
-    },
-    '5zzhsopk': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
   // Dashboard
   {
-    'ykn5kqzt': {
-      'en': 'Total Leads',
-      'ar': 'إجمالي العملاء المتوقعين',
-    },
-    'm81654at': {
-      'en': 'Total Units',
-      'ar': 'إجمالي الوحدات',
-    },
-    'ik7xdldb': {
-      'en': 'Total Pending',
-      'ar': 'إجمالي معلق',
-    },
     'dax1mh3h': {
       'en': 'Dashboard',
       'ar': 'لوحة القيادة',
+    },
+    'la420qy2': {
+      'en': 'Total Leads',
+      'ar': 'إجمالي العملاء المتوقعين',
+    },
+    '3nmogoek': {
+      'en': 'Total Units',
+      'ar': 'إجمالي الوحدات',
+    },
+    'iqbb5o0m': {
+      'en': 'Total Pending',
+      'ar': 'إجمالي معلق',
     },
     'pl4c7vli': {
       'en': 'My Account',
@@ -178,11 +178,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'k576y7ps': {
       'en': 'search',
-      'ar': '',
+      'ar': 'بحث',
     },
     'xymjxh97': {
       'en': 'Filter',
-      'ar': '',
+      'ar': 'منقي',
     },
     'hjhci0rr': {
       'en': 'My Account',
@@ -215,6 +215,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Units
   {
+    'zs175pxp': {
+      'en': 'All Units',
+      'ar': 'جميع الوحدات',
+    },
+    'bphk5jnw': {
+      'en': ' (10)',
+      'ar': '(10)',
+    },
     '87mrtb5i': {
       'en': 'Units',
       'ar': 'الوحدات',
@@ -225,6 +233,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'xg7pspv6': {
       'en': 'All Leads',
       'ar': 'كل العملاء المتوقعين',
+    },
+    'y9vul0et': {
+      'en': 'Rent',
+      'ar': 'تأجير',
+    },
+    'hlq749i9': {
+      'en': 'Rent',
+      'ar': 'تأجير',
+    },
+    'tmg1lmed': {
+      'en': 'Sale',
+      'ar': 'تخفيض السعر',
+    },
+    'fslpxl8x': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'yb30f34e': {
+      'en': 'Filter',
+      'ar': 'منقي',
+    },
+    'iucgyh33': {
+      'en': 'unit type',
+      'ar': 'نوع الوحدة',
+    },
+    '2ceeyl6i': {
+      'en': 'Status ',
+      'ar': 'حالة',
     },
     'gc5qsfn6': {
       'en': 'My Account',
@@ -293,11 +329,45 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // AddActivity
+  {
+    'nln6l28p': {
+      'en': 'Test',
+      'ar': 'اختبار',
+    },
+    'aky62noq': {
+      'en': 'Test 1',
+      'ar': 'اختبار 1',
+    },
+    'znl84ebf': {
+      'en': 'Type Here',
+      'ar': 'أكتب هنا',
+    },
+    'okaiupwc': {
+      'en': 'Add New Activity',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'pkgj3rc1': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // CustomBottomSheet
   {
     'jaaxdoyw': {
       'en': 'Close',
       'ar': 'قريب',
+    },
+  },
+  // ActivityFilter
+  {
+    'x1y4xxt3': {
+      'en': 'Type',
+      'ar': 'يكتب',
+    },
+    'ufukrab5': {
+      'en': 'Type Here',
+      'ar': 'أكتب هنا',
     },
   },
 ].reduce((a, b) => a..addAll(b));

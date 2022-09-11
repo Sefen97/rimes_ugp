@@ -12,8 +12,6 @@ import 'index.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await FlutterFlowTheme.initialize();
-
   FFAppState(); // Initialize FFAppState
 
   runApp(MyApp());
@@ -30,7 +28,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -51,7 +49,6 @@ class _MyAppState extends State<MyApp> {
       setState(() => _locale = createLocale(language));
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
@@ -70,7 +67,6 @@ class _MyAppState extends State<MyApp> {
         Locale('ar'),
       ],
       theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,
       routeInformationParser: _router.routeInformationParser,
       routerDelegate: _router.routerDelegate,
@@ -105,8 +101,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Dashboard': DashboardWidget(),
       'Activity': ActivityWidget(),
-      'Units': UnitsWidget(),
       'Leads': LeadsWidget(),
+      'Units': UnitsWidget(),
       'More': MoreWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -147,21 +143,21 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.content_paste_sharp,
-              size: 24,
-            ),
-            label: FFLocalizations.of(context).getText(
-              '87mrtb5i' /* Units */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.article_outlined,
               size: 24,
             ),
             label: FFLocalizations.of(context).getText(
               '0yt64aay' /* Leads */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.content_paste_sharp,
+              size: 24,
+            ),
+            label: FFLocalizations.of(context).getText(
+              '87mrtb5i' /* Units */,
             ),
             tooltip: '',
           ),

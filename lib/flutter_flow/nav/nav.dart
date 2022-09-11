@@ -56,14 +56,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : LoginScreenWidget(),
           routes: [
             FFRoute(
-              name: 'LoginScreen',
-              path: 'loginScreen',
-              builder: (context, params) => LoginScreenWidget(),
-            ),
-            FFRoute(
               name: 'ForgetPassword',
               path: 'forgetPassword',
               builder: (context, params) => ForgetPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'LoginScreen',
+              path: 'loginScreen',
+              builder: (context, params) => LoginScreenWidget(),
             ),
             FFRoute(
               name: 'Dashboard',
@@ -104,6 +104,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'MyAccount',
               path: 'myAccount',
               builder: (context, params) => MyAccountWidget(),
+            ),
+            FFRoute(
+              name: 'AddActivity',
+              path: 'addActivity',
+              builder: (context, params) => AddActivityWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
