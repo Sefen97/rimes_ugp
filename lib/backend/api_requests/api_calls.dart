@@ -4,8 +4,22 @@ import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
+const _kPrivateApiFunctionName = 'ffPrivateApiCall';
+
+/// Start RimesApi Group Code
+
+class RimesApiGroup {
+  static String baseUrl = 'http://45.35.169.130:8765/CRMRealEstateNew_Test/';
+  static Map<String, String> headers = {};
+  static LoginRequestCall loginRequestCall = LoginRequestCall();
+  static AdmainDashboardRequestCall admainDashboardRequestCall =
+      AdmainDashboardRequestCall();
+  static AllActivityRequestCall allActivityRequestCall =
+      AllActivityRequestCall();
+}
+
 class LoginRequestCall {
-  static Future<ApiCallResponse> call({
+  Future<ApiCallResponse> call({
     String? email = '',
     String? password = '',
   }) {
@@ -16,13 +30,12 @@ class LoginRequestCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'LoginRequest',
-      apiUrl: 'http://45.35.169.130:8765/CRMRealEstateNew_Test/api/authorize',
+      apiUrl: '${RimesApiGroup.baseUrl}/api/authorize',
       callType: ApiCallType.POST,
-      headers: {},
-      params: {
-        'email': email,
-        'password': password,
+      headers: {
+        ...RimesApiGroup.headers,
       },
+      params: {},
       body: body,
       bodyType: BodyType.JSON,
       returnBody: true,
@@ -30,16 +43,17 @@ class LoginRequestCall {
   }
 }
 
-class AdmindashboardCall {
-  static Future<ApiCallResponse> call({
-    String? userId = '',
+class AdmainDashboardRequestCall {
+  Future<ApiCallResponse> call({
+    int? userId,
   }) {
     return ApiManager.instance.makeApiCall(
-      callName: 'Admindashboard',
-      apiUrl:
-          'http://45.35.169.130:8765/CRMRealEstateNew_Test/api/dashboard/admin?',
+      callName: 'AdmainDashboardRequest',
+      apiUrl: '${RimesApiGroup.baseUrl}api/dashboard/admin?',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        ...RimesApiGroup.headers,
+      },
       params: {
         'userId': userId,
       },
@@ -49,7 +63,7 @@ class AdmindashboardCall {
 }
 
 class AllActivityRequestCall {
-  static Future<ApiCallResponse> call({
+  Future<ApiCallResponse> call({
     int? userId,
   }) {
     final body = '''
@@ -86,16 +100,17 @@ class AllActivityRequestCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AllActivityRequest',
-      apiUrl:
-          'http://45.35.169.130:8765/CRMRealEstateNew_Test/api/activity/all',
+      apiUrl: '${RimesApiGroup.baseUrl}/api/activity/all',
       callType: ApiCallType.POST,
-      headers: {},
-      params: {
-        'userId': userId,
+      headers: {
+        ...RimesApiGroup.headers,
       },
+      params: {},
       body: body,
       bodyType: BodyType.JSON,
       returnBody: true,
     );
   }
 }
+
+/// End RimesApi Group Code

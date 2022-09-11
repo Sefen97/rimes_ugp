@@ -13,7 +13,9 @@ class MyAccountWidget extends StatefulWidget {
 
 class _MyAccountWidgetState extends State<MyAccountWidget> {
   TextEditingController? textController1;
+
   TextEditingController? textController2;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -151,6 +153,20 @@ class _MyAccountWidgetState extends State<MyAccountWidget> {
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),
@@ -189,6 +205,20 @@ class _MyAccountWidgetState extends State<MyAccountWidget> {
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).lineColor,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(6),

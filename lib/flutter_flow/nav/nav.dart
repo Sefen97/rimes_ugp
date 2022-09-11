@@ -66,11 +66,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ForgetPasswordWidget(),
             ),
             FFRoute(
-              name: 'Home',
+              name: 'Dashboard',
               path: 'home',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Home')
-                  : HomeWidget(),
+                  ? NavBarPage(initialPage: 'Dashboard')
+                  : DashboardWidget(),
             ),
             FFRoute(
               name: 'Activity',
@@ -80,18 +80,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : ActivityWidget(),
             ),
             FFRoute(
-              name: 'Leads',
-              path: 'leads',
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Leads')
-                  : LeadsWidget(),
-            ),
-            FFRoute(
               name: 'Units',
               path: 'units',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'Units')
                   : UnitsWidget(),
+            ),
+            FFRoute(
+              name: 'Leads',
+              path: 'leads',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'Leads')
+                  : LeadsWidget(),
             ),
             FFRoute(
               name: 'More',

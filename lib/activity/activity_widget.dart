@@ -17,6 +17,7 @@ class ActivityWidget extends StatefulWidget {
 
 class _ActivityWidgetState extends State<ActivityWidget> {
   TextEditingController? textController;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -555,7 +556,9 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           isDense: true,
-                          hintText: 'search',
+                          hintText: FFLocalizations.of(context).getText(
+                            'k576y7ps' /* search */,
+                          ),
                           hintStyle: FlutterFlowTheme.of(context).bodyText2,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -565,6 +568,20 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1,
@@ -609,7 +626,9 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                             child: Text(
-                              'Filter',
+                              FFLocalizations.of(context).getText(
+                                'xymjxh97' /* Filter */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
@@ -638,7 +657,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(18, 24, 18, 10),
                   child: FutureBuilder<ApiCallResponse>(
-                    future: AllActivityRequestCall.call(
+                    future: RimesApiGroup.allActivityRequestCall.call(
                       userId: 10,
                     ),
                     builder: (context, snapshot) {
@@ -681,6 +700,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Expanded(
+                                        flex: 2,
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           crossAxisAlignment:
@@ -742,44 +762,47 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                           ],
                                         ),
                                       ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 10),
-                                            child: Text(
+                                      Expanded(
+                                        flex: 1,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 0, 10),
+                                              child: Text(
+                                                getJsonField(
+                                                  allActivityItemsItem,
+                                                  r'''$.activityStatusName''',
+                                                ).toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFFE11B33),
+                                                          fontSize: 13,
+                                                        ),
+                                              ),
+                                            ),
+                                            Text(
                                               getJsonField(
                                                 allActivityItemsItem,
-                                                r'''$.activityStatusName''',
+                                                r'''$.agent''',
                                               ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFFE11B33),
                                                         fontSize: 13,
                                                       ),
                                             ),
-                                          ),
-                                          Text(
-                                            getJsonField(
-                                              allActivityItemsItem,
-                                              r'''$.agent''',
-                                            ).toString(),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  fontSize: 13,
-                                                ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),

@@ -15,11 +15,14 @@ class LoginScreenWidget extends StatefulWidget {
 }
 
 class _LoginScreenWidgetState extends State<LoginScreenWidget> {
-  ApiCallResponse? loginRespons;
   TextEditingController? textController1;
+
   TextEditingController? textController2;
+
   late bool passwordVisibility;
+
   bool? checkboxListTileValue;
+  ApiCallResponse? loginRespons;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -113,6 +116,20 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 3,
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 3,
+                              ),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyText2,
                           keyboardType: TextInputType.emailAddress,
@@ -157,6 +174,20 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                             ),
                             borderRadius: BorderRadius.circular(6),
                           ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
                           suffixIcon: InkWell(
                             onTap: () => setState(
                               () => passwordVisibility = !passwordVisibility,
@@ -179,6 +210,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                               'k5zk081z' /* Field is required */,
                             );
                           }
+
                           if (val.length < 5) {
                             return 'Requires at least 5 characters.';
                           }
@@ -257,7 +289,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 return;
                               }
 
-                              loginRespons = await LoginRequestCall.call(
+                              loginRespons =
+                                  await RimesApiGroup.loginRequestCall.call(
                                 email: textController1!.text,
                                 password: textController2!.text,
                               );
@@ -296,7 +329,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 }
 
                                 // Navigation
-                                context.pushNamed('Home');
+
+                                context.pushNamed('Dashboard');
                               } else {
                                 // Alert
                                 await showDialog(

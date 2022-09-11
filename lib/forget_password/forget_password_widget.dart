@@ -13,6 +13,7 @@ class ForgetPasswordWidget extends StatefulWidget {
 
 class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
   TextEditingController? textController;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -132,6 +133,20 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).lineColor,
+                            width: 3,
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 3,
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
                             width: 3,
                           ),
                           borderRadius: BorderRadius.circular(5),

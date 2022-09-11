@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({Key? key}) : super(key: key);
+class DashboardWidget extends StatefulWidget {
+  const DashboardWidget({Key? key}) : super(key: key);
 
   @override
-  _HomeWidgetState createState() => _HomeWidgetState();
+  _DashboardWidgetState createState() => _DashboardWidgetState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> {
+class _DashboardWidgetState extends State<DashboardWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -526,8 +526,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                   child: FutureBuilder<ApiCallResponse>(
-                    future: AdmindashboardCall.call(
-                      userId: FFAppState().employeeId,
+                    future: RimesApiGroup.admainDashboardRequestCall.call(
+                      userId: 10,
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
@@ -543,7 +543,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                         );
                       }
-                      final columnAdmindashboardResponse = snapshot.data!;
+                      final columnAdmainDashboardRequestResponse =
+                          snapshot.data!;
                       return Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -552,7 +553,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               alignment: AlignmentDirectional(0, 0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0, 0, 0, 500),
+                                    0, 0, 0, 530),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment:
@@ -616,7 +617,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                                         Text(
                                                           getJsonField(
-                                                            columnAdmindashboardResponse
+                                                            columnAdmainDashboardRequestResponse
                                                                 .jsonBody,
                                                             r'''$.result.employeeAnalysis.totalLeads''',
                                                           ).toString(),
@@ -717,7 +718,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                                         Text(
                                                           getJsonField(
-                                                            columnAdmindashboardResponse
+                                                            columnAdmainDashboardRequestResponse
                                                                 .jsonBody,
                                                             r'''$.result.employeeAnalysis.totalUnits''',
                                                           ).toString(),
@@ -815,7 +816,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                                         Text(
                                                           getJsonField(
-                                                            columnAdmindashboardResponse
+                                                            columnAdmainDashboardRequestResponse
                                                                 .jsonBody,
                                                             r'''$.result.employeeAnalysis.totalPendingLeads''',
                                                           ).toString(),

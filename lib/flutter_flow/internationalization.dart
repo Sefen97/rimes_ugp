@@ -119,7 +119,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // Home
+  // Dashboard
   {
     'ykn5kqzt': {
       'en': 'Total Leads',
@@ -176,11 +176,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' (10)',
       'ar': '(10)',
     },
-    'vi54d50v': {
+    'k576y7ps': {
       'en': 'search',
       'ar': '',
     },
-    'uk6q8t6w': {
+    'xymjxh97': {
       'en': 'Filter',
       'ar': '',
     },
@@ -211,6 +211,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'jdgas38r': {
       'en': 'Activity',
       'ar': 'نشاط',
+    },
+  },
+  // Units
+  {
+    '87mrtb5i': {
+      'en': 'Units',
+      'ar': 'الوحدات',
     },
   },
   // Leads
@@ -246,13 +253,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0yt64aay': {
       'en': 'Leads',
       'ar': 'يؤدي',
-    },
-  },
-  // Units
-  {
-    '87mrtb5i': {
-      'en': 'Units',
-      'ar': 'الوحدات',
     },
   },
   // More
