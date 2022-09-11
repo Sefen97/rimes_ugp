@@ -49,6 +49,33 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
+  // ForgetPassword
+  {
+    'pd1p6aja': {
+      'en': 'Forgot your password?',
+      'ar': 'نسيت رقمك السري؟',
+    },
+    'r3d8zynj': {
+      'en': 'Please enter your email address to ',
+      'ar': 'الرجاء إدخال عنوان بريدك الإلكتروني إلى',
+    },
+    '0bg79id7': {
+      'en': 'receive a verification code',
+      'ar': 'تلقي رمز التحقق',
+    },
+    'fih0k0aq': {
+      'en': 'Email Address',
+      'ar': 'عنوان البريد الالكترونى',
+    },
+    '524qdmoo': {
+      'en': 'Send',
+      'ar': 'إرسال',
+    },
+    '5zzhsopk': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // LoginScreen
   {
     '0fjvw330': {
@@ -88,33 +115,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
     },
     '68dlbt9s': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
-  // ForgetPassword
-  {
-    'pd1p6aja': {
-      'en': 'Forgot your password?',
-      'ar': 'نسيت رقمك السري؟',
-    },
-    'r3d8zynj': {
-      'en': 'Please enter your email address to ',
-      'ar': 'الرجاء إدخال عنوان بريدك الإلكتروني إلى',
-    },
-    '0bg79id7': {
-      'en': 'receive a verification code',
-      'ar': 'تلقي رمز التحقق',
-    },
-    'fih0k0aq': {
-      'en': 'Email Address',
-      'ar': 'عنوان البريد الالكترونى',
-    },
-    '524qdmoo': {
-      'en': 'Send',
-      'ar': 'إرسال',
-    },
-    '5zzhsopk': {
       'en': 'Home',
       'ar': 'مسكن',
     },
@@ -178,11 +178,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'k576y7ps': {
       'en': 'search',
-      'ar': '',
+      'ar': 'بحث',
     },
     'xymjxh97': {
       'en': 'Filter',
-      'ar': '',
+      'ar': 'منقي',
     },
     'hjhci0rr': {
       'en': 'My Account',
@@ -217,7 +217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'zs175pxp': {
       'en': 'All Units',
-      'ar': 'جميع الأنشطة',
+      'ar': 'جميع الوحدات',
     },
     'bphk5jnw': {
       'en': ' (10)',
@@ -235,36 +235,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'كل العملاء المتوقعين',
     },
     'y9vul0et': {
-      'en': '',
+      'en': 'Rent',
       'ar': 'تأجير',
     },
     'hlq749i9': {
-      'en': 'Rent ',
-      'ar': '',
+      'en': 'Rent',
+      'ar': 'تأجير',
     },
     'tmg1lmed': {
       'en': 'Sale',
-      'ar': '',
+      'ar': 'تخفيض السعر',
     },
     'fslpxl8x': {
       'en': 'search',
-      'ar': '',
+      'ar': 'بحث',
     },
     'yb30f34e': {
       'en': 'Filter',
-      'ar': '',
+      'ar': 'منقي',
     },
-    'z17pfyy8': {
+    'iucgyh33': {
       'en': 'unit type',
-      'ar': '',
+      'ar': 'نوع الوحدة',
     },
-    'gi2vyop9': {
-      'en': 'Badroom',
-      'ar': '',
-    },
-    'jhzx9d5v': {
+    '2ceeyl6i': {
       'en': 'Status ',
-      'ar': '',
+      'ar': 'حالة',
     },
     'gc5qsfn6': {
       'en': 'My Account',
@@ -333,11 +329,45 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // AddActivity
+  {
+    'nln6l28p': {
+      'en': 'Test',
+      'ar': 'اختبار',
+    },
+    'aky62noq': {
+      'en': 'Test 1',
+      'ar': 'اختبار 1',
+    },
+    'znl84ebf': {
+      'en': 'Type Here',
+      'ar': 'أكتب هنا',
+    },
+    'okaiupwc': {
+      'en': 'Add New Activity',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'pkgj3rc1': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // CustomBottomSheet
   {
     'jaaxdoyw': {
       'en': 'Close',
       'ar': 'قريب',
+    },
+  },
+  // ActivityFilter
+  {
+    'x1y4xxt3': {
+      'en': 'Type',
+      'ar': 'يكتب',
+    },
+    'ufukrab5': {
+      'en': 'Type Here',
+      'ar': 'أكتب هنا',
     },
   },
 ].reduce((a, b) => a..addAll(b));

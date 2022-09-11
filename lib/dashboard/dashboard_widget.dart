@@ -532,11 +532,11 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                   if (!snapshot.hasData) {
                     return Center(
                       child: SizedBox(
-                        width: 70,
-                        height: 70,
+                        width: 60,
+                        height: 60,
                         child: SpinKitFadingCircle(
                           color: FlutterFlowTheme.of(context).primaryColor,
-                          size: 70,
+                          size: 60,
                         ),
                       ),
                     );

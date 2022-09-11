@@ -104,29 +104,31 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                             hintStyle: FlutterFlowTheme.of(context).bodyText2,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFFF2F1F8),
-                                width: 3,
+                                color: Color(0x210A0A0A),
+                                width: 2,
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFFF2F1F8),
-                                width: 3,
+                                color: Color(0x210A0A0A),
+                                width: 2,
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 3,
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 3,
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
                               ),
                               borderRadius: BorderRadius.circular(6),
                             ),
@@ -162,29 +164,29 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           hintStyle: FlutterFlowTheme.of(context).bodyText2,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xFFF2F1F8),
-                              width: 3,
+                              color: Color(0x210A0A0A),
+                              width: 2,
                             ),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xFFF2F1F8),
-                              width: 3,
+                              color: Color(0x210A0A0A),
+                              width: 2,
                             ),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 3,
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
                             ),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0x00000000),
-                              width: 3,
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
                             ),
                             borderRadius: BorderRadius.circular(6),
                           ),
