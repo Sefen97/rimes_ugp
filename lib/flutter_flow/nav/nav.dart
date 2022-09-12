@@ -61,16 +61,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ForgetPasswordWidget(),
             ),
             FFRoute(
-              name: 'LoginScreen',
-              path: 'loginScreen',
-              builder: (context, params) => LoginScreenWidget(),
-            ),
-            FFRoute(
               name: 'Dashboard',
               path: 'home',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'Dashboard')
                   : DashboardWidget(),
+            ),
+            FFRoute(
+              name: 'LoginScreen',
+              path: 'loginScreen',
+              builder: (context, params) => LoginScreenWidget(),
             ),
             FFRoute(
               name: 'Activity',

@@ -79,42 +79,53 @@ class _MyAccountWidgetState extends State<MyAccountWidget> {
                   children: [
                     Align(
                       alignment: AlignmentDirectional(0, 0),
-                      child: Stack(
-                        alignment: AlignmentDirectional(0, 0),
-                        children: [
-                          Align(
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Align(
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Stack(
                             alignment: AlignmentDirectional(0, 0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                'assets/images/no_path_copy_48.png',
-                                width: 200,
-                                height: 200,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.4, 0),
-                            child: Container(
-                              width: 40,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFE11B33),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: Align(
+                            children: [
+                              Align(
                                 alignment: AlignmentDirectional(0, 0),
-                                child: Image.asset(
-                                  'assets/images/group_3406.png',
-                                  width: 24,
-                                  height: 24,
-                                  fit: BoxFit.cover,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5),
+                                  child: Image.asset(
+                                    'assets/images/no_path_copy_48.png',
+                                    width: 200,
+                                    height: 200,
+                                    fit: BoxFit.fill,
+                                  ),
                                 ),
                               ),
-                            ),
+                              Align(
+                                alignment: AlignmentDirectional(0.75, 0.1),
+                                child: Container(
+                                  width: 40,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFE11B33),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Image.asset(
+                                      'assets/images/group_3406.png',
+                                      width: 24,
+                                      height: 24,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                     Align(

@@ -34,6 +34,16 @@ class FFAppState {
   String userName = 'Null';
 
   String profileImage = '';
+
+  List<String> pickTo = [
+    'Unit',
+    'Content',
+    'Lead',
+    'Activity',
+    'Test 1',
+    'Test 2',
+    'Test 3'
+  ];
 }
 
 LatLng? _latLngFromString(String? val) {

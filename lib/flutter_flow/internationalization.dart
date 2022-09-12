@@ -76,49 +76,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // LoginScreen
-  {
-    '0fjvw330': {
-      'en': 'Welcome,',
-      'ar': 'أهلا وسهلا،',
-    },
-    '90pzzvfi': {
-      'en': 'Sing in to continue',
-      'ar': 'الغناء للمتابعة',
-    },
-    'ggitvmra': {
-      'en': 'Email Address',
-      'ar': 'عنوان البريد الالكترونى',
-    },
-    'u82uik4h': {
-      'en': 'Password',
-      'ar': 'كلمة المرور',
-    },
-    '4ra5qus4': {
-      'en': 'Remember Me',
-      'ar': 'تذكرنى',
-    },
-    'br3lwu9r': {
-      'en': 'Login',
-      'ar': 'تسجيل الدخول',
-    },
-    'wr2052ai': {
-      'en': 'Forget password ?',
-      'ar': 'نسيت كلمة السر؟',
-    },
-    'f6lfsfvo': {
-      'en': 'Field is required',
-      'ar': 'الحقل مطلوب',
-    },
-    'k5zk081z': {
-      'en': 'Field is required',
-      'ar': 'الحقل مطلوب',
-    },
-    '68dlbt9s': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
   // Dashboard
   {
     'dax1mh3h': {
@@ -162,6 +119,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل خروج',
     },
     'qeu2on7a': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
+  // LoginScreen
+  {
+    '0fjvw330': {
+      'en': 'Welcome,',
+      'ar': 'أهلا وسهلا،',
+    },
+    '90pzzvfi': {
+      'en': 'Sing in to continue',
+      'ar': 'الغناء للمتابعة',
+    },
+    'ggitvmra': {
+      'en': 'Email Address',
+      'ar': 'عنوان البريد الالكترونى',
+    },
+    'u82uik4h': {
+      'en': 'Password',
+      'ar': 'كلمة المرور',
+    },
+    '4ra5qus4': {
+      'en': 'Remember Me',
+      'ar': 'تذكرنى',
+    },
+    'br3lwu9r': {
+      'en': 'Login',
+      'ar': 'تسجيل الدخول',
+    },
+    'wr2052ai': {
+      'en': 'Forget password ?',
+      'ar': 'نسيت كلمة السر؟',
+    },
+    'f6lfsfvo': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+    },
+    'k5zk081z': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+    },
+    '68dlbt9s': {
       'en': 'Home',
       'ar': 'مسكن',
     },
@@ -331,17 +331,101 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // AddActivity
   {
-    'nln6l28p': {
-      'en': 'Test',
-      'ar': 'اختبار',
+    'ifysoqeu': {
+      'en': 'Type',
+      'ar': '',
     },
-    'aky62noq': {
-      'en': 'Test 1',
-      'ar': 'اختبار 1',
-    },
-    'znl84ebf': {
+    'wgs4e89x': {
       'en': 'Type Here',
-      'ar': 'أكتب هنا',
+      'ar': '',
+    },
+    'ge2g2f9h': {
+      'en': 'Assign To',
+      'ar': '',
+    },
+    'z0w8h7ak': {
+      'en': 'Name of contact',
+      'ar': '',
+    },
+    'ebgs0p1n': {
+      'en': 'Date',
+      'ar': '',
+    },
+    'af0ilssx': {
+      'en': 'Date',
+      'ar': '',
+    },
+    'fdzu8scv': {
+      'en': 'Activity Status',
+      'ar': '',
+    },
+    'olu0vq5o': {
+      'en': 'Status',
+      'ar': '',
+    },
+    'galst8vf': {
+      'en': 'Pick To',
+      'ar': '',
+    },
+    'supvcfe6': {
+      'en': '[pickTo 0]',
+      'ar': '',
+    },
+    '11kv8rw3': {
+      'en': 'Unit',
+      'ar': '',
+    },
+    '0rlk6ga0': {
+      'en': 'Remark',
+      'ar': '',
+    },
+    'wpf8ygfc': {
+      'en': 'Remark here',
+      'ar': '',
+    },
+    'ejly387d': {
+      'en': 'Add',
+      'ar': 'تسجيل الدخول',
+    },
+    'rwjms85v': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'vtn4vhil': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'sueo80sq': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '5n70z95a': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '8ihdtadm': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'dobo1ur1': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '8km4dde6': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '6didpa89': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '36ayfbun': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'asif13ma': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
     },
     'okaiupwc': {
       'en': 'Add New Activity',
@@ -368,6 +452,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ufukrab5': {
       'en': 'Type Here',
       'ar': 'أكتب هنا',
+    },
+    'f4knb014': {
+      'en': 'Date',
+      'ar': 'يكتب',
+    },
+    'p5hdaw1r': {
+      'en': 'Date Here',
+      'ar': 'أكتب هنا',
+    },
+    't1xwmc1z': {
+      'en': 'Activity Status',
+      'ar': 'يكتب',
+    },
+    'v25ntzij': {
+      'en': 'Status',
+      'ar': 'أكتب هنا',
+    },
+    'xj0czjum': {
+      'en': 'Reletd To',
+      'ar': 'يكتب',
+    },
+    'k3yltokx': {
+      'en': 'All',
+      'ar': 'أكتب هنا',
+    },
+    '4e8j1n63': {
+      'en': 'Reset',
+      'ar': 'تسجيل الدخول',
+    },
+    'vez3x67e': {
+      'en': 'Apply',
+      'ar': 'تسجيل الدخول',
     },
   },
 ].reduce((a, b) => a..addAll(b));

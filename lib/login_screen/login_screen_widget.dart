@@ -92,7 +92,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           controller: textController1,
                           onChanged: (_) => EasyDebounce.debounce(
                             'textController1',
-                            Duration(milliseconds: 2000),
+                            Duration(milliseconds: 200),
                             () => setState(() {}),
                           ),
                           obscureText: false,
@@ -155,6 +155,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 32, 0, 0),
                       child: TextFormField(
                         controller: textController2,
+                        onChanged: (_) => EasyDebounce.debounce(
+                          'textController2',
+                          Duration(milliseconds: 200),
+                          () => setState(() {}),
+                        ),
                         obscureText: !passwordVisibility,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
