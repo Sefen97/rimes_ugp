@@ -115,7 +115,7 @@ class _VerifyScreenWidgetState extends State<VerifyScreenWidget> {
                       ),
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   enableActiveFill: false,
-                  autoFocus: true,
+                  autoFocus: false,
                   showCursor: true,
                   cursorColor: FlutterFlowTheme.of(context).primaryColor,
                   obscureText: false,
