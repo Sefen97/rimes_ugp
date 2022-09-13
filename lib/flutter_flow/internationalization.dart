@@ -337,6 +337,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // ActivityDetails
+  {
+    '8mygmwfr': {
+      'en': ' Activity Details',
+      'ar': 'تفاصيل النشاط',
+    },
+    'zhb6s965': {
+      'en': 'change',
+      'ar': 'يتغيرون',
+    },
+    'xwkxhrc4': {
+      'en': 'Comments ',
+      'ar': 'تعليقات',
+    },
+    'payz4gjk': {
+      'en': '(3)',
+      'ar': '(3)',
+    },
+    'zoy1mlf0': {
+      'en': 'Add Comment',
+      'ar': 'أضف تعليق',
+    },
+    'xlr8wyhr': {
+      'en': 'Name',
+      'ar': 'اسم',
+    },
+    'd27l7sm7': {
+      'en': '9-5-2021 5:30 PM',
+      'ar': '9-5-2021 5:30 مساءً',
+    },
+    'azgjwx8l': {
+      'en':
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
+    },
+    '2s479f0p': {
+      'en': 'Name 2',
+      'ar': 'الاسم 2',
+    },
+    'q0rczkoi': {
+      'en': '9-5-2021 5:30 PM',
+      'ar': '9-5-2021 5:30 مساءً',
+    },
+    'f29v7bhl': {
+      'en':
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
+    },
+    'b6o3ste6': {
+      'en': 'Name 3',
+      'ar': 'الاسم 3',
+    },
+    '0qjwsjz1': {
+      'en': '9-5-2021 5:30 PM',
+      'ar': '9-5-2021 5:30 مساءً',
+    },
+    '6ab8kc6y': {
+      'en':
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
+    },
+    'r9vb0syt': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // AddActivity
   {
     'ifysoqeu': {
@@ -440,72 +506,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أضف نشاطًا جديدًا',
     },
     'pkgj3rc1': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
-  // ActivityDetails
-  {
-    '8mygmwfr': {
-      'en': ' Activity Details',
-      'ar': 'تفاصيل النشاط',
-    },
-    'zhb6s965': {
-      'en': 'change',
-      'ar': 'يتغيرون',
-    },
-    'xwkxhrc4': {
-      'en': 'Comments ',
-      'ar': 'تعليقات',
-    },
-    'payz4gjk': {
-      'en': '(3)',
-      'ar': '(3)',
-    },
-    'zoy1mlf0': {
-      'en': 'Add Comment',
-      'ar': 'أضف تعليق',
-    },
-    'xlr8wyhr': {
-      'en': 'Name',
-      'ar': 'اسم',
-    },
-    'd27l7sm7': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    'azgjwx8l': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    '2s479f0p': {
-      'en': 'Name 2',
-      'ar': 'الاسم 2',
-    },
-    'q0rczkoi': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    'f29v7bhl': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    'b6o3ste6': {
-      'en': 'Name 3',
-      'ar': 'الاسم 3',
-    },
-    '0qjwsjz1': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    '6ab8kc6y': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    'r9vb0syt': {
       'en': 'Home',
       'ar': 'مسكن',
     },

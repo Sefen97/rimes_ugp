@@ -106,17 +106,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => MyAccountWidget(),
             ),
             FFRoute(
-              name: 'AddActivity',
-              path: 'addActivity',
-              builder: (context, params) => AddActivityWidget(),
-            ),
-            FFRoute(
               name: 'ActivityDetails',
               path: 'activityDetails',
               builder: (context, params) => ActivityDetailsWidget(
                 activityType: params.getParam('activityType', ParamType.String),
                 status: params.getParam('status', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'AddActivity',
+              path: 'addActivity',
+              builder: (context, params) => AddActivityWidget(),
             ),
             FFRoute(
               name: 'VerifyScreen',
