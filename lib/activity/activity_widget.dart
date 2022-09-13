@@ -558,7 +558,6 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                           Duration(milliseconds: 2000),
                           () => setState(() {}),
                         ),
-                        autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           isDense: true,
