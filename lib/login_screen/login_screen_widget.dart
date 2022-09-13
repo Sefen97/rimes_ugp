@@ -302,8 +302,6 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 email: textController1!.text,
                                 password: textController2!.text,
                               );
-                              await Future.delayed(
-                                  const Duration(milliseconds: 2000));
                               if (getJsonField(
                                 (loginRespons?.jsonBody ?? ''),
                                 r'''$.result.status''',

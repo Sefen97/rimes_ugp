@@ -71,6 +71,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Send',
       'ar': 'إرسال',
     },
+    '2dl5db5z': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'nwdcxntd': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
     '5zzhsopk': {
       'en': 'Home',
       'ar': 'مسكن',
@@ -363,15 +371,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Status',
       'ar': '',
     },
-    'galst8vf': {
+    '7rs15d4s': {
       'en': 'Pick To',
       'ar': '',
     },
-    'supvcfe6': {
+    'ylbcyuoj': {
       'en': '[pickTo 0]',
       'ar': '',
     },
-    '11kv8rw3': {
+    's7xg3yev': {
       'en': 'Unit',
       'ar': '',
     },
@@ -419,11 +427,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    '36ayfbun': {
+    'uzwdcqku': {
       'en': 'Field is required',
       'ar': '',
     },
-    'asif13ma': {
+    'iu7vsvpt': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
@@ -436,6 +444,95 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // ActivityDetails
+  {
+    '8mygmwfr': {
+      'en': ' Activity Details',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'zhb6s965': {
+      'en': 'change',
+      'ar': 'تسجيل الدخول',
+    },
+    'xwkxhrc4': {
+      'en': 'Comments ',
+      'ar': '',
+    },
+    'payz4gjk': {
+      'en': '(3)',
+      'ar': '',
+    },
+    'zoy1mlf0': {
+      'en': 'Add Comment',
+      'ar': '',
+    },
+    'xlr8wyhr': {
+      'en': 'Name',
+      'ar': '',
+    },
+    'd27l7sm7': {
+      'en': '9-5-2021 5:30 PM',
+      'ar': '',
+    },
+    'azgjwx8l': {
+      'en':
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      'ar': '',
+    },
+    '2s479f0p': {
+      'en': 'Name 2',
+      'ar': '',
+    },
+    'q0rczkoi': {
+      'en': '9-5-2021 5:30 PM',
+      'ar': '',
+    },
+    'f29v7bhl': {
+      'en':
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      'ar': '',
+    },
+    'b6o3ste6': {
+      'en': 'Name 3',
+      'ar': '',
+    },
+    '0qjwsjz1': {
+      'en': '9-5-2021 5:30 PM',
+      'ar': '',
+    },
+    '6ab8kc6y': {
+      'en':
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+      'ar': '',
+    },
+    'r9vb0syt': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // VerifyScreen
+  {
+    'g65y2hg6': {
+      'en': 'Please enter 4 digit code send to',
+      'ar': '',
+    },
+    'jo3tebtz': {
+      'en': 'Send',
+      'ar': 'تسجيل الدخول',
+    },
+    '33ehefl3': {
+      'en': 'Resend Code',
+      'ar': '',
+    },
+    '9r0kyl2k': {
+      'en': 'Verify your email',
+      'ar': 'نسيت رقمك السري؟',
+    },
+    '1ft6trdw': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // CustomBottomSheet
   {
     'jaaxdoyw': {
@@ -443,7 +540,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'قريب',
     },
   },
-  // ActivityFilter
+  // ActivityFilterBottomSheet
   {
     'x1y4xxt3': {
       'en': 'Type',
@@ -483,6 +580,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vez3x67e': {
       'en': 'Apply',
+      'ar': 'تسجيل الدخول',
+    },
+  },
+  // AddCommentBottomSheet
+  {
+    'w5e46ize': {
+      'en': 'Add comment',
+      'ar': '',
+    },
+    'vs25j2wv': {
+      'en': 'Enter your comment here...',
+      'ar': '',
+    },
+    'nkg8hh9g': {
+      'en': 'Add',
       'ar': 'تسجيل الدخول',
     },
   },

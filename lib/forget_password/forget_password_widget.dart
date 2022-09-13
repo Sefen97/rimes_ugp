@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +15,7 @@ class ForgetPasswordWidget extends StatefulWidget {
 class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
   TextEditingController? textController;
 
+  final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -61,28 +63,42 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(0, 0),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 39, 0, 0),
-                    child: Image.asset(
-                      'assets/images/group_3435.png',
-                      width: 142,
-                      height: 142,
-                      fit: BoxFit.cover,
+          child: Form(
+            key: formKey,
+            autovalidateMode: AutovalidateMode.always,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(0, 0),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 39, 0, 0),
+                      child: Image.asset(
+                        'assets/images/group_3435.png',
+                        width: 142,
+                        height: 142,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 5),
-                  child: Text(
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 5),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'r3d8zynj' /* Please enter your email addres... */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF959595),
+                            fontSize: 14,
+                          ),
+                    ),
+                  ),
+                  Text(
                     FFLocalizations.of(context).getText(
-                      'r3d8zynj' /* Please enter your email addres... */,
+                      '0bg79id7' /* receive a verification code */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Poppins',
@@ -90,107 +106,131 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                           fontSize: 14,
                         ),
                   ),
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    '0bg79id7' /* receive a verification code */,
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0xFF959595),
-                        fontSize: 14,
-                      ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 44, 0, 0),
-                  child: Container(
-                    width: double.infinity,
-                    child: TextFormField(
-                      controller: textController,
-                      autofocus: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          'fih0k0aq' /* Email Address */,
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 44, 0, 0),
+                    child: Container(
+                      width: double.infinity,
+                      child: TextFormField(
+                        controller: textController,
+                        onChanged: (_) => EasyDebounce.debounce(
+                          'textController',
+                          Duration(milliseconds: 2000),
+                          () => setState(() {}),
                         ),
-                        labelStyle:
-                            FlutterFlowTheme.of(context).bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: Color(0xFFC9C9C9),
-                                ),
-                        hintStyle:
-                            FlutterFlowTheme.of(context).bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: Color(0xFFC9C9C9),
-                                ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).lineColor,
-                            width: 3,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'fih0k0aq' /* Email Address */,
                           ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).lineColor,
-                            width: 3,
+                          labelStyle:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFC9C9C9),
+                                  ),
+                          hintStyle:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFC9C9C9),
+                                  ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).lineColor,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(5),
                           ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x00000000),
-                            width: 3,
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).lineColor,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(5),
                           ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x00000000),
-                            width: 3,
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(5),
                           ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.black,
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(5),
                           ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 48, 0, 0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFFE11B33), Color(0xFFFDA48E)],
-                        stops: [0, 1],
-                        begin: AlignmentDirectional(1, -0.94),
-                        end: AlignmentDirectional(-1, 0.94),
-                      ),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Align(
-                      alignment: AlignmentDirectional(0, 0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '524qdmoo' /* Send */,
                         ),
-                        textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                               fontFamily: 'Poppins',
-                              color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
-                              fontSize: 20,
+                              color: Colors.black,
                             ),
+                        keyboardType: TextInputType.emailAddress,
+                        validator: (val) {
+                          if (val == null || val.isEmpty) {
+                            return FFLocalizations.of(context).getText(
+                              '2dl5db5z' /* Field is required */,
+                            );
+                          }
+
+                          if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+                            return 'Has to be a valid email address.';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 48, 0, 0),
+                    child: InkWell(
+                      onTap: () async {
+                        if (formKey.currentState == null ||
+                            !formKey.currentState!.validate()) {
+                          return;
+                        }
+
+                        context.pushNamed(
+                          'VerifyScreen',
+                          queryParams: {
+                            'emailAddress': serializeParam(
+                                textController!.text, ParamType.String),
+                          }.withoutNulls,
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 48,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFFE11B33), Color(0xFFFDA48E)],
+                            stops: [0, 1],
+                            begin: AlignmentDirectional(1, -0.94),
+                            end: AlignmentDirectional(-1, 0.94),
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Align(
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              '524qdmoo' /* Send */,
+                            ),
+                            textAlign: TextAlign.center,
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      fontSize: 20,
+                                    ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

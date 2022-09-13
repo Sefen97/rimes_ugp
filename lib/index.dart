@@ -8,3 +8,6 @@ export 'leads/leads_widget.dart' show LeadsWidget;
 export 'more/more_widget.dart' show MoreWidget;
 export 'my_account/my_account_widget.dart' show MyAccountWidget;
 export 'add_activity/add_activity_widget.dart' show AddActivityWidget;
+export 'activity_details/activity_details_widget.dart'
+    show ActivityDetailsWidget;
+export 'verify_screen/verify_screen_widget.dart' show VerifyScreenWidget;

@@ -37,6 +37,7 @@ dependencies:
   intl: 0.17.0
   json_path: 0.4.1
   page_transition: 2.0.9
+  pin_code_fields: 7.4.0
   shared_preferences: 2.0.15
   timeago: 3.2.2
   url_launcher: 6.1.5

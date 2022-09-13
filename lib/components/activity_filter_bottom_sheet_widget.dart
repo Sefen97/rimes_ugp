@@ -5,14 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityFilterWidget extends StatefulWidget {
-  const ActivityFilterWidget({Key? key}) : super(key: key);
+class ActivityFilterBottomSheetWidget extends StatefulWidget {
+  const ActivityFilterBottomSheetWidget({Key? key}) : super(key: key);
 
   @override
-  _ActivityFilterWidgetState createState() => _ActivityFilterWidgetState();
+  _ActivityFilterBottomSheetWidgetState createState() =>
+      _ActivityFilterBottomSheetWidgetState();
 }
 
-class _ActivityFilterWidgetState extends State<ActivityFilterWidget> {
+class _ActivityFilterBottomSheetWidgetState
+    extends State<ActivityFilterBottomSheetWidget> {
   TextEditingController? activityStatusTextFieldController;
 
   TextEditingController? dateTextFieldController;
@@ -45,7 +47,7 @@ class _ActivityFilterWidgetState extends State<ActivityFilterWidget> {
       ),
       child: Container(
         width: double.infinity,
-        height: 800,
+        height: 600,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.only(
@@ -380,7 +382,6 @@ class _ActivityFilterWidgetState extends State<ActivityFilterWidget> {
                             child: FFButtonWidget(
                               onPressed: () async {
                                 Navigator.pop(context);
-                                context.pop();
                               },
                               text: FFLocalizations.of(context).getText(
                                 'vez3x67e' /* Apply */,

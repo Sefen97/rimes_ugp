@@ -361,7 +361,9 @@ class _AddActivityWidgetState extends State<AddActivityWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                     child: Text(
-                      'Pick To',
+                      FFLocalizations.of(context).getText(
+                        '7rs15d4s' /* Pick To */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
                             color: Color(0xFF635656),
@@ -383,7 +385,9 @@ class _AddActivityWidgetState extends State<AddActivityWidget> {
                         children: [
                           FlutterFlowRadioButton(
                             options: FFAppState().pickTo.toList(),
-                            initialValue: '[pickTo 0]',
+                            initialValue: FFLocalizations.of(context).getText(
+                              'ylbcyuoj' /* [pickTo 0] */,
+                            ),
                             onChanged: (value) {
                               setState(() => radioButtonValue = value);
                             },
@@ -473,7 +477,9 @@ class _AddActivityWidgetState extends State<AddActivityWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Field is required';
+                          return FFLocalizations.of(context).getText(
+                            'uzwdcqku' /* Field is required */,
+                          );
                         }
 
                         return null;

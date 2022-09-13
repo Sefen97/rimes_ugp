@@ -1,5 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
-import '../components/activity_filter_widget.dart';
+import '../components/activity_filter_bottom_sheet_widget.dart';
 import '../components/custom_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -628,7 +628,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                           builder: (context) {
                             return Padding(
                               padding: MediaQuery.of(context).viewInsets,
-                              child: ActivityFilterWidget(),
+                              child: ActivityFilterBottomSheetWidget(),
                             );
                           },
                         );
@@ -712,49 +712,85 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                             itemBuilder: (context, allActivityItemsIndex) {
                               final allActivityItemsItem =
                                   allActivityItems[allActivityItemsIndex];
-                              return Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Expanded(
-                                        flex: 2,
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 10),
-                                              child: Text(
-                                                getJsonField(
-                                                  allActivityItemsItem,
-                                                  r'''$.typeName''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFF5B5B5B),
-                                                          fontSize: 15,
-                                                        ),
+                              return InkWell(
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'ActivityDetails',
+                                    queryParams: {
+                                      'activityType': serializeParam(
+                                          getJsonField(
+                                            allActivityItemsItem,
+                                            r'''$.typeName''',
+                                          ).toString(),
+                                          ParamType.String),
+                                      'status': serializeParam(
+                                          getJsonField(
+                                            allActivityItemsItem,
+                                            r'''$.activityStatusName''',
+                                          ).toString(),
+                                          ParamType.String),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                          flex: 2,
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 10),
+                                                child: Text(
+                                                  getJsonField(
+                                                    allActivityItemsItem,
+                                                    r'''$.typeName''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFF5B5B5B),
+                                                        fontSize: 15,
+                                                      ),
+                                                ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 10),
-                                              child: Text(
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 10),
+                                                child: Text(
+                                                  getJsonField(
+                                                    allActivityItemsItem,
+                                                    r'''$.activitySource''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFFAAAAAA),
+                                                        fontSize: 13,
+                                                      ),
+                                                ),
+                                              ),
+                                              Text(
                                                 getJsonField(
                                                   allActivityItemsItem,
-                                                  r'''$.activitySource''',
+                                                  r'''$.activitySubject''',
                                                 ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -766,81 +802,66 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                                           fontSize: 13,
                                                         ),
                                               ),
-                                            ),
-                                            Text(
-                                              getJsonField(
-                                                allActivityItemsItem,
-                                                r'''$.activitySubject''',
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                            ],
+                                          ),
+                                        ),
+                                        Expanded(
+                                          flex: 1,
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 10),
+                                                child: Text(
+                                                  getJsonField(
+                                                    allActivityItemsItem,
+                                                    r'''$.activityStatusName''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         color:
-                                                            Color(0xFFAAAAAA),
+                                                            Color(0xFFE11B33),
                                                         fontSize: 13,
                                                       ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 10),
-                                              child: Text(
+                                                ),
+                                              ),
+                                              Text(
                                                 getJsonField(
                                                   allActivityItemsItem,
-                                                  r'''$.activityStatusName''',
+                                                  r'''$.agent''',
                                                 ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
                                                         .override(
                                                           fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFFE11B33),
                                                           fontSize: 13,
                                                         ),
                                               ),
-                                            ),
-                                            Text(
-                                              getJsonField(
-                                                allActivityItemsItem,
-                                                r'''$.agent''',
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 13,
-                                                      ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 14, 0, 14),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 1,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x70635656),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 14, 0, 14),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 1,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x70635656),
-                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               );
                             },
                           );
