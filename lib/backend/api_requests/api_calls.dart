@@ -31,7 +31,7 @@ class LoginRequestCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'LoginRequest',
-      apiUrl: '${RimesApiGroup.baseUrl}/api/authorize',
+      apiUrl: '${RimesApiGroup.baseUrl}api/authorize',
       callType: ApiCallType.POST,
       headers: {
         ...RimesApiGroup.headers,
@@ -101,7 +101,7 @@ class AllActivityRequestCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AllActivityRequest',
-      apiUrl: '${RimesApiGroup.baseUrl}/api/activity/all',
+      apiUrl: '${RimesApiGroup.baseUrl}api/activity/all',
       callType: ApiCallType.POST,
       headers: {
         ...RimesApiGroup.headers,
