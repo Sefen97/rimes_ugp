@@ -73,11 +73,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2dl5db5z': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     'nwdcxntd': {
       'en': 'Please choose an option from the dropdown',
-      'ar': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     '5zzhsopk': {
       'en': 'Home',
@@ -341,99 +341,99 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ifysoqeu': {
       'en': 'Type',
-      'ar': '',
+      'ar': 'يكتب',
     },
     'wgs4e89x': {
       'en': 'Type Here',
-      'ar': '',
+      'ar': 'أكتب هنا',
     },
     'ge2g2f9h': {
       'en': 'Assign To',
-      'ar': '',
+      'ar': 'يسند إلى',
     },
     'z0w8h7ak': {
       'en': 'Name of contact',
-      'ar': '',
+      'ar': 'اسم جهة الاتصال',
     },
     'ebgs0p1n': {
       'en': 'Date',
-      'ar': '',
+      'ar': 'تاريخ',
     },
     'af0ilssx': {
       'en': 'Date',
-      'ar': '',
+      'ar': 'تاريخ',
     },
     'fdzu8scv': {
       'en': 'Activity Status',
-      'ar': '',
+      'ar': 'حالة النشاط',
     },
     'olu0vq5o': {
       'en': 'Status',
-      'ar': '',
+      'ar': 'حالة',
     },
     '7rs15d4s': {
       'en': 'Pick To',
-      'ar': '',
+      'ar': 'اختر',
     },
     'ylbcyuoj': {
       'en': '[pickTo 0]',
-      'ar': '',
+      'ar': '[اختيار 0]',
     },
     's7xg3yev': {
       'en': 'Unit',
-      'ar': '',
+      'ar': 'وحدة',
     },
     '0rlk6ga0': {
       'en': 'Remark',
-      'ar': '',
+      'ar': 'ملاحظة',
     },
     'wpf8ygfc': {
       'en': 'Remark here',
-      'ar': '',
+      'ar': 'لاحظ هنا',
     },
     'ejly387d': {
       'en': 'Add',
-      'ar': 'تسجيل الدخول',
+      'ar': 'يضيف',
     },
     'rwjms85v': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     'vtn4vhil': {
       'en': 'Please choose an option from the dropdown',
-      'ar': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     'sueo80sq': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     '5n70z95a': {
       'en': 'Please choose an option from the dropdown',
-      'ar': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     '8ihdtadm': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     'dobo1ur1': {
       'en': 'Please choose an option from the dropdown',
-      'ar': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     '8km4dde6': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     '6didpa89': {
       'en': 'Please choose an option from the dropdown',
-      'ar': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     'uzwdcqku': {
       'en': 'Field is required',
-      'ar': '',
+      'ar': 'الحقل مطلوب',
     },
     'iu7vsvpt': {
       'en': 'Please choose an option from the dropdown',
-      'ar': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     'okaiupwc': {
       'en': 'Add New Activity',
@@ -448,89 +448,89 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '8mygmwfr': {
       'en': ' Activity Details',
-      'ar': 'أضف نشاطًا جديدًا',
+      'ar': 'تفاصيل النشاط',
     },
     'zhb6s965': {
       'en': 'change',
-      'ar': 'تسجيل الدخول',
+      'ar': 'يتغيرون',
     },
     'xwkxhrc4': {
       'en': 'Comments ',
-      'ar': '',
+      'ar': 'تعليقات',
     },
     'payz4gjk': {
       'en': '(3)',
-      'ar': '',
+      'ar': '(3)',
     },
     'zoy1mlf0': {
       'en': 'Add Comment',
-      'ar': '',
+      'ar': 'أضف تعليق',
     },
     'xlr8wyhr': {
       'en': 'Name',
-      'ar': '',
+      'ar': 'اسم',
     },
     'd27l7sm7': {
       'en': '9-5-2021 5:30 PM',
-      'ar': '',
+      'ar': '9-5-2021 5:30 مساءً',
     },
     'azgjwx8l': {
       'en':
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': '',
+      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
     },
     '2s479f0p': {
       'en': 'Name 2',
-      'ar': '',
+      'ar': 'الاسم 2',
     },
     'q0rczkoi': {
       'en': '9-5-2021 5:30 PM',
-      'ar': '',
+      'ar': '9-5-2021 5:30 مساءً',
     },
     'f29v7bhl': {
       'en':
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': '',
+      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
     },
     'b6o3ste6': {
       'en': 'Name 3',
-      'ar': '',
+      'ar': 'الاسم 3',
     },
     '0qjwsjz1': {
       'en': '9-5-2021 5:30 PM',
-      'ar': '',
+      'ar': '9-5-2021 5:30 مساءً',
     },
     '6ab8kc6y': {
       'en':
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': '',
+      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
     },
     'r9vb0syt': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'مسكن',
     },
   },
   // VerifyScreen
   {
     'g65y2hg6': {
       'en': 'Please enter 4 digit code send to',
-      'ar': '',
+      'ar': 'الرجاء إدخال رمز مكون من 4 أرقام أرسل إلى',
     },
     'jo3tebtz': {
       'en': 'Send',
-      'ar': 'تسجيل الدخول',
+      'ar': 'إرسال',
     },
     '33ehefl3': {
       'en': 'Resend Code',
-      'ar': '',
+      'ar': 'أعد إرسال الرمز',
     },
     '9r0kyl2k': {
       'en': 'Verify your email',
-      'ar': 'نسيت رقمك السري؟',
+      'ar': 'قم بتأكيد بريدك الألكتروني',
     },
     '1ft6trdw': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'مسكن',
     },
   },
   // CustomBottomSheet
@@ -552,50 +552,50 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f4knb014': {
       'en': 'Date',
-      'ar': 'يكتب',
+      'ar': 'تاريخ',
     },
     'p5hdaw1r': {
       'en': 'Date Here',
-      'ar': 'أكتب هنا',
+      'ar': 'التاريخ هنا',
     },
     't1xwmc1z': {
       'en': 'Activity Status',
-      'ar': 'يكتب',
+      'ar': 'حالة النشاط',
     },
     'v25ntzij': {
       'en': 'Status',
-      'ar': 'أكتب هنا',
+      'ar': 'حالة',
     },
     'xj0czjum': {
       'en': 'Reletd To',
-      'ar': 'يكتب',
+      'ar': 'إعادة إلى',
     },
     'k3yltokx': {
       'en': 'All',
-      'ar': 'أكتب هنا',
+      'ar': 'الجميع',
     },
     '4e8j1n63': {
       'en': 'Reset',
-      'ar': 'تسجيل الدخول',
+      'ar': 'إعادة ضبط',
     },
     'vez3x67e': {
       'en': 'Apply',
-      'ar': 'تسجيل الدخول',
+      'ar': 'يتقدم',
     },
   },
   // AddCommentBottomSheet
   {
     'w5e46ize': {
       'en': 'Add comment',
-      'ar': '',
+      'ar': 'أضف تعليق',
     },
     'vs25j2wv': {
       'en': 'Enter your comment here...',
-      'ar': '',
+      'ar': 'أدخل تعليقك هنا...',
     },
     'nkg8hh9g': {
       'en': 'Add',
-      'ar': 'تسجيل الدخول',
+      'ar': 'يضيف',
     },
   },
 ].reduce((a, b) => a..addAll(b));

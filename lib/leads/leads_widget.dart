@@ -589,7 +589,6 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                               Duration(milliseconds: 2000),
                               () => setState(() {}),
                             ),
-                            autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               isDense: true,
