@@ -102,6 +102,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Pending',
       'ar': 'إجمالي معلق',
     },
+    '3hi4cldj': {
+      'en': 'All leads',
+      'ar': '',
+    },
+    'hbww2bym': {
+      'en': 'Converted',
+      'ar': '',
+    },
+    'alke5efq': {
+      'en': 'Peanding',
+      'ar': '',
+    },
+    '1di1mkoy': {
+      'en': 'Rejected',
+      'ar': '',
+    },
+    '5f04xx8d': {
+      'en': 'AllUnits',
+      'ar': '',
+    },
+    '1sode12t': {
+      'en': 'Reserved',
+      'ar': '',
+    },
+    'pvd7bcqr': {
+      'en': 'Availble',
+      'ar': '',
+    },
     'pl4c7vli': {
       'en': 'My Account',
       'ar': 'حسابي',
