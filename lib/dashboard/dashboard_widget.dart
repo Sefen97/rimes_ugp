@@ -521,7 +521,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
             child: FutureBuilder<ApiCallResponse>(
               future: RimesApiGroup.admainDashboardRequestCall.call(
                 userId: 10,
@@ -781,7 +781,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 17, 16, 0),
                         child: Container(
                           width: double.infinity,
                           height: 215,
@@ -881,89 +881,39 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   child: Container(
                                                     width: 80,
                                                     height: 80,
-                                                    child: Stack(
-                                                      children: [
-                                                        FlutterFlowPieChart(
-                                                          data: FFPieChartData(
-                                                            values: [
-                                                              getJsonField(
-                                                                columnAdmainDashboardRequestResponse
-                                                                    .jsonBody,
-                                                                r'''$.result.employeeAnalysis.totalApprovedLead''',
-                                                              ),
-                                                              getJsonField(
-                                                                columnAdmainDashboardRequestResponse
-                                                                    .jsonBody,
-                                                                r'''$.result.employeeAnalysis.totalPendingLeads''',
-                                                              ),
-                                                              getJsonField(
-                                                                columnAdmainDashboardRequestResponse
-                                                                    .jsonBody,
-                                                                r'''$.result.employeeAnalysis.totalRejectedLeads''',
-                                                              )
-                                                            ],
-                                                            colors: [
-                                                              Color(0xFF00335A),
-                                                              Color(0xFFFCB367),
-                                                              Color(0xFFC51415)
-                                                            ],
-                                                            radius: [
-                                                              30,
-                                                              30,
-                                                              30
-                                                            ],
+                                                    child: FlutterFlowPieChart(
+                                                      data: FFPieChartData(
+                                                        values: [
+                                                          getJsonField(
+                                                            columnAdmainDashboardRequestResponse
+                                                                .jsonBody,
+                                                            r'''$.result.employeeAnalysis.totalApprovedLead''',
                                                           ),
-                                                          donutHoleRadius: 0,
-                                                          donutHoleColor:
-                                                              Colors.white,
-                                                          sectionLabelStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .title3,
-                                                        ),
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1, 1),
-                                                          child:
-                                                              FlutterFlowChartLegendWidget(
-                                                            entries: [
-                                                              LegendEntry(
-                                                                  Color(
-                                                                      0xFF00335A),
-                                                                  'Converted'),
-                                                              LegendEntry(
-                                                                  Color(
-                                                                      0xFFFCB367),
-                                                                  'Peanding'),
-                                                              LegendEntry(
-                                                                  Color(
-                                                                      0xFFC51415),
-                                                                  'Rejected'),
-                                                            ],
-                                                            width: 8,
-                                                            height: 3,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1,
-                                                            textPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0),
-                                                            borderColor: Color(
-                                                                0x00000001),
-                                                            indicatorSize: 6,
+                                                          getJsonField(
+                                                            columnAdmainDashboardRequestResponse
+                                                                .jsonBody,
+                                                            r'''$.result.employeeAnalysis.totalPendingLeads''',
                                                           ),
-                                                        ),
-                                                      ],
+                                                          getJsonField(
+                                                            columnAdmainDashboardRequestResponse
+                                                                .jsonBody,
+                                                            r'''$.result.employeeAnalysis.totalRejectedLeads''',
+                                                          )
+                                                        ],
+                                                        colors: [
+                                                          Color(0xFF00335A),
+                                                          Color(0xFFFCB367),
+                                                          Color(0xFFC51415)
+                                                        ],
+                                                        radius: [30, 30, 30],
+                                                      ),
+                                                      donutHoleRadius: 0,
+                                                      donutHoleColor:
+                                                          Colors.white,
+                                                      sectionLabelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .title3,
                                                     ),
                                                   ),
                                                 ),
@@ -1147,26 +1097,11 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 2,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Container(
-                            width: double.infinity,
-                            height: 240,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).white,
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all(
-                                color: Color(0xFFF3F3F3),
-                                width: 1,
-                              ),
-                            ),
-                          ),
+                      Container(
+                        width: double.infinity,
+                        height: 240,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).white,
                         ),
                       ),
                     ],
