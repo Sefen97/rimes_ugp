@@ -1,5 +1,6 @@
 import '../backend/api_requests/api_calls.dart';
 import '../components/custom_bottom_sheet_widget.dart';
+import '../flutter_flow/flutter_flow_charts.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -519,31 +520,30 @@ class _DashboardWidgetState extends State<DashboardWidget> {
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Align(
-            alignment: AlignmentDirectional(0, 0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-              child: FutureBuilder<ApiCallResponse>(
-                future: RimesApiGroup.admainDashboardRequestCall.call(
-                  userId: 10,
-                ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: SpinKitFadingCircle(
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                          size: 60,
-                        ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+            child: FutureBuilder<ApiCallResponse>(
+              future: RimesApiGroup.admainDashboardRequestCall.call(
+                userId: 10,
+              ),
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 60,
+                      height: 60,
+                      child: SpinKitFadingCircle(
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        size: 60,
                       ),
-                    );
-                  }
-                  final columnAdmainDashboardRequestResponse = snapshot.data!;
-                  return Column(
-                    mainAxisSize: MainAxisSize.max,
+                    ),
+                  );
+                }
+                final columnAdmainDashboardRequestResponse = snapshot.data!;
+                return SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -780,10 +780,399 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           ),
                         ],
                       ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 215,
+                          decoration: BoxDecoration(
+                            color: Color(0x00000001),
+                            border: Border.all(
+                              color: Color(0x00000001),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 7, 0),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 1,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Container(
+                                      width: 100,
+                                      height: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(
+                                          color: Color(0xFFF8F8F8),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 11, 0, 0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              flex: 1,
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(16, 0, 16, 0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      'All leads',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                    ),
+                                                    Expanded(
+                                                      child: Text(
+                                                        getJsonField(
+                                                          columnAdmainDashboardRequestResponse
+                                                              .jsonBody,
+                                                          r'''$.result.employeeAnalysis.totalLeads''',
+                                                        ).toString(),
+                                                        textAlign:
+                                                            TextAlign.end,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 5, 0, 0),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 1,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .lineColor,
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 4,
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1, -1),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(16, 5, 0, 0),
+                                                  child: Container(
+                                                    width: 80,
+                                                    height: 80,
+                                                    child: Stack(
+                                                      children: [
+                                                        FlutterFlowPieChart(
+                                                          data: FFPieChartData(
+                                                            values: [
+                                                              getJsonField(
+                                                                columnAdmainDashboardRequestResponse
+                                                                    .jsonBody,
+                                                                r'''$.result.employeeAnalysis.totalApprovedLead''',
+                                                              ),
+                                                              getJsonField(
+                                                                columnAdmainDashboardRequestResponse
+                                                                    .jsonBody,
+                                                                r'''$.result.employeeAnalysis.totalPendingLeads''',
+                                                              ),
+                                                              getJsonField(
+                                                                columnAdmainDashboardRequestResponse
+                                                                    .jsonBody,
+                                                                r'''$.result.employeeAnalysis.totalRejectedLeads''',
+                                                              )
+                                                            ],
+                                                            colors: [
+                                                              Color(0xFF00335A),
+                                                              Color(0xFFFCB367),
+                                                              Color(0xFFC51415)
+                                                            ],
+                                                            radius: [
+                                                              30,
+                                                              30,
+                                                              30
+                                                            ],
+                                                          ),
+                                                          donutHoleRadius: 0,
+                                                          donutHoleColor:
+                                                              Colors.white,
+                                                          sectionLabelStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .title3,
+                                                        ),
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1, 1),
+                                                          child:
+                                                              FlutterFlowChartLegendWidget(
+                                                            entries: [
+                                                              LegendEntry(
+                                                                  Color(
+                                                                      0xFF00335A),
+                                                                  'Converted'),
+                                                              LegendEntry(
+                                                                  Color(
+                                                                      0xFFFCB367),
+                                                                  'Peanding'),
+                                                              LegendEntry(
+                                                                  Color(
+                                                                      0xFFC51415),
+                                                                  'Rejected'),
+                                                            ],
+                                                            width: 8,
+                                                            height: 3,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1,
+                                                            textPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        0),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0),
+                                                            borderColor: Color(
+                                                                0x00000001),
+                                                            indicatorSize: 6,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      7, 0, 0, 0),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 1,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Container(
+                                      width: 100,
+                                      height: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(
+                                          color: Color(0xFFF8F8F8),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 11, 0, 0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              flex: 1,
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(16, 0, 16, 0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      'AllUnits',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                    ),
+                                                    Expanded(
+                                                      child: Text(
+                                                        getJsonField(
+                                                          columnAdmainDashboardRequestResponse
+                                                              .jsonBody,
+                                                          r'''$.result.employeeAnalysis.totalUnits''',
+                                                        ).toString(),
+                                                        textAlign:
+                                                            TextAlign.end,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 5, 0, 0),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 1,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .lineColor,
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              flex: 4,
+                                              child: Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1, -1),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(16, 5, 0, 0),
+                                                  child: Container(
+                                                    width: 80,
+                                                    height: 80,
+                                                    child: Stack(
+                                                      children: [
+                                                        FlutterFlowPieChart(
+                                                          data: FFPieChartData(
+                                                            values: [
+                                                              getJsonField(
+                                                                columnAdmainDashboardRequestResponse
+                                                                    .jsonBody,
+                                                                r'''$.result.employeeAnalysis.totalReservedUnits''',
+                                                              ),
+                                                              getJsonField(
+                                                                columnAdmainDashboardRequestResponse
+                                                                    .jsonBody,
+                                                                r'''$.result.employeeAnalysis.totalAvailableUnits''',
+                                                              )
+                                                            ],
+                                                            colors: [
+                                                              Color(0xFFFCB367),
+                                                              Color(0xFF00335A)
+                                                            ],
+                                                            radius: [30, 30],
+                                                          ),
+                                                          donutHoleRadius: 0,
+                                                          donutHoleColor:
+                                                              Colors.white,
+                                                          sectionLabelStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .title3,
+                                                        ),
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1, 1),
+                                                          child:
+                                                              FlutterFlowChartLegendWidget(
+                                                            entries: [
+                                                              LegendEntry(
+                                                                  Color(
+                                                                      0xFFFCB367),
+                                                                  'Reserved'),
+                                                              LegendEntry(
+                                                                  Color(
+                                                                      0xFF00335A),
+                                                                  'Availble'),
+                                                            ],
+                                                            width: 8,
+                                                            height: 3,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1,
+                                                            textPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        0),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0),
+                                                            borderColor: Color(
+                                                                0x00000001),
+                                                            indicatorSize: 6,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Container(
+                            width: double.infinity,
+                            height: 240,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).white,
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                color: Color(0xFFF3F3F3),
+                                width: 1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
           ),
         ),
