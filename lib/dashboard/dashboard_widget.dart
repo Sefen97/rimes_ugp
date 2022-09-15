@@ -1012,75 +1012,44 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   child: Container(
                                                     width: 80,
                                                     height: 80,
-                                                    child: Stack(
-                                                      children: [
-                                                        FlutterFlowPieChart(
-                                                          data: FFPieChartData(
-                                                            values: [
-                                                              getJsonField(
-                                                                columnAdmainDashboardRequestResponse
-                                                                    .jsonBody,
-                                                                r'''$.result.employeeAnalysis.totalReservedUnits''',
-                                                              ),
-                                                              getJsonField(
-                                                                columnAdmainDashboardRequestResponse
-                                                                    .jsonBody,
-                                                                r'''$.result.employeeAnalysis.totalAvailableUnits''',
-                                                              )
-                                                            ],
-                                                            colors: [
-                                                              Color(0xFFFCB367),
-                                                              Color(0xFF00335A)
-                                                            ],
-                                                            radius: [30, 30],
+                                                    child: FlutterFlowPieChart(
+                                                      data: FFPieChartData(
+                                                        values: [
+                                                          getJsonField(
+                                                            columnAdmainDashboardRequestResponse
+                                                                .jsonBody,
+                                                            r'''$.result.employeeAnalysis.totalReservedUnits''',
                                                           ),
-                                                          donutHoleRadius: 0,
-                                                          donutHoleColor:
-                                                              Colors.white,
-                                                          sectionLabelStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .title3,
-                                                        ),
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1, 1),
-                                                          child:
-                                                              FlutterFlowChartLegendWidget(
-                                                            entries: [
-                                                              LegendEntry(
-                                                                  Color(
-                                                                      0xFFFCB367),
-                                                                  'Reserved'),
-                                                              LegendEntry(
-                                                                  Color(
-                                                                      0xFF00335A),
-                                                                  'Availble'),
-                                                            ],
-                                                            width: 8,
-                                                            height: 3,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
+                                                          getJsonField(
+                                                            columnAdmainDashboardRequestResponse
+                                                                .jsonBody,
+                                                            r'''$.result.employeeAnalysis.totalAvailableUnits''',
+                                                          )
+                                                        ],
+                                                        colors: [
+                                                          Color(0xFFFCB367),
+                                                          Color(0xFF00335A)
+                                                        ],
+                                                        radius: [30, 30],
+                                                      ),
+                                                      donutHoleRadius: 0,
+                                                      donutHoleColor:
+                                                          Colors.white,
+                                                      sectionLabelType:
+                                                          PieChartSectionLabelType
+                                                              .value,
+                                                      sectionLabelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .title3
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyText1,
-                                                            textPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0),
-                                                            borderColor: Color(
-                                                                0x00000001),
-                                                            indicatorSize: 6,
-                                                          ),
-                                                        ),
-                                                      ],
+                                                                    .white,
+                                                                fontSize: 10,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
@@ -1097,11 +1066,77 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: 240,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).white,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                            width: double.infinity,
+                            height: 250,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Color(0xFFF3F3F3),
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      child: FlutterFlowBarChart(
+                                        barData: [
+                                          FFBarChartData(
+                                            yData: FFAppState().leadchart,
+                                            color: Color(0xFF00335A),
+                                            borderColor: Color(0x00000001),
+                                          )
+                                        ],
+                                        xLabels: FFAppState().namelead,
+                                        barWidth: 8,
+                                        barBorderRadius:
+                                            BorderRadius.circular(0),
+                                        groupSpace: 0,
+                                        alignment:
+                                            BarChartAlignment.spaceAround,
+                                        chartStylingInfo: ChartStylingInfo(
+                                          backgroundColor: Colors.white,
+                                          showBorder: false,
+                                        ),
+                                        axisBounds: AxisBounds(),
+                                        xAxisLabelInfo: AxisLabelInfo(
+                                          showLabels: true,
+                                          labelTextStyle: TextStyle(
+                                            color: Color(0xFF00335A),
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          labelInterval: 10,
+                                        ),
+                                        yAxisLabelInfo: AxisLabelInfo(
+                                          showLabels: true,
+                                          labelTextStyle: TextStyle(
+                                            color: Color(0xFF00335A),
+                                          ),
+                                          labelInterval: 10,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
