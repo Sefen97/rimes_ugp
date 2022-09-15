@@ -521,7 +521,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+            padding: EdgeInsetsDirectional.fromSTEB(16, 10, 16, 10),
             child: FutureBuilder<ApiCallResponse>(
               future: RimesApiGroup.admainDashboardRequestCall.call(
                 userId: 10,
@@ -781,7 +781,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 17, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 0),
                         child: Container(
                           width: double.infinity,
                           height: 215,
@@ -832,7 +832,11 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                       MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      'All leads',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'zo9dwsvf' /* All leads */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -963,7 +967,11 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                       MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      'AllUnits',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'd8gdtjla' /* AllUnits */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1091,6 +1099,20 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 24),
+                                        child: Text(
+                                          'Unit In Rent',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                   Expanded(
                                     child: Container(
                                       width: double.infinity,
@@ -1107,9 +1129,92 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         barWidth: 8,
                                         barBorderRadius:
                                             BorderRadius.circular(0),
-                                        groupSpace: 0,
-                                        alignment:
-                                            BarChartAlignment.spaceAround,
+                                        groupSpace: 55,
+                                        chartStylingInfo: ChartStylingInfo(
+                                          backgroundColor: Colors.white,
+                                          showBorder: false,
+                                        ),
+                                        axisBounds: AxisBounds(),
+                                        xAxisLabelInfo: AxisLabelInfo(
+                                          showLabels: true,
+                                          labelTextStyle: TextStyle(
+                                            color: Color(0xFF00335A),
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          labelInterval: 10,
+                                        ),
+                                        yAxisLabelInfo: AxisLabelInfo(
+                                          showLabels: true,
+                                          labelTextStyle: TextStyle(
+                                            color: Color(0xFF00335A),
+                                          ),
+                                          labelInterval: 10,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                            width: double.infinity,
+                            height: 250,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Color(0xFFF3F3F3),
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 24),
+                                        child: Text(
+                                          'All Leads',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      child: FlutterFlowBarChart(
+                                        barData: [
+                                          FFBarChartData(
+                                            yData: FFAppState().leadchart,
+                                            color: Color(0xFFDB1B1B),
+                                            borderColor: Color(0x210A0A0A),
+                                          )
+                                        ],
+                                        xLabels: FFAppState().namelead,
+                                        barWidth: 20,
+                                        barBorderRadius:
+                                            BorderRadius.circular(0),
+                                        groupSpace: 40,
                                         chartStylingInfo: ChartStylingInfo(
                                           backgroundColor: Colors.white,
                                           showBorder: false,
