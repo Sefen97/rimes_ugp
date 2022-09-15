@@ -1106,7 +1106,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 0, 0, 24),
                                         child: Text(
-                                          'Unit In Rent',
+                                          FFLocalizations.of(context).getText(
+                                            'wfzzlp7y' /* Unit In Rent */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1,
                                         ),
@@ -1120,12 +1122,13 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                       child: FlutterFlowBarChart(
                                         barData: [
                                           FFBarChartData(
-                                            yData: FFAppState().leadchart,
+                                            yData:
+                                                FFAppState().unitParChartValue,
                                             color: Color(0xFF00335A),
                                             borderColor: Color(0x00000001),
                                           )
                                         ],
-                                        xLabels: FFAppState().namelead,
+                                        xLabels: FFAppState().unitParChartName,
                                         barWidth: 8,
                                         barBorderRadius:
                                             BorderRadius.circular(0),
@@ -1191,7 +1194,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 0, 0, 24),
                                         child: Text(
-                                          'All Leads',
+                                          FFLocalizations.of(context).getText(
+                                            'mw8wkehh' /* All Leads */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1,
                                         ),
@@ -1205,12 +1210,13 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                       child: FlutterFlowBarChart(
                                         barData: [
                                           FFBarChartData(
-                                            yData: FFAppState().leadchart,
+                                            yData:
+                                                FFAppState().unitParChartValue,
                                             color: Color(0xFFDB1B1B),
                                             borderColor: Color(0x210A0A0A),
                                           )
                                         ],
-                                        xLabels: FFAppState().namelead,
+                                        xLabels: FFAppState().unitParChartName,
                                         barWidth: 20,
                                         barBorderRadius:
                                             BorderRadius.circular(0),

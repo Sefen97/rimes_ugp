@@ -45,9 +45,15 @@ class FFAppState {
     'Test 3'
   ];
 
-  List<int> leadchart = [10, 20, 30, 20, 60];
+  List<String> unitParChartName = [
+    'Weak 1',
+    'Weak 2',
+    'Weak 3',
+    'Weak 4',
+    'Weak 5'
+  ];
 
-  List<String> namelead = ['weak 1', 'weak 2', 'weak 3', 'weak 4', 'weak 5'];
+  List<int> unitParChartValue = [10, 20, 30, 40, 50];
 }
 
 LatLng? _latLngFromString(String? val) {

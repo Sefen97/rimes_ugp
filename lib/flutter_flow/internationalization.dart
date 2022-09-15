@@ -84,6 +84,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // LoginScreen
+  {
+    '0fjvw330': {
+      'en': 'Welcome,',
+      'ar': 'أهلا وسهلا،',
+    },
+    '90pzzvfi': {
+      'en': 'Sing in to continue',
+      'ar': 'الغناء للمتابعة',
+    },
+    'ggitvmra': {
+      'en': 'Email Address',
+      'ar': 'عنوان البريد الالكترونى',
+    },
+    'u82uik4h': {
+      'en': 'Password',
+      'ar': 'كلمة المرور',
+    },
+    '4ra5qus4': {
+      'en': 'Remember Me',
+      'ar': 'تذكرنى',
+    },
+    'br3lwu9r': {
+      'en': 'Login',
+      'ar': 'تسجيل الدخول',
+    },
+    'wr2052ai': {
+      'en': 'Forget password ?',
+      'ar': 'نسيت كلمة السر؟',
+    },
+    'f6lfsfvo': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+    },
+    'k5zk081z': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+    },
+    '68dlbt9s': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // Dashboard
   {
     'dax1mh3h': {
@@ -130,7 +173,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Availble',
       'ar': '',
     },
-    'j51uiviu': {
+    'wfzzlp7y': {
       'en': 'Unit In Rent',
       'ar': '',
     },
@@ -138,7 +181,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Unit In Reant',
       'ar': '',
     },
-    '0zz5s93n': {
+    'mw8wkehh': {
       'en': 'All Leads',
       'ar': '',
     },
@@ -171,49 +214,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل خروج',
     },
     'qeu2on7a': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
-  // LoginScreen
-  {
-    '0fjvw330': {
-      'en': 'Welcome,',
-      'ar': 'أهلا وسهلا،',
-    },
-    '90pzzvfi': {
-      'en': 'Sing in to continue',
-      'ar': 'الغناء للمتابعة',
-    },
-    'ggitvmra': {
-      'en': 'Email Address',
-      'ar': 'عنوان البريد الالكترونى',
-    },
-    'u82uik4h': {
-      'en': 'Password',
-      'ar': 'كلمة المرور',
-    },
-    '4ra5qus4': {
-      'en': 'Remember Me',
-      'ar': 'تذكرنى',
-    },
-    'br3lwu9r': {
-      'en': 'Login',
-      'ar': 'تسجيل الدخول',
-    },
-    'wr2052ai': {
-      'en': 'Forget password ?',
-      'ar': 'نسيت كلمة السر؟',
-    },
-    'f6lfsfvo': {
-      'en': 'Field is required',
-      'ar': 'الحقل مطلوب',
-    },
-    'k5zk081z': {
-      'en': 'Field is required',
-      'ar': 'الحقل مطلوب',
-    },
-    '68dlbt9s': {
       'en': 'Home',
       'ar': 'مسكن',
     },
