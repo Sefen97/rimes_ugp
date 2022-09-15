@@ -84,81 +84,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // Dashboard
-  {
-    'dax1mh3h': {
-      'en': 'Dashboard',
-      'ar': 'لوحة القيادة',
-    },
-    'la420qy2': {
-      'en': 'Total Leads',
-      'ar': 'إجمالي العملاء المتوقعين',
-    },
-    '3nmogoek': {
-      'en': 'Total Units',
-      'ar': 'إجمالي الوحدات',
-    },
-    'iqbb5o0m': {
-      'en': 'Total Pending',
-      'ar': 'إجمالي معلق',
-    },
-    'onmin3l2': {
-      'en': 'All leads',
-      'ar': '',
-    },
-    'f5gav5t7': {
-      'en': 'Converted',
-      'ar': '',
-    },
-    'iprl558d': {
-      'en': 'Peanding',
-      'ar': '',
-    },
-    'gtxuti0q': {
-      'en': 'Rejected',
-      'ar': '',
-    },
-    'ixn0kg6m': {
-      'en': 'AllUnits',
-      'ar': '',
-    },
-    't7xhju0n': {
-      'en': 'Reserved',
-      'ar': '',
-    },
-    'bx36zckp': {
-      'en': 'Availble',
-      'ar': '',
-    },
-    'pl4c7vli': {
-      'en': 'My Account',
-      'ar': 'حسابي',
-    },
-    '1ucjdhip': {
-      'en': 'Notifications',
-      'ar': 'إشعارات',
-    },
-    'z4bj7c2z': {
-      'en': 'Language',
-      'ar': 'لغة',
-    },
-    'qw17xtfb': {
-      'en': 'Change password',
-      'ar': 'غير كلمة السر',
-    },
-    'rs5sru5q': {
-      'en': 'How it work',
-      'ar': 'كيف تعمل',
-    },
-    't6mdbdq2': {
-      'en': 'Logout',
-      'ar': 'تسجيل خروج',
-    },
-    'qeu2on7a': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
   // LoginScreen
   {
     '0fjvw330': {
@@ -198,6 +123,97 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الحقل مطلوب',
     },
     '68dlbt9s': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
+  // Dashboard
+  {
+    'dax1mh3h': {
+      'en': 'Dashboard',
+      'ar': 'لوحة القيادة',
+    },
+    'la420qy2': {
+      'en': 'Total Leads',
+      'ar': 'إجمالي العملاء المتوقعين',
+    },
+    '3nmogoek': {
+      'en': 'Total Units',
+      'ar': 'إجمالي الوحدات',
+    },
+    'iqbb5o0m': {
+      'en': 'Total Pending',
+      'ar': 'إجمالي معلق',
+    },
+    'zo9dwsvf': {
+      'en': 'All leads',
+      'ar': '',
+    },
+    'gbrgtegf': {
+      'en': 'Converted',
+      'ar': '',
+    },
+    'h6gfrz27': {
+      'en': 'Peanding',
+      'ar': '',
+    },
+    '7k7072pv': {
+      'en': 'Rejected',
+      'ar': '',
+    },
+    'd8gdtjla': {
+      'en': 'AllUnits',
+      'ar': '',
+    },
+    '2wgji4zi': {
+      'en': 'Reserved',
+      'ar': '',
+    },
+    '1d4fqx04': {
+      'en': 'Availble',
+      'ar': '',
+    },
+    'wfzzlp7y': {
+      'en': 'Unit In Rent',
+      'ar': '',
+    },
+    'jg0ch1jg': {
+      'en': 'Unit In Reant',
+      'ar': '',
+    },
+    'mw8wkehh': {
+      'en': 'All Leads',
+      'ar': '',
+    },
+    '36er3v3o': {
+      'en': 'Unit In Reant',
+      'ar': '',
+    },
+    'pl4c7vli': {
+      'en': 'My Account',
+      'ar': 'حسابي',
+    },
+    '1ucjdhip': {
+      'en': 'Notifications',
+      'ar': 'إشعارات',
+    },
+    'z4bj7c2z': {
+      'en': 'Language',
+      'ar': 'لغة',
+    },
+    'qw17xtfb': {
+      'en': 'Change password',
+      'ar': 'غير كلمة السر',
+    },
+    'rs5sru5q': {
+      'en': 'How it work',
+      'ar': 'كيف تعمل',
+    },
+    't6mdbdq2': {
+      'en': 'Logout',
+      'ar': 'تسجيل خروج',
+    },
+    'qeu2on7a': {
       'en': 'Home',
       'ar': 'مسكن',
     },
