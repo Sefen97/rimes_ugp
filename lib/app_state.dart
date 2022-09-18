@@ -56,6 +56,8 @@ class FFAppState {
   List<int> pieChartUnitValue = [30, 20];
 
   List<int> pieChartLeadValue = [70, 20, 50];
+
+  List<String> unitChoise = ['All', 'Rent', 'Sale'];
 }
 
 LatLng? _latLngFromString(String? val) {
