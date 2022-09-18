@@ -350,37 +350,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أكثر',
     },
   },
-  // MyAccount
-  {
-    'lh58zepi': {
-      'en': 'My Account',
-      'ar': 'حسابي',
-    },
-    'db3vx4hg': {
-      'en': 'Name',
-      'ar': 'اسم',
-    },
-    'v0rlr5xn': {
-      'en': 'Username is here',
-      'ar': 'اسم المستخدم هنا',
-    },
-    '56irthb0': {
-      'en': 'Email Addre',
-      'ar': 'عنوان البريد الإلكتروني',
-    },
-    'nbof8uii': {
-      'en': 'Username@gmail.com',
-      'ar': 'Username@gmail.com',
-    },
-    '8n1os0b6': {
-      'en': 'Save',
-      'ar': 'يحفظ',
-    },
-    'u1bpqbhq': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
   // ActivityDetails
   {
     '8mygmwfr': {
@@ -443,6 +412,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
     },
     'r9vb0syt': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
+  // MyAccount
+  {
+    'lh58zepi': {
+      'en': 'My Account',
+      'ar': 'حسابي',
+    },
+    'db3vx4hg': {
+      'en': 'Name',
+      'ar': 'اسم',
+    },
+    'v0rlr5xn': {
+      'en': 'Username is here',
+      'ar': 'اسم المستخدم هنا',
+    },
+    '56irthb0': {
+      'en': 'Email Addre',
+      'ar': 'عنوان البريد الإلكتروني',
+    },
+    'nbof8uii': {
+      'en': 'Username@gmail.com',
+      'ar': 'Username@gmail.com',
+    },
+    '8n1os0b6': {
+      'en': 'Save',
+      'ar': 'يحفظ',
+    },
+    'u1bpqbhq': {
       'en': 'Home',
       'ar': 'مسكن',
     },

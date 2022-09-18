@@ -17,6 +17,7 @@ class RimesApiGroup {
   static AllActivityRequestCall allActivityRequestCall =
       AllActivityRequestCall();
   static AllLeadsCall allLeadsCall = AllLeadsCall();
+  static LeadDashboardCall leadDashboardCall = LeadDashboardCall();
 }
 
 class LoginRequestCall {
@@ -173,6 +174,27 @@ class AllLeadsCall {
       params: {},
       body: body,
       bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class LeadDashboardCall {
+  Future<ApiCallResponse> call({
+    int? userId = 10,
+    int? filterId = 1,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'LeadDashboard',
+      apiUrl: '${RimesApiGroup.baseUrl}api/dashboard/leads/filter?',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'userId': userId,
+        'filterId': filterId,
+      },
       returnBody: true,
     );
   }

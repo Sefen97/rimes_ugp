@@ -38,7 +38,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : NavBarPage(),
+          : LoginScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -53,7 +53,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : NavBarPage(),
+              : LoginScreenWidget(),
           routes: [
             FFRoute(
               name: 'ForgetPassword',
@@ -101,17 +101,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : MoreWidget(),
             ),
             FFRoute(
-              name: 'MyAccount',
-              path: 'myAccount',
-              builder: (context, params) => MyAccountWidget(),
-            ),
-            FFRoute(
               name: 'ActivityDetails',
               path: 'activityDetails',
               builder: (context, params) => ActivityDetailsWidget(
                 activityType: params.getParam('activityType', ParamType.String),
                 status: params.getParam('status', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'MyAccount',
+              path: 'myAccount',
+              builder: (context, params) => MyAccountWidget(),
             ),
             FFRoute(
               name: 'AddActivity',
