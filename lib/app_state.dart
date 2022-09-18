@@ -45,15 +45,9 @@ class FFAppState {
     'Test 3'
   ];
 
-  List<String> unitParChartName = [
-    'Weak 1',
-    'Weak 2',
-    'Weak 3',
-    'Weak 4',
-    'Weak 5'
-  ];
+  List<String> unitParChartName = ['Weak 1', 'Weak 2', 'Weak 3', 'Weak 4'];
 
-  List<int> unitParChartValue = [10, 20, 30, 40, 50];
+  List<int> unitParChartValue = [10, 20, 30, 40];
 }
 
 LatLng? _latLngFromString(String? val) {

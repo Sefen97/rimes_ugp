@@ -1204,44 +1204,74 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     ],
                                   ),
                                   Expanded(
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                      child: FlutterFlowBarChart(
-                                        barData: [
-                                          FFBarChartData(
-                                            yData:
-                                                FFAppState().unitParChartValue,
-                                            color: Color(0xFFDB1B1B),
-                                            borderColor: Color(0x210A0A0A),
-                                          )
-                                        ],
-                                        xLabels: FFAppState().unitParChartName,
-                                        barWidth: 20,
-                                        barBorderRadius:
-                                            BorderRadius.circular(0),
-                                        groupSpace: 40,
-                                        chartStylingInfo: ChartStylingInfo(
-                                          backgroundColor: Colors.white,
-                                          showBorder: false,
-                                        ),
-                                        axisBounds: AxisBounds(),
-                                        xAxisLabelInfo: AxisLabelInfo(
-                                          showLabels: true,
-                                          labelTextStyle: TextStyle(
-                                            color: Color(0xFF00335A),
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                          labelInterval: 10,
-                                        ),
-                                        yAxisLabelInfo: AxisLabelInfo(
-                                          showLabels: true,
-                                          labelTextStyle: TextStyle(
-                                            color: Color(0xFF00335A),
-                                          ),
-                                          labelInterval: 10,
-                                        ),
+                                    child: FutureBuilder<ApiCallResponse>(
+                                      future:
+                                          RimesApiGroup.leadDashboardCall.call(
+                                        userId: 10,
+                                        filterId: -1,
                                       ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 60,
+                                              height: 60,
+                                              child: SpinKitFadingCircle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
+                                                size: 60,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final chartLeadDashboardResponse =
+                                            snapshot.data!;
+                                        return Container(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          child: FlutterFlowBarChart(
+                                            barData: [
+                                              FFBarChartData(
+                                                yData: FFAppState()
+                                                    .unitParChartValue,
+                                                color: Color(0xFFDB1B1B),
+                                                borderColor: Color(0x210A0A0A),
+                                              )
+                                            ],
+                                            xLabels: getJsonField(
+                                              chartLeadDashboardResponse
+                                                  .jsonBody,
+                                              r'''$.result''',
+                                            ),
+                                            barWidth: 20,
+                                            barBorderRadius:
+                                                BorderRadius.circular(0),
+                                            groupSpace: 40,
+                                            chartStylingInfo: ChartStylingInfo(
+                                              backgroundColor: Colors.white,
+                                              showBorder: false,
+                                            ),
+                                            axisBounds: AxisBounds(),
+                                            xAxisLabelInfo: AxisLabelInfo(
+                                              showLabels: true,
+                                              labelTextStyle: TextStyle(
+                                                color: Color(0xFF00335A),
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                              labelInterval: 10,
+                                            ),
+                                            yAxisLabelInfo: AxisLabelInfo(
+                                              showLabels: true,
+                                              labelTextStyle: TextStyle(
+                                                color: Color(0xFF00335A),
+                                              ),
+                                              labelInterval: 10,
+                                            ),
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
                                 ],
