@@ -20,6 +20,11 @@ class _DashboardWidgetState extends State<DashboardWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final pieChartColorsList = [
+      Color(0xFFD354E3),
+      Color(0xFF9418A8),
+      Color(0xFF00335A)
+    ];
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
@@ -823,7 +828,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
-                                              flex: 1,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(16, 0, 16, 0),
@@ -874,52 +878,30 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                 ),
                                               ),
                                             ),
-                                            Expanded(
-                                              flex: 4,
+                                            Container(
+                                              width: double.infinity,
+                                              height: 175,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1, -1),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 5, 0, 0),
-                                                  child: Container(
-                                                    width: 80,
-                                                    height: 80,
-                                                    child: FlutterFlowPieChart(
-                                                      data: FFPieChartData(
-                                                        values: [
-                                                          getJsonField(
-                                                            columnAdmainDashboardRequestResponse
-                                                                .jsonBody,
-                                                            r'''$.result.employeeAnalysis.totalApprovedLead''',
-                                                          ),
-                                                          getJsonField(
-                                                            columnAdmainDashboardRequestResponse
-                                                                .jsonBody,
-                                                            r'''$.result.employeeAnalysis.totalPendingLeads''',
-                                                          ),
-                                                          getJsonField(
-                                                            columnAdmainDashboardRequestResponse
-                                                                .jsonBody,
-                                                            r'''$.result.employeeAnalysis.totalRejectedLeads''',
-                                                          )
-                                                        ],
-                                                        colors: [
-                                                          Color(0xFF00335A),
-                                                          Color(0xFFFCB367),
-                                                          Color(0xFFC51415)
-                                                        ],
-                                                        radius: [30, 30, 30],
-                                                      ),
-                                                      donutHoleRadius: 0,
-                                                      donutHoleColor:
-                                                          Colors.white,
-                                                      sectionLabelStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .title3,
-                                                    ),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
+                                                child: FlutterFlowPieChart(
+                                                  data: FFPieChartData(
+                                                    values: FFAppState()
+                                                        .pieChartLeadValue,
+                                                    colors: pieChartColorsList,
+                                                    radius: [10],
                                                   ),
+                                                  donutHoleRadius: 30,
+                                                  donutHoleColor: Colors.white,
+                                                  sectionLabelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .title3,
                                                 ),
                                               ),
                                             ),
@@ -958,7 +940,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
-                                              flex: 1,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(16, 0, 16, 0),
@@ -1009,57 +990,30 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                 ),
                                               ),
                                             ),
-                                            Expanded(
-                                              flex: 4,
+                                            Container(
+                                              width: double.infinity,
+                                              height: 175,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1, -1),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 5, 0, 0),
-                                                  child: Container(
-                                                    width: 80,
-                                                    height: 80,
-                                                    child: FlutterFlowPieChart(
-                                                      data: FFPieChartData(
-                                                        values: [
-                                                          getJsonField(
-                                                            columnAdmainDashboardRequestResponse
-                                                                .jsonBody,
-                                                            r'''$.result.employeeAnalysis.totalReservedUnits''',
-                                                          ),
-                                                          getJsonField(
-                                                            columnAdmainDashboardRequestResponse
-                                                                .jsonBody,
-                                                            r'''$.result.employeeAnalysis.totalAvailableUnits''',
-                                                          )
-                                                        ],
-                                                        colors: [
-                                                          Color(0xFFFCB367),
-                                                          Color(0xFF00335A)
-                                                        ],
-                                                        radius: [30, 30],
-                                                      ),
-                                                      donutHoleRadius: 0,
-                                                      donutHoleColor:
-                                                          Colors.white,
-                                                      sectionLabelType:
-                                                          PieChartSectionLabelType
-                                                              .value,
-                                                      sectionLabelStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .title3
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .white,
-                                                                fontSize: 10,
-                                                              ),
-                                                    ),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
+                                                child: FlutterFlowPieChart(
+                                                  data: FFPieChartData(
+                                                    values: FFAppState()
+                                                        .pieChartUnitValue,
+                                                    colors: pieChartColorsList,
+                                                    radius: [40],
                                                   ),
+                                                  donutHoleRadius: 0,
+                                                  donutHoleColor: Colors.white,
+                                                  sectionLabelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .title3,
                                                 ),
                                               ),
                                             ),
@@ -1132,7 +1086,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         barWidth: 8,
                                         barBorderRadius:
                                             BorderRadius.circular(0),
-                                        groupSpace: 55,
+                                        groupSpace: 66,
                                         chartStylingInfo: ChartStylingInfo(
                                           backgroundColor: Colors.white,
                                           showBorder: false,
@@ -1220,7 +1174,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         barWidth: 20,
                                         barBorderRadius:
                                             BorderRadius.circular(0),
-                                        groupSpace: 40,
+                                        groupSpace: 50,
                                         chartStylingInfo: ChartStylingInfo(
                                           backgroundColor: Colors.white,
                                           showBorder: false,

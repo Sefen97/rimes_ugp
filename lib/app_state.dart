@@ -48,6 +48,14 @@ class FFAppState {
   List<String> unitParChartName = ['Weak 1', 'Weak 2', 'Weak 3', 'Weak 4'];
 
   List<int> unitParChartValue = [10, 20, 30, 40];
+
+  List<String> pieChartUnitName = ['Avilble', 'Reversd'];
+
+  List<String> pieChartLeadName = ['Convert', 'Peanding', 'Reject'];
+
+  List<int> pieChartUnitValue = [30, 20];
+
+  List<int> pieChartLeadValue = [70, 20, 50];
 }
 
 LatLng? _latLngFromString(String? val) {

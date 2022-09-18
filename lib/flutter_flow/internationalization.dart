@@ -149,28 +149,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'All leads',
       'ar': '',
     },
-    'gbrgtegf': {
-      'en': 'Converted',
-      'ar': '',
-    },
-    'h6gfrz27': {
-      'en': 'Peanding',
-      'ar': '',
-    },
-    '7k7072pv': {
-      'en': 'Rejected',
-      'ar': '',
-    },
     'd8gdtjla': {
       'en': 'AllUnits',
-      'ar': '',
-    },
-    '2wgji4zi': {
-      'en': 'Reserved',
-      'ar': '',
-    },
-    '1d4fqx04': {
-      'en': 'Availble',
       'ar': '',
     },
     'wfzzlp7y': {
