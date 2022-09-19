@@ -38,7 +38,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : LoginScreenWidget(),
+          : NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -53,7 +53,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : LoginScreenWidget(),
+              : NavBarPage(),
           routes: [
             FFRoute(
               name: 'ForgetPassword',
@@ -106,6 +106,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ActivityDetailsWidget(
                 activityType: params.getParam('activityType', ParamType.String),
                 status: params.getParam('status', ParamType.String),
+                activityStatus:
+                    params.getParam('activityStatus', ParamType.String),
               ),
             ),
             FFRoute(
@@ -123,6 +125,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'verifyScreen',
               builder: (context, params) => VerifyScreenWidget(
                 emailAddress: params.getParam('emailAddress', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'SearchScreen',
+              path: 'searchScreen',
+              builder: (context, params) => SearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                loockupId: params.getParam('loockupId', ParamType.int),
+                subscribId: params.getParam('subscribId', ParamType.int),
+                languageId: params.getParam('languageId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'LeadDetails',
+              path: 'leadDetails',
+              builder: (context, params) => LeadDetailsWidget(
+                leadName: params.getParam('leadName', ParamType.String),
+                leadId: params.getParam('leadId', ParamType.int),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),

@@ -539,7 +539,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                       width: 60,
                       height: 60,
                       child: SpinKitFadingCircle(
-                        color: FlutterFlowTheme.of(context).primaryColor,
+                        color: Color(0xFFDB1B1B),
                         size: 60,
                       ),
                     ),

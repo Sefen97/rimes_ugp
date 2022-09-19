@@ -81,14 +81,7 @@ class _UnitsWidgetState extends State<UnitsWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [
-              Image.network(
-                'https://picsum.photos/seed/803/600',
-                width: 500,
-                height: 500,
-                fit: BoxFit.cover,
-              ),
-            ],
+            children: [],
           ),
         ),
       ),

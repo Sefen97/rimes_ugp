@@ -710,7 +710,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                             width: 60,
                             height: 60,
                             child: SpinKitFadingCircle(
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color: Color(0xFFDB1B1B),
                               size: 60,
                             ),
                           ),
@@ -723,6 +723,11 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                             listViewAllLeadsResponse.jsonBody,
                             r'''$.result''',
                           ).toList().take(200).toList();
+                          if (allLeadsItem.isEmpty) {
+                            return Image.asset(
+                              'assets/images/noData.png',
+                            );
+                          }
                           return RefreshIndicator(
                             onRefresh: () async {
                               setState(() => _apiRequestCompleter = null);
@@ -739,160 +744,224 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                 return Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       5, 10, 5, 5),
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Container(
-                                      width: 100,
-                                      height: 180,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFF3F3F3),
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16, 7, 0, 0),
-                                            child: Text(
+                                  child: InkWell(
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'LeadDetails',
+                                        queryParams: {
+                                          'leadName': serializeParam(
                                               getJsonField(
                                                 allLeadsItemItem,
-                                                r'''$.code''',
+                                                r'''$.employeeName''',
                                               ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1,
+                                              ParamType.String),
+                                          'leadId': serializeParam(
+                                              getJsonField(
+                                                allLeadsItemItem,
+                                                r'''$.salesLeadId''',
+                                              ),
+                                              ParamType.int),
+                                        }.withoutNulls,
+                                      );
+                                    },
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 2,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: Container(
+                                        width: 100,
+                                        height: 180,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF3F3F3),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(16, 7, 0, 0),
+                                              child: Text(
+                                                getJsonField(
+                                                  allLeadsItemItem,
+                                                  r'''$.code''',
+                                                ).toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1,
+                                              ),
                                             ),
-                                          ),
-                                          Expanded(
-                                            child: Align(
-                                              alignment:
-                                                  AlignmentDirectional(0, 0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 10, 0, 0),
-                                                child: Container(
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(2),
-                                                      bottomRight:
-                                                          Radius.circular(5),
-                                                      topLeft:
-                                                          Radius.circular(0),
-                                                      topRight:
-                                                          Radius.circular(0),
+                                            Expanded(
+                                              child: Align(
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 10, 0, 0),
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(2),
+                                                        bottomRight:
+                                                            Radius.circular(5),
+                                                        topLeft:
+                                                            Radius.circular(0),
+                                                        topRight:
+                                                            Radius.circular(0),
+                                                      ),
                                                     ),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                16, 7, 0, 0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0,
-                                                                        10,
-                                                                        0,
-                                                                        0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  getJsonField(
-                                                                    allLeadsItemItem,
-                                                                    r'''$.employeeName''',
-                                                                  ).toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .start,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1,
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16, 7, 0, 0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0,
-                                                                          19,
+                                                                          10,
                                                                           0,
                                                                           0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: 76,
-                                                                    height: 30,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFFCB367),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              20),
-                                                                    ),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    getJsonField(
+                                                                      allLeadsItemItem,
+                                                                      r'''$.employeeName''',
+                                                                    ).toString(),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .start,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyText1,
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            19,
+                                                                            0,
+                                                                            0),
                                                                     child:
-                                                                        Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                        Container(
+                                                                      width: 76,
+                                                                      height:
+                                                                          30,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: Color(
+                                                                            0xFFFCB367),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(20),
+                                                                      ),
                                                                       child:
-                                                                          Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'iucgyh33' /* unit type */,
+                                                                          Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0,
+                                                                            0),
+                                                                        child:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'iucgyh33' /* unit type */,
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyText1
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                              ),
                                                                         ),
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            13,
+                                                                            0,
+                                                                            0),
+                                                                    child: Text(
+                                                                      getJsonField(
+                                                                        allLeadsItemItem,
+                                                                        r'''$.contactName''',
+                                                                      ).toString(),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                Color(0xFFAAAAAA),
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            flex: 1,
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0,
-                                                                          13,
+                                                                          10,
                                                                           0,
                                                                           0),
-                                                                  child: Text(
-                                                                    getJsonField(
-                                                                      allLeadsItemItem,
-                                                                      r'''$.contactName''',
-                                                                    ).toString(),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .start,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '2ceeyl6i' /* Status  */,
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .start,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyText1
@@ -900,89 +969,45 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                                                           fontFamily:
                                                                               'Poppins',
                                                                           color:
-                                                                              Color(0xFFAAAAAA),
+                                                                              Color(0xFFE11B33),
                                                                         ),
                                                                   ),
-                                                                ),
-                                                              ],
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            20,
+                                                                            0,
+                                                                            0),
+                                                                    child: Text(
+                                                                      getJsonField(
+                                                                        allLeadsItemItem,
+                                                                        r'''$.contactTypeName''',
+                                                                      ).toString(),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                Color(0xFFAAAAAA),
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
-                                                        ),
-                                                        Expanded(
-                                                          flex: 1,
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0,
-                                                                        10,
-                                                                        0,
-                                                                        0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .start,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2ceeyl6i' /* Status  */,
-                                                                  ),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .start,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: Color(
-                                                                            0xFFE11B33),
-                                                                      ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
-                                                                          20,
-                                                                          0,
-                                                                          0),
-                                                                  child: Text(
-                                                                    getJsonField(
-                                                                      allLeadsItemItem,
-                                                                      r'''$.contactTypeName''',
-                                                                    ).toString(),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              Color(0xFFAAAAAA),
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

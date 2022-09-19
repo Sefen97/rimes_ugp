@@ -336,61 +336,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' Activity Details',
       'ar': 'تفاصيل النشاط',
     },
-    'zhb6s965': {
-      'en': 'change',
-      'ar': 'يتغيرون',
-    },
-    'xwkxhrc4': {
-      'en': 'Comments ',
-      'ar': 'تعليقات',
-    },
-    'payz4gjk': {
-      'en': '(3)',
-      'ar': '(3)',
-    },
-    'zoy1mlf0': {
-      'en': 'Add Comment',
-      'ar': 'أضف تعليق',
-    },
-    'xlr8wyhr': {
-      'en': 'Name',
-      'ar': 'اسم',
-    },
-    'd27l7sm7': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    'azgjwx8l': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    '2s479f0p': {
-      'en': 'Name 2',
-      'ar': 'الاسم 2',
-    },
-    'q0rczkoi': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    'f29v7bhl': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    'b6o3ste6': {
-      'en': 'Name 3',
-      'ar': 'الاسم 3',
-    },
-    '0qjwsjz1': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    '6ab8kc6y': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
     'r9vb0syt': {
       'en': 'Home',
       'ar': 'مسكن',
@@ -557,6 +502,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // SearchScreen
+  {
+    'uu1567j9': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    '7zy8s3rd': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // LeadDetails
+  {
+    'nzbl7tbt': {
+      'en': 'Lead Details',
+      'ar': 'تفاصيل النشاط',
+    },
+    'kdgongdg': {
+      'en': 'Comments ',
+      'ar': 'تعليقات',
+    },
+    'j72pgy9r': {
+      'en': '(3)',
+      'ar': '(3)',
+    },
+    'v6banz4y': {
+      'en': 'Add Comment',
+      'ar': 'أضف تعليق',
+    },
+    '8kotljqt': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // CustomBottomSheet
   {
     'jaaxdoyw': {
@@ -574,14 +553,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Type Here',
       'ar': 'أكتب هنا',
     },
-    'f4knb014': {
-      'en': 'Date',
-      'ar': 'تاريخ',
-    },
-    'p5hdaw1r': {
-      'en': 'Date Here',
-      'ar': 'التاريخ هنا',
-    },
     't1xwmc1z': {
       'en': 'Activity Status',
       'ar': 'حالة النشاط',
@@ -589,14 +560,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'v25ntzij': {
       'en': 'Status',
       'ar': 'حالة',
-    },
-    'xj0czjum': {
-      'en': 'Reletd To',
-      'ar': 'إعادة إلى',
-    },
-    'k3yltokx': {
-      'en': 'All',
-      'ar': 'الجميع',
     },
     '4e8j1n63': {
       'en': 'Reset',
@@ -620,6 +583,89 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'nkg8hh9g': {
       'en': 'Add',
       'ar': 'يضيف',
+    },
+  },
+  // Miscellaneous
+  {
+    'kyuwqwvy': {
+      'en': '',
+      'ar': '',
+    },
+    'tn4tom3r': {
+      'en': '',
+      'ar': '',
+    },
+    '134ckl43': {
+      'en': '',
+      'ar': '',
+    },
+    '5yz6xadn': {
+      'en': '',
+      'ar': '',
+    },
+    'lyakwqqz': {
+      'en': '',
+      'ar': '',
+    },
+    'vicli6b2': {
+      'en': '',
+      'ar': '',
+    },
+    't0obbik6': {
+      'en': '',
+      'ar': '',
+    },
+    'h248u9o8': {
+      'en': '',
+      'ar': '',
+    },
+    'z0iqeq5e': {
+      'en': '',
+      'ar': '',
+    },
+    'kpz1evdu': {
+      'en': '',
+      'ar': '',
+    },
+    '9yphrkh4': {
+      'en': '',
+      'ar': '',
+    },
+    'x74mn6n4': {
+      'en': '',
+      'ar': '',
+    },
+    '16n269e6': {
+      'en': '',
+      'ar': '',
+    },
+    'oaq9yl6r': {
+      'en': '',
+      'ar': '',
+    },
+    'yp3kbpe8': {
+      'en': '',
+      'ar': '',
+    },
+    'rb6tfcbb': {
+      'en': '',
+      'ar': '',
+    },
+    'laxkcxdi': {
+      'en': '',
+      'ar': '',
+    },
+    'xuhnkxtx': {
+      'en': '',
+      'ar': '',
+    },
+    'ub4q9eoq': {
+      'en': '',
+      'ar': '',
+    },
+    'mof55fhu': {
+      'en': '',
+      'ar': '',
     },
   },
 ].reduce((a, b) => a..addAll(b));

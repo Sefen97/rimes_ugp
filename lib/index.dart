@@ -11,3 +11,5 @@ export 'activity_details/activity_details_widget.dart'
 export 'my_account/my_account_widget.dart' show MyAccountWidget;
 export 'add_activity/add_activity_widget.dart' show AddActivityWidget;
 export 'verify_screen/verify_screen_widget.dart' show VerifyScreenWidget;
+export 'search_screen/search_screen_widget.dart' show SearchScreenWidget;
+export 'lead_details/lead_details_widget.dart' show LeadDetailsWidget;

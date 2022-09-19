@@ -690,7 +690,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                             width: 60,
                             height: 60,
                             child: SpinKitFadingCircle(
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color: Color(0xFFDB1B1B),
                               size: 60,
                             ),
                           ),
@@ -703,6 +703,11 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                             listViewAllActivityRequestResponse.jsonBody,
                             r'''$.result''',
                           ).toList().take(200).toList();
+                          if (allActivityItems.isEmpty) {
+                            return Image.asset(
+                              'assets/images/noData.png',
+                            );
+                          }
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             shrinkWrap: true,
@@ -723,6 +728,12 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                           ).toString(),
                                           ParamType.String),
                                       'status': serializeParam(
+                                          getJsonField(
+                                            allActivityItemsItem,
+                                            r'''$.activityStatusName''',
+                                          ).toString(),
+                                          ParamType.String),
+                                      'activityStatus': serializeParam(
                                           getJsonField(
                                             allActivityItemsItem,
                                             r'''$.activityStatusName''',

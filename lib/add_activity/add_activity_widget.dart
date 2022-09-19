@@ -236,6 +236,7 @@ class _AddActivityWidgetState extends State<AddActivityWidget> {
                           Duration(milliseconds: 200),
                           () => setState(() {}),
                         ),
+                        autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(

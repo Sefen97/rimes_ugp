@@ -19,7 +19,7 @@ class FFAppState {
 
   late SharedPreferences prefs;
 
-  String employeeId = '';
+  String employeeId = '10';
 
   List<dynamic> activityList = [];
 

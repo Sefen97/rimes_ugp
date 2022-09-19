@@ -18,6 +18,8 @@ class RimesApiGroup {
       AllActivityRequestCall();
   static AllLeadsCall allLeadsCall = AllLeadsCall();
   static LeadDashboardCall leadDashboardCall = LeadDashboardCall();
+  static LookuopCommonCall lookuopCommonCall = LookuopCommonCall();
+  static LeadCommentsCall leadCommentsCall = LeadCommentsCall();
 }
 
 class LoginRequestCall {
@@ -195,6 +197,61 @@ class LeadDashboardCall {
         'userId': userId,
         'filterId': filterId,
       },
+      returnBody: true,
+    );
+  }
+}
+
+class LookuopCommonCall {
+  Future<ApiCallResponse> call({
+    int? lookupId,
+    int? languageId,
+    int? subscriberId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'LookuopCommon',
+      apiUrl: '${RimesApiGroup.baseUrl}/api/lookup/common/all/?',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'lookupId': lookupId,
+        'languageId': languageId,
+        'subscriberId': subscriberId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class LeadCommentsCall {
+  Future<ApiCallResponse> call({
+    int? userId,
+    int? subscriberId,
+    int? id,
+    int? accessTypeId,
+  }) {
+    final body = '''
+{
+  "userId": ${userId},
+  "subscriberId": ${subscriberId},
+  "id": ${id},
+  "accessTypeId": ${accessTypeId},
+  "team": [
+    0
+  ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'LeadComments',
+      apiUrl: '${RimesApiGroup.baseUrl}api/saleslead/comments/get',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
       returnBody: true,
     );
   }
