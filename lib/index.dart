@@ -11,5 +11,10 @@ export 'activity_details/activity_details_widget.dart'
 export 'my_account/my_account_widget.dart' show MyAccountWidget;
 export 'add_activity/add_activity_widget.dart' show AddActivityWidget;
 export 'verify_screen/verify_screen_widget.dart' show VerifyScreenWidget;
-export 'search_screen/search_screen_widget.dart' show SearchScreenWidget;
+export 'loockup_search_screen/loockup_search_screen_widget.dart'
+    show LoockupSearchScreenWidget;
 export 'lead_details/lead_details_widget.dart' show LeadDetailsWidget;
+export 'property_search_screen/property_search_screen_widget.dart'
+    show PropertySearchScreenWidget;
+export 'all_employees_search_screen/all_employees_search_screen_widget.dart'
+    show AllEmployeesSearchScreenWidget;

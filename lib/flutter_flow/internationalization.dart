@@ -382,21 +382,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Type Here',
       'ar': 'أكتب هنا',
     },
+    '7rs15d4s': {
+      'en': 'Pick To',
+      'ar': 'اختر',
+    },
+    'ylbcyuoj': {
+      'en': '',
+      'ar': '[اختيار 0]',
+    },
+    's7xg3yev': {
+      'en': 'Unit',
+      'ar': 'وحدة',
+    },
+    'drhls8ul': {
+      'en': 'Related',
+      'ar': 'يكتب',
+    },
+    'ib91xmq5': {
+      'en': 'Releted To',
+      'ar': 'أكتب هنا',
+    },
     'ge2g2f9h': {
       'en': 'Assign To',
       'ar': 'يسند إلى',
     },
     'z0w8h7ak': {
-      'en': 'Name of contact',
+      'en': 'Assign To',
       'ar': 'اسم جهة الاتصال',
-    },
-    'ebgs0p1n': {
-      'en': 'Date',
-      'ar': 'تاريخ',
-    },
-    'af0ilssx': {
-      'en': 'Date',
-      'ar': 'تاريخ',
     },
     'fdzu8scv': {
       'en': 'Activity Status',
@@ -405,18 +417,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'olu0vq5o': {
       'en': 'Status',
       'ar': 'حالة',
-    },
-    '7rs15d4s': {
-      'en': 'Pick To',
-      'ar': 'اختر',
-    },
-    'ylbcyuoj': {
-      'en': '[pickTo 0]',
-      'ar': '[اختيار 0]',
-    },
-    's7xg3yev': {
-      'en': 'Unit',
-      'ar': 'وحدة',
     },
     '0rlk6ga0': {
       'en': 'Remark',
@@ -438,6 +438,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
+    'u7ttxbjh': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'kn45luil': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
     'sueo80sq': {
       'en': 'Field is required',
       'ar': 'الحقل مطلوب',
@@ -446,13 +454,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
-    '8ihdtadm': {
+    'obfzc1lh': {
       'en': 'Field is required',
-      'ar': 'الحقل مطلوب',
+      'ar': '',
     },
-    'dobo1ur1': {
+    'ajwu3045': {
       'en': 'Please choose an option from the dropdown',
-      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'ar': '',
     },
     '8km4dde6': {
       'en': 'Field is required',
@@ -502,13 +510,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // SearchScreen
+  // LoockupSearchScreen
   {
     'uu1567j9': {
       'en': 'search',
       'ar': 'بحث',
     },
-    '7zy8s3rd': {
+    'xzp0mkpx': {
       'en': 'Home',
       'ar': '',
     },
@@ -531,7 +539,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add Comment',
       'ar': 'أضف تعليق',
     },
-    '8kotljqt': {
+    'oltdodfv': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // PropertySearchScreen
+  {
+    'ro200so0': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'rwz0d5ix': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllEmployeesSearchScreen
+  {
+    'cs8qpuyy': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'aq86uunt': {
       'en': 'Home',
       'ar': '',
     },
@@ -570,7 +600,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يتقدم',
     },
   },
-  // AddCommentBottomSheet
+  // AddLeadCommentBottomSheet
   {
     'w5e46ize': {
       'en': 'Add comment',
@@ -583,6 +613,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'nkg8hh9g': {
       'en': 'Add',
       'ar': 'يضيف',
+    },
+  },
+  // LeadFilter
+  {
+    'h8yuc05n': {
+      'en': 'Contact Type',
+      'ar': 'يكتب',
+    },
+    'pmmkx20e': {
+      'en': 'Type of contact',
+      'ar': 'أكتب هنا',
+    },
+    '3akcat62': {
+      'en': 'Rating',
+      'ar': 'حالة النشاط',
+    },
+    'dvratuf9': {
+      'en': 'Select',
+      'ar': 'حالة',
+    },
+    '5g7kre6x': {
+      'en': 'Reset',
+      'ar': 'إعادة ضبط',
+    },
+    'xilv7q7x': {
+      'en': 'Apply',
+      'ar': 'يتقدم',
     },
   },
   // Miscellaneous

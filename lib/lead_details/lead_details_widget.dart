@@ -1,5 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
-import '../components/add_comment_bottom_sheet_widget.dart';
+import '../components/add_lead_comment_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -171,7 +171,10 @@ class _LeadDetailsWidgetState extends State<LeadDetailsWidget> {
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.of(context).viewInsets,
-                                    child: AddCommentBottomSheetWidget(),
+                                    child: AddLeadCommentBottomSheetWidget(
+                                      id: widget.leadId,
+                                      leadName: widget.leadName,
+                                    ),
                                   );
                                 },
                               );

@@ -6,7 +6,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ActivityFilterBottomSheetWidget extends StatefulWidget {
-  const ActivityFilterBottomSheetWidget({Key? key}) : super(key: key);
+  const ActivityFilterBottomSheetWidget({
+    Key? key,
+    this.type,
+    this.activityStatus,
+  }) : super(key: key);
+
+  final String? type;
+  final String? activityStatus;
 
   @override
   _ActivityFilterBottomSheetWidgetState createState() =>
@@ -22,8 +29,16 @@ class _ActivityFilterBottomSheetWidgetState
   @override
   void initState() {
     super.initState();
-    activityStatusTextFieldController = TextEditingController();
-    typTextFieldController = TextEditingController();
+    activityStatusTextFieldController = TextEditingController(
+        text: valueOrDefault<String>(
+      widget.activityStatus,
+      'Activity Status',
+    ));
+    typTextFieldController = TextEditingController(
+        text: valueOrDefault<String>(
+      widget.type,
+      'Type Here',
+    ));
   }
 
   @override
@@ -128,6 +143,11 @@ class _ActivityFilterBottomSheetWidgetState
                           ),
                           contentPadding:
                               EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xFF757575),
+                            size: 22,
+                          ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1,
                       ),
@@ -135,7 +155,7 @@ class _ActivityFilterBottomSheetWidgetState
                     InkWell(
                       onTap: () async {
                         context.pushNamed(
-                          'SearchScreen',
+                          'LoockupSearchScreen',
                           queryParams: {
                             'appBarTitle': serializeParam(
                                 'Activity Type', ParamType.String),
@@ -159,85 +179,92 @@ class _ActivityFilterBottomSheetWidgetState
                   ],
                 ),
               ),
-              Container(
-                height: 80,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                      child: TextFormField(
-                        controller: activityStatusTextFieldController,
-                        autofocus: true,
-                        readOnly: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            't1xwmc1z' /* Activity Status */,
+              InkWell(
+                onTap: () async {
+                  context.pushNamed(
+                    'LoockupSearchScreen',
+                    queryParams: {
+                      'appBarTitle':
+                          serializeParam('Activity Status', ParamType.String),
+                      'loockupId': serializeParam(2075, ParamType.int),
+                      'subscribId': serializeParam(2, ParamType.int),
+                      'languageId': serializeParam(2, ParamType.int),
+                    }.withoutNulls,
+                  );
+                },
+                child: Container(
+                  height: 80,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                        child: TextFormField(
+                          controller: activityStatusTextFieldController,
+                          autofocus: true,
+                          readOnly: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: FFLocalizations.of(context).getText(
+                              't1xwmc1z' /* Activity Status */,
+                            ),
+                            hintText: FFLocalizations.of(context).getText(
+                              'v25ntzij' /* Status */,
+                            ),
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            contentPadding:
+                                EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                            suffixIcon: Icon(
+                              Icons.arrow_drop_down,
+                              color: Color(0xFF757575),
+                              size: 22,
+                            ),
                           ),
-                          hintText: FFLocalizations.of(context).getText(
-                            'v25ntzij' /* Status */,
-                          ),
-                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x210A0A0A),
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x210A0A0A),
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).customColor3,
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).customColor3,
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          contentPadding:
-                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          style: FlutterFlowTheme.of(context).bodyText1,
                         ),
-                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
-                    ),
-                    InkWell(
-                      onTap: () async {
-                        context.pushNamed(
-                          'SearchScreen',
-                          queryParams: {
-                            'appBarTitle': serializeParam(
-                                'Activity Status', ParamType.String),
-                            'loockupId': serializeParam(2075, ParamType.int),
-                            'subscribId': serializeParam(2, ParamType.int),
-                            'languageId': serializeParam(2, ParamType.int),
-                          }.withoutNulls,
-                        );
-                      },
-                      child: Container(
+                      Container(
                         width: double.infinity,
                         height: 100,
                         decoration: BoxDecoration(
@@ -247,8 +274,8 @@ class _ActivityFilterBottomSheetWidgetState
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Padding(

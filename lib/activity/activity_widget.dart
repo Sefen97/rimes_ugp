@@ -721,24 +721,12 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                   context.pushNamed(
                                     'ActivityDetails',
                                     queryParams: {
-                                      'activityType': serializeParam(
+                                      'id': serializeParam(
                                           getJsonField(
                                             allActivityItemsItem,
-                                            r'''$.typeName''',
-                                          ).toString(),
-                                          ParamType.String),
-                                      'status': serializeParam(
-                                          getJsonField(
-                                            allActivityItemsItem,
-                                            r'''$.activityStatusName''',
-                                          ).toString(),
-                                          ParamType.String),
-                                      'activityStatus': serializeParam(
-                                          getJsonField(
-                                            allActivityItemsItem,
-                                            r'''$.activityStatusName''',
-                                          ).toString(),
-                                          ParamType.String),
+                                            r'''$.activityId''',
+                                          ),
+                                          ParamType.int),
                                     }.withoutNulls,
                                   );
                                 },

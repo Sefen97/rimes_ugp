@@ -104,10 +104,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ActivityDetails',
               path: 'activityDetails',
               builder: (context, params) => ActivityDetailsWidget(
-                activityType: params.getParam('activityType', ParamType.String),
-                status: params.getParam('status', ParamType.String),
-                activityStatus:
-                    params.getParam('activityStatus', ParamType.String),
+                id: params.getParam('id', ParamType.int),
               ),
             ),
             FFRoute(
@@ -128,9 +125,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'SearchScreen',
-              path: 'searchScreen',
-              builder: (context, params) => SearchScreenWidget(
+              name: 'LoockupSearchScreen',
+              path: 'loockupSearchScreen',
+              builder: (context, params) => LoockupSearchScreenWidget(
                 appBarTitle: params.getParam('appBarTitle', ParamType.String),
                 loockupId: params.getParam('loockupId', ParamType.int),
                 subscribId: params.getParam('subscribId', ParamType.int),
@@ -143,6 +140,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => LeadDetailsWidget(
                 leadName: params.getParam('leadName', ParamType.String),
                 leadId: params.getParam('leadId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'PropertySearchScreen',
+              path: 'propertySearchScreen',
+              builder: (context, params) => PropertySearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                id: params.getParam('id', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'AllEmployeesSearchScreen',
+              path: 'allEmployeesSearchScreen',
+              builder: (context, params) => AllEmployeesSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                userId: params.getParam('userId', ParamType.int),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),

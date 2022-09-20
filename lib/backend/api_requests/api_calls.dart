@@ -20,6 +20,10 @@ class RimesApiGroup {
   static LeadDashboardCall leadDashboardCall = LeadDashboardCall();
   static LookuopCommonCall lookuopCommonCall = LookuopCommonCall();
   static LeadCommentsCall leadCommentsCall = LeadCommentsCall();
+  static ActivityDetailsCall activityDetailsCall = ActivityDetailsCall();
+  static AllPropertysCall allPropertysCall = AllPropertysCall();
+  static AllEmployeesCall allEmployeesCall = AllEmployeesCall();
+  static AddLeadCommintCall addLeadCommintCall = AddLeadCommintCall();
 }
 
 class LoginRequestCall {
@@ -245,6 +249,144 @@ class LeadCommentsCall {
     return ApiManager.instance.makeApiCall(
       callName: 'LeadComments',
       apiUrl: '${RimesApiGroup.baseUrl}api/saleslead/comments/get',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class ActivityDetailsCall {
+  Future<ApiCallResponse> call({
+    int? id,
+    int? userId,
+    int? subscriberId,
+    int? languageId,
+  }) {
+    final body = '''
+{
+  "userId": ${userId},
+  "subscriberId": ${subscriberId},
+  "id": ${id},
+  "languageId": ${languageId}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'ActivityDetails',
+      apiUrl: '${RimesApiGroup.baseUrl}api/activity/get',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class AllPropertysCall {
+  Future<ApiCallResponse> call({
+    int? pageSize,
+    int? id,
+    int? subscriberId,
+    int? userId,
+  }) {
+    final body = '''
+{
+  "filter": {
+    "start": "",
+    "length": "",
+    "sortColumn": "",
+    "direction": "",
+    "searchValue": "",
+    "skip": 0,
+    "pageSize": ${pageSize}
+  },
+  "id": ${id},
+  "subscriberId": ${subscriberId},
+  "userId": ${userId},
+  "languageId": 1,
+  "accessTypeId": 1,
+  "availablity": 0,
+  "listingTypeId": 1,
+  "propertyMasterId": 0,
+  "types": [
+    1
+  ],
+  "cities": [],
+  "categories": [],
+  "status": [],
+  "nextAvailableFrom": "",
+  "nextAvailableTo": "",
+  "listingDate": "",
+  "bedroom": 0,
+  "contactId": 0,
+  "published": true,
+  "team": []
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllPropertys',
+      apiUrl: '${RimesApiGroup.baseUrl}api/property/all',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class AllEmployeesCall {
+  Future<ApiCallResponse> call({
+    int? accessTypeId,
+    int? userId,
+    int? subscriptioId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllEmployees',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/employees/all/?',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'accessTypeId': accessTypeId,
+        'userId': userId,
+        'subscriptioId': subscriptioId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class AddLeadCommintCall {
+  Future<ApiCallResponse> call({
+    int? userId,
+    int? subscriberId,
+    String? comment = '',
+    int? salesLeadId,
+    int? commentId,
+  }) {
+    final body = '''
+{
+  "userId": ${userId},
+  "subscriberId": ${subscriberId},
+  "comment": "${comment}",
+  "salesLeadId": ${salesLeadId},
+  "commentId": ${commentId}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AddLeadCommint',
+      apiUrl: '${RimesApiGroup.baseUrl}api/salesLead/comment/add',
       callType: ApiCallType.POST,
       headers: {
         ...RimesApiGroup.headers,

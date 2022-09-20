@@ -7,25 +7,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SearchScreenWidget extends StatefulWidget {
-  const SearchScreenWidget({
+class PropertySearchScreenWidget extends StatefulWidget {
+  const PropertySearchScreenWidget({
     Key? key,
     this.appBarTitle,
-    this.loockupId,
-    this.subscribId,
-    this.languageId,
+    this.id,
   }) : super(key: key);
 
   final String? appBarTitle;
-  final int? loockupId;
-  final int? subscribId;
-  final int? languageId;
+  final int? id;
 
   @override
-  _SearchScreenWidgetState createState() => _SearchScreenWidgetState();
+  _PropertySearchScreenWidgetState createState() =>
+      _PropertySearchScreenWidgetState();
 }
 
-class _SearchScreenWidgetState extends State<SearchScreenWidget> {
+class _PropertySearchScreenWidgetState
+    extends State<PropertySearchScreenWidget> {
   TextEditingController? textController;
 
   Completer<ApiCallResponse>? _apiRequestCompleter;
@@ -90,7 +88,7 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                   decoration: InputDecoration(
                     isDense: true,
                     hintText: FFLocalizations.of(context).getText(
-                      'uu1567j9' /* search */,
+                      'ro200so0' /* search */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyText2,
                     enabledBorder: OutlineInputBorder(
@@ -151,10 +149,11 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                     child: FutureBuilder<ApiCallResponse>(
                       future:
                           (_apiRequestCompleter ??= Completer<ApiCallResponse>()
-                                ..complete(RimesApiGroup.lookuopCommonCall.call(
-                                  lookupId: widget.loockupId,
-                                  languageId: widget.languageId,
-                                  subscriberId: widget.subscribId,
+                                ..complete(RimesApiGroup.allPropertysCall.call(
+                                  id: widget.id,
+                                  userId: 10,
+                                  pageSize: 100,
+                                  subscriberId: 2,
                                 )))
                               .future,
                       builder: (context, snapshot) {
@@ -171,14 +170,14 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                             ),
                           );
                         }
-                        final listViewLookuopCommonResponse = snapshot.data!;
+                        final listViewAllPropertysResponse = snapshot.data!;
                         return Builder(
                           builder: (context) {
-                            final loockupResponse = getJsonField(
-                              listViewLookuopCommonResponse.jsonBody,
+                            final propertyResponse = getJsonField(
+                              listViewAllPropertysResponse.jsonBody,
                               r'''$.result''',
                             ).toList().take(200).toList();
-                            if (loockupResponse.isEmpty) {
+                            if (propertyResponse.isEmpty) {
                               return Image.asset(
                                 'assets/images/noData.png',
                               );
@@ -192,67 +191,73 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                               child: ListView.builder(
                                 padding: EdgeInsets.zero,
                                 scrollDirection: Axis.vertical,
-                                itemCount: loockupResponse.length,
-                                itemBuilder: (context, loockupResponseIndex) {
-                                  final loockupResponseItem =
-                                      loockupResponse[loockupResponseIndex];
+                                itemCount: propertyResponse.length,
+                                itemBuilder: (context, propertyResponseIndex) {
+                                  final propertyResponseItem =
+                                      propertyResponse[propertyResponseIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 10, 0, 10),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Container(
-                                                width: 20,
-                                                height: 20,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                  border: Border.all(
-                                                    color: Color(0xFF3B3E51),
-                                                    width: 2,
+                                    child: InkWell(
+                                      onTap: () async {
+                                        context.pop();
+                                      },
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 10, 0, 10),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Container(
+                                                  width: 20,
+                                                  height: 20,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    border: Border.all(
+                                                      color: Color(0xFF3B3E51),
+                                                      width: 2,
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
-                                                child: Text(
-                                                  getJsonField(
-                                                    loockupResponseItem,
-                                                    r'''$.name''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF3B3E51),
-                                                      ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(5, 0, 0, 0),
+                                                  child: Text(
+                                                    getJsonField(
+                                                      propertyResponseItem,
+                                                      r'''$.propertyCode''',
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF3B3E51),
+                                                        ),
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Container(
-                                          width: double.infinity,
-                                          height: 2,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFF3F3F3),
+                                          Container(
+                                            width: double.infinity,
+                                            height: 2,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFF3F3F3),
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   );
                                 },
