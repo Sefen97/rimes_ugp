@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityDetailsWidget extends StatefulWidget {
-  const ActivityDetailsWidget({
+class ActivityDetailsScreenWidget extends StatefulWidget {
+  const ActivityDetailsScreenWidget({
     Key? key,
     this.id,
   }) : super(key: key);
@@ -15,10 +15,12 @@ class ActivityDetailsWidget extends StatefulWidget {
   final int? id;
 
   @override
-  _ActivityDetailsWidgetState createState() => _ActivityDetailsWidgetState();
+  _ActivityDetailsScreenWidgetState createState() =>
+      _ActivityDetailsScreenWidgetState();
 }
 
-class _ActivityDetailsWidgetState extends State<ActivityDetailsWidget> {
+class _ActivityDetailsScreenWidgetState
+    extends State<ActivityDetailsScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

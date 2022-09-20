@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyAccountWidget extends StatefulWidget {
-  const MyAccountWidget({Key? key}) : super(key: key);
+class MyAccountScreenWidget extends StatefulWidget {
+  const MyAccountScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _MyAccountWidgetState createState() => _MyAccountWidgetState();
+  _MyAccountScreenWidgetState createState() => _MyAccountScreenWidgetState();
 }
 
-class _MyAccountWidgetState extends State<MyAccountWidget> {
+class _MyAccountScreenWidgetState extends State<MyAccountScreenWidget> {
   TextEditingController? textController1;
 
   TextEditingController? textController2;

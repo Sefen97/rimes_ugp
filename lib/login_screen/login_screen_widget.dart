@@ -338,7 +338,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
 
                                 // Navigation
 
-                                context.pushNamed('Dashboard');
+                                context.pushNamed('AdminDashboardScreen');
                               } else {
                                 // Alert
                                 await showDialog(
@@ -392,7 +392,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: InkWell(
                             onTap: () async {
-                              context.pushNamed('ForgetPassword');
+                              context.pushNamed('ForgetPasswordScreen');
                             },
                             child: Text(
                               FFLocalizations.of(context).getText(

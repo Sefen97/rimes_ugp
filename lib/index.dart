@@ -1,20 +1,26 @@
 // Export pages
-export 'forget_password/forget_password_widget.dart' show ForgetPasswordWidget;
+export 'forget_password_screen/forget_password_screen_widget.dart'
+    show ForgetPasswordScreenWidget;
 export 'login_screen/login_screen_widget.dart' show LoginScreenWidget;
-export 'dashboard/dashboard_widget.dart' show DashboardWidget;
-export 'activity/activity_widget.dart' show ActivityWidget;
-export 'units/units_widget.dart' show UnitsWidget;
-export 'leads/leads_widget.dart' show LeadsWidget;
-export 'more/more_widget.dart' show MoreWidget;
-export 'activity_details/activity_details_widget.dart'
-    show ActivityDetailsWidget;
-export 'my_account/my_account_widget.dart' show MyAccountWidget;
-export 'add_activity/add_activity_widget.dart' show AddActivityWidget;
+export 'admin_dashboard_screen/admin_dashboard_screen_widget.dart'
+    show AdminDashboardScreenWidget;
+export 'activity_screen/activity_screen_widget.dart' show ActivityScreenWidget;
+export 'units_screen/units_screen_widget.dart' show UnitsScreenWidget;
+export 'leads_screen/leads_screen_widget.dart' show LeadsScreenWidget;
+export 'more_screen/more_screen_widget.dart' show MoreScreenWidget;
+export 'activity_details_screen/activity_details_screen_widget.dart'
+    show ActivityDetailsScreenWidget;
+export 'my_account_screen/my_account_screen_widget.dart'
+    show MyAccountScreenWidget;
+export 'add_activity_screen/add_activity_screen_widget.dart'
+    show AddActivityScreenWidget;
 export 'verify_screen/verify_screen_widget.dart' show VerifyScreenWidget;
 export 'loockup_search_screen/loockup_search_screen_widget.dart'
     show LoockupSearchScreenWidget;
-export 'lead_details/lead_details_widget.dart' show LeadDetailsWidget;
+export 'lead_details_screen/lead_details_screen_widget.dart'
+    show LeadDetailsScreenWidget;
 export 'property_search_screen/property_search_screen_widget.dart'
     show PropertySearchScreenWidget;
 export 'all_employees_search_screen/all_employees_search_screen_widget.dart'
     show AllEmployeesSearchScreenWidget;
+export 'add_lead_screen/add_lead_screen_widget.dart' show AddLeadScreenWidget;

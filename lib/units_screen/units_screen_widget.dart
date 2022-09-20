@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class UnitsWidget extends StatefulWidget {
-  const UnitsWidget({Key? key}) : super(key: key);
+class UnitsScreenWidget extends StatefulWidget {
+  const UnitsScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _UnitsWidgetState createState() => _UnitsWidgetState();
+  _UnitsScreenWidgetState createState() => _UnitsScreenWidgetState();
 }
 
-class _UnitsWidgetState extends State<UnitsWidget> {
+class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

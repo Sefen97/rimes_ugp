@@ -8,14 +8,15 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AddActivityWidget extends StatefulWidget {
-  const AddActivityWidget({Key? key}) : super(key: key);
+class AddActivityScreenWidget extends StatefulWidget {
+  const AddActivityScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _AddActivityWidgetState createState() => _AddActivityWidgetState();
+  _AddActivityScreenWidgetState createState() =>
+      _AddActivityScreenWidgetState();
 }
 
-class _AddActivityWidgetState extends State<AddActivityWidget> {
+class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
   TextEditingController? assignToTextFieldController;
 
   TextEditingController? reletedTextFieldController;

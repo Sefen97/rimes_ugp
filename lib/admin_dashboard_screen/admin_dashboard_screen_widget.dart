@@ -8,14 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({Key? key}) : super(key: key);
+class AdminDashboardScreenWidget extends StatefulWidget {
+  const AdminDashboardScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _DashboardWidgetState createState() => _DashboardWidgetState();
+  _AdminDashboardScreenWidgetState createState() =>
+      _AdminDashboardScreenWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget> {
+class _AdminDashboardScreenWidgetState
+    extends State<AdminDashboardScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -208,7 +210,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     0, 33, 10, 10),
                                 child: InkWell(
                                   onTap: () async {
-                                    context.pushNamed('MyAccount');
+                                    context.pushNamed('MyAccountScreen');
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,

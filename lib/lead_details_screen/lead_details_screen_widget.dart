@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LeadDetailsWidget extends StatefulWidget {
-  const LeadDetailsWidget({
+class LeadDetailsScreenWidget extends StatefulWidget {
+  const LeadDetailsScreenWidget({
     Key? key,
     this.leadName,
     this.leadId,
@@ -17,10 +17,11 @@ class LeadDetailsWidget extends StatefulWidget {
   final int? leadId;
 
   @override
-  _LeadDetailsWidgetState createState() => _LeadDetailsWidgetState();
+  _LeadDetailsScreenWidgetState createState() =>
+      _LeadDetailsScreenWidgetState();
 }
 
-class _LeadDetailsWidgetState extends State<LeadDetailsWidget> {
+class _LeadDetailsScreenWidgetState extends State<LeadDetailsScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

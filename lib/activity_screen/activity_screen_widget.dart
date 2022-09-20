@@ -9,14 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityWidget extends StatefulWidget {
-  const ActivityWidget({Key? key}) : super(key: key);
+class ActivityScreenWidget extends StatefulWidget {
+  const ActivityScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _ActivityWidgetState createState() => _ActivityWidgetState();
+  _ActivityScreenWidgetState createState() => _ActivityScreenWidgetState();
 }
 
-class _ActivityWidgetState extends State<ActivityWidget> {
+class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
   TextEditingController? textController;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -79,7 +79,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
             alignment: AlignmentDirectional(0, 0),
             child: InkWell(
               onTap: () async {
-                context.pushNamed('AddActivity');
+                context.pushNamed('AddActivityScreen');
               },
               child: Image.asset(
                 'assets/images/group_3445.png',
@@ -228,7 +228,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 33, 10, 10),
                               child: InkWell(
                                 onTap: () async {
-                                  context.pushNamed('MyAccount');
+                                  context.pushNamed('MyAccountScreen');
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -719,7 +719,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                               return InkWell(
                                 onTap: () async {
                                   context.pushNamed(
-                                    'ActivityDetails',
+                                    'ActivityDetailsScreen',
                                     queryParams: {
                                       'id': serializeParam(
                                           getJsonField(

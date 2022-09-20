@@ -49,7 +49,7 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // ForgetPassword
+  // ForgetPasswordScreen
   {
     'pd1p6aja': {
       'en': 'Forgot your password?',
@@ -127,7 +127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // Dashboard
+  // AdminDashboardScreen
   {
     'dax1mh3h': {
       'en': 'Dashboard',
@@ -198,7 +198,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // Activity
+  // ActivityScreen
   {
     '1u0v4et1': {
       'en': 'All Activites',
@@ -245,7 +245,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'نشاط',
     },
   },
-  // Units
+  // UnitsScreen
   {
     'zs175pxp': {
       'en': 'All Units',
@@ -260,7 +260,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الوحدات',
     },
   },
-  // Leads
+  // LeadsScreen
   {
     'xg7pspv6': {
       'en': 'All Leads',
@@ -323,14 +323,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يؤدي',
     },
   },
-  // More
+  // MoreScreen
   {
     'h25m206f': {
       'en': 'More',
       'ar': 'أكثر',
     },
   },
-  // ActivityDetails
+  // ActivityDetailsScreen
   {
     '8mygmwfr': {
       'en': ' Activity Details',
@@ -341,7 +341,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // MyAccount
+  // MyAccountScreen
   {
     'lh58zepi': {
       'en': 'My Account',
@@ -372,7 +372,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // AddActivity
+  // AddActivityScreen
   {
     'ifysoqeu': {
       'en': 'Type',
@@ -521,7 +521,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
-  // LeadDetails
+  // LeadDetailsScreen
   {
     'nzbl7tbt': {
       'en': 'Lead Details',
@@ -562,6 +562,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'بحث',
     },
     'aq86uunt': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AddLeadScreen
+  {
+    '25lqyfwu': {
+      'en': 'Add a new lead',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'dxxoi6eo': {
+      'en': 'Rent',
+      'ar': 'تأجير',
+    },
+    'duidywgl': {
+      'en': 'Rent',
+      'ar': 'تأجير',
+    },
+    'jr5fvejb': {
+      'en': 'Sale',
+      'ar': 'تخفيض السعر',
+    },
+    'k53j0ga9': {
+      'en': 'Contact',
+      'ar': 'يكتب',
+    },
+    'tm0if34f': {
+      'en': 'Contact',
+      'ar': 'أكتب هنا',
+    },
+    '3otujcu3': {
       'en': 'Home',
       'ar': '',
     },
@@ -617,27 +648,51 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // LeadFilter
   {
-    'h8yuc05n': {
+    'y3jxbwxs': {
       'en': 'Contact Type',
       'ar': 'يكتب',
     },
-    'pmmkx20e': {
+    '21xvq7d6': {
       'en': 'Type of contact',
       'ar': 'أكتب هنا',
     },
-    '3akcat62': {
+    'r3sqhij0': {
       'en': 'Rating',
       'ar': 'حالة النشاط',
     },
-    'dvratuf9': {
+    '1cai98h2': {
       'en': 'Select',
       'ar': 'حالة',
     },
-    '5g7kre6x': {
+    'lmy4gm2i': {
+      'en': 'Lead Source',
+      'ar': 'يكتب',
+    },
+    'wr8u8qcz': {
+      'en': 'Select',
+      'ar': 'أكتب هنا',
+    },
+    're6m1f6j': {
+      'en': 'Assign To',
+      'ar': 'يكتب',
+    },
+    'hzyo6n6f': {
+      'en': 'Select',
+      'ar': 'أكتب هنا',
+    },
+    'ej056fx5': {
+      'en': 'Lead Type',
+      'ar': 'يكتب',
+    },
+    'gi09g6cv': {
+      'en': 'Select',
+      'ar': 'أكتب هنا',
+    },
+    'z8ozwg5n': {
       'en': 'Reset',
       'ar': 'إعادة ضبط',
     },
-    'xilv7q7x': {
+    '3dbmdyvc': {
       'en': 'Apply',
       'ar': 'يتقدم',
     },

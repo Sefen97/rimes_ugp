@@ -176,7 +176,7 @@ class _AddLeadCommentBottomSheetWidgetState
                           Navigator.pop(context);
 
                           context.pushNamed(
-                            'LeadDetails',
+                            'LeadDetailsScreen',
                             queryParams: {
                               'leadName': serializeParam(
                                   widget.leadName, ParamType.String),
