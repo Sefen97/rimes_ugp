@@ -307,11 +307,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 r'''$.result.status''',
                               )) {
                                 // Set employee id
-                                setState(() =>
-                                    FFAppState().employeeId = getJsonField(
-                                      (loginRespons?.jsonBody ?? ''),
-                                      r'''$.result.refreshToken.employeeId''',
-                                    ).toString());
+                                setState(
+                                    () => FFAppState().userId = getJsonField(
+                                          (loginRespons?.jsonBody ?? ''),
+                                          r'''$.result.refreshToken.employeeId''',
+                                        ));
                                 setState(
                                     () => FFAppState().userName = getJsonField(
                                           (loginRespons?.jsonBody ?? ''),

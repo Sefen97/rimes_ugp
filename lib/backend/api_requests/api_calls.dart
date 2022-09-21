@@ -21,9 +21,14 @@ class RimesApiGroup {
   static LookuopCommonCall lookuopCommonCall = LookuopCommonCall();
   static LeadCommentsCall leadCommentsCall = LeadCommentsCall();
   static ActivityDetailsCall activityDetailsCall = ActivityDetailsCall();
-  static AllPropertysCall allPropertysCall = AllPropertysCall();
-  static AllEmployeesCall allEmployeesCall = AllEmployeesCall();
+  static AllPropertiesCall allPropertiesCall = AllPropertiesCall();
+  static LookuopAllEmployeesCall lookuopAllEmployeesCall =
+      LookuopAllEmployeesCall();
   static AddLeadCommintCall addLeadCommintCall = AddLeadCommintCall();
+  static SalesLeadRequestCall salesLeadRequestCall = SalesLeadRequestCall();
+  static AllCitiesCall allCitiesCall = AllCitiesCall();
+  static AllCommintyMobileCall allCommintyMobileCall = AllCommintyMobileCall();
+  static AllSubCommunityCall allSubCommunityCall = AllSubCommunityCall();
 }
 
 class LoginRequestCall {
@@ -290,7 +295,7 @@ class ActivityDetailsCall {
   }
 }
 
-class AllPropertysCall {
+class AllPropertiesCall {
   Future<ApiCallResponse> call({
     int? pageSize,
     int? id,
@@ -331,7 +336,7 @@ class AllPropertysCall {
   "team": []
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'AllPropertys',
+      callName: 'AllProperties',
       apiUrl: '${RimesApiGroup.baseUrl}api/property/all',
       callType: ApiCallType.POST,
       headers: {
@@ -345,14 +350,14 @@ class AllPropertysCall {
   }
 }
 
-class AllEmployeesCall {
+class LookuopAllEmployeesCall {
   Future<ApiCallResponse> call({
     int? accessTypeId,
     int? userId,
     int? subscriptioId,
   }) {
     return ApiManager.instance.makeApiCall(
-      callName: 'AllEmployees',
+      callName: 'LookuopAllEmployees',
       apiUrl: '${RimesApiGroup.baseUrl}api/lookup/employees/all/?',
       callType: ApiCallType.GET,
       headers: {
@@ -394,6 +399,137 @@ class AddLeadCommintCall {
       params: {},
       body: body,
       bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class SalesLeadRequestCall {
+  Future<ApiCallResponse> call({
+    int? pageSize,
+    int? userId,
+    int? subscriberId,
+  }) {
+    final body = '''
+{
+  "filter": {
+    "start": "",
+    "length": "",
+    "sortColumn": "",
+    "direction": "",
+    "searchValue": "",
+    "skip": 0,
+    "pageSize": ${pageSize}
+  },
+  "contactTypeId_search": 0,
+  "ratingId_search": 0,
+  "priorityId_search": 0,
+  "leadSourceId_search": 0,
+  "employeeId_search": 0,
+  "leaToDate_search": "2022-09-21T08:12:47.174Z",
+  "leaFromDate_search": "2021-09-21T08:12:47.174Z",
+  "communityId_search": 0,
+  "community": 0,
+  "subCommunity": 0,
+  "category": 0,
+  "type": 0,
+  "userId": ${userId},
+  "accessTypeId": 0,
+  "languageId": 0,
+  "building": 0,
+  "unitNo": "",
+  "contactId": 0,
+  "city": 0,
+  "bed": 0,
+  "area": 0,
+  "price": 0,
+  "name": "",
+  "subscriberId": ${subscriberId},
+  "limit": 0,
+  "leadType": 0,
+  "team": [],
+  "bedroom": 0,
+  "dateType": 0,
+  "fromDate_report": "2022-09-21T08:12:47.174Z",
+  "toDate_report": "2022-09-21T08:12:47.174Z"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'SalesLeadRequest',
+      apiUrl: '${RimesApiGroup.baseUrl}api/saleslead/all',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class AllCitiesCall {
+  Future<ApiCallResponse> call({
+    int? subscriberId,
+    int? countryId,
+    int? parentId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllCities',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/citytree/all?',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'subscriberId': subscriberId,
+        'countryId': countryId,
+        'parentId': parentId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class AllCommintyMobileCall {
+  Future<ApiCallResponse> call({
+    int? id,
+    int? subscriberId,
+    int? languageId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllCommintyMobile',
+      apiUrl: '${RimesApiGroup.baseUrl}/api/lookup/unitcommunity/mobile/all?',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'id': id,
+        'subscriberId': subscriberId,
+        'languageId': languageId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class AllSubCommunityCall {
+  Future<ApiCallResponse> call({
+    int? id,
+    int? subscriberId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllSubCommunity',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/unitsubcommunity/all?',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'id': id,
+        'subscriberId': subscriberId,
+      },
       returnBody: true,
     );
   }

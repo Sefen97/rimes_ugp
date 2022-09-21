@@ -2,7 +2,6 @@ import '../backend/api_requests/api_calls.dart';
 import '../components/custom_bottom_sheet_widget.dart';
 import '../components/lead_filter_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
-import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
@@ -21,7 +20,6 @@ class LeadsScreenWidget extends StatefulWidget {
 class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
   TextEditingController? textController;
 
-  String? radioButtonValue;
   Completer<ApiCallResponse>? _apiRequestCompleter;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -541,46 +539,7 @@ class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 0),
-                  child: FlutterFlowRadioButton(
-                    options: [
-                      FFLocalizations.of(context).getText(
-                        'hlq749i9' /* Rent */,
-                      ),
-                      FFLocalizations.of(context).getText(
-                        'tmg1lmed' /* Sale */,
-                      )
-                    ].toList(),
-                    initialValue: FFLocalizations.of(context).getText(
-                      'y9vul0et' /* Rent */,
-                    ),
-                    onChanged: (value) {
-                      setState(() => radioButtonValue = value);
-                    },
-                    optionHeight: 30,
-                    textStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF5B5B5B),
-                          fontSize: 14,
-                        ),
-                    selectedTextStyle:
-                        FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).alternate,
-                            ),
-                    textPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                    buttonPosition: RadioButtonPosition.left,
-                    direction: Axis.horizontal,
-                    radioButtonColor: FlutterFlowTheme.of(context).alternate,
-                    inactiveRadioButtonColor:
-                        FlutterFlowTheme.of(context).lineColor,
-                    toggleable: false,
-                    horizontalAlignment: WrapAlignment.start,
-                    verticalAlignment: WrapCrossAlignment.start,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -719,7 +678,7 @@ class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
                         (_apiRequestCompleter ??= Completer<ApiCallResponse>()
                               ..complete(RimesApiGroup.allLeadsCall.call(
                                 pageSize: 15,
-                                userId: 10,
+                                userId: FFAppState().userId,
                                 subscriberId: 2,
                               )))
                             .future,

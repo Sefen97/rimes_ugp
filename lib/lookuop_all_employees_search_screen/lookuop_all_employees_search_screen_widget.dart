@@ -7,26 +7,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoockupSearchScreenWidget extends StatefulWidget {
-  const LoockupSearchScreenWidget({
+class LookuopAllEmployeesSearchScreenWidget extends StatefulWidget {
+  const LookuopAllEmployeesSearchScreenWidget({
     Key? key,
     this.appBarTitle,
-    this.loockupId,
-    this.subscribId,
-    this.languageId,
+    this.userId,
   }) : super(key: key);
 
   final String? appBarTitle;
-  final int? loockupId;
-  final int? subscribId;
-  final int? languageId;
+  final int? userId;
 
   @override
-  _LoockupSearchScreenWidgetState createState() =>
-      _LoockupSearchScreenWidgetState();
+  _LookuopAllEmployeesSearchScreenWidgetState createState() =>
+      _LookuopAllEmployeesSearchScreenWidgetState();
 }
 
-class _LoockupSearchScreenWidgetState extends State<LoockupSearchScreenWidget> {
+class _LookuopAllEmployeesSearchScreenWidgetState
+    extends State<LookuopAllEmployeesSearchScreenWidget> {
   TextEditingController? textController;
 
   Completer<ApiCallResponse>? _apiRequestCompleter;
@@ -91,7 +88,7 @@ class _LoockupSearchScreenWidgetState extends State<LoockupSearchScreenWidget> {
                   decoration: InputDecoration(
                     isDense: true,
                     hintText: FFLocalizations.of(context).getText(
-                      'uu1567j9' /* search */,
+                      'cs8qpuyy' /* search */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyText2,
                     enabledBorder: OutlineInputBorder(
@@ -152,10 +149,11 @@ class _LoockupSearchScreenWidgetState extends State<LoockupSearchScreenWidget> {
                     child: FutureBuilder<ApiCallResponse>(
                       future:
                           (_apiRequestCompleter ??= Completer<ApiCallResponse>()
-                                ..complete(RimesApiGroup.lookuopCommonCall.call(
-                                  lookupId: widget.loockupId,
-                                  languageId: widget.languageId,
-                                  subscriberId: widget.subscribId,
+                                ..complete(
+                                    RimesApiGroup.lookuopAllEmployeesCall.call(
+                                  accessTypeId: 1,
+                                  userId: widget.userId,
+                                  subscriptioId: 2,
                                 )))
                               .future,
                       builder: (context, snapshot) {
@@ -172,14 +170,15 @@ class _LoockupSearchScreenWidgetState extends State<LoockupSearchScreenWidget> {
                             ),
                           );
                         }
-                        final listViewLookuopCommonResponse = snapshot.data!;
+                        final listViewLookuopAllEmployeesResponse =
+                            snapshot.data!;
                         return Builder(
                           builder: (context) {
-                            final loockupResponse = getJsonField(
-                              listViewLookuopCommonResponse.jsonBody,
+                            final allEmployeeResponse = getJsonField(
+                              listViewLookuopAllEmployeesResponse.jsonBody,
                               r'''$.result''',
                             ).toList().take(200).toList();
-                            if (loockupResponse.isEmpty) {
+                            if (allEmployeeResponse.isEmpty) {
                               return Image.asset(
                                 'assets/images/noData.png',
                               );
@@ -193,10 +192,12 @@ class _LoockupSearchScreenWidgetState extends State<LoockupSearchScreenWidget> {
                               child: ListView.builder(
                                 padding: EdgeInsets.zero,
                                 scrollDirection: Axis.vertical,
-                                itemCount: loockupResponse.length,
-                                itemBuilder: (context, loockupResponseIndex) {
-                                  final loockupResponseItem =
-                                      loockupResponse[loockupResponseIndex];
+                                itemCount: allEmployeeResponse.length,
+                                itemBuilder:
+                                    (context, allEmployeeResponseIndex) {
+                                  final allEmployeeResponseItem =
+                                      allEmployeeResponse[
+                                          allEmployeeResponseIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
@@ -235,8 +236,8 @@ class _LoockupSearchScreenWidgetState extends State<LoockupSearchScreenWidget> {
                                                       .fromSTEB(5, 0, 0, 0),
                                                   child: Text(
                                                     getJsonField(
-                                                      loockupResponseItem,
-                                                      r'''$.name''',
+                                                      allEmployeeResponseItem,
+                                                      r'''$.firstName''',
                                                     ).toString(),
                                                     style: FlutterFlowTheme.of(
                                                             context)

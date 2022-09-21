@@ -220,7 +220,7 @@ class _LeadDetailsScreenWidgetState extends State<LeadDetailsScreenWidget> {
                         alignment: AlignmentDirectional(0, -1),
                         child: FutureBuilder<ApiCallResponse>(
                           future: RimesApiGroup.leadCommentsCall.call(
-                            userId: 10,
+                            userId: FFAppState().userId,
                             subscriberId: 2,
                             id: widget.leadId,
                             accessTypeId: 2,

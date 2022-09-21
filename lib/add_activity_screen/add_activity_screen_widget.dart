@@ -9,7 +9,12 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddActivityScreenWidget extends StatefulWidget {
-  const AddActivityScreenWidget({Key? key}) : super(key: key);
+  const AddActivityScreenWidget({
+    Key? key,
+    this.typeName,
+  }) : super(key: key);
+
+  final String? typeName;
 
   @override
   _AddActivityScreenWidgetState createState() =>
@@ -41,7 +46,7 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
     super.initState();
     assignToTextFieldController = TextEditingController();
     reletedTextFieldController = TextEditingController();
-    typeTextFieldController1 = TextEditingController();
+    typeTextFieldController1 = TextEditingController(text: widget.typeName);
     dateTextFieldController =
         TextEditingController(text: dateTimeFormat('d/M/y', datePicked));
     typeTextFieldController2 = TextEditingController();
@@ -98,11 +103,11 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 24),
                       child: InkWell(
                         onTap: () async {
                           context.pushNamed(
-                            'LoockupSearchScreen',
+                            'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
                                   'Activity Type', ParamType.String),
@@ -202,64 +207,57 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '7rs15d4s' /* Pick To */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: Color(0xFF635656),
-                              fontSize: 16,
-                            ),
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        '7rs15d4s' /* Pick To */,
                       ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF635656),
+                            fontSize: 17,
+                          ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 31),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                       child: Container(
                         width: double.infinity,
                         height: 50,
                         decoration: BoxDecoration(
                           color: Color(0x00000001),
                         ),
-                        child: ListView(
-                          padding: EdgeInsets.zero,
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            FlutterFlowRadioButton(
-                              options: FFAppState().pickTo.toList(),
-                              onChanged: (value) {
-                                setState(() => radioButtonValue = value);
-                              },
-                              optionHeight: 40,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
+                        child: FlutterFlowRadioButton(
+                          options: FFAppState().pickTo.toList(),
+                          initialValue: FFLocalizations.of(context).getText(
+                            '2jth2lhu' /* [pickTo 0] */,
+                          ),
+                          onChanged: (value) {
+                            setState(() => radioButtonValue = value);
+                          },
+                          optionHeight: 40,
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
                                     color: Colors.black,
                                     fontSize: 16,
                                   ),
-                              selectedTextStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .customColor3,
-                                    fontSize: 16,
-                                  ),
-                              textPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 7, 15, 7),
-                              buttonPosition: RadioButtonPosition.left,
-                              direction: Axis.horizontal,
-                              radioButtonColor:
-                                  FlutterFlowTheme.of(context).customColor3,
-                              inactiveRadioButtonColor: Color(0x8A000000),
-                              toggleable: false,
-                              horizontalAlignment: WrapAlignment.start,
-                              verticalAlignment: WrapCrossAlignment.start,
-                            ),
-                          ],
+                          selectedTextStyle: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                fontSize: 16,
+                              ),
+                          textPadding:
+                              EdgeInsetsDirectional.fromSTEB(0, 7, 15, 7),
+                          buttonPosition: RadioButtonPosition.left,
+                          direction: Axis.vertical,
+                          radioButtonColor:
+                              FlutterFlowTheme.of(context).customColor3,
+                          inactiveRadioButtonColor: Color(0x8A000000),
+                          toggleable: false,
+                          horizontalAlignment: WrapAlignment.start,
+                          verticalAlignment: WrapCrossAlignment.start,
                         ),
                       ),
                     ),
@@ -371,7 +369,7 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                       child: InkWell(
                         onTap: () async {
                           context.pushNamed(
-                            'AllEmployeesSearchScreen',
+                            'LookuopAllEmployeesSearchScreen',
                             queryParams: {
                               'appBarTitle':
                                   serializeParam('Assign To', ParamType.String),
@@ -583,7 +581,7 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                       child: InkWell(
                         onTap: () async {
                           context.pushNamed(
-                            'LoockupSearchScreen',
+                            'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
                                   'Activity Status', ParamType.String),
@@ -770,9 +768,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                           onPressed: () async {
                             if (formKey.currentState == null ||
                                 !formKey.currentState!.validate()) {
-                              return;
-                            }
-                            if (radioButtonValue == null) {
                               return;
                             }
 

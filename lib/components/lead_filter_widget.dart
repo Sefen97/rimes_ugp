@@ -77,414 +77,481 @@ class _LeadFilterWidgetState extends State<LeadFilterWidget> {
                 ),
               ),
             ),
-            Container(
-              height: 80,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                    child: TextFormField(
-                      controller: contactTypeTextFieldController,
-                      readOnly: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          'y3jxbwxs' /* Contact Type */,
+            InkWell(
+              onTap: () async {
+                context.pushNamed(
+                  'LoockupCommonSearchScreen',
+                  queryParams: {
+                    'appBarTitle':
+                        serializeParam('Contact type', ParamType.String),
+                    'loockupId': serializeParam(10, ParamType.int),
+                    'subscribId': serializeParam(2, ParamType.int),
+                    'languageId': serializeParam(2, ParamType.int),
+                  }.withoutNulls,
+                );
+              },
+              child: Container(
+                height: 80,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: TextFormField(
+                        controller: contactTypeTextFieldController,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'y3jxbwxs' /* Contact Type */,
+                          ),
+                          hintText: FFLocalizations.of(context).getText(
+                            '21xvq7d6' /* Type of contact */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xFF757575),
+                            size: 22,
+                          ),
                         ),
-                        hintText: FFLocalizations.of(context).getText(
-                          '21xvq7d6' /* Type of contact */,
-                        ),
-                        hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        suffixIcon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xFF757575),
-                          size: 22,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0x00000001),
-                      border: Border.all(
+                    Container(
+                      width: double.infinity,
+                      height: 100,
+                      decoration: BoxDecoration(
                         color: Color(0x00000001),
+                        border: Border.all(
+                          color: Color(0x00000001),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            Container(
-              height: 80,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                    child: TextFormField(
-                      controller: ratingTextFieldController,
-                      readOnly: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          'r3sqhij0' /* Rating */,
+            InkWell(
+              onTap: () async {
+                context.pushNamed(
+                  'LoockupCommonSearchScreen',
+                  queryParams: {
+                    'appBarTitle': serializeParam('Rating', ParamType.String),
+                    'loockupId': serializeParam(65, ParamType.int),
+                    'subscribId': serializeParam(2, ParamType.int),
+                    'languageId': serializeParam(2, ParamType.int),
+                  }.withoutNulls,
+                );
+              },
+              child: Container(
+                height: 80,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: TextFormField(
+                        controller: ratingTextFieldController,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'r3sqhij0' /* Rating */,
+                          ),
+                          hintText: FFLocalizations.of(context).getText(
+                            '1cai98h2' /* Select */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xFF757575),
+                            size: 22,
+                          ),
                         ),
-                        hintText: FFLocalizations.of(context).getText(
-                          '1cai98h2' /* Select */,
-                        ),
-                        hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        suffixIcon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xFF757575),
-                          size: 22,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0x00000001),
-                      border: Border.all(
+                    Container(
+                      width: double.infinity,
+                      height: 100,
+                      decoration: BoxDecoration(
                         color: Color(0x00000001),
+                        border: Border.all(
+                          color: Color(0x00000001),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            Container(
-              height: 80,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                    child: TextFormField(
-                      controller: leadSourceTextFieldController,
-                      readOnly: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          'lmy4gm2i' /* Lead Source */,
+            InkWell(
+              onTap: () async {
+                context.pushNamed(
+                  'LoockupCommonSearchScreen',
+                  queryParams: {
+                    'appBarTitle':
+                        serializeParam('Lead Source', ParamType.String),
+                    'loockupId': serializeParam(24, ParamType.int),
+                    'subscribId': serializeParam(2, ParamType.int),
+                    'languageId': serializeParam(2, ParamType.int),
+                  }.withoutNulls,
+                );
+              },
+              child: Container(
+                height: 80,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: TextFormField(
+                        controller: leadSourceTextFieldController,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'lmy4gm2i' /* Lead Source */,
+                          ),
+                          hintText: FFLocalizations.of(context).getText(
+                            'wr8u8qcz' /* Select */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xFF757575),
+                            size: 22,
+                          ),
                         ),
-                        hintText: FFLocalizations.of(context).getText(
-                          'wr8u8qcz' /* Select */,
-                        ),
-                        hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        suffixIcon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xFF757575),
-                          size: 22,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0x00000001),
-                      border: Border.all(
+                    Container(
+                      width: double.infinity,
+                      height: 100,
+                      decoration: BoxDecoration(
                         color: Color(0x00000001),
+                        border: Border.all(
+                          color: Color(0x00000001),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            Container(
-              height: 80,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                    child: TextFormField(
-                      controller: assignToTextFieldController,
-                      readOnly: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          're6m1f6j' /* Assign To */,
+            InkWell(
+              onTap: () async {
+                context.pushNamed(
+                  'LookuopAllEmployeesSearchScreen',
+                  queryParams: {
+                    'appBarTitle':
+                        serializeParam('Assigned To', ParamType.String),
+                    'userId': serializeParam(10, ParamType.int),
+                  }.withoutNulls,
+                );
+              },
+              child: Container(
+                height: 80,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: TextFormField(
+                        controller: assignToTextFieldController,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            're6m1f6j' /* Assign To */,
+                          ),
+                          hintText: FFLocalizations.of(context).getText(
+                            'hzyo6n6f' /* Select */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xFF757575),
+                            size: 22,
+                          ),
                         ),
-                        hintText: FFLocalizations.of(context).getText(
-                          'hzyo6n6f' /* Select */,
-                        ),
-                        hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        suffixIcon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xFF757575),
-                          size: 22,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0x00000001),
-                      border: Border.all(
+                    Container(
+                      width: double.infinity,
+                      height: 100,
+                      decoration: BoxDecoration(
                         color: Color(0x00000001),
+                        border: Border.all(
+                          color: Color(0x00000001),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            Container(
-              height: 80,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                    child: TextFormField(
-                      controller: leadTypeTextFieldController,
-                      readOnly: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: FFLocalizations.of(context).getText(
-                          'ej056fx5' /* Lead Type */,
+            InkWell(
+              onTap: () async {
+                context.pushNamed(
+                  'LoockupCommonSearchScreen',
+                  queryParams: {
+                    'appBarTitle':
+                        serializeParam('Lead Type', ParamType.String),
+                    'loockupId': serializeParam(28, ParamType.int),
+                    'subscribId': serializeParam(2, ParamType.int),
+                    'languageId': serializeParam(2, ParamType.int),
+                  }.withoutNulls,
+                );
+              },
+              child: Container(
+                height: 80,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: TextFormField(
+                        controller: leadTypeTextFieldController,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'ej056fx5' /* Lead Type */,
+                          ),
+                          hintText: FFLocalizations.of(context).getText(
+                            'gi09g6cv' /* Select */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down,
+                            color: Color(0xFF757575),
+                            size: 22,
+                          ),
                         ),
-                        hintText: FFLocalizations.of(context).getText(
-                          'gi09g6cv' /* Select */,
-                        ),
-                        hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x210A0A0A),
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).customColor3,
-                            width: 2,
-                          ),
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(4.0),
-                            topRight: Radius.circular(4.0),
-                          ),
-                        ),
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        suffixIcon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Color(0xFF757575),
-                          size: 22,
-                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0x00000001),
-                      border: Border.all(
+                    Container(
+                      width: double.infinity,
+                      height: 100,
+                      decoration: BoxDecoration(
                         color: Color(0x00000001),
+                        border: Border.all(
+                          color: Color(0x00000001),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Padding(

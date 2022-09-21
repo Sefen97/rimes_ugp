@@ -67,7 +67,7 @@ class _ActivityDetailsScreenWidgetState
             child: FutureBuilder<ApiCallResponse>(
               future: RimesApiGroup.activityDetailsCall.call(
                 id: widget.id,
-                userId: 10,
+                userId: FFAppState().userId,
                 subscriberId: 2,
                 languageId: 2,
               ),

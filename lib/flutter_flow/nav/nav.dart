@@ -115,7 +115,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'AddActivityScreen',
               path: 'addActivityScreen',
-              builder: (context, params) => AddActivityScreenWidget(),
+              builder: (context, params) => AddActivityScreenWidget(
+                typeName: params.getParam('typeName', ParamType.String),
+              ),
             ),
             FFRoute(
               name: 'VerifyScreen',
@@ -125,9 +127,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'LoockupSearchScreen',
-              path: 'loockupSearchScreen',
-              builder: (context, params) => LoockupSearchScreenWidget(
+              name: 'LoockupCommonSearchScreen',
+              path: 'loockupCommonSearchScreen',
+              builder: (context, params) => LoockupCommonSearchScreenWidget(
                 appBarTitle: params.getParam('appBarTitle', ParamType.String),
                 loockupId: params.getParam('loockupId', ParamType.int),
                 subscribId: params.getParam('subscribId', ParamType.int),
@@ -151,11 +153,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'AllEmployeesSearchScreen',
-              path: 'allEmployeesSearchScreen',
-              builder: (context, params) => AllEmployeesSearchScreenWidget(
+              name: 'LookuopAllEmployeesSearchScreen',
+              path: 'lookuopAllEmployeesSearchScreen',
+              builder: (context, params) =>
+                  LookuopAllEmployeesSearchScreenWidget(
                 appBarTitle: params.getParam('appBarTitle', ParamType.String),
                 userId: params.getParam('userId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'SalesLeadSearchScreen',
+              path: 'salesLeadSearchScreen',
+              builder: (context, params) => SalesLeadSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                subscribId: params.getParam('subscribId', ParamType.int),
+                userId: params.getParam('userId', ParamType.int),
+                pageSize: params.getParam('pageSize', ParamType.int),
               ),
             ),
             FFRoute(

@@ -155,7 +155,7 @@ class _ActivityFilterBottomSheetWidgetState
                     InkWell(
                       onTap: () async {
                         context.pushNamed(
-                          'LoockupSearchScreen',
+                          'LoockupCommonSearchScreen',
                           queryParams: {
                             'appBarTitle': serializeParam(
                                 'Activity Type', ParamType.String),
@@ -182,7 +182,7 @@ class _ActivityFilterBottomSheetWidgetState
               InkWell(
                 onTap: () async {
                   context.pushNamed(
-                    'LoockupSearchScreen',
+                    'LoockupCommonSearchScreen',
                     queryParams: {
                       'appBarTitle':
                           serializeParam('Activity Status', ParamType.String),

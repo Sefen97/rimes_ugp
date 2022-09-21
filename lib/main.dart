@@ -101,8 +101,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'AdminDashboardScreen': AdminDashboardScreenWidget(),
       'ActivityScreen': ActivityScreenWidget(),
-      'UnitsScreen': UnitsScreenWidget(),
       'LeadsScreen': LeadsScreenWidget(),
+      'UnitsScreen': UnitsScreenWidget(),
       'MoreScreen': MoreScreenWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -115,7 +115,7 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-        selectedItemColor: Color(0xFF232D51),
+        selectedItemColor: FlutterFlowTheme.of(context).customColor3,
         unselectedItemColor: Color(0xFF959595),
         showSelectedLabels: true,
         showUnselectedLabels: true,
@@ -143,21 +143,21 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.content_paste_sharp,
-              size: 24,
-            ),
-            label: FFLocalizations.of(context).getText(
-              '87mrtb5i' /* Units */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.article_outlined,
               size: 24,
             ),
             label: FFLocalizations.of(context).getText(
               '0yt64aay' /* Leads */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.content_paste_sharp,
+              size: 24,
+            ),
+            label: FFLocalizations.of(context).getText(
+              '87mrtb5i' /* Units */,
             ),
             tooltip: '',
           ),

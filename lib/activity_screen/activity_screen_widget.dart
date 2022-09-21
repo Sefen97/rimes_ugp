@@ -680,7 +680,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(18, 24, 18, 10),
                   child: FutureBuilder<ApiCallResponse>(
                     future: RimesApiGroup.allActivityRequestCall.call(
-                      userId: 10,
+                      userId: FFAppState().userId,
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.

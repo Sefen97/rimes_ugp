@@ -7,23 +7,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PropertySearchScreenWidget extends StatefulWidget {
-  const PropertySearchScreenWidget({
+class SalesLeadSearchScreenWidget extends StatefulWidget {
+  const SalesLeadSearchScreenWidget({
     Key? key,
     this.appBarTitle,
-    this.id,
+    this.subscribId,
+    this.userId,
+    this.pageSize,
   }) : super(key: key);
 
   final String? appBarTitle;
-  final int? id;
+  final int? subscribId;
+  final int? userId;
+  final int? pageSize;
 
   @override
-  _PropertySearchScreenWidgetState createState() =>
-      _PropertySearchScreenWidgetState();
+  _SalesLeadSearchScreenWidgetState createState() =>
+      _SalesLeadSearchScreenWidgetState();
 }
 
-class _PropertySearchScreenWidgetState
-    extends State<PropertySearchScreenWidget> {
+class _SalesLeadSearchScreenWidgetState
+    extends State<SalesLeadSearchScreenWidget> {
   TextEditingController? textController;
 
   Completer<ApiCallResponse>? _apiRequestCompleter;
@@ -88,7 +92,7 @@ class _PropertySearchScreenWidgetState
                   decoration: InputDecoration(
                     isDense: true,
                     hintText: FFLocalizations.of(context).getText(
-                      'ro200so0' /* search */,
+                      'x7foek7v' /* search */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyText2,
                     enabledBorder: OutlineInputBorder(
@@ -149,11 +153,11 @@ class _PropertySearchScreenWidgetState
                     child: FutureBuilder<ApiCallResponse>(
                       future:
                           (_apiRequestCompleter ??= Completer<ApiCallResponse>()
-                                ..complete(RimesApiGroup.allPropertiesCall.call(
-                                  id: widget.id,
-                                  userId: FFAppState().userId,
-                                  pageSize: 100,
-                                  subscriberId: 2,
+                                ..complete(
+                                    RimesApiGroup.salesLeadRequestCall.call(
+                                  pageSize: widget.pageSize,
+                                  userId: widget.userId,
+                                  subscriberId: widget.subscribId,
                                 )))
                               .future,
                       builder: (context, snapshot) {
@@ -170,14 +174,14 @@ class _PropertySearchScreenWidgetState
                             ),
                           );
                         }
-                        final listViewAllPropertiesResponse = snapshot.data!;
+                        final listViewSalesLeadRequestResponse = snapshot.data!;
                         return Builder(
                           builder: (context) {
-                            final propertyResponse = getJsonField(
-                              listViewAllPropertiesResponse.jsonBody,
+                            final salesLeadResponse = getJsonField(
+                              listViewSalesLeadRequestResponse.jsonBody,
                               r'''$.result''',
                             ).toList().take(200).toList();
-                            if (propertyResponse.isEmpty) {
+                            if (salesLeadResponse.isEmpty) {
                               return Image.asset(
                                 'assets/images/noData.png',
                               );
@@ -191,10 +195,10 @@ class _PropertySearchScreenWidgetState
                               child: ListView.builder(
                                 padding: EdgeInsets.zero,
                                 scrollDirection: Axis.vertical,
-                                itemCount: propertyResponse.length,
-                                itemBuilder: (context, propertyResponseIndex) {
-                                  final propertyResponseItem =
-                                      propertyResponse[propertyResponseIndex];
+                                itemCount: salesLeadResponse.length,
+                                itemBuilder: (context, salesLeadResponseIndex) {
+                                  final salesLeadResponseItem =
+                                      salesLeadResponse[salesLeadResponseIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
@@ -233,8 +237,8 @@ class _PropertySearchScreenWidgetState
                                                       .fromSTEB(5, 0, 0, 0),
                                                   child: Text(
                                                     getJsonField(
-                                                      propertyResponseItem,
-                                                      r'''$.propertyCode''',
+                                                      salesLeadResponseItem,
+                                                      r'''$.employeeName''',
                                                     ).toString(),
                                                     style: FlutterFlowTheme.of(
                                                             context)

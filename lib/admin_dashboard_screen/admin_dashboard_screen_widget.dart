@@ -531,7 +531,7 @@ class _AdminDashboardScreenWidgetState
             padding: EdgeInsetsDirectional.fromSTEB(16, 10, 16, 16),
             child: FutureBuilder<ApiCallResponse>(
               future: RimesApiGroup.admainDashboardRequestCall.call(
-                userId: 10,
+                userId: FFAppState().userId,
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.

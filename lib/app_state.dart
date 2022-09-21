@@ -15,11 +15,10 @@ class FFAppState {
 
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
+    _userId = prefs.getInt('ff_userId') ?? _userId;
   }
 
   late SharedPreferences prefs;
-
-  String employeeId = '10';
 
   List<dynamic> activityList = [];
 
@@ -58,6 +57,15 @@ class FFAppState {
   List<int> pieChartLeadValue = [70, 20, 50];
 
   List<String> unitChoise = ['All', 'Rent', 'Sale'];
+
+  List<String> emptyList = [];
+
+  int _userId = 10;
+  int get userId => _userId;
+  set userId(int _value) {
+    _userId = _value;
+    prefs.setInt('ff_userId', _value);
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
