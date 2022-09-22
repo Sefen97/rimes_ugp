@@ -834,23 +834,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // UnitDetailsScreen
   {
-    '0e9z29zc': {
+    'vsemrqmi': {
       'en': 'Total Leads ',
       'ar': '',
     },
-    'ae96ed62': {
+    'mg0k936a': {
       'en': '0',
       'ar': '',
     },
-    '69sm4exn': {
+    'cqxc1lx6': {
       'en': 'Total Activity',
       'ar': '',
     },
-    '1wnq1ib4': {
+    'uiwdt346': {
       'en': '0',
       'ar': '',
     },
-    'vtiyvm81': {
+    '1i4qzxol': {
       'en': 'Attach File',
       'ar': '',
     },
@@ -1030,54 +1030,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Filter',
       'ar': 'منقي',
     },
-    '5clrlsb6': {
-      'en': 'Hello World',
-      'ar': '',
-    },
-    'ntgh108p': {
-      'en': 'Hello World',
-      'ar': '',
-    },
-    'm3wczttf': {
-      'en': 'Hello World',
-      'ar': '',
-    },
-    'mk0rvzif': {
-      'en': 'Hello World',
-      'ar': '',
-    },
-    '6av01s0g': {
-      'en': 'Username',
-      'ar': '',
-    },
-    '30qb5tvy': {
-      'en': 'username @gmail.com',
-      'ar': '',
-    },
-    '7ko65sqy': {
-      'en': 'My Account',
-      'ar': 'حسابي',
-    },
-    '3l6gpw4k': {
-      'en': 'Notifications',
-      'ar': 'إشعارات',
-    },
-    'q0pjllaj': {
-      'en': 'Language',
-      'ar': 'لغة',
-    },
-    'n4wp3pjt': {
-      'en': 'Change password',
-      'ar': 'غير كلمة السر',
-    },
-    'b0lzsjxv': {
-      'en': 'How it work',
-      'ar': 'كيف تعمل',
-    },
-    'md9ipxs8': {
-      'en': 'Logout',
-      'ar': 'تسجيل خروج',
-    },
     '59stgch3': {
       'en': 'All Contact',
       'ar': 'جميع الأنشطة',
@@ -1086,7 +1038,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' (10)',
       'ar': '(10)',
     },
-    'ke8nvbwo': {
+    'uucay5v6': {
       'en': 'Home',
       'ar': '',
     },
@@ -1279,7 +1231,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
     'it77x5za': {
-      'en': 'Please select...',
+      'en': 'Beadroom',
       'ar': '',
     },
     'p0wr95v3': {

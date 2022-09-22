@@ -149,11 +149,6 @@ class _ActivityFilterBottomSheetWidgetState
                           ),
                           contentPadding:
                               EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                          suffixIcon: Icon(
-                            Icons.arrow_drop_down,
-                            color: Color(0xFF757575),
-                            size: 22,
-                          ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1,
                       ),
@@ -261,11 +256,6 @@ class _ActivityFilterBottomSheetWidgetState
                             ),
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                            suffixIcon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Color(0xFF757575),
-                              size: 22,
-                            ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),

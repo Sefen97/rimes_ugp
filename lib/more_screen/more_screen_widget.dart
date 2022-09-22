@@ -29,30 +29,36 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Icon(
-                          Icons.phone,
-                          color: FlutterFlowTheme.of(context).customColor3,
-                          size: 25,
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'icm11ddj' /* Contact */,
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
+                  child: InkWell(
+                    onTap: () async {
+                      context.pushNamed('AllContactScreen');
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Icon(
+                            Icons.phone,
+                            color: FlutterFlowTheme.of(context).customColor3,
+                            size: 25,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'icm11ddj' /* Contact */,
+                              ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

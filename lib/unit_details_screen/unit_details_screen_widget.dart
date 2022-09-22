@@ -262,7 +262,10 @@ class _UnitDetailsScreenWidgetState extends State<UnitDetailsScreenWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(10, 0, 0, 0),
                                                 child: Text(
-                                                  'Total Leads ',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vsemrqmi' /* Total Leads  */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyText1
@@ -282,7 +285,11 @@ class _UnitDetailsScreenWidgetState extends State<UnitDetailsScreenWidget> {
                                                       MainAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      '0',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'mg0k936a' /* 0 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -324,7 +331,10 @@ class _UnitDetailsScreenWidgetState extends State<UnitDetailsScreenWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(10, 0, 0, 0),
                                                 child: Text(
-                                                  'Total Activity',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'cqxc1lx6' /* Total Activity */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyText1
@@ -344,7 +354,11 @@ class _UnitDetailsScreenWidgetState extends State<UnitDetailsScreenWidget> {
                                                       MainAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      '0',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'uiwdt346' /* 0 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -369,7 +383,10 @@ class _UnitDetailsScreenWidgetState extends State<UnitDetailsScreenWidget> {
                                                 size: 24,
                                               ),
                                               Text(
-                                                'Attach File',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '1i4qzxol' /* Attach File */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1

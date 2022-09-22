@@ -168,11 +168,6 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                             ),
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                            suffixIcon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Color(0xFF757575),
-                              size: 22,
-                            ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),
@@ -263,11 +258,6 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                             ),
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                            suffixIcon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Color(0xFF757575),
-                              size: 22,
-                            ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),
@@ -360,11 +350,6 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                             ),
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                            suffixIcon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Color(0xFF757575),
-                              size: 22,
-                            ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),
@@ -467,11 +452,6 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
-                                  suffixIcon: Icon(
-                                    Icons.arrow_drop_down,
-                                    color: Color(0xFF757575),
-                                    size: 22,
-                                  ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1,
                                 keyboardType: TextInputType.datetime,
@@ -561,11 +541,6 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  suffixIcon: Icon(
-                                    Icons.arrow_drop_down,
-                                    color: Color(0xFF757575),
-                                    size: 22,
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1,
@@ -660,11 +635,6 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                               ),
                               contentPadding:
                                   EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                              suffixIcon: Icon(
-                                Icons.arrow_drop_down,
-                                color: Color(0xFF757575),
-                                size: 22,
-                              ),
                             ),
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
@@ -1031,7 +1001,7 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
                                         color: Colors.black,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'it77x5za' /* Please select... */,
+                                    'it77x5za' /* Beadroom */,
                                   ),
                                   fillColor: Colors.white,
                                   elevation: 0,
