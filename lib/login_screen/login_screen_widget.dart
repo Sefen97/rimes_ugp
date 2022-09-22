@@ -15,14 +15,12 @@ class LoginScreenWidget extends StatefulWidget {
 }
 
 class _LoginScreenWidgetState extends State<LoginScreenWidget> {
+  ApiCallResponse? loginRespons;
   TextEditingController? textController1;
-
   TextEditingController? textController2;
 
   late bool passwordVisibility;
-
   bool? checkboxListTileValue;
-  ApiCallResponse? loginRespons;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -32,6 +30,13 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
     textController1 = TextEditingController();
     textController2 = TextEditingController();
     passwordVisibility = false;
+  }
+
+  @override
+  void dispose() {
+    textController1?.dispose();
+    textController2?.dispose();
+    super.dispose();
   }
 
   @override
@@ -307,11 +312,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                                 r'''$.result.status''',
                               )) {
                                 // Set employee id
-                                setState(() =>
-                                    FFAppState().employeeId = getJsonField(
-                                      (loginRespons?.jsonBody ?? ''),
-                                      r'''$.result.refreshToken.employeeId''',
-                                    ).toString());
+                                setState(
+                                    () => FFAppState().userId = getJsonField(
+                                          (loginRespons?.jsonBody ?? ''),
+                                          r'''$.result.refreshToken.employeeId''',
+                                        ));
                                 setState(
                                     () => FFAppState().userName = getJsonField(
                                           (loginRespons?.jsonBody ?? ''),
@@ -338,7 +343,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
 
                                 // Navigation
 
-                                context.pushNamed('Dashboard');
+                                context.pushNamed('AdminDashboardScreen');
                               } else {
                                 // Alert
                                 await showDialog(
@@ -392,7 +397,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: InkWell(
                             onTap: () async {
-                              context.pushNamed('ForgetPassword');
+                              context.pushNamed('ForgetPasswordScreen');
                             },
                             child: Text(
                               FFLocalizations.of(context).getText(

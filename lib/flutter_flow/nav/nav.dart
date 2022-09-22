@@ -31,11 +31,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, _) => appStateNotifier.showSplashImage
           ? Container(
               color: Colors.transparent,
-              child: Builder(
-                builder: (context) => Image.asset(
-                  'assets/images/Rims.png',
-                  fit: BoxFit.cover,
-                ),
+              child: Image.asset(
+                'assets/images/Rims.png',
+                fit: BoxFit.cover,
               ),
             )
           : LoginScreenWidget(),
@@ -46,19 +44,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Container(
                   color: Colors.transparent,
-                  child: Builder(
-                    builder: (context) => Image.asset(
-                      'assets/images/Rims.png',
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image.asset(
+                    'assets/images/Rims.png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : LoginScreenWidget(),
           routes: [
             FFRoute(
-              name: 'ForgetPassword',
-              path: 'forgetPassword',
-              builder: (context, params) => ForgetPasswordWidget(),
+              name: 'ForgetPasswordScreen',
+              path: 'forgetPasswordScreen',
+              builder: (context, params) => ForgetPasswordScreenWidget(),
             ),
             FFRoute(
               name: 'LoginScreen',
@@ -66,57 +62,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => LoginScreenWidget(),
             ),
             FFRoute(
-              name: 'Dashboard',
+              name: 'AdminDashboardScreen',
               path: 'home',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Dashboard')
-                  : DashboardWidget(),
+                  ? NavBarPage(initialPage: 'AdminDashboardScreen')
+                  : AdminDashboardScreenWidget(),
             ),
             FFRoute(
-              name: 'Activity',
-              path: 'activity',
+              name: 'ActivityScreen',
+              path: 'activityScreen',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Activity')
-                  : ActivityWidget(),
+                  ? NavBarPage(initialPage: 'ActivityScreen')
+                  : ActivityScreenWidget(),
             ),
             FFRoute(
-              name: 'Units',
-              path: 'units',
+              name: 'UnitsScreen',
+              path: 'unitsScreen',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Units')
-                  : UnitsWidget(),
+                  ? NavBarPage(initialPage: 'UnitsScreen')
+                  : UnitsScreenWidget(),
             ),
             FFRoute(
-              name: 'Leads',
-              path: 'leads',
+              name: 'LeadsScreen',
+              path: 'leadsScreen',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Leads')
-                  : LeadsWidget(),
+                  ? NavBarPage(initialPage: 'LeadsScreen')
+                  : LeadsScreenWidget(),
             ),
             FFRoute(
-              name: 'More',
-              path: 'more',
+              name: 'MoreScreen',
+              path: 'moreScreen',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'More')
-                  : MoreWidget(),
+                  ? NavBarPage(initialPage: 'MoreScreen')
+                  : MoreScreenWidget(),
             ),
             FFRoute(
-              name: 'ActivityDetails',
-              path: 'activityDetails',
-              builder: (context, params) => ActivityDetailsWidget(
-                activityType: params.getParam('activityType', ParamType.String),
-                status: params.getParam('status', ParamType.String),
+              name: 'ActivityDetailsScreen',
+              path: 'activityDetailsScreen',
+              builder: (context, params) => ActivityDetailsScreenWidget(
+                id: params.getParam('id', ParamType.int),
               ),
             ),
             FFRoute(
-              name: 'MyAccount',
-              path: 'myAccount',
-              builder: (context, params) => MyAccountWidget(),
+              name: 'MyAccountScreen',
+              path: 'myAccountScreen',
+              builder: (context, params) => MyAccountScreenWidget(),
             ),
             FFRoute(
-              name: 'AddActivity',
-              path: 'addActivity',
-              builder: (context, params) => AddActivityWidget(),
+              name: 'AddActivityScreen',
+              path: 'addActivityScreen',
+              builder: (context, params) => AddActivityScreenWidget(
+                typeName: params.getParam('typeName', ParamType.String),
+              ),
             ),
             FFRoute(
               name: 'VerifyScreen',
@@ -124,6 +121,87 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => VerifyScreenWidget(
                 emailAddress: params.getParam('emailAddress', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'LoockupCommonSearchScreen',
+              path: 'loockupCommonSearchScreen',
+              builder: (context, params) => LoockupCommonSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                loockupId: params.getParam('loockupId', ParamType.int),
+                subscribId: params.getParam('subscribId', ParamType.int),
+                languageId: params.getParam('languageId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'LeadDetailsScreen',
+              path: 'leadDetailsScreen',
+              builder: (context, params) => LeadDetailsScreenWidget(
+                leadName: params.getParam('leadName', ParamType.String),
+                leadId: params.getParam('leadId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'PropertySearchScreen',
+              path: 'propertySearchScreen',
+              builder: (context, params) => PropertySearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                id: params.getParam('id', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'LookuopAllEmployeesSearchScreen',
+              path: 'lookuopAllEmployeesSearchScreen',
+              builder: (context, params) =>
+                  LookuopAllEmployeesSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                userId: params.getParam('userId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'SalesLeadSearchScreen',
+              path: 'salesLeadSearchScreen',
+              builder: (context, params) => SalesLeadSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+                subscribId: params.getParam('subscribId', ParamType.int),
+                userId: params.getParam('userId', ParamType.int),
+                pageSize: params.getParam('pageSize', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'AddLeadScreen',
+              path: 'addLeadScreen',
+              builder: (context, params) => AddLeadScreenWidget(),
+            ),
+            FFRoute(
+              name: 'UnitDetailsScreen',
+              path: 'unitDetailsScreen',
+              builder: (context, params) => UnitDetailsScreenWidget(
+                id: params.getParam('id', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'AddUnitScreen',
+              path: 'addUnitScreen',
+              builder: (context, params) => AddUnitScreenWidget(),
+            ),
+            FFRoute(
+              name: 'PropertyMasterSearchScreen',
+              path: 'propertyMasterSearchScreen',
+              builder: (context, params) => PropertyMasterSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'AllContactSearchScreen',
+              path: 'allContactSearchScreen',
+              builder: (context, params) => AllContactSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'AllContactScreen',
+              path: 'allContactScreen',
+              builder: (context, params) => AllContactScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -265,6 +343,6 @@ class TransitionInfo {
   static TransitionInfo appDefault() => TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.rightToLeft,
-        duration: Duration(milliseconds: 300),
+        duration: Duration(milliseconds: 200),
       );
 }

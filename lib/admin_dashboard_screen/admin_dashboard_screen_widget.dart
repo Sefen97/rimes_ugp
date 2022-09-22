@@ -8,14 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({Key? key}) : super(key: key);
+class AdminDashboardScreenWidget extends StatefulWidget {
+  const AdminDashboardScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _DashboardWidgetState createState() => _DashboardWidgetState();
+  _AdminDashboardScreenWidgetState createState() =>
+      _AdminDashboardScreenWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget> {
+class _AdminDashboardScreenWidgetState
+    extends State<AdminDashboardScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -208,7 +210,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     0, 33, 10, 10),
                                 child: InkWell(
                                   onTap: () async {
-                                    context.pushNamed('MyAccount');
+                                    context.pushNamed('MyAccountScreen');
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -397,7 +399,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           ),
                                         );
                                       },
-                                    );
+                                    ).then((value) => setState(() {}));
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -529,7 +531,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(16, 10, 16, 16),
             child: FutureBuilder<ApiCallResponse>(
               future: RimesApiGroup.admainDashboardRequestCall.call(
-                userId: 10,
+                userId: FFAppState().userId,
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -539,7 +541,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                       width: 60,
                       height: 60,
                       child: SpinKitFadingCircle(
-                        color: FlutterFlowTheme.of(context).primaryColor,
+                        color: Color(0xFFDB1B1B),
                         size: 60,
                       ),
                     ),

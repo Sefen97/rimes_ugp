@@ -6,7 +6,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ActivityFilterBottomSheetWidget extends StatefulWidget {
-  const ActivityFilterBottomSheetWidget({Key? key}) : super(key: key);
+  const ActivityFilterBottomSheetWidget({
+    Key? key,
+    this.type,
+    this.activityStatus,
+  }) : super(key: key);
+
+  final String? type;
+  final String? activityStatus;
 
   @override
   _ActivityFilterBottomSheetWidgetState createState() =>
@@ -16,20 +23,28 @@ class ActivityFilterBottomSheetWidget extends StatefulWidget {
 class _ActivityFilterBottomSheetWidgetState
     extends State<ActivityFilterBottomSheetWidget> {
   TextEditingController? activityStatusTextFieldController;
-
-  TextEditingController? dateTextFieldController;
-
   TextEditingController? typTextFieldController;
-
-  TextEditingController? reletdTextFieldController;
 
   @override
   void initState() {
     super.initState();
-    activityStatusTextFieldController = TextEditingController();
-    dateTextFieldController = TextEditingController();
-    typTextFieldController = TextEditingController();
-    reletdTextFieldController = TextEditingController();
+    activityStatusTextFieldController = TextEditingController(
+        text: valueOrDefault<String>(
+      widget.activityStatus,
+      'Activity Status',
+    ));
+    typTextFieldController = TextEditingController(
+        text: valueOrDefault<String>(
+      widget.type,
+      'Type Here',
+    ));
+  }
+
+  @override
+  void dispose() {
+    activityStatusTextFieldController?.dispose();
+    typTextFieldController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -66,251 +81,201 @@ class _ActivityFilterBottomSheetWidgetState
                 padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                 child: Container(
                   width: 50,
-                  height: 4,
+                  height: 5,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).lineColor,
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                child: TextFormField(
-                  controller: typTextFieldController,
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: FFLocalizations.of(context).getText(
-                      'x1y4xxt3' /* Type */,
+              Container(
+                height: 80,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                      child: TextFormField(
+                        controller: typTextFieldController,
+                        autofocus: true,
+                        readOnly: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'x1y4xxt3' /* Type */,
+                          ),
+                          hintText: FFLocalizations.of(context).getText(
+                            'ufukrab5' /* Type Here */,
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x210A0A0A),
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).customColor3,
+                              width: 2,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          contentPadding:
+                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1,
+                      ),
                     ),
-                    hintText: FFLocalizations.of(context).getText(
-                      'ufukrab5' /* Type Here */,
-                    ),
-                    hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed(
+                          'LoockupCommonSearchScreen',
+                          queryParams: {
+                            'appBarTitle': serializeParam(
+                                'Activity Type', ParamType.String),
+                            'loockupId': serializeParam(2076, ParamType.int),
+                            'subscribId': serializeParam(2, ParamType.int),
+                            'languageId': serializeParam(2, ParamType.int),
+                          }.withoutNulls,
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Color(0x00000001),
+                          border: Border.all(
+                            color: Color(0x00000001),
+                          ),
+                        ),
                       ),
                     ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () async {
+                  context.pushNamed(
+                    'LoockupCommonSearchScreen',
+                    queryParams: {
+                      'appBarTitle':
+                          serializeParam('Activity Status', ParamType.String),
+                      'loockupId': serializeParam(2075, ParamType.int),
+                      'subscribId': serializeParam(2, ParamType.int),
+                      'languageId': serializeParam(2, ParamType.int),
+                    }.withoutNulls,
+                  );
+                },
+                child: Container(
+                  height: 80,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                        child: TextFormField(
+                          controller: activityStatusTextFieldController,
+                          autofocus: true,
+                          readOnly: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: FFLocalizations.of(context).getText(
+                              't1xwmc1z' /* Activity Status */,
+                            ),
+                            hintText: FFLocalizations.of(context).getText(
+                              'v25ntzij' /* Status */,
+                            ),
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            contentPadding:
+                                EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
                       ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
+                      Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Color(0x00000001),
+                          border: Border.all(
+                            color: Color(0x00000001),
+                          ),
+                        ),
                       ),
-                    ),
-                    contentPadding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    ],
                   ),
-                  style: FlutterFlowTheme.of(context).bodyText1,
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                child: TextFormField(
-                  controller: dateTextFieldController,
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: FFLocalizations.of(context).getText(
-                      'f4knb014' /* Date */,
-                    ),
-                    hintText: FFLocalizations.of(context).getText(
-                      'p5hdaw1r' /* Date Here */,
-                    ),
-                    hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    contentPadding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyText1,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                child: TextFormField(
-                  controller: activityStatusTextFieldController,
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: FFLocalizations.of(context).getText(
-                      't1xwmc1z' /* Activity Status */,
-                    ),
-                    hintText: FFLocalizations.of(context).getText(
-                      'v25ntzij' /* Status */,
-                    ),
-                    hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    contentPadding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyText1,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 48),
-                child: TextFormField(
-                  controller: reletdTextFieldController,
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: FFLocalizations.of(context).getText(
-                      'xj0czjum' /* Reletd To */,
-                    ),
-                    hintText: FFLocalizations.of(context).getText(
-                      'k3yltokx' /* All */,
-                    ),
-                    hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0x210A0A0A),
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).customColor3,
-                        width: 2,
-                      ),
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(4.0),
-                        topRight: Radius.circular(4.0),
-                      ),
-                    ),
-                    contentPadding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyText1,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -330,10 +295,7 @@ class _ActivityFilterBottomSheetWidgetState
                             child: FFButtonWidget(
                               onPressed: () async {
                                 setState(() {
-                                  typTextFieldController?.clear();
-                                  dateTextFieldController?.clear();
                                   activityStatusTextFieldController?.clear();
-                                  reletdTextFieldController?.clear();
                                 });
                                 Navigator.pop(context);
                               },

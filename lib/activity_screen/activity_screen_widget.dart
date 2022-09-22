@@ -9,22 +9,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityWidget extends StatefulWidget {
-  const ActivityWidget({Key? key}) : super(key: key);
+class ActivityScreenWidget extends StatefulWidget {
+  const ActivityScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _ActivityWidgetState createState() => _ActivityWidgetState();
+  _ActivityScreenWidgetState createState() => _ActivityScreenWidgetState();
 }
 
-class _ActivityWidgetState extends State<ActivityWidget> {
+class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
   TextEditingController? textController;
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -79,7 +84,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
             alignment: AlignmentDirectional(0, 0),
             child: InkWell(
               onTap: () async {
-                context.pushNamed('AddActivity');
+                context.pushNamed('AddActivityScreen');
               },
               child: Image.asset(
                 'assets/images/group_3445.png',
@@ -228,7 +233,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 33, 10, 10),
                               child: InkWell(
                                 onTap: () async {
-                                  context.pushNamed('MyAccount');
+                                  context.pushNamed('MyAccountScreen');
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -414,7 +419,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                                         ),
                                       );
                                     },
-                                  );
+                                  ).then((value) => setState(() {}));
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -630,7 +635,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                               child: ActivityFilterBottomSheetWidget(),
                             );
                           },
-                        );
+                        ).then((value) => setState(() {}));
                       },
                       child: Container(
                         width: 75,
@@ -680,7 +685,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(18, 24, 18, 10),
                   child: FutureBuilder<ApiCallResponse>(
                     future: RimesApiGroup.allActivityRequestCall.call(
-                      userId: 10,
+                      userId: FFAppState().userId,
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
@@ -690,7 +695,7 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                             width: 60,
                             height: 60,
                             child: SpinKitFadingCircle(
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color: Color(0xFFDB1B1B),
                               size: 60,
                             ),
                           ),
@@ -703,6 +708,11 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                             listViewAllActivityRequestResponse.jsonBody,
                             r'''$.result''',
                           ).toList().take(200).toList();
+                          if (allActivityItems.isEmpty) {
+                            return Image.asset(
+                              'assets/images/noData.png',
+                            );
+                          }
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             shrinkWrap: true,
@@ -714,20 +724,14 @@ class _ActivityWidgetState extends State<ActivityWidget> {
                               return InkWell(
                                 onTap: () async {
                                   context.pushNamed(
-                                    'ActivityDetails',
+                                    'ActivityDetailsScreen',
                                     queryParams: {
-                                      'activityType': serializeParam(
+                                      'id': serializeParam(
                                           getJsonField(
                                             allActivityItemsItem,
-                                            r'''$.typeName''',
-                                          ).toString(),
-                                          ParamType.String),
-                                      'status': serializeParam(
-                                          getJsonField(
-                                            allActivityItemsItem,
-                                            r'''$.activityStatusName''',
-                                          ).toString(),
-                                          ParamType.String),
+                                            r'''$.activityId''',
+                                          ),
+                                          ParamType.int),
                                     }.withoutNulls,
                                   );
                                 },

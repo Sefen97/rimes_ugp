@@ -15,11 +15,11 @@ class FFAppState {
 
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
+    _userId = prefs.getInt('ff_userId') ?? _userId;
+    _beadroom = prefs.getStringList('ff_beadroom') ?? _beadroom;
   }
 
   late SharedPreferences prefs;
-
-  String employeeId = '';
 
   List<dynamic> activityList = [];
 
@@ -58,6 +58,32 @@ class FFAppState {
   List<int> pieChartLeadValue = [70, 20, 50];
 
   List<String> unitChoise = ['All', 'Rent', 'Sale'];
+
+  List<String> emptyList = [];
+
+  int _userId = 10;
+  int get userId => _userId;
+  set userId(int _value) {
+    _userId = _value;
+    prefs.setInt('ff_userId', _value);
+  }
+
+  List<String> _beadroom = ['Stodio', '1', '2', '3', '4', '5', '6', '7', '8'];
+  List<String> get beadroom => _beadroom;
+  set beadroom(List<String> _value) {
+    _beadroom = _value;
+    prefs.setStringList('ff_beadroom', _value);
+  }
+
+  void addToBeadroom(String _value) {
+    _beadroom.add(_value);
+    prefs.setStringList('ff_beadroom', _beadroom);
+  }
+
+  void removeFromBeadroom(String _value) {
+    _beadroom.remove(_value);
+    prefs.setStringList('ff_beadroom', _beadroom);
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

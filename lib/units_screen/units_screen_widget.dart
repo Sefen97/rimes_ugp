@@ -1,33 +1,36 @@
 import '../backend/api_requests/api_calls.dart';
-import '../components/custom_bottom_sheet_widget.dart';
+import '../components/unit_filter_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LeadsWidget extends StatefulWidget {
-  const LeadsWidget({Key? key}) : super(key: key);
+class UnitsScreenWidget extends StatefulWidget {
+  const UnitsScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _LeadsWidgetState createState() => _LeadsWidgetState();
+  _UnitsScreenWidgetState createState() => _UnitsScreenWidgetState();
 }
 
-class _LeadsWidgetState extends State<LeadsWidget> {
-  TextEditingController? textController;
-
+class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
   String? radioButtonValue;
-  Completer<ApiCallResponse>? _apiRequestCompleter;
+  TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -57,11 +60,21 @@ class _LeadsWidgetState extends State<LeadsWidget> {
           children: [
             Text(
               FFLocalizations.of(context).getText(
-                'xg7pspv6' /* All Leads */,
+                'zs175pxp' /* All Units */,
               ),
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Poppins',
                     color: Color(0xFF5B5B5B),
+                    fontSize: 17,
+                  ),
+            ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'bphk5jnw' /*  (10) */,
+              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Poppins',
+                    color: Color(0xFFE11B33),
                     fontSize: 17,
                   ),
             ),
@@ -70,11 +83,16 @@ class _LeadsWidgetState extends State<LeadsWidget> {
         actions: [
           Align(
             alignment: AlignmentDirectional(0, 0),
-            child: Image.asset(
-              'assets/images/group_3445.png',
-              width: 90,
-              height: 60,
-              fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () async {
+                context.pushNamed('AddUnitScreen');
+              },
+              child: Image.asset(
+                'assets/images/group_3445.png',
+                width: 90,
+                height: 60,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],
@@ -147,7 +165,9 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                         ),
                                       ),
                                       Text(
-                                        FFAppState().userName,
+                                        FFLocalizations.of(context).getText(
+                                          'q9g69gow' /* Username */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
@@ -158,7 +178,9 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        FFAppState().email,
+                                        FFLocalizations.of(context).getText(
+                                          'n6tb3vxb' /* username @gmail.com */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
@@ -216,7 +238,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 33, 10, 10),
                               child: InkWell(
                                 onTap: () async {
-                                  context.pushNamed('MyAccount');
+                                  context.pushNamed('MyAccountScreen');
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -234,7 +256,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                           21, 0, 0, 0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'gc5qsfn6' /* My Account */,
+                                          'my6ka01k' /* My Account */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
@@ -267,7 +289,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                         21, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'ewzgdnrt' /* Notifications */,
+                                        'rewnpmyn' /* Notifications */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -299,7 +321,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                         15, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'gppitf4h' /* Language */,
+                                        'up350dfd' /* Language */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -371,7 +393,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                         15, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'zvs6frwl' /* Change password */,
+                                        'p7vvb21f' /* Change password */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -387,51 +409,33 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(1, 10, 10, 10),
-                              child: InkWell(
-                                onTap: () async {
-                                  showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.of(context).viewInsets,
-                                        child: CustomBottomSheetWidget(
-                                          meassage: 'It\'s Leads Screen',
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Image.asset(
-                                        'assets/images/iconly_bold_info_square.png',
-                                        height: 30,
-                                        fit: BoxFit.cover,
-                                      ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Image.asset(
+                                      'assets/images/iconly_bold_info_square.png',
+                                      height: 30,
+                                      fit: BoxFit.cover,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15, 0, 0, 0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'm11075be' /* How it work */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF5B5B5B),
-                                            ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        15, 0, 0, 0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'qk6xoos3' /* How it work */,
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF5B5B5B),
+                                          ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             Padding(
@@ -488,7 +492,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                           15, 0, 0, 0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'fcevwame' /* Logout */,
+                                          'gflrxg6t' /* Logout */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
@@ -529,9 +533,9 @@ class _LeadsWidgetState extends State<LeadsWidget> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 8),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -539,14 +543,17 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                   child: FlutterFlowRadioButton(
                     options: [
                       FFLocalizations.of(context).getText(
-                        'hlq749i9' /* Rent */,
+                        'fu9329vu' /* All */,
                       ),
                       FFLocalizations.of(context).getText(
-                        'tmg1lmed' /* Sale */,
+                        'gx44hgks' /* Rent */,
+                      ),
+                      FFLocalizations.of(context).getText(
+                        'mpof57ii' /* Sale */,
                       )
                     ].toList(),
                     initialValue: FFLocalizations.of(context).getText(
-                      'y9vul0et' /* Rent */,
+                      '09j9uje7' /* All */,
                     ),
                     onChanged: (value) {
                       setState(() => radioButtonValue = value);
@@ -574,7 +581,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -593,7 +600,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                             decoration: InputDecoration(
                               isDense: true,
                               hintText: FFLocalizations.of(context).getText(
-                                'fslpxl8x' /* search */,
+                                'fsysjefq' /* search */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context).bodyText2,
                               enabledBorder: OutlineInputBorder(
@@ -649,43 +656,58 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
-                        child: Container(
-                          width: 75,
-                          height: 46,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF140D4D),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'yb30f34e' /* Filter */,
+                        child: InkWell(
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: UnitFilterWidget(),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
+                          },
+                          child: Container(
+                            width: 75,
+                            height: 46,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF140D4D),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5, 0, 0, 0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'rixyta66' /* Filter */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBtnText,
+                                        ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                      ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                                child: Icon(
-                                  Icons.filter_alt_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
-                                  size: 24,
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5, 0, 0, 0),
+                                  child: Icon(
+                                    Icons.filter_alt_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    size: 24,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -694,14 +716,12 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                 ),
                 Expanded(
                   child: FutureBuilder<ApiCallResponse>(
-                    future:
-                        (_apiRequestCompleter ??= Completer<ApiCallResponse>()
-                              ..complete(RimesApiGroup.allLeadsCall.call(
-                                pageSize: 15,
-                                userId: 10,
-                                subscriberId: 2,
-                              )))
-                            .future,
+                    future: RimesApiGroup.allPropertiesCall.call(
+                      id: 0,
+                      userId: FFAppState().userId,
+                      pageSize: 100,
+                      subscriberId: 2,
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -710,35 +730,49 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                             width: 60,
                             height: 60,
                             child: SpinKitFadingCircle(
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color: Color(0xFFDB1B1B),
                               size: 60,
                             ),
                           ),
                         );
                       }
-                      final listViewAllLeadsResponse = snapshot.data!;
+                      final listViewAllPropertiesResponse = snapshot.data!;
                       return Builder(
                         builder: (context) {
-                          final allLeadsItem = getJsonField(
-                            listViewAllLeadsResponse.jsonBody,
+                          final allUnitsResponse = getJsonField(
+                            listViewAllPropertiesResponse.jsonBody,
                             r'''$.result''',
-                          ).toList().take(200).toList();
-                          return RefreshIndicator(
-                            onRefresh: () async {
-                              setState(() => _apiRequestCompleter = null);
-                              await waitForApiRequestCompleter();
-                            },
-                            child: ListView.builder(
-                              padding: EdgeInsets.zero,
-                              shrinkWrap: true,
-                              scrollDirection: Axis.vertical,
-                              itemCount: allLeadsItem.length,
-                              itemBuilder: (context, allLeadsItemIndex) {
-                                final allLeadsItemItem =
-                                    allLeadsItem[allLeadsItemIndex];
-                                return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 10, 5, 5),
+                          ).toList().take(500).toList();
+                          if (allUnitsResponse.isEmpty) {
+                            return Image.asset(
+                              'assets/images/noData.png',
+                            );
+                          }
+                          return ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: allUnitsResponse.length,
+                            itemBuilder: (context, allUnitsResponseIndex) {
+                              final allUnitsResponseItem =
+                                  allUnitsResponse[allUnitsResponseIndex];
+                              return Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(5, 10, 5, 5),
+                                child: InkWell(
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'UnitDetailsScreen',
+                                      queryParams: {
+                                        'id': serializeParam(
+                                            getJsonField(
+                                              allUnitsResponseItem,
+                                              r'''$.propertyId''',
+                                            ),
+                                            ParamType.int),
+                                      }.withoutNulls,
+                                    );
+                                  },
                                   child: Material(
                                     color: Colors.transparent,
                                     elevation: 2,
@@ -747,7 +781,7 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                     ),
                                     child: Container(
                                       width: 100,
-                                      height: 180,
+                                      height: 150,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFF3F3F3),
                                         borderRadius: BorderRadius.circular(5),
@@ -763,8 +797,8 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                                     16, 7, 0, 0),
                                             child: Text(
                                               getJsonField(
-                                                allLeadsItemItem,
-                                                r'''$.code''',
+                                                allUnitsResponseItem,
+                                                r'''$.propertyCode''',
                                               ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -828,8 +862,8 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                                               children: [
                                                                 Text(
                                                                   getJsonField(
-                                                                    allLeadsItemItem,
-                                                                    r'''$.employeeName''',
+                                                                    allUnitsResponseItem,
+                                                                    r'''$.propertyTypeName''',
                                                                   ).toString(),
                                                                   textAlign:
                                                                       TextAlign
@@ -842,56 +876,13 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0,
-                                                                          19,
-                                                                          0,
-                                                                          0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: 76,
-                                                                    height: 30,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFFCB367),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              20),
-                                                                    ),
-                                                                    child:
-                                                                        Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'iucgyh33' /* unit type */,
-                                                                        ),
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
                                                                           13,
                                                                           0,
                                                                           0),
                                                                   child: Text(
                                                                     getJsonField(
-                                                                      allLeadsItemItem,
-                                                                      r'''$.contactName''',
+                                                                      allUnitsResponseItem,
+                                                                      r'''$.cityName''',
                                                                     ).toString(),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -930,11 +921,10 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                                                       .center,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2ceeyl6i' /* Status  */,
-                                                                  ),
+                                                                  getJsonField(
+                                                                    allUnitsResponseItem,
+                                                                    r'''$.statusName''',
+                                                                  ).toString(),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .start,
@@ -947,29 +937,6 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                                                         color: Color(
                                                                             0xFFE11B33),
                                                                       ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
-                                                                          20,
-                                                                          0,
-                                                                          0),
-                                                                  child: Text(
-                                                                    getJsonField(
-                                                                      allLeadsItemItem,
-                                                                      r'''$.contactTypeName''',
-                                                                    ).toString(),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              Color(0xFFAAAAAA),
-                                                                        ),
-                                                                  ),
                                                                 ),
                                                               ],
                                                             ),
@@ -986,9 +953,9 @@ class _LeadsWidgetState extends State<LeadsWidget> {
                                       ),
                                     ),
                                   ),
-                                );
-                              },
-                            ),
+                                ),
+                              );
+                            },
                           );
                         },
                       );
@@ -1001,20 +968,5 @@ class _LeadsWidgetState extends State<LeadsWidget> {
         ),
       ),
     );
-  }
-
-  Future waitForApiRequestCompleter({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = _apiRequestCompleter?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
   }
 }

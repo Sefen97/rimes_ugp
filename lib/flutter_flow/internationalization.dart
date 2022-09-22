@@ -49,7 +49,7 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // ForgetPassword
+  // ForgetPasswordScreen
   {
     'pd1p6aja': {
       'en': 'Forgot your password?',
@@ -127,7 +127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // Dashboard
+  // AdminDashboardScreen
   {
     'dax1mh3h': {
       'en': 'Dashboard',
@@ -198,7 +198,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // Activity
+  // ActivityScreen
   {
     '1u0v4et1': {
       'en': 'All Activites',
@@ -245,7 +245,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'نشاط',
     },
   },
-  // Units
+  // UnitsScreen
   {
     'zs175pxp': {
       'en': 'All Units',
@@ -255,28 +255,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' (10)',
       'ar': '(10)',
     },
+    '09j9uje7': {
+      'en': 'All',
+      'ar': 'تأجير',
+    },
+    'fu9329vu': {
+      'en': 'All',
+      'ar': 'تأجير',
+    },
+    'gx44hgks': {
+      'en': 'Rent',
+      'ar': 'تخفيض السعر',
+    },
+    'mpof57ii': {
+      'en': 'Sale',
+      'ar': '',
+    },
+    'fsysjefq': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'rixyta66': {
+      'en': 'Filter',
+      'ar': 'منقي',
+    },
+    'q9g69gow': {
+      'en': 'Username',
+      'ar': '',
+    },
+    'n6tb3vxb': {
+      'en': 'username @gmail.com',
+      'ar': '',
+    },
+    'my6ka01k': {
+      'en': 'My Account',
+      'ar': 'حسابي',
+    },
+    'rewnpmyn': {
+      'en': 'Notifications',
+      'ar': 'إشعارات',
+    },
+    'up350dfd': {
+      'en': 'Language',
+      'ar': 'لغة',
+    },
+    'p7vvb21f': {
+      'en': 'Change password',
+      'ar': 'غير كلمة السر',
+    },
+    'qk6xoos3': {
+      'en': 'How it work',
+      'ar': 'كيف تعمل',
+    },
+    'gflrxg6t': {
+      'en': 'Logout',
+      'ar': 'تسجيل خروج',
+    },
     '87mrtb5i': {
       'en': 'Units',
       'ar': 'الوحدات',
     },
   },
-  // Leads
+  // LeadsScreen
   {
     'xg7pspv6': {
       'en': 'All Leads',
       'ar': 'كل العملاء المتوقعين',
-    },
-    'y9vul0et': {
-      'en': 'Rent',
-      'ar': 'تأجير',
-    },
-    'hlq749i9': {
-      'en': 'Rent',
-      'ar': 'تأجير',
-    },
-    'tmg1lmed': {
-      'en': 'Sale',
-      'ar': 'تخفيض السعر',
     },
     'fslpxl8x': {
       'en': 'search',
@@ -323,80 +367,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يؤدي',
     },
   },
-  // More
+  // MoreScreen
   {
+    'icm11ddj': {
+      'en': 'Contact',
+      'ar': '',
+    },
+    'h90dm300': {
+      'en': 'Properites',
+      'ar': '',
+    },
     'h25m206f': {
       'en': 'More',
       'ar': 'أكثر',
     },
   },
-  // ActivityDetails
+  // ActivityDetailsScreen
   {
     '8mygmwfr': {
       'en': ' Activity Details',
       'ar': 'تفاصيل النشاط',
-    },
-    'zhb6s965': {
-      'en': 'change',
-      'ar': 'يتغيرون',
-    },
-    'xwkxhrc4': {
-      'en': 'Comments ',
-      'ar': 'تعليقات',
-    },
-    'payz4gjk': {
-      'en': '(3)',
-      'ar': '(3)',
-    },
-    'zoy1mlf0': {
-      'en': 'Add Comment',
-      'ar': 'أضف تعليق',
-    },
-    'xlr8wyhr': {
-      'en': 'Name',
-      'ar': 'اسم',
-    },
-    'd27l7sm7': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    'azgjwx8l': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    '2s479f0p': {
-      'en': 'Name 2',
-      'ar': 'الاسم 2',
-    },
-    'q0rczkoi': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    'f29v7bhl': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
-    },
-    'b6o3ste6': {
-      'en': 'Name 3',
-      'ar': 'الاسم 3',
-    },
-    '0qjwsjz1': {
-      'en': '9-5-2021 5:30 PM',
-      'ar': '9-5-2021 5:30 مساءً',
-    },
-    '6ab8kc6y': {
-      'en':
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'ar': 'لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعة الطباعة والتنضيد',
     },
     'r9vb0syt': {
       'en': 'Home',
       'ar': 'مسكن',
     },
   },
-  // MyAccount
+  // MyAccountScreen
   {
     'lh58zepi': {
       'en': 'My Account',
@@ -427,7 +424,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // AddActivity
+  // AddActivityScreen
   {
     'ifysoqeu': {
       'en': 'Type',
@@ -437,21 +434,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Type Here',
       'ar': 'أكتب هنا',
     },
+    '7rs15d4s': {
+      'en': 'Pick To',
+      'ar': 'اختر',
+    },
+    '2jth2lhu': {
+      'en': '[pickTo 0]',
+      'ar': '[اختيار 0]',
+    },
+    'h108y2y1': {
+      'en': 'Unit',
+      'ar': 'وحدة',
+    },
+    'drhls8ul': {
+      'en': 'Related',
+      'ar': 'يكتب',
+    },
+    'ib91xmq5': {
+      'en': 'Releted To',
+      'ar': 'أكتب هنا',
+    },
     'ge2g2f9h': {
       'en': 'Assign To',
       'ar': 'يسند إلى',
     },
     'z0w8h7ak': {
-      'en': 'Name of contact',
+      'en': 'Assign To',
       'ar': 'اسم جهة الاتصال',
-    },
-    'ebgs0p1n': {
-      'en': 'Date',
-      'ar': 'تاريخ',
-    },
-    'af0ilssx': {
-      'en': 'Date',
-      'ar': 'تاريخ',
     },
     'fdzu8scv': {
       'en': 'Activity Status',
@@ -460,18 +469,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'olu0vq5o': {
       'en': 'Status',
       'ar': 'حالة',
-    },
-    '7rs15d4s': {
-      'en': 'Pick To',
-      'ar': 'اختر',
-    },
-    'ylbcyuoj': {
-      'en': '[pickTo 0]',
-      'ar': '[اختيار 0]',
-    },
-    's7xg3yev': {
-      'en': 'Unit',
-      'ar': 'وحدة',
     },
     '0rlk6ga0': {
       'en': 'Remark',
@@ -493,6 +490,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
+    'u7ttxbjh': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'kn45luil': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
     'sueo80sq': {
       'en': 'Field is required',
       'ar': 'الحقل مطلوب',
@@ -501,13 +506,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
-    '8ihdtadm': {
+    'obfzc1lh': {
       'en': 'Field is required',
-      'ar': 'الحقل مطلوب',
+      'ar': '',
     },
-    'dobo1ur1': {
+    'ajwu3045': {
       'en': 'Please choose an option from the dropdown',
-      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'ar': '',
     },
     '8km4dde6': {
       'en': 'Field is required',
@@ -557,6 +562,487 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // LoockupCommonSearchScreen
+  {
+    'uu1567j9': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'xzp0mkpx': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // LeadDetailsScreen
+  {
+    'nzbl7tbt': {
+      'en': 'Lead Details',
+      'ar': 'تفاصيل النشاط',
+    },
+    'kdgongdg': {
+      'en': 'Comments ',
+      'ar': 'تعليقات',
+    },
+    'j72pgy9r': {
+      'en': '(3)',
+      'ar': '(3)',
+    },
+    'v6banz4y': {
+      'en': 'Add Comment',
+      'ar': 'أضف تعليق',
+    },
+    'oltdodfv': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // PropertySearchScreen
+  {
+    'ro200so0': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'rwz0d5ix': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // LookuopAllEmployeesSearchScreen
+  {
+    'cs8qpuyy': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'aq86uunt': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // SalesLeadSearchScreen
+  {
+    'x7foek7v': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'wiz0kpmk': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AddLeadScreen
+  {
+    '25lqyfwu': {
+      'en': 'Add a new lead',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'dxxoi6eo': {
+      'en': 'Rent',
+      'ar': 'تأجير',
+    },
+    'duidywgl': {
+      'en': 'Rent',
+      'ar': 'تأجير',
+    },
+    'jr5fvejb': {
+      'en': 'Sale',
+      'ar': 'تخفيض السعر',
+    },
+    'k53j0ga9': {
+      'en': 'Contact',
+      'ar': 'يكتب',
+    },
+    'tm0if34f': {
+      'en': 'Contact',
+      'ar': 'أكتب هنا',
+    },
+    'osl3vnxd': {
+      'en': 'Lead Status',
+      'ar': 'يكتب',
+    },
+    '75n5kgml': {
+      'en': 'Lead Status',
+      'ar': 'أكتب هنا',
+    },
+    'q9aj966x': {
+      'en': 'Unit',
+      'ar': 'يكتب',
+    },
+    'v9x0u3dd': {
+      'en': 'Unit',
+      'ar': 'أكتب هنا',
+    },
+    '4rjqxdal': {
+      'en': 'City',
+      'ar': 'يكتب',
+    },
+    'aymrjtvt': {
+      'en': 'City',
+      'ar': 'أكتب هنا',
+    },
+    'jz7kmvm6': {
+      'en': 'Community',
+      'ar': 'يكتب',
+    },
+    '35x2pb87': {
+      'en': 'Community',
+      'ar': 'أكتب هنا',
+    },
+    'ejkmdhqt': {
+      'en': 'Sub Community',
+      'ar': 'يكتب',
+    },
+    '30hv7tl2': {
+      'en': 'Sub Community',
+      'ar': 'أكتب هنا',
+    },
+    '1v9pbm80': {
+      'en': 'Rate',
+      'ar': 'يكتب',
+    },
+    'lguaaibh': {
+      'en': 'Rate',
+      'ar': 'أكتب هنا',
+    },
+    'hb95sd6y': {
+      'en': 'Piriorty',
+      'ar': 'يكتب',
+    },
+    '3s00l1n2': {
+      'en': 'Piriorty',
+      'ar': 'أكتب هنا',
+    },
+    'uvmpimkd': {
+      'en': 'Lead Source',
+      'ar': 'يكتب',
+    },
+    'dw1psfli': {
+      'en': 'Lead Source',
+      'ar': 'أكتب هنا',
+    },
+    'prdwmitv': {
+      'en': 'Assigment',
+      'ar': 'يكتب',
+    },
+    'btv3wgdj': {
+      'en': 'Assigment',
+      'ar': 'أكتب هنا',
+    },
+    'jnc8ytl6': {
+      'en': 'Contact',
+      'ar': 'يكتب',
+    },
+    'o92lq1pd': {
+      'en': 'Contact',
+      'ar': 'أكتب هنا',
+    },
+    'zfgc9m8s': {
+      'en': 'Add',
+      'ar': 'يضيف',
+    },
+    'mkfkc62q': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'cyhyhazx': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'led6rzpn': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '4ocfppy1': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'qx7z2p5q': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'x0j0n810': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'az8qdgtb': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '8d82w17t': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'yhcmcmh6': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'utfslz94': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '6o21jtbo': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '7ra1wvl6': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'q1h9dr4g': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'o2eodtxj': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'ct0a75ld': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'unmip5ar': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'y7plyo0e': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'ghhzg9kg': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '8ulyt8cy': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'l4me8jhl': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'fc4x5mg4': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'df9v3ikz': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'imwdwyck': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // UnitDetailsScreen
+  {
+    'vsemrqmi': {
+      'en': 'Total Leads ',
+      'ar': '',
+    },
+    'mg0k936a': {
+      'en': '0',
+      'ar': '',
+    },
+    'cqxc1lx6': {
+      'en': 'Total Activity',
+      'ar': '',
+    },
+    'uiwdt346': {
+      'en': '0',
+      'ar': '',
+    },
+    '1i4qzxol': {
+      'en': 'Attach File',
+      'ar': '',
+    },
+    'sbxgd2xz': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AddUnitScreen
+  {
+    'w8z6cfba': {
+      'en': 'Sale',
+      'ar': 'تأجير',
+    },
+    'wcnofidv': {
+      'en': 'Sale',
+      'ar': 'تأجير',
+    },
+    '6wqfm5kx': {
+      'en': 'Rent',
+      'ar': 'تخفيض السعر',
+    },
+    '6okik1g1': {
+      'en': 'Property',
+      'ar': 'يكتب',
+    },
+    '7mr0fbwm': {
+      'en': 'Property',
+      'ar': 'أكتب هنا',
+    },
+    'tfdute34': {
+      'en': 'Owner',
+      'ar': 'يكتب',
+    },
+    '06g2e5sv': {
+      'en': 'Owner',
+      'ar': 'أكتب هنا',
+    },
+    'kw0dxt4y': {
+      'en': 'Category',
+      'ar': 'يكتب',
+    },
+    'au56w32s': {
+      'en': 'Category',
+      'ar': 'أكتب هنا',
+    },
+    'st8ucruu': {
+      'en': 'Total Area',
+      'ar': 'تاريخ',
+    },
+    'y2jennjg': {
+      'en': 'Total Area',
+      'ar': 'تاريخ',
+    },
+    'x6ynxds9': {
+      'en': 'Price',
+      'ar': 'تاريخ',
+    },
+    'v036mqk4': {
+      'en': 'Price',
+      'ar': 'تاريخ',
+    },
+    'ezz391xn': {
+      'en': 'City',
+      'ar': 'يكتب',
+    },
+    'r4wnag30': {
+      'en': 'City',
+      'ar': 'أكتب هنا',
+    },
+    'ilm9ghuq': {
+      'en': 'Community',
+      'ar': 'يكتب',
+    },
+    'bl69s7nd': {
+      'en': 'Community',
+      'ar': 'أكتب هنا',
+    },
+    'u37yawp1': {
+      'en': 'Add',
+      'ar': 'يضيف',
+    },
+    '70njs4jp': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'suma2sf1': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'o2bclex8': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '9zeugxal': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'zbgqqg21': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '4nwxqah4': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '8jtj50ce': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'm6io4mua': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '7qhdn0o8': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    't5q1awvc': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'x4gzwctp': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'jkw3f3hh': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'ji981fto': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '1lq69oap': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'a36ixavv': {
+      'en': 'Add New Unit',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'pu60nk1h': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // PropertyMasterSearchScreen
+  {
+    '9sas7zey': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'oueee1lb': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllContactSearchScreen
+  {
+    'f8ft43pm': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'm7z91huf': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllContactScreen
+  {
+    '9wd8bm8n': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'd2qzkmgi': {
+      'en': 'Filter',
+      'ar': 'منقي',
+    },
+    '59stgch3': {
+      'en': 'All Contact',
+      'ar': 'جميع الأنشطة',
+    },
+    'mmta81iv': {
+      'en': ' (10)',
+      'ar': '(10)',
+    },
+    'uucay5v6': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // CustomBottomSheet
   {
     'jaaxdoyw': {
@@ -574,14 +1060,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Type Here',
       'ar': 'أكتب هنا',
     },
-    'f4knb014': {
-      'en': 'Date',
-      'ar': 'تاريخ',
-    },
-    'p5hdaw1r': {
-      'en': 'Date Here',
-      'ar': 'التاريخ هنا',
-    },
     't1xwmc1z': {
       'en': 'Activity Status',
       'ar': 'حالة النشاط',
@@ -589,14 +1067,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'v25ntzij': {
       'en': 'Status',
       'ar': 'حالة',
-    },
-    'xj0czjum': {
-      'en': 'Reletd To',
-      'ar': 'إعادة إلى',
-    },
-    'k3yltokx': {
-      'en': 'All',
-      'ar': 'الجميع',
     },
     '4e8j1n63': {
       'en': 'Reset',
@@ -607,7 +1077,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يتقدم',
     },
   },
-  // AddCommentBottomSheet
+  // AddLeadCommentBottomSheet
   {
     'w5e46ize': {
       'en': 'Add comment',
@@ -620,6 +1090,240 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'nkg8hh9g': {
       'en': 'Add',
       'ar': 'يضيف',
+    },
+  },
+  // LeadFilter
+  {
+    'y3jxbwxs': {
+      'en': 'Contact Type',
+      'ar': 'يكتب',
+    },
+    '21xvq7d6': {
+      'en': 'Type of contact',
+      'ar': 'أكتب هنا',
+    },
+    'r3sqhij0': {
+      'en': 'Rating',
+      'ar': 'حالة النشاط',
+    },
+    '1cai98h2': {
+      'en': 'Select',
+      'ar': 'حالة',
+    },
+    'lmy4gm2i': {
+      'en': 'Lead Source',
+      'ar': 'يكتب',
+    },
+    'wr8u8qcz': {
+      'en': 'Select',
+      'ar': 'أكتب هنا',
+    },
+    're6m1f6j': {
+      'en': 'Assign To',
+      'ar': 'يكتب',
+    },
+    'hzyo6n6f': {
+      'en': 'Select',
+      'ar': 'أكتب هنا',
+    },
+    'ej056fx5': {
+      'en': 'Lead Type',
+      'ar': 'يكتب',
+    },
+    'gi09g6cv': {
+      'en': 'Select',
+      'ar': 'أكتب هنا',
+    },
+    'z8ozwg5n': {
+      'en': 'Reset',
+      'ar': 'إعادة ضبط',
+    },
+    '3dbmdyvc': {
+      'en': 'Apply',
+      'ar': 'يتقدم',
+    },
+  },
+  // CityBottomSheet
+  {
+    '4h94h22z': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'ovhvs5wv': {
+      'en': 'Cities',
+      'ar': '',
+    },
+  },
+  // CommunityMobileBottomSheet
+  {
+    'o5hvtdj5': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    '818k13ud': {
+      'en': 'Community',
+      'ar': '',
+    },
+  },
+  // SubCommunityBottomSheet
+  {
+    'o96m3yn8': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    '0bbb8dfw': {
+      'en': 'Sub Community',
+      'ar': '',
+    },
+  },
+  // UnitFilter
+  {
+    'cwyr24n0': {
+      'en': 'Availibalty',
+      'ar': 'يكتب',
+    },
+    '23vm3jex': {
+      'en': 'Availibalty',
+      'ar': 'أكتب هنا',
+    },
+    'hk6mj4jy': {
+      'en': 'Property Master',
+      'ar': 'حالة النشاط',
+    },
+    'c1xgtzh0': {
+      'en': 'Property Master',
+      'ar': 'حالة',
+    },
+    'jy5w1tln': {
+      'en': 'Type',
+      'ar': 'يكتب',
+    },
+    'ciiaak6c': {
+      'en': 'Type',
+      'ar': 'أكتب هنا',
+    },
+    'd0t9aiu9': {
+      'en': 'City',
+      'ar': 'تاريخ',
+    },
+    '1grdr3cb': {
+      'en': 'City',
+      'ar': 'تاريخ',
+    },
+    'yas6ug0g': {
+      'en': 'Category',
+      'ar': 'تاريخ',
+    },
+    'watyywn1': {
+      'en': 'Category',
+      'ar': 'تاريخ',
+    },
+    'jkfgtvw2': {
+      'en': 'Status',
+      'ar': 'يكتب',
+    },
+    'x7t4w2kb': {
+      'en': 'Status',
+      'ar': 'أكتب هنا',
+    },
+    'se94cu5z': {
+      'en': 'Option 1',
+      'ar': '',
+    },
+    'it77x5za': {
+      'en': 'Beadroom',
+      'ar': '',
+    },
+    'p0wr95v3': {
+      'en': 'Reset',
+      'ar': 'إعادة ضبط',
+    },
+    '19dgimzn': {
+      'en': 'Apply',
+      'ar': 'يتقدم',
+    },
+  },
+  // Miscellaneous
+  {
+    'kyuwqwvy': {
+      'en': '',
+      'ar': '',
+    },
+    'tn4tom3r': {
+      'en': '',
+      'ar': '',
+    },
+    '134ckl43': {
+      'en': '',
+      'ar': '',
+    },
+    '5yz6xadn': {
+      'en': '',
+      'ar': '',
+    },
+    'lyakwqqz': {
+      'en': '',
+      'ar': '',
+    },
+    'vicli6b2': {
+      'en': '',
+      'ar': '',
+    },
+    't0obbik6': {
+      'en': '',
+      'ar': '',
+    },
+    'h248u9o8': {
+      'en': '',
+      'ar': '',
+    },
+    'z0iqeq5e': {
+      'en': '',
+      'ar': '',
+    },
+    'kpz1evdu': {
+      'en': '',
+      'ar': '',
+    },
+    '9yphrkh4': {
+      'en': '',
+      'ar': '',
+    },
+    'x74mn6n4': {
+      'en': '',
+      'ar': '',
+    },
+    '16n269e6': {
+      'en': '',
+      'ar': '',
+    },
+    'oaq9yl6r': {
+      'en': '',
+      'ar': '',
+    },
+    'yp3kbpe8': {
+      'en': '',
+      'ar': '',
+    },
+    'rb6tfcbb': {
+      'en': '',
+      'ar': '',
+    },
+    'laxkcxdi': {
+      'en': '',
+      'ar': '',
+    },
+    'xuhnkxtx': {
+      'en': '',
+      'ar': '',
+    },
+    'ub4q9eoq': {
+      'en': '',
+      'ar': '',
+    },
+    'mof55fhu': {
+      'en': '',
+      'ar': '',
     },
   },
 ].reduce((a, b) => a..addAll(b));

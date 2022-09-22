@@ -5,16 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgetPasswordWidget extends StatefulWidget {
-  const ForgetPasswordWidget({Key? key}) : super(key: key);
+class ForgetPasswordScreenWidget extends StatefulWidget {
+  const ForgetPasswordScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _ForgetPasswordWidgetState createState() => _ForgetPasswordWidgetState();
+  _ForgetPasswordScreenWidgetState createState() =>
+      _ForgetPasswordScreenWidgetState();
 }
 
-class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
+class _ForgetPasswordScreenWidgetState
+    extends State<ForgetPasswordScreenWidget> {
   TextEditingController? textController;
-
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -22,6 +23,12 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override

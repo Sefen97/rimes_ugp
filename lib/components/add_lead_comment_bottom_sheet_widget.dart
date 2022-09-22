@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -5,22 +6,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AddCommentBottomSheetWidget extends StatefulWidget {
-  const AddCommentBottomSheetWidget({Key? key}) : super(key: key);
+class AddLeadCommentBottomSheetWidget extends StatefulWidget {
+  const AddLeadCommentBottomSheetWidget({
+    Key? key,
+    this.id,
+    this.leadName,
+  }) : super(key: key);
+
+  final int? id;
+  final String? leadName;
 
   @override
-  _AddCommentBottomSheetWidgetState createState() =>
-      _AddCommentBottomSheetWidgetState();
+  _AddLeadCommentBottomSheetWidgetState createState() =>
+      _AddLeadCommentBottomSheetWidgetState();
 }
 
-class _AddCommentBottomSheetWidgetState
-    extends State<AddCommentBottomSheetWidget> {
+class _AddLeadCommentBottomSheetWidgetState
+    extends State<AddLeadCommentBottomSheetWidget> {
+  ApiCallResponse? addCommintResponse;
   TextEditingController? shortBioController;
 
   @override
   void initState() {
     super.initState();
     shortBioController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    shortBioController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -76,7 +91,11 @@ class _AddCommentBottomSheetWidgetState
                   FFLocalizations.of(context).getText(
                     'w5e46ize' /* Add comment */,
                   ),
-                  style: FlutterFlowTheme.of(context).title2,
+                  style: FlutterFlowTheme.of(context).title2.override(
+                        fontFamily: 'Poppins',
+                        color: Color(0xFFE11113),
+                        fontSize: 15,
+                      ),
                 ),
               ),
               Padding(
@@ -117,6 +136,8 @@ class _AddCommentBottomSheetWidgetState
                       ),
                       borderRadius: BorderRadius.circular(8),
                     ),
+                    filled: true,
+                    fillColor: Color(0xFFF3F3F3),
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(20, 32, 20, 12),
                   ),
@@ -145,7 +166,50 @@ class _AddCommentBottomSheetWidgetState
                     alignment: AlignmentDirectional(0, 0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        Navigator.pop(context);
+                        addCommintResponse =
+                            await RimesApiGroup.addLeadCommintCall.call(
+                          userId: FFAppState().userId,
+                          subscriberId: 2,
+                          comment: shortBioController!.text,
+                          salesLeadId: widget.id,
+                          commentId: widget.id,
+                        );
+                        if (getJsonField(
+                          (addCommintResponse?.jsonBody ?? ''),
+                          r'''$.result.status''',
+                        )) {
+                          Navigator.pop(context);
+
+                          context.pushNamed(
+                            'LeadDetailsScreen',
+                            queryParams: {
+                              'leadName': serializeParam(
+                                  widget.leadName, ParamType.String),
+                              'leadId':
+                                  serializeParam(widget.id, ParamType.int),
+                            }.withoutNulls,
+                          );
+
+                          context.pop();
+                        } else {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text('There is something wrong !'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        }
+
+                        setState(() {});
                       },
                       text: FFLocalizations.of(context).getText(
                         'nkg8hh9g' /* Add */,
