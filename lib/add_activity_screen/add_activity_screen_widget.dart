@@ -22,22 +22,14 @@ class AddActivityScreenWidget extends StatefulWidget {
 }
 
 class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
-  TextEditingController? assignToTextFieldController;
-
-  TextEditingController? reletedTextFieldController;
-
-  TextEditingController? typeTextFieldController1;
-
-  String? radioButtonValue;
-
-  TextEditingController? dateTextFieldController;
-
   DateTime? datePicked;
-
+  TextEditingController? dateTextFieldController;
+  String? radioButtonValue;
+  TextEditingController? typeTextFieldController1;
+  TextEditingController? reletedTextFieldController;
+  TextEditingController? assignToTextFieldController;
   TextEditingController? typeTextFieldController2;
-
   TextEditingController? remarkTextFieldController;
-
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -51,6 +43,17 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
         TextEditingController(text: dateTimeFormat('d/M/y', datePicked));
     typeTextFieldController2 = TextEditingController();
     remarkTextFieldController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    assignToTextFieldController?.dispose();
+    reletedTextFieldController?.dispose();
+    typeTextFieldController1?.dispose();
+    dateTextFieldController?.dispose();
+    typeTextFieldController2?.dispose();
+    remarkTextFieldController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -178,11 +181,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                                     width: 2,
                                   ),
                                   borderRadius: BorderRadius.circular(5),
-                                ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
@@ -336,11 +334,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -432,11 +425,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                                     width: 2,
                                   ),
                                   borderRadius: BorderRadius.circular(5),
-                                ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
@@ -647,11 +635,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -730,11 +713,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                               width: 2,
                             ),
                             borderRadius: BorderRadius.circular(5),
-                          ),
-                          suffixIcon: Icon(
-                            Icons.arrow_drop_down,
-                            color: Color(0xFF757575),
-                            size: 22,
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1,

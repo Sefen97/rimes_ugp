@@ -24,14 +24,19 @@ class SubCommunityBottomSheetWidget extends StatefulWidget {
 
 class _SubCommunityBottomSheetWidgetState
     extends State<SubCommunityBottomSheetWidget> {
-  TextEditingController? textController;
-
   Completer<ApiCallResponse>? _apiRequestCompleter;
+  TextEditingController? textController;
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -216,7 +221,7 @@ class _SubCommunityBottomSheetWidgetState
                                           ),
                                         );
                                       },
-                                    );
+                                    ).then((value) => setState(() {}));
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,

@@ -24,15 +24,20 @@ class LookuopAllEmployeesSearchScreenWidget extends StatefulWidget {
 
 class _LookuopAllEmployeesSearchScreenWidgetState
     extends State<LookuopAllEmployeesSearchScreenWidget> {
-  TextEditingController? textController;
-
   Completer<ApiCallResponse>? _apiRequestCompleter;
+  TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override

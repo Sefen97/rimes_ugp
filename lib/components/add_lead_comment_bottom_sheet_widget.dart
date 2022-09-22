@@ -23,14 +23,19 @@ class AddLeadCommentBottomSheetWidget extends StatefulWidget {
 
 class _AddLeadCommentBottomSheetWidgetState
     extends State<AddLeadCommentBottomSheetWidget> {
-  TextEditingController? shortBioController;
-
   ApiCallResponse? addCommintResponse;
+  TextEditingController? shortBioController;
 
   @override
   void initState() {
     super.initState();
     shortBioController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    shortBioController?.dispose();
+    super.dispose();
   }
 
   @override

@@ -18,15 +18,20 @@ class LeadsScreenWidget extends StatefulWidget {
 }
 
 class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
-  TextEditingController? textController;
-
   Completer<ApiCallResponse>? _apiRequestCompleter;
+  TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -406,7 +411,7 @@ class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
                                         ),
                                       );
                                     },
-                                  );
+                                  ).then((value) => setState(() {}));
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -626,7 +631,7 @@ class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
                                   child: LeadFilterWidget(),
                                 );
                               },
-                            );
+                            ).then((value) => setState(() {}));
                           },
                           child: Container(
                             width: 75,

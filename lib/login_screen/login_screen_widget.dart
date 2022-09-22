@@ -15,14 +15,12 @@ class LoginScreenWidget extends StatefulWidget {
 }
 
 class _LoginScreenWidgetState extends State<LoginScreenWidget> {
+  ApiCallResponse? loginRespons;
   TextEditingController? textController1;
-
   TextEditingController? textController2;
 
   late bool passwordVisibility;
-
   bool? checkboxListTileValue;
-  ApiCallResponse? loginRespons;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -32,6 +30,13 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
     textController1 = TextEditingController();
     textController2 = TextEditingController();
     passwordVisibility = false;
+  }
+
+  @override
+  void dispose() {
+    textController1?.dispose();
+    textController2?.dispose();
+    super.dispose();
   }
 
   @override

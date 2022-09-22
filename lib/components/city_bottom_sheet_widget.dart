@@ -24,14 +24,19 @@ class CityBottomSheetWidget extends StatefulWidget {
 }
 
 class _CityBottomSheetWidgetState extends State<CityBottomSheetWidget> {
-  TextEditingController? textController;
-
   Completer<ApiCallResponse>? _apiRequestCompleter;
+  TextEditingController? textController;
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -218,7 +223,7 @@ class _CityBottomSheetWidgetState extends State<CityBottomSheetWidget> {
                                           ),
                                         );
                                       },
-                                    );
+                                    ).then((value) => setState(() {}));
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,

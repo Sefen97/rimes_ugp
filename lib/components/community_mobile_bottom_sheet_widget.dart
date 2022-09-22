@@ -26,14 +26,19 @@ class CommunityMobileBottomSheetWidget extends StatefulWidget {
 
 class _CommunityMobileBottomSheetWidgetState
     extends State<CommunityMobileBottomSheetWidget> {
-  TextEditingController? textController;
-
   Completer<ApiCallResponse>? _apiRequestCompleter;
+  TextEditingController? textController;
 
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -221,7 +226,7 @@ class _CommunityMobileBottomSheetWidgetState
                                           ),
                                         );
                                       },
-                                    );
+                                    ).then((value) => setState(() {}));
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,

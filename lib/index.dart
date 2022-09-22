@@ -26,3 +26,12 @@ export 'lookuop_all_employees_search_screen/lookuop_all_employees_search_screen_
 export 'sales_lead_search_screen/sales_lead_search_screen_widget.dart'
     show SalesLeadSearchScreenWidget;
 export 'add_lead_screen/add_lead_screen_widget.dart' show AddLeadScreenWidget;
+export 'unit_details_screen/unit_details_screen_widget.dart'
+    show UnitDetailsScreenWidget;
+export 'add_unit_screen/add_unit_screen_widget.dart' show AddUnitScreenWidget;
+export 'property_master_search_screen/property_master_search_screen_widget.dart'
+    show PropertyMasterSearchScreenWidget;
+export 'all_contact_search_screen/all_contact_search_screen_widget.dart'
+    show AllContactSearchScreenWidget;
+export 'all_contact_screen/all_contact_screen_widget.dart'
+    show AllContactScreenWidget;

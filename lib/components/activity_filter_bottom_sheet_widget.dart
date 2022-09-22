@@ -23,7 +23,6 @@ class ActivityFilterBottomSheetWidget extends StatefulWidget {
 class _ActivityFilterBottomSheetWidgetState
     extends State<ActivityFilterBottomSheetWidget> {
   TextEditingController? activityStatusTextFieldController;
-
   TextEditingController? typTextFieldController;
 
   @override
@@ -39,6 +38,13 @@ class _ActivityFilterBottomSheetWidgetState
       widget.type,
       'Type Here',
     ));
+  }
+
+  @override
+  void dispose() {
+    activityStatusTextFieldController?.dispose();
+    typTextFieldController?.dispose();
+    super.dispose();
   }
 
   @override

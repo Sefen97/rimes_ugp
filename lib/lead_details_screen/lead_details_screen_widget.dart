@@ -178,7 +178,7 @@ class _LeadDetailsScreenWidgetState extends State<LeadDetailsScreenWidget> {
                                     ),
                                   );
                                 },
-                              );
+                              ).then((value) => setState(() {}));
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,

@@ -399,7 +399,7 @@ class _AdminDashboardScreenWidgetState
                                           ),
                                         );
                                       },
-                                    );
+                                    ).then((value) => setState(() {}));
                                   },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,

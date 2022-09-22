@@ -7,27 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SalesLeadSearchScreenWidget extends StatefulWidget {
-  const SalesLeadSearchScreenWidget({
+class AllContactSearchScreenWidget extends StatefulWidget {
+  const AllContactSearchScreenWidget({
     Key? key,
     this.appBarTitle,
-    this.subscribId,
-    this.userId,
-    this.pageSize,
   }) : super(key: key);
 
   final String? appBarTitle;
-  final int? subscribId;
-  final int? userId;
-  final int? pageSize;
 
   @override
-  _SalesLeadSearchScreenWidgetState createState() =>
-      _SalesLeadSearchScreenWidgetState();
+  _AllContactSearchScreenWidgetState createState() =>
+      _AllContactSearchScreenWidgetState();
 }
 
-class _SalesLeadSearchScreenWidgetState
-    extends State<SalesLeadSearchScreenWidget> {
+class _AllContactSearchScreenWidgetState
+    extends State<AllContactSearchScreenWidget> {
   Completer<ApiCallResponse>? _apiRequestCompleter;
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -97,7 +91,7 @@ class _SalesLeadSearchScreenWidgetState
                   decoration: InputDecoration(
                     isDense: true,
                     hintText: FFLocalizations.of(context).getText(
-                      'x7foek7v' /* search */,
+                      'f8ft43pm' /* search */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyText2,
                     enabledBorder: OutlineInputBorder(
@@ -158,11 +152,11 @@ class _SalesLeadSearchScreenWidgetState
                     child: FutureBuilder<ApiCallResponse>(
                       future:
                           (_apiRequestCompleter ??= Completer<ApiCallResponse>()
-                                ..complete(
-                                    RimesApiGroup.salesLeadRequestCall.call(
-                                  pageSize: widget.pageSize,
-                                  userId: widget.userId,
-                                  subscriberId: widget.subscribId,
+                                ..complete(RimesApiGroup.allContactCall.call(
+                                  id: FFAppState().userId,
+                                  subscriberId: 2,
+                                  languageId: 2,
+                                  accessTypeId: 1,
                                 )))
                               .future,
                       builder: (context, snapshot) {
@@ -179,14 +173,14 @@ class _SalesLeadSearchScreenWidgetState
                             ),
                           );
                         }
-                        final listViewSalesLeadRequestResponse = snapshot.data!;
+                        final listViewAllContactResponse = snapshot.data!;
                         return Builder(
                           builder: (context) {
-                            final salesLeadResponse = getJsonField(
-                              listViewSalesLeadRequestResponse.jsonBody,
+                            final contactMasterResponse = getJsonField(
+                              listViewAllContactResponse.jsonBody,
                               r'''$.result''',
                             ).toList().take(200).toList();
-                            if (salesLeadResponse.isEmpty) {
+                            if (contactMasterResponse.isEmpty) {
                               return Image.asset(
                                 'assets/images/noData.png',
                               );
@@ -200,10 +194,12 @@ class _SalesLeadSearchScreenWidgetState
                               child: ListView.builder(
                                 padding: EdgeInsets.zero,
                                 scrollDirection: Axis.vertical,
-                                itemCount: salesLeadResponse.length,
-                                itemBuilder: (context, salesLeadResponseIndex) {
-                                  final salesLeadResponseItem =
-                                      salesLeadResponse[salesLeadResponseIndex];
+                                itemCount: contactMasterResponse.length,
+                                itemBuilder:
+                                    (context, contactMasterResponseIndex) {
+                                  final contactMasterResponseItem =
+                                      contactMasterResponse[
+                                          contactMasterResponseIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
@@ -242,8 +238,8 @@ class _SalesLeadSearchScreenWidgetState
                                                       .fromSTEB(5, 0, 0, 0),
                                                   child: Text(
                                                     getJsonField(
-                                                      salesLeadResponseItem,
-                                                      r'''$.employeeName''',
+                                                      contactMasterResponseItem,
+                                                      r'''$.firstName''',
                                                     ).toString(),
                                                     style: FlutterFlowTheme.of(
                                                             context)

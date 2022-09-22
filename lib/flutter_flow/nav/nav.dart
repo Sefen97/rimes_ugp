@@ -31,11 +31,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, _) => appStateNotifier.showSplashImage
           ? Container(
               color: Colors.transparent,
-              child: Builder(
-                builder: (context) => Image.asset(
-                  'assets/images/Rims.png',
-                  fit: BoxFit.cover,
-                ),
+              child: Image.asset(
+                'assets/images/Rims.png',
+                fit: BoxFit.cover,
               ),
             )
           : LoginScreenWidget(),
@@ -46,11 +44,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Container(
                   color: Colors.transparent,
-                  child: Builder(
-                    builder: (context) => Image.asset(
-                      'assets/images/Rims.png',
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image.asset(
+                    'assets/images/Rims.png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : LoginScreenWidget(),
@@ -175,6 +171,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'AddLeadScreen',
               path: 'addLeadScreen',
               builder: (context, params) => AddLeadScreenWidget(),
+            ),
+            FFRoute(
+              name: 'UnitDetailsScreen',
+              path: 'unitDetailsScreen',
+              builder: (context, params) => UnitDetailsScreenWidget(
+                id: params.getParam('id', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'AddUnitScreen',
+              path: 'addUnitScreen',
+              builder: (context, params) => AddUnitScreenWidget(),
+            ),
+            FFRoute(
+              name: 'PropertyMasterSearchScreen',
+              path: 'propertyMasterSearchScreen',
+              builder: (context, params) => PropertyMasterSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'AllContactSearchScreen',
+              path: 'allContactSearchScreen',
+              builder: (context, params) => AllContactSearchScreenWidget(
+                appBarTitle: params.getParam('appBarTitle', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'AllContactScreen',
+              path: 'allContactScreen',
+              builder: (context, params) => AllContactScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -316,6 +343,6 @@ class TransitionInfo {
   static TransitionInfo appDefault() => TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.rightToLeft,
-        duration: Duration(milliseconds: 300),
+        duration: Duration(milliseconds: 200),
       );
 }

@@ -15,23 +15,15 @@ class LeadFilterWidget extends StatefulWidget {
 }
 
 class _LeadFilterWidgetState extends State<LeadFilterWidget> {
-  TextEditingController? assignToTextFieldController;
-
-  TextEditingController? contactTypeTextFieldController;
-
-  TextEditingController? ratingTextFieldController;
-
-  TextEditingController? leadSourceTextFieldController;
-
-  TextEditingController? leadTypeTextFieldController;
-
-  TextEditingController? dateFromTextFieldController;
-
   DateTime? datePicked1;
-
-  TextEditingController? dateToTextFieldController;
-
+  TextEditingController? dateFromTextFieldController;
   DateTime? datePicked2;
+  TextEditingController? dateToTextFieldController;
+  TextEditingController? assignToTextFieldController;
+  TextEditingController? contactTypeTextFieldController;
+  TextEditingController? ratingTextFieldController;
+  TextEditingController? leadSourceTextFieldController;
+  TextEditingController? leadTypeTextFieldController;
 
   @override
   void initState() {
@@ -45,6 +37,18 @@ class _LeadFilterWidgetState extends State<LeadFilterWidget> {
         TextEditingController(text: dateTimeFormat('d/M/y', datePicked1));
     dateToTextFieldController =
         TextEditingController(text: dateTimeFormat('d/M/y', datePicked2));
+  }
+
+  @override
+  void dispose() {
+    assignToTextFieldController?.dispose();
+    contactTypeTextFieldController?.dispose();
+    ratingTextFieldController?.dispose();
+    leadSourceTextFieldController?.dispose();
+    leadTypeTextFieldController?.dispose();
+    dateFromTextFieldController?.dispose();
+    dateToTextFieldController?.dispose();
+    super.dispose();
   }
 
   @override

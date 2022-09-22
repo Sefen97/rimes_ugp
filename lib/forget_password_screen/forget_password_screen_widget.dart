@@ -16,7 +16,6 @@ class ForgetPasswordScreenWidget extends StatefulWidget {
 class _ForgetPasswordScreenWidgetState
     extends State<ForgetPasswordScreenWidget> {
   TextEditingController? textController;
-
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -24,6 +23,12 @@ class _ForgetPasswordScreenWidgetState
   void initState() {
     super.initState();
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
   }
 
   @override

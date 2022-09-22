@@ -1,6 +1,4 @@
-import '../backend/api_requests/api_calls.dart';
 import '../components/activity_filter_bottom_sheet_widget.dart';
-import '../components/custom_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -9,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityScreenWidget extends StatefulWidget {
-  const ActivityScreenWidget({Key? key}) : super(key: key);
+class AllContactScreenWidget extends StatefulWidget {
+  const AllContactScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _ActivityScreenWidgetState createState() => _ActivityScreenWidgetState();
+  _AllContactScreenWidgetState createState() => _AllContactScreenWidgetState();
 }
 
-class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
+class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -59,7 +57,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
           children: [
             Text(
               FFLocalizations.of(context).getText(
-                '1u0v4et1' /* All Activites */,
+                '59stgch3' /* All Contact */,
               ),
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Poppins',
@@ -69,7 +67,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
             ),
             Text(
               FFLocalizations.of(context).getText(
-                'co9amx78' /*  (10) */,
+                'mmta81iv' /*  (10) */,
               ),
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Poppins',
@@ -82,23 +80,18 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
         actions: [
           Align(
             alignment: AlignmentDirectional(0, 0),
-            child: InkWell(
-              onTap: () async {
-                context.pushNamed('AddActivityScreen');
-              },
-              child: Image.asset(
-                'assets/images/group_3445.png',
-                width: 90,
-                height: 60,
-                fit: BoxFit.cover,
-              ),
+            child: Image.asset(
+              'assets/images/group_3445.png',
+              width: 90,
+              height: 60,
+              fit: BoxFit.cover,
             ),
           ),
         ],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).btnText,
       drawer: Drawer(
         elevation: 16,
         child: Align(
@@ -164,7 +157,9 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                         ),
                                       ),
                                       Text(
-                                        FFAppState().userName,
+                                        FFLocalizations.of(context).getText(
+                                          '6av01s0g' /* Username */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
@@ -175,7 +170,9 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                             ),
                                       ),
                                       Text(
-                                        FFAppState().email,
+                                        FFLocalizations.of(context).getText(
+                                          '30qb5tvy' /* username @gmail.com */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
@@ -251,7 +248,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                           21, 0, 0, 0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'hjhci0rr' /* My Account */,
+                                          '7ko65sqy' /* My Account */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
@@ -284,7 +281,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                         21, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'iyskagcc' /* Notifications */,
+                                        '3l6gpw4k' /* Notifications */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -316,7 +313,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                         15, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'ihgock6k' /* Language */,
+                                        'q0pjllaj' /* Language */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -388,7 +385,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                         15, 0, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'swpyzkn1' /* Change password */,
+                                        'n4wp3pjt' /* Change password */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
@@ -404,51 +401,33 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(1, 10, 10, 10),
-                              child: InkWell(
-                                onTap: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.of(context).viewInsets,
-                                        child: CustomBottomSheetWidget(
-                                          meassage: 'It\'s Activity  Screen',
-                                        ),
-                                      );
-                                    },
-                                  ).then((value) => setState(() {}));
-                                },
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Image.asset(
-                                        'assets/images/iconly_bold_info_square.png',
-                                        height: 30,
-                                        fit: BoxFit.cover,
-                                      ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Image.asset(
+                                      'assets/images/iconly_bold_info_square.png',
+                                      height: 30,
+                                      fit: BoxFit.cover,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15, 0, 0, 0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'w2opjwek' /* How it work */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF5B5B5B),
-                                            ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        15, 0, 0, 0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'b0lzsjxv' /* How it work */,
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF5B5B5B),
+                                          ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             Padding(
@@ -461,21 +440,21 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                content: Text('Are you sure ?'),
+                                                content: Text('are you sure ?'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('No'),
+                                                    child: Text('no'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('Yes'),
+                                                    child: Text('yes'),
                                                   ),
                                                 ],
                                               );
@@ -483,7 +462,8 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                           ) ??
                                           false;
                                   if (confirmDialogResponse) {
-                                    context.pop();
+                                    context.goNamed('LoginScreen');
+
                                     return;
                                   } else {
                                     return;
@@ -505,7 +485,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                           15, 0, 0, 0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'l0bniklc' /* Logout */,
+                                          'md9ipxs8' /* Logout */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
@@ -547,8 +527,6 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -567,7 +545,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                         decoration: InputDecoration(
                           isDense: true,
                           hintText: FFLocalizations.of(context).getText(
-                            'k576y7ps' /* search */,
+                            '9wd8bm8n' /* search */,
                           ),
                           hintStyle: FlutterFlowTheme.of(context).bodyText2,
                           enabledBorder: OutlineInputBorder(
@@ -652,7 +630,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'xymjxh97' /* Filter */,
+                                  'd2qzkmgi' /* Filter */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
@@ -682,195 +660,86 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(18, 24, 18, 10),
-                  child: FutureBuilder<ApiCallResponse>(
-                    future: RimesApiGroup.allActivityRequestCall.call(
-                      userId: FFAppState().userId,
-                    ),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 60,
-                            height: 60,
-                            child: SpinKitFadingCircle(
-                              color: Color(0xFFDB1B1B),
-                              size: 60,
-                            ),
-                          ),
-                        );
-                      }
-                      final listViewAllActivityRequestResponse = snapshot.data!;
-                      return Builder(
-                        builder: (context) {
-                          final allActivityItems = getJsonField(
-                            listViewAllActivityRequestResponse.jsonBody,
-                            r'''$.result''',
-                          ).toList().take(200).toList();
-                          if (allActivityItems.isEmpty) {
-                            return Image.asset(
-                              'assets/images/noData.png',
-                            );
-                          }
-                          return ListView.builder(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: allActivityItems.length,
-                            itemBuilder: (context, allActivityItemsIndex) {
-                              final allActivityItemsItem =
-                                  allActivityItems[allActivityItemsIndex];
-                              return InkWell(
-                                onTap: () async {
-                                  context.pushNamed(
-                                    'ActivityDetailsScreen',
-                                    queryParams: {
-                                      'id': serializeParam(
-                                          getJsonField(
-                                            allActivityItemsItem,
-                                            r'''$.activityId''',
-                                          ),
-                                          ParamType.int),
-                                    }.withoutNulls,
-                                  );
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Expanded(
-                                          flex: 2,
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 10),
-                                                child: Text(
-                                                  getJsonField(
-                                                    allActivityItemsItem,
-                                                    r'''$.typeName''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF5B5B5B),
-                                                        fontSize: 15,
-                                                      ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 10),
-                                                child: Text(
-                                                  getJsonField(
-                                                    allActivityItemsItem,
-                                                    r'''$.activitySource''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFFAAAAAA),
-                                                        fontSize: 13,
-                                                      ),
-                                                ),
-                                              ),
-                                              Text(
-                                                getJsonField(
-                                                  allActivityItemsItem,
-                                                  r'''$.activitySubject''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFFAAAAAA),
-                                                          fontSize: 13,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 10),
-                                                child: Text(
-                                                  getJsonField(
-                                                    allActivityItemsItem,
-                                                    r'''$.activityStatusName''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFFE11B33),
-                                                        fontSize: 13,
-                                                      ),
-                                                ),
-                                              ),
-                                              Text(
-                                                getJsonField(
-                                                  allActivityItemsItem,
-                                                  r'''$.agent''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 13,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 14, 0, 14),
-                                      child: Container(
-                                        width: double.infinity,
-                                        height: 1,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x70635656),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.network(
+                                  'https://picsum.photos/seed/790/600',
+                                  width: 80,
+                                  height: 80,
+                                  fit: BoxFit.cover,
                                 ),
-                              );
-                            },
-                          );
-                        },
-                      );
-                    },
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15, 0, 0, 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        'Hello World',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                      Text(
+                                        'Hello World',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                      Text(
+                                        'Hello World',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'Hello World',
+                                        textAlign: TextAlign.end,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                              child: Container(
+                                width: double.infinity,
+                                height: 2,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF3F3F3),
+                                  border: Border.all(
+                                    color: Color(0xFFF3F3F3),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

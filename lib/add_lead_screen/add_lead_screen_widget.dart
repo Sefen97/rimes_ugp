@@ -18,30 +18,18 @@ class AddLeadScreenWidget extends StatefulWidget {
 }
 
 class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
-  TextEditingController? assigmentTextFieldController;
-
-  TextEditingController? cityTextFieldController;
-
-  TextEditingController? contactTextFieldController1;
-
   String? radioButtonValue;
-
+  TextEditingController? contactTextFieldController1;
   TextEditingController? leadStatusTextFieldController;
-
   TextEditingController? unitTextFieldController;
-
+  TextEditingController? cityTextFieldController;
   TextEditingController? communityTextFieldController;
-
   TextEditingController? subCommunityTextFieldController;
-
   TextEditingController? rateCommunityTextFieldController;
-
   TextEditingController? piriortyTextFieldController;
-
   TextEditingController? leadSourceTextFieldController;
-
+  TextEditingController? assigmentTextFieldController;
   TextEditingController? contactTextFieldController2;
-
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -59,6 +47,22 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
     piriortyTextFieldController = TextEditingController();
     leadSourceTextFieldController = TextEditingController();
     contactTextFieldController2 = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    assigmentTextFieldController?.dispose();
+    cityTextFieldController?.dispose();
+    contactTextFieldController1?.dispose();
+    leadStatusTextFieldController?.dispose();
+    unitTextFieldController?.dispose();
+    communityTextFieldController?.dispose();
+    subCommunityTextFieldController?.dispose();
+    rateCommunityTextFieldController?.dispose();
+    piriortyTextFieldController?.dispose();
+    leadSourceTextFieldController?.dispose();
+    contactTextFieldController2?.dispose();
+    super.dispose();
   }
 
   @override
@@ -229,11 +233,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -334,11 +333,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -437,11 +431,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -483,7 +472,7 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                 ),
                               );
                             },
-                          );
+                          ).then((value) => setState(() {}));
                         },
                         child: Stack(
                           children: [
@@ -547,11 +536,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -596,7 +580,7 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                 );
                               },
-                            );
+                            ).then((value) => setState(() {}));
                           } else {
                             await showDialog(
                               context: context,
@@ -677,11 +661,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -725,7 +704,7 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                 );
                               },
-                            );
+                            ).then((value) => setState(() {}));
                           } else {
                             await showDialog(
                               context: context,
@@ -806,11 +785,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                     width: 2,
                                   ),
                                   borderRadius: BorderRadius.circular(5),
-                                ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
@@ -912,11 +886,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -1016,11 +985,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                     width: 2,
                                   ),
                                   borderRadius: BorderRadius.circular(5),
-                                ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
@@ -1122,11 +1086,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -1225,11 +1184,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down,
-                                  color: Color(0xFF757575),
-                                  size: 22,
-                                ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
                               validator: (val) {
@@ -1316,11 +1270,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                   width: 2,
                                 ),
                                 borderRadius: BorderRadius.circular(5),
-                              ),
-                              suffixIcon: Icon(
-                                Icons.arrow_drop_down,
-                                color: Color(0xFF757575),
-                                size: 22,
                               ),
                             ),
                             style: FlutterFlowTheme.of(context).bodyText1,

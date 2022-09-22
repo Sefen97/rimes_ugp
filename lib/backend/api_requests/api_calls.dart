@@ -29,6 +29,10 @@ class RimesApiGroup {
   static AllCitiesCall allCitiesCall = AllCitiesCall();
   static AllCommintyMobileCall allCommintyMobileCall = AllCommintyMobileCall();
   static AllSubCommunityCall allSubCommunityCall = AllSubCommunityCall();
+  static AllPropertyMasterCall allPropertyMasterCall = AllPropertyMasterCall();
+  static AllContactCall allContactCall = AllContactCall();
+  static PropertyGetCall propertyGetCall = PropertyGetCall();
+  static AttachGetCall attachGetCall = AttachGetCall();
 }
 
 class LoginRequestCall {
@@ -535,4 +539,186 @@ class AllSubCommunityCall {
   }
 }
 
+class AllPropertyMasterCall {
+  Future<ApiCallResponse> call({
+    int? pageSize = 10,
+    int? masterPropType = 1,
+    int? userId = 10,
+    int? subscriberId = 2,
+    int? languageId = 2,
+    int? accessTypeId = 2,
+  }) {
+    final body = '''
+{
+  "filter": {
+    "start": "",
+    "length": "",
+    "sortColumn": "",
+    "direction": "",
+    "searchValue": "",
+    "skip": 0,
+    "pageSize": ${pageSize}
+  },
+  "masterPropId": 0,
+  "masterPropName": "",
+  "masterPropCommunity": 0,
+  "masterPropType": ${masterPropType},
+  "subscriberId": ${subscriberId},
+  "languageId": ${languageId},
+  "employeeId": 0,
+  "referedBy": 0,
+  "userId": ${userId},
+  "defaultPropertyMasterCode": 0,
+  "accessTypeId": ${accessTypeId},
+  "team": [],
+  "dateType": 0,
+  "fromDate_report": "2021-09-22T09:19:26.174Z",
+  "toDate_report": "2022-09-22T09:19:26.174Z"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllPropertyMaster',
+      apiUrl: '${RimesApiGroup.baseUrl}api/property/master/all',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class AllContactCall {
+  Future<ApiCallResponse> call({
+    int? id = 10,
+    int? subscriberId = 2,
+    int? languageId = 2,
+    int? accessTypeId = 1,
+  }) {
+    final body = '''
+{
+   "filter":{
+      "start":null,
+      "length":null,
+      "sortColumn":null,
+      "direction":null,
+      "searchValue":null,
+      "skip":0,
+      "pageSize":10000
+   },
+   "id":10,
+   "subscriberId":2,
+   "languageId":1,
+   "name":null,
+   "contactTypeId":0,
+   "code":0,
+   "accessTypeId":1,
+   "industryId":0,
+   "industryTypeId":0,
+   "phone":null,
+   "mobile":null,
+   "email":null,
+   "searchText":null,
+   "searchType":0,
+   "start":0,
+   "limit":0,
+   "light":true,
+   "team":[
+      0
+   ],
+   "currentUser":0
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AllContact',
+      apiUrl: '${RimesApiGroup.baseUrl}api/contact/all',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class PropertyGetCall {
+  Future<ApiCallResponse> call({
+    int? userId = 10,
+    int? languageId = 2,
+    int? subscriberId = 2,
+    int? accessTypeId = 1,
+    int? id,
+  }) {
+    final body = '''
+{
+  "userId": ${userId},
+  "languageId":${languageId},
+  "subscriberId":${subscriberId} ,
+  "accessTypeId":${accessTypeId} ,
+  "id":${id}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'PropertyGet',
+      apiUrl: '${RimesApiGroup.baseUrl}api/property/get',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class AttachGetCall {
+  Future<ApiCallResponse> call({
+    int? userId,
+    int? subscriberId,
+    int? type,
+    int? id,
+  }) {
+    final body = '''
+{
+  "userId": ${userId},
+  "subscriberId":${subscriberId},
+  "type":${type},
+  "id":${id}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'AttachGet',
+      apiUrl: '${RimesApiGroup.baseUrl}api/attachments/get',
+      callType: ApiCallType.POST,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
 /// End RimesApi Group Code
+
+class ApiPagingParams {
+  int nextPageNumber = 0;
+  int numItems = 0;
+  dynamic lastResponse;
+
+  ApiPagingParams({
+    required this.nextPageNumber,
+    required this.numItems,
+    required this.lastResponse,
+  });
+
+  @override
+  String toString() =>
+      'PagingParams(nextPageNumber: $nextPageNumber, numItems: $numItems, lastResponse: $lastResponse,)';
+}

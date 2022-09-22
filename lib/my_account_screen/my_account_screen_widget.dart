@@ -13,9 +13,7 @@ class MyAccountScreenWidget extends StatefulWidget {
 
 class _MyAccountScreenWidgetState extends State<MyAccountScreenWidget> {
   TextEditingController? textController1;
-
   TextEditingController? textController2;
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -23,6 +21,13 @@ class _MyAccountScreenWidgetState extends State<MyAccountScreenWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController1?.dispose();
+    textController2?.dispose();
+    super.dispose();
   }
 
   @override

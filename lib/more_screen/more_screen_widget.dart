@@ -46,7 +46,9 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                           child: Text(
-                            'Contact',
+                            FFLocalizations.of(context).getText(
+                              'icm11ddj' /* Contact */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ),
@@ -71,7 +73,9 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                         child: Text(
-                          'Properites',
+                          FFLocalizations.of(context).getText(
+                            'h90dm300' /* Properites */,
+                          ),
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),

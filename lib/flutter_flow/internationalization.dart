@@ -267,7 +267,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Rent',
       'ar': 'تخفيض السعر',
     },
-    'c97u2czd': {
+    'mpof57ii': {
       'en': 'Sale',
       'ar': '',
     },
@@ -369,11 +369,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MoreScreen
   {
-    'ckyux0ln': {
+    'icm11ddj': {
       'en': 'Contact',
       'ar': '',
     },
-    '8pefa3yc': {
+    'h90dm300': {
       'en': 'Properites',
       'ar': '',
     },
@@ -832,6 +832,265 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
+  // UnitDetailsScreen
+  {
+    '0e9z29zc': {
+      'en': 'Total Leads ',
+      'ar': '',
+    },
+    'ae96ed62': {
+      'en': '0',
+      'ar': '',
+    },
+    '69sm4exn': {
+      'en': 'Total Activity',
+      'ar': '',
+    },
+    '1wnq1ib4': {
+      'en': '0',
+      'ar': '',
+    },
+    'vtiyvm81': {
+      'en': 'Attach File',
+      'ar': '',
+    },
+    'sbxgd2xz': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AddUnitScreen
+  {
+    'w8z6cfba': {
+      'en': 'Sale',
+      'ar': 'تأجير',
+    },
+    'wcnofidv': {
+      'en': 'Sale',
+      'ar': 'تأجير',
+    },
+    '6wqfm5kx': {
+      'en': 'Rent',
+      'ar': 'تخفيض السعر',
+    },
+    '6okik1g1': {
+      'en': 'Property',
+      'ar': 'يكتب',
+    },
+    '7mr0fbwm': {
+      'en': 'Property',
+      'ar': 'أكتب هنا',
+    },
+    'tfdute34': {
+      'en': 'Owner',
+      'ar': 'يكتب',
+    },
+    '06g2e5sv': {
+      'en': 'Owner',
+      'ar': 'أكتب هنا',
+    },
+    'kw0dxt4y': {
+      'en': 'Category',
+      'ar': 'يكتب',
+    },
+    'au56w32s': {
+      'en': 'Category',
+      'ar': 'أكتب هنا',
+    },
+    'st8ucruu': {
+      'en': 'Total Area',
+      'ar': 'تاريخ',
+    },
+    'y2jennjg': {
+      'en': 'Total Area',
+      'ar': 'تاريخ',
+    },
+    'x6ynxds9': {
+      'en': 'Price',
+      'ar': 'تاريخ',
+    },
+    'v036mqk4': {
+      'en': 'Price',
+      'ar': 'تاريخ',
+    },
+    'ezz391xn': {
+      'en': 'City',
+      'ar': 'يكتب',
+    },
+    'r4wnag30': {
+      'en': 'City',
+      'ar': 'أكتب هنا',
+    },
+    'ilm9ghuq': {
+      'en': 'Community',
+      'ar': 'يكتب',
+    },
+    'bl69s7nd': {
+      'en': 'Community',
+      'ar': 'أكتب هنا',
+    },
+    'u37yawp1': {
+      'en': 'Add',
+      'ar': 'يضيف',
+    },
+    '70njs4jp': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'suma2sf1': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'o2bclex8': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '9zeugxal': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'zbgqqg21': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '4nwxqah4': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '8jtj50ce': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'm6io4mua': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    '7qhdn0o8': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    't5q1awvc': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'x4gzwctp': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'jkw3f3hh': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'ji981fto': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    '1lq69oap': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'a36ixavv': {
+      'en': 'Add New Unit',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    'pu60nk1h': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // PropertyMasterSearchScreen
+  {
+    '9sas7zey': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'oueee1lb': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllContactSearchScreen
+  {
+    'f8ft43pm': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'm7z91huf': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllContactScreen
+  {
+    '9wd8bm8n': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'd2qzkmgi': {
+      'en': 'Filter',
+      'ar': 'منقي',
+    },
+    '5clrlsb6': {
+      'en': 'Hello World',
+      'ar': '',
+    },
+    'ntgh108p': {
+      'en': 'Hello World',
+      'ar': '',
+    },
+    'm3wczttf': {
+      'en': 'Hello World',
+      'ar': '',
+    },
+    'mk0rvzif': {
+      'en': 'Hello World',
+      'ar': '',
+    },
+    '6av01s0g': {
+      'en': 'Username',
+      'ar': '',
+    },
+    '30qb5tvy': {
+      'en': 'username @gmail.com',
+      'ar': '',
+    },
+    '7ko65sqy': {
+      'en': 'My Account',
+      'ar': 'حسابي',
+    },
+    '3l6gpw4k': {
+      'en': 'Notifications',
+      'ar': 'إشعارات',
+    },
+    'q0pjllaj': {
+      'en': 'Language',
+      'ar': 'لغة',
+    },
+    'n4wp3pjt': {
+      'en': 'Change password',
+      'ar': 'غير كلمة السر',
+    },
+    'b0lzsjxv': {
+      'en': 'How it work',
+      'ar': 'كيف تعمل',
+    },
+    'md9ipxs8': {
+      'en': 'Logout',
+      'ar': 'تسجيل خروج',
+    },
+    '59stgch3': {
+      'en': 'All Contact',
+      'ar': 'جميع الأنشطة',
+    },
+    'mmta81iv': {
+      'en': ' (10)',
+      'ar': '(10)',
+    },
+    'ke8nvbwo': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // CustomBottomSheet
   {
     'jaaxdoyw': {
@@ -963,6 +1222,73 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0bbb8dfw': {
       'en': 'Sub Community',
       'ar': '',
+    },
+  },
+  // UnitFilter
+  {
+    'cwyr24n0': {
+      'en': 'Availibalty',
+      'ar': 'يكتب',
+    },
+    '23vm3jex': {
+      'en': 'Availibalty',
+      'ar': 'أكتب هنا',
+    },
+    'hk6mj4jy': {
+      'en': 'Property Master',
+      'ar': 'حالة النشاط',
+    },
+    'c1xgtzh0': {
+      'en': 'Property Master',
+      'ar': 'حالة',
+    },
+    'jy5w1tln': {
+      'en': 'Type',
+      'ar': 'يكتب',
+    },
+    'ciiaak6c': {
+      'en': 'Type',
+      'ar': 'أكتب هنا',
+    },
+    'd0t9aiu9': {
+      'en': 'City',
+      'ar': 'تاريخ',
+    },
+    '1grdr3cb': {
+      'en': 'City',
+      'ar': 'تاريخ',
+    },
+    'yas6ug0g': {
+      'en': 'Category',
+      'ar': 'تاريخ',
+    },
+    'watyywn1': {
+      'en': 'Category',
+      'ar': 'تاريخ',
+    },
+    'jkfgtvw2': {
+      'en': 'Status',
+      'ar': 'يكتب',
+    },
+    'x7t4w2kb': {
+      'en': 'Status',
+      'ar': 'أكتب هنا',
+    },
+    'se94cu5z': {
+      'en': 'Option 1',
+      'ar': '',
+    },
+    'it77x5za': {
+      'en': 'Please select...',
+      'ar': '',
+    },
+    'p0wr95v3': {
+      'en': 'Reset',
+      'ar': 'إعادة ضبط',
+    },
+    '19dgimzn': {
+      'en': 'Apply',
+      'ar': 'يتقدم',
     },
   },
   // Miscellaneous
