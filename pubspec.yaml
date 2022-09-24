@@ -38,7 +38,7 @@ dependencies:
   google_fonts: 3.0.1
   intl: 0.17.0
   json_path: 0.4.1
-  page_transition: 2.0.9
+  page_transition: 2.0.4
   pin_code_fields: 7.4.0
   shared_preferences: 2.0.15
   timeago: 3.2.2

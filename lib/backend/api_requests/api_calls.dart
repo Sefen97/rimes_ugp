@@ -92,7 +92,7 @@ class AllActivityRequestCall {
     "direction": "",
     "searchValue": "",
     "skip": 0,
-    "pageSize": 10
+    "pageSize": 1000
   },
   "typeId_search": 0,
   "userId": ${userId},
@@ -223,7 +223,7 @@ class LookuopCommonCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'LookuopCommon',
-      apiUrl: '${RimesApiGroup.baseUrl}/api/lookup/common/all/?',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/common/all/?',
       callType: ApiCallType.GET,
       headers: {
         ...RimesApiGroup.headers,
@@ -503,7 +503,7 @@ class AllCommintyMobileCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'AllCommintyMobile',
-      apiUrl: '${RimesApiGroup.baseUrl}/api/lookup/unitcommunity/mobile/all?',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/unitcommunity/mobile/all?',
       callType: ApiCallType.GET,
       headers: {
         ...RimesApiGroup.headers,

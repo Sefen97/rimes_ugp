@@ -29,11 +29,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) => appStateNotifier.showSplashImage
-          ? Container(
-              color: Colors.transparent,
-              child: Image.asset(
-                'assets/images/Rims.png',
-                fit: BoxFit.cover,
+          ? Builder(
+              builder: (context) => Container(
+                color: Colors.transparent,
+                child: Image.asset(
+                  'assets/images/Rims.png',
+                  fit: BoxFit.cover,
+                ),
               ),
             )
           : LoginScreenWidget(),
@@ -42,11 +44,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.showSplashImage
-              ? Container(
-                  color: Colors.transparent,
-                  child: Image.asset(
-                    'assets/images/Rims.png',
-                    fit: BoxFit.cover,
+              ? Builder(
+                  builder: (context) => Container(
+                    color: Colors.transparent,
+                    child: Image.asset(
+                      'assets/images/Rims.png',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
               : LoginScreenWidget(),
