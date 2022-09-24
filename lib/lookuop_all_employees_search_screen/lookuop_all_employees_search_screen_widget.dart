@@ -155,7 +155,7 @@ class _LookuopAllEmployeesSearchScreenWidgetState
                       future:
                           (_apiRequestCompleter ??= Completer<ApiCallResponse>()
                                 ..complete(
-                                    RimesApiGroup.lookuopAllEmployeesCall.call(
+                                    RimesApiGroup.lookoupAllEmployeesCall.call(
                                   accessTypeId: 1,
                                   userId: widget.userId,
                                   subscriptioId: 2,
@@ -175,12 +175,12 @@ class _LookuopAllEmployeesSearchScreenWidgetState
                             ),
                           );
                         }
-                        final listViewLookuopAllEmployeesResponse =
+                        final listViewLookoupAllEmployeesResponse =
                             snapshot.data!;
                         return Builder(
                           builder: (context) {
                             final allEmployeeResponse = getJsonField(
-                              listViewLookuopAllEmployeesResponse.jsonBody,
+                              listViewLookoupAllEmployeesResponse.jsonBody,
                               r'''$.result''',
                             ).toList().take(200).toList();
                             if (allEmployeeResponse.isEmpty) {

@@ -22,8 +22,8 @@ class RimesApiGroup {
   static LeadCommentsCall leadCommentsCall = LeadCommentsCall();
   static ActivityDetailsCall activityDetailsCall = ActivityDetailsCall();
   static AllPropertiesCall allPropertiesCall = AllPropertiesCall();
-  static LookuopAllEmployeesCall lookuopAllEmployeesCall =
-      LookuopAllEmployeesCall();
+  static LookoupAllEmployeesCall lookoupAllEmployeesCall =
+      LookoupAllEmployeesCall();
   static AddLeadCommintCall addLeadCommintCall = AddLeadCommintCall();
   static SalesLeadRequestCall salesLeadRequestCall = SalesLeadRequestCall();
   static AllCitiesCall allCitiesCall = AllCitiesCall();
@@ -354,14 +354,14 @@ class AllPropertiesCall {
   }
 }
 
-class LookuopAllEmployeesCall {
+class LookoupAllEmployeesCall {
   Future<ApiCallResponse> call({
     int? accessTypeId,
     int? userId,
     int? subscriptioId,
   }) {
     return ApiManager.instance.makeApiCall(
-      callName: 'LookuopAllEmployees',
+      callName: 'LookoupAllEmployees',
       apiUrl: '${RimesApiGroup.baseUrl}api/lookup/employees/all/?',
       callType: ApiCallType.GET,
       headers: {
