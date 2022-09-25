@@ -161,7 +161,9 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Field is required';
+                          return FFLocalizations.of(context).getText(
+                            'n484wszl' /* Field is required */,
+                          );
                         }
 
                         return null;
@@ -249,7 +251,9 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                             style: FlutterFlowTheme.of(context).bodyText1,
                             validator: (val) {
                               if (val == null || val.isEmpty) {
-                                return 'Field is required';
+                                return FFLocalizations.of(context).getText(
+                                  'cbt7n7ki' /* Field is required */,
+                                );
                               }
 
                               return null;
@@ -352,7 +356,9 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                             style: FlutterFlowTheme.of(context).bodyText1,
                             validator: (val) {
                               if (val == null || val.isEmpty) {
-                                return 'Field is required';
+                                return FFLocalizations.of(context).getText(
+                                  'pxt5tsp2' /* Field is required */,
+                                );
                               }
 
                               return null;
@@ -482,7 +488,10 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                                         FlutterFlowTheme.of(context).bodyText1,
                                     validator: (val) {
                                       if (val == null || val.isEmpty) {
-                                        return 'Field is required';
+                                        return FFLocalizations.of(context)
+                                            .getText(
+                                          't6hmuahj' /* Field is required */,
+                                        );
                                       }
 
                                       return null;
@@ -610,7 +619,10 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                                         FlutterFlowTheme.of(context).bodyText1,
                                     validator: (val) {
                                       if (val == null || val.isEmpty) {
-                                        return 'Field is required';
+                                        return FFLocalizations.of(context)
+                                            .getText(
+                                          'stn6xkgz' /* Field is required */,
+                                        );
                                       }
 
                                       return null;
@@ -695,7 +707,9 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Field is required';
+                          return FFLocalizations.of(context).getText(
+                            'hq3xr7wi' /* Field is required */,
+                          );
                         }
 
                         return null;
@@ -763,7 +777,9 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Field is required';
+                          return FFLocalizations.of(context).getText(
+                            'w5nnqijy' /* Field is required */,
+                          );
                         }
 
                         return null;

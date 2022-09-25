@@ -350,7 +350,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
 
                                 // Navigation
 
-                                context.pushNamed('AdminDashboardScreen');
+                                context.goNamed('AdminDashboardScreen');
                               } else {
                                 // Alert
                                 await showDialog(

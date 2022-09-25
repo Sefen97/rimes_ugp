@@ -322,7 +322,9 @@ class _ContactDetailScreenWidgetState extends State<ContactDetailScreenWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 40, 0, 0),
                                         child: Text(
-                                          '---------------',
+                                          FFLocalizations.of(context).getText(
+                                            'r9p520f3' /* --------------- */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
                                               .override(
@@ -334,186 +336,207 @@ class _ContactDetailScreenWidgetState extends State<ContactDetailScreenWidget> {
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 10, 0, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Image.asset(
-                                              'assets/images/lead.png',
-                                              width: 30,
-                                              height: 30,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'qw9cuimb' /* Total Leads  */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFF140D4D),
-                                                          fontSize: 15,
-                                                        ),
+                                        child: InkWell(
+                                          onTap: () async {
+                                            context.pushNamed('LeadsScreen');
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Image.asset(
+                                                'assets/images/lead.png',
+                                                width: 30,
+                                                height: 30,
+                                                fit: BoxFit.cover,
                                               ),
-                                            ),
-                                            Expanded(
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    getJsonField(
-                                                      columnContactGetResponse
-                                                          .jsonBody,
-                                                      r'''$.result.totalLeads''',
-                                                    ).toString(),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 0, 0, 0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'qw9cuimb' /* Total Leads  */,
                                                   ),
-                                                ],
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFF140D4D),
+                                                        fontSize: 15,
+                                                      ),
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                              Expanded(
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      getJsonField(
+                                                        columnContactGetResponse
+                                                            .jsonBody,
+                                                        r'''$.result.totalLeads''',
+                                                      ).toString(),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 15, 0, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Container(
-                                              width: 30,
-                                              height: 30,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFF140D4D),
-                                                borderRadius:
-                                                    BorderRadius.circular(5),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(1, 1, 1, 1),
-                                                child: Image.asset(
-                                                  'assets/images/activity.png',
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  fit: BoxFit.contain,
+                                        child: InkWell(
+                                          onTap: () async {
+                                            context.pushNamed('ActivityScreen');
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 30,
+                                                height: 30,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFF140D4D),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
                                                 ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'bz3dxbvo' /* Total Activity */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFF140D4D),
-                                                          fontSize: 15,
-                                                        ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    getJsonField(
-                                                      columnContactGetResponse
-                                                          .jsonBody,
-                                                      r'''$.result.totalActivity''',
-                                                    ).toString(),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(1, 1, 1, 1),
+                                                  child: Image.asset(
+                                                    'assets/images/activity.png',
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    fit: BoxFit.contain,
                                                   ),
-                                                ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 0, 0, 0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'bz3dxbvo' /* Total Activity */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFF140D4D),
+                                                        fontSize: 15,
+                                                      ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      getJsonField(
+                                                        columnContactGetResponse
+                                                            .jsonBody,
+                                                        r'''$.result.totalActivity''',
+                                                      ).toString(),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 15, 0, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Container(
-                                              width: 30,
-                                              height: 30,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFF140D4D),
-                                                borderRadius:
-                                                    BorderRadius.circular(5),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(1, 1, 1, 1),
-                                                child: Image.asset(
-                                                  'assets/images/units.png',
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  fit: BoxFit.contain,
+                                        child: InkWell(
+                                          onTap: () async {
+                                            context.pushNamed('UnitsScreen');
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 30,
+                                                height: 30,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFF140D4D),
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
                                                 ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  't37s55pl' /* Total Units */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFF140D4D),
-                                                          fontSize: 15,
-                                                        ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                children: [
-                                                  Text(
-                                                    getJsonField(
-                                                      columnContactGetResponse
-                                                          .jsonBody,
-                                                      r'''$.result.totalUnits''',
-                                                    ).toString(),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(1, 1, 1, 1),
+                                                  child: Image.asset(
+                                                    'assets/images/units.png',
+                                                    width: double.infinity,
+                                                    height: double.infinity,
+                                                    fit: BoxFit.contain,
                                                   ),
-                                                ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 0, 0, 0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    't37s55pl' /* Total Units */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFF140D4D),
+                                                        fontSize: 15,
+                                                      ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      getJsonField(
+                                                        columnContactGetResponse
+                                                            .jsonBody,
+                                                        r'''$.result.totalUnits''',
+                                                      ).toString(),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Padding(

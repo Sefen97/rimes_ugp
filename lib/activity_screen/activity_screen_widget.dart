@@ -483,7 +483,8 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                           ) ??
                                           false;
                                   if (confirmDialogResponse) {
-                                    context.pop();
+                                    context.goNamed('LoginScreen');
+
                                     return;
                                   } else {
                                     return;
