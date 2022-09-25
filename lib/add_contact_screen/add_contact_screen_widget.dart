@@ -102,7 +102,9 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
                         FFLocalizations.of(context).getText(
                           '49onx43c' /* Ms */,
                         ),
-                        'Mrs'
+                        FFLocalizations.of(context).getText(
+                          'woqofylq' /* Mrs */,
+                        )
                       ].toList(),
                       initialValue: FFLocalizations.of(context).getText(
                         'i9balv33' /* Mr */,
@@ -194,7 +196,9 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Field is required';
+                          return FFLocalizations.of(context).getText(
+                            'kfb1nela' /* Field is required */,
+                          );
                         }
 
                         return null;
@@ -262,7 +266,9 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Field is required';
+                          return FFLocalizations.of(context).getText(
+                            'an98tau0' /* Field is required */,
+                          );
                         }
 
                         return null;

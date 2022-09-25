@@ -2,8 +2,10 @@ import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../flutter_flow/permissions_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,6 +29,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
   @override
   void initState() {
     super.initState();
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await requestPermission(locationPermission);
+    });
+
     textController1 = TextEditingController();
     textController2 = TextEditingController();
     passwordVisibility = false;
@@ -343,7 +350,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
 
                                 // Navigation
 
-                                context.pushNamed('AdminDashboardScreen');
+                                context.goNamed('AdminDashboardScreen');
                               } else {
                                 // Alert
                                 await showDialog(

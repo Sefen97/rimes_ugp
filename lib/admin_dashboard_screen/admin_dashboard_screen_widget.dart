@@ -464,7 +464,8 @@ class _AdminDashboardScreenWidgetState
                                             ) ??
                                             false;
                                     if (confirmDialogResponse) {
-                                      context.pop();
+                                      context.goNamed('LoginScreen');
+
                                       return;
                                     } else {
                                       return;

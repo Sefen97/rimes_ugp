@@ -262,7 +262,6 @@ class _LeadDetailsScreenWidgetState extends State<LeadDetailsScreenWidget> {
                                       }
                                       return ListView.builder(
                                         padding: EdgeInsets.zero,
-                                        shrinkWrap: true,
                                         scrollDirection: Axis.vertical,
                                         itemCount: commentsResponse.length,
                                         itemBuilder:
@@ -283,7 +282,7 @@ class _LeadDetailsScreenWidgetState extends State<LeadDetailsScreenWidget> {
                                               ),
                                               child: Container(
                                                 width: 100,
-                                                height: 110,
+                                                height: 120,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)

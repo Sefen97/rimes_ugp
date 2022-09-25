@@ -470,7 +470,8 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
                                           ) ??
                                           false;
                                   if (confirmDialogResponse) {
-                                    context.pop();
+                                    context.goNamed('LoginScreen');
+
                                     return;
                                   } else {
                                     return;
