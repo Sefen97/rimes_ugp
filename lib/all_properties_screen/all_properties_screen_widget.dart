@@ -1,4 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
+import '../components/propirty_filter_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -80,11 +81,16 @@ class _AllPropertiesScreenWidgetState extends State<AllPropertiesScreenWidget> {
         actions: [
           Align(
             alignment: AlignmentDirectional(0, 0),
-            child: Image.asset(
-              'assets/images/group_3445.png',
-              width: 90,
-              height: 60,
-              fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () async {
+                context.pushNamed('AddPropertyScreen');
+              },
+              child: Image.asset(
+                'assets/images/group_3445.png',
+                width: 90,
+                height: 60,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],
@@ -171,41 +177,58 @@ class _AllPropertiesScreenWidgetState extends State<AllPropertiesScreenWidget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
-                    child: Container(
-                      width: 75,
-                      height: 46,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF140D4D),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'psv1qfak' /* Filter */,
+                    child: InkWell(
+                      onTap: () async {
+                        await showModalBottomSheet(
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return Padding(
+                              padding: MediaQuery.of(context).viewInsets,
+                              child: PropirtyFilterBottomSheetWidget(),
+                            );
+                          },
+                        ).then((value) => setState(() {}));
+                      },
+                      child: Container(
+                        width: 75,
+                        height: 46,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF140D4D),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'psv1qfak' /* Filter */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                    ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBtnText,
-                                  ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                            child: Icon(
-                              Icons.filter_alt_outlined,
-                              color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
-                              size: 24,
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                              child: Icon(
+                                Icons.filter_alt_outlined,
+                                color:
+                                    FlutterFlowTheme.of(context).primaryBtnText,
+                                size: 24,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

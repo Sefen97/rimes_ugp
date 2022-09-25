@@ -1,6 +1,6 @@
 import '../backend/api_requests/api_calls.dart';
 import '../components/custom_bottom_sheet_widget.dart';
-import '../components/lead_filter_widget.dart';
+import '../components/lead_filter_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -628,7 +628,7 @@ class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
                               builder: (context) {
                                 return Padding(
                                   padding: MediaQuery.of(context).viewInsets,
-                                  child: LeadFilterWidget(),
+                                  child: LeadFilterBottomSheetWidget(),
                                 );
                               },
                             ).then((value) => setState(() {}));

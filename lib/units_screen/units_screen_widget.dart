@@ -1,5 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
-import '../components/unit_filter_widget.dart';
+import '../components/unit_filter_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -665,7 +665,7 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
                               builder: (context) {
                                 return Padding(
                                   padding: MediaQuery.of(context).viewInsets,
-                                  child: UnitFilterWidget(),
+                                  child: UnitFilterBottomSheetWidget(),
                                 );
                               },
                             ).then((value) => setState(() {}));

@@ -10,6 +10,8 @@ export 'leads_screen/leads_screen_widget.dart' show LeadsScreenWidget;
 export 'more_screen/more_screen_widget.dart' show MoreScreenWidget;
 export 'activity_details_screen/activity_details_screen_widget.dart'
     show ActivityDetailsScreenWidget;
+export 'add_property_screen/add_property_screen_widget.dart'
+    show AddPropertyScreenWidget;
 export 'my_account_screen/my_account_screen_widget.dart'
     show MyAccountScreenWidget;
 export 'add_activity_screen/add_activity_screen_widget.dart'

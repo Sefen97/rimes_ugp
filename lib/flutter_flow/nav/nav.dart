@@ -108,6 +108,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
+              name: 'AddPropertyScreen',
+              path: 'addPropertyScreen',
+              builder: (context, params) => AddPropertyScreenWidget(),
+            ),
+            FFRoute(
               name: 'MyAccountScreen',
               path: 'myAccountScreen',
               builder: (context, params) => MyAccountScreenWidget(),
