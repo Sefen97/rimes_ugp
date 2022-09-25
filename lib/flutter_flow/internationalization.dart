@@ -459,63 +459,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add',
       'ar': 'يضيف',
     },
-    'ewczcx3d': {
+    '4kki655m': {
       'en': 'Field is required',
       'ar': '',
     },
-    'rqvf3ff7': {
+    'ljr0j4dk': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    '4gqjmlxk': {
+    'w43s896x': {
       'en': 'Field is required',
       'ar': '',
     },
-    'mgcq8fk4': {
+    '22ugbxv2': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    'y61h9izr': {
+    '10xniv4v': {
       'en': 'Field is required',
       'ar': '',
     },
-    'v9jxapp9': {
+    'x1g981ra': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    'sv40o746': {
+    'td7npnvo': {
       'en': 'Field is required',
       'ar': '',
     },
-    '8433868l': {
+    'bfzo7qrs': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    '2t86aa41': {
+    'nhbyg0as': {
       'en': 'Field is required',
       'ar': '',
     },
-    'yjr79gko': {
+    'locohlgf': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    '2he6tpvz': {
+    'rkfs80fm': {
       'en': 'Field is required',
       'ar': '',
     },
-    'w67n547g': {
+    'a6r4w9e0': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    'cxm6pg41': {
+    'vteknure': {
       'en': 'Field is required',
       'ar': '',
     },
-    'z3a7q5aw': {
+    'alrsj1os': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    've74ukpm': {
+    'cv6w7fc6': {
       'en': 'Home',
       'ar': '',
     },
@@ -1188,7 +1188,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Ms',
       'ar': '',
     },
-    '1ggle7n9': {
+    'i2rqdfdl': {
       'en': 'Mrs',
       'ar': '',
     },
@@ -1228,19 +1228,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add',
       'ar': 'يضيف',
     },
-    '9np5ulvs': {
+    '73sbglkw': {
       'en': 'Field is required',
       'ar': '',
     },
-    'l6ezy9sg': {
+    'mze3b46f': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
-    'znburk1a': {
+    'bur9dmhi': {
       'en': 'Field is required',
       'ar': '',
     },
-    '345y4rip': {
+    'gdplngia': {
       'en': 'Please choose an option from the dropdown',
       'ar': '',
     },
@@ -1248,14 +1248,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Add a new Contact',
       'ar': 'أضف نشاطًا جديدًا',
     },
-    '2lefxggl': {
+    'mc06rm74': {
       'en': 'Home',
       'ar': '',
     },
   },
   // ContactDetailScreen
   {
-    'or4l1lqh': {
+    'ww751wf8': {
       'en': '---------------',
       'ar': '',
     },
@@ -1275,7 +1275,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Attach File',
       'ar': '',
     },
-    'ntv0sizs': {
+    'yrn3mc1j': {
       'en': 'Home',
       'ar': '',
     },
@@ -1298,7 +1298,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': ' (10)',
       'ar': '(10)',
     },
-    'mc1wbw9m': {
+    'm1mcwfff': {
       'en': 'Home',
       'ar': '',
     },
@@ -1567,6 +1567,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Miscellaneous
   {
+    'wfgierp3': {
+      'en': 'Please turn on your location',
+      'ar': '',
+    },
     'kyuwqwvy': {
       'en': '',
       'ar': '',

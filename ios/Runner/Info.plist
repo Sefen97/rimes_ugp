@@ -48,7 +48,8 @@
 	<true/>
 
 
-
+	<key>NSLocationWhenInUseUsageDescription</key>
+      <string>Please turn on your location</string>
 
 
 	<key>UILaunchStoryboardName</key>
