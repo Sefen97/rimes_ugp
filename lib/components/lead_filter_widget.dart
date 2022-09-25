@@ -73,8 +73,8 @@ class _LeadFilterWidgetState extends State<LeadFilterWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
               child: Container(
-                width: 50,
-                height: 5,
+                width: 80,
+                height: 10,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).lineColor,
                   borderRadius: BorderRadius.circular(8),

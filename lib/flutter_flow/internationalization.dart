@@ -859,6 +859,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
+  // PropertyMasterSearchScreen
+  {
+    '9sas7zey': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'oueee1lb': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
   // AddUnitScreen
   {
     'w8z6cfba': {
@@ -998,28 +1009,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '',
     },
   },
-  // PropertyMasterSearchScreen
-  {
-    '9sas7zey': {
-      'en': 'search',
-      'ar': 'بحث',
-    },
-    'oueee1lb': {
-      'en': 'Home',
-      'ar': '',
-    },
-  },
-  // AllContactSearchScreen
-  {
-    'f8ft43pm': {
-      'en': 'search',
-      'ar': 'بحث',
-    },
-    'm7z91huf': {
-      'en': 'Home',
-      'ar': '',
-    },
-  },
   // AllContactScreen
   {
     '9wd8bm8n': {
@@ -1039,6 +1028,150 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': '(10)',
     },
     'uucay5v6': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllContactSearchScreen
+  {
+    'f8ft43pm': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'm7z91huf': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AddContactScreen
+  {
+    'i9balv33': {
+      'en': 'Mr',
+      'ar': 'تأجير',
+    },
+    'ii1wns4u': {
+      'en': 'Mr',
+      'ar': 'تأجير',
+    },
+    'j7k7o56u': {
+      'en': 'Miss',
+      'ar': 'تخفيض السعر',
+    },
+    '49onx43c': {
+      'en': 'Ms',
+      'ar': '',
+    },
+    'bgtpg317': {
+      'en': 'Mrs',
+      'ar': '',
+    },
+    'lnp0nlum': {
+      'en': 'Contact Name',
+      'ar': 'يكتب',
+    },
+    'vzabmj9g': {
+      'en': 'Contact Name',
+      'ar': 'أكتب هنا',
+    },
+    '8xaekzcw': {
+      'en': 'Email Address',
+      'ar': 'يكتب',
+    },
+    '3d583mgj': {
+      'en': 'Email Address',
+      'ar': 'أكتب هنا',
+    },
+    'ipccgs3y': {
+      'en': 'Nationalty',
+      'ar': 'يكتب',
+    },
+    'ww4g0fsi': {
+      'en': 'Nationalty',
+      'ar': 'أكتب هنا',
+    },
+    'gflgazhp': {
+      'en': 'Contact Type',
+      'ar': 'يكتب',
+    },
+    'ldipr9k7': {
+      'en': 'Contact Type',
+      'ar': 'أكتب هنا',
+    },
+    '5q2spzne': {
+      'en': 'Add',
+      'ar': 'يضيف',
+    },
+    'qqp32pvx': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'zq7vib24': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    's2t57h6e': {
+      'en': 'Field is required',
+      'ar': '',
+    },
+    'vo4dbdz6': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': '',
+    },
+    'i8dil49t': {
+      'en': 'Add a new Contact',
+      'ar': 'أضف نشاطًا جديدًا',
+    },
+    '9jxfe51p': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // ContactDetailScreen
+  {
+    '5ikmg6wc': {
+      'en': '---------------',
+      'ar': '',
+    },
+    'qw9cuimb': {
+      'en': 'Total Leads ',
+      'ar': '',
+    },
+    'bz3dxbvo': {
+      'en': 'Total Activity',
+      'ar': '',
+    },
+    't37s55pl': {
+      'en': 'Total Units',
+      'ar': '',
+    },
+    'pvidh9jz': {
+      'en': 'Attach File',
+      'ar': '',
+    },
+    'jaltu7b8': {
+      'en': 'Home',
+      'ar': '',
+    },
+  },
+  // AllPropertiesScreen
+  {
+    '63bjt3mt': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'psv1qfak': {
+      'en': 'Filter',
+      'ar': 'منقي',
+    },
+    'z83q02fu': {
+      'en': 'All Properties',
+      'ar': 'جميع الأنشطة',
+    },
+    'epeo7bhh': {
+      'en': ' (10)',
+      'ar': '(10)',
+    },
+    '4qhs8y7e': {
       'en': 'Home',
       'ar': '',
     },
@@ -1239,6 +1372,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إعادة ضبط',
     },
     '19dgimzn': {
+      'en': 'Apply',
+      'ar': 'يتقدم',
+    },
+  },
+  // ContactFilterBottomSheet
+  {
+    'muvscv56': {
+      'en': 'Contact Type',
+      'ar': 'يكتب',
+    },
+    'mv8773fb': {
+      'en': 'Contact Type',
+      'ar': 'أكتب هنا',
+    },
+    'jg2teard': {
+      'en': 'industry',
+      'ar': 'حالة النشاط',
+    },
+    'szfzijp1': {
+      'en': 'industry',
+      'ar': 'حالة',
+    },
+    'g825trnz': {
+      'en': 'industry Type',
+      'ar': 'يكتب',
+    },
+    '39bfp7o0': {
+      'en': 'industry Type',
+      'ar': 'أكتب هنا',
+    },
+    'hx9ueoaj': {
+      'en': 'Reset',
+      'ar': 'إعادة ضبط',
+    },
+    'r6pygq4m': {
       'en': 'Apply',
       'ar': 'يتقدم',
     },

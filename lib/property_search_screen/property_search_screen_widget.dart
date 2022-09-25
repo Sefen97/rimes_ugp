@@ -157,8 +157,8 @@ class _PropertySearchScreenWidgetState
                                 ..complete(RimesApiGroup.allPropertiesCall.call(
                                   id: widget.id,
                                   userId: FFAppState().userId,
-                                  pageSize: 100,
                                   subscriberId: 2,
+                                  pageSize: 10,
                                 )))
                               .future,
                       builder: (context, snapshot) {

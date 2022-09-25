@@ -62,30 +62,35 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                     ),
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Icon(
-                        Icons.home_work_outlined,
-                        color: Color(0xFFDB1B1B),
-                        size: 25,
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'h90dm300' /* Properites */,
-                          ),
-                          style: FlutterFlowTheme.of(context).bodyText1,
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('AllPropertiesScreen');
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Icon(
+                          Icons.home_work_outlined,
+                          color: Color(0xFFDB1B1B),
+                          size: 25,
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'h90dm300' /* Properites */,
+                            ),
+                            style: FlutterFlowTheme.of(context).bodyText1,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

@@ -33,6 +33,7 @@ class RimesApiGroup {
   static AllContactCall allContactCall = AllContactCall();
   static PropertyGetCall propertyGetCall = PropertyGetCall();
   static AttachGetCall attachGetCall = AttachGetCall();
+  static ContactGetCall contactGetCall = ContactGetCall();
 }
 
 class LoginRequestCall {
@@ -700,6 +701,29 @@ class AttachGetCall {
       params: {},
       body: body,
       bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class ContactGetCall {
+  Future<ApiCallResponse> call({
+    int? contactId,
+    int? languageId,
+    int? subscriberId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'ContactGet',
+      apiUrl: '${RimesApiGroup.baseUrl}api/contact/get',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'contactId': contactId,
+        'languageId': languageId,
+        'subscriberId': subscriberId,
+      },
       returnBody: true,
     );
   }
