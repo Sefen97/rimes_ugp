@@ -10,6 +10,8 @@ export 'leads_screen/leads_screen_widget.dart' show LeadsScreenWidget;
 export 'more_screen/more_screen_widget.dart' show MoreScreenWidget;
 export 'activity_details_screen/activity_details_screen_widget.dart'
     show ActivityDetailsScreenWidget;
+export 'add_property_screen/add_property_screen_widget.dart'
+    show AddPropertyScreenWidget;
 export 'my_account_screen/my_account_screen_widget.dart'
     show MyAccountScreenWidget;
 export 'add_activity_screen/add_activity_screen_widget.dart'
@@ -28,10 +30,16 @@ export 'sales_lead_search_screen/sales_lead_search_screen_widget.dart'
 export 'add_lead_screen/add_lead_screen_widget.dart' show AddLeadScreenWidget;
 export 'unit_details_screen/unit_details_screen_widget.dart'
     show UnitDetailsScreenWidget;
-export 'add_unit_screen/add_unit_screen_widget.dart' show AddUnitScreenWidget;
 export 'property_master_search_screen/property_master_search_screen_widget.dart'
     show PropertyMasterSearchScreenWidget;
-export 'all_contact_search_screen/all_contact_search_screen_widget.dart'
-    show AllContactSearchScreenWidget;
+export 'add_unit_screen/add_unit_screen_widget.dart' show AddUnitScreenWidget;
 export 'all_contact_screen/all_contact_screen_widget.dart'
     show AllContactScreenWidget;
+export 'all_contact_search_screen/all_contact_search_screen_widget.dart'
+    show AllContactSearchScreenWidget;
+export 'add_contact_screen/add_contact_screen_widget.dart'
+    show AddContactScreenWidget;
+export 'contact_detail_screen/contact_detail_screen_widget.dart'
+    show ContactDetailScreenWidget;
+export 'all_properties_screen/all_properties_screen_widget.dart'
+    show AllPropertiesScreenWidget;

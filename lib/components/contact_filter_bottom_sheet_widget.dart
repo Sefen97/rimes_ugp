@@ -5,45 +5,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityFilterBottomSheetWidget extends StatefulWidget {
-  const ActivityFilterBottomSheetWidget({
+class ContactFilterBottomSheetWidget extends StatefulWidget {
+  const ContactFilterBottomSheetWidget({
     Key? key,
-    this.type,
-    this.activityStatus,
+    this.contactType,
+    this.industry,
+    this.industryType,
   }) : super(key: key);
 
-  final String? type;
-  final String? activityStatus;
+  final String? contactType;
+  final String? industry;
+  final String? industryType;
 
   @override
-  _ActivityFilterBottomSheetWidgetState createState() =>
-      _ActivityFilterBottomSheetWidgetState();
+  _ContactFilterBottomSheetWidgetState createState() =>
+      _ContactFilterBottomSheetWidgetState();
 }
 
-class _ActivityFilterBottomSheetWidgetState
-    extends State<ActivityFilterBottomSheetWidget> {
-  TextEditingController? activityStatusTextFieldController;
-  TextEditingController? typTextFieldController;
+class _ContactFilterBottomSheetWidgetState
+    extends State<ContactFilterBottomSheetWidget> {
+  TextEditingController? contactTypeTextFieldController;
+  TextEditingController? industoryTextFieldController;
+  TextEditingController? industryTypeTextFieldController;
 
   @override
   void initState() {
     super.initState();
-    activityStatusTextFieldController = TextEditingController(
-        text: valueOrDefault<String>(
-      widget.activityStatus,
-      'Activity Status',
-    ));
-    typTextFieldController = TextEditingController(
-        text: valueOrDefault<String>(
-      widget.type,
-      'Type Here',
-    ));
+    contactTypeTextFieldController =
+        TextEditingController(text: widget.contactType);
+    industoryTextFieldController = TextEditingController(text: widget.industry);
+    industryTypeTextFieldController =
+        TextEditingController(text: widget.industryType);
   }
 
   @override
   void dispose() {
-    activityStatusTextFieldController?.dispose();
-    typTextFieldController?.dispose();
+    contactTypeTextFieldController?.dispose();
+    industoryTextFieldController?.dispose();
+    industryTypeTextFieldController?.dispose();
     super.dispose();
   }
 
@@ -88,106 +87,14 @@ class _ActivityFilterBottomSheetWidgetState
                   ),
                 ),
               ),
-              Container(
-                height: 80,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                      child: TextFormField(
-                        controller: typTextFieldController,
-                        autofocus: true,
-                        readOnly: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            'x1y4xxt3' /* Type */,
-                          ),
-                          hintText: FFLocalizations.of(context).getText(
-                            'ufukrab5' /* Type Here */,
-                          ),
-                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x210A0A0A),
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x210A0A0A),
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).customColor3,
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).customColor3,
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          contentPadding:
-                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyText1,
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () async {
-                        context.pushNamed(
-                          'LoockupCommonSearchScreen',
-                          queryParams: {
-                            'appBarTitle': serializeParam(
-                                'Activity Type', ParamType.String),
-                            'loockupId': serializeParam(2076, ParamType.int),
-                            'subscribId': serializeParam(2, ParamType.int),
-                            'languageId': serializeParam(2, ParamType.int),
-                          }.withoutNulls,
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Color(0x00000001),
-                          border: Border.all(
-                            color: Color(0x00000001),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               InkWell(
                 onTap: () async {
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
                       'appBarTitle':
-                          serializeParam('Activity Status', ParamType.String),
-                      'loockupId': serializeParam(2075, ParamType.int),
+                          serializeParam('Contact Type', ParamType.String),
+                      'loockupId': serializeParam(10, ParamType.int),
                       'subscribId': serializeParam(2, ParamType.int),
                       'languageId': serializeParam(2, ParamType.int),
                     }.withoutNulls,
@@ -200,16 +107,204 @@ class _ActivityFilterBottomSheetWidgetState
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                         child: TextFormField(
-                          controller: activityStatusTextFieldController,
+                          controller: contactTypeTextFieldController,
                           autofocus: true,
                           readOnly: true,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: FFLocalizations.of(context).getText(
-                              't1xwmc1z' /* Activity Status */,
+                              'muvscv56' /* Contact Type */,
                             ),
                             hintText: FFLocalizations.of(context).getText(
-                              'v25ntzij' /* Status */,
+                              'mv8773fb' /* Contact Type */,
+                            ),
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            contentPadding:
+                                EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Color(0x00000001),
+                          border: Border.all(
+                            color: Color(0x00000001),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () async {
+                  context.pushNamed(
+                    'LoockupCommonSearchScreen',
+                    queryParams: {
+                      'appBarTitle':
+                          serializeParam('Industry', ParamType.String),
+                      'loockupId': serializeParam(61, ParamType.int),
+                      'subscribId': serializeParam(2, ParamType.int),
+                      'languageId': serializeParam(2, ParamType.int),
+                    }.withoutNulls,
+                  );
+                },
+                child: Container(
+                  height: 80,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                        child: TextFormField(
+                          controller: industoryTextFieldController,
+                          autofocus: true,
+                          readOnly: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: FFLocalizations.of(context).getText(
+                              'jg2teard' /* industry */,
+                            ),
+                            hintText: FFLocalizations.of(context).getText(
+                              'szfzijp1' /* industry */,
+                            ),
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            contentPadding:
+                                EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Color(0x00000001),
+                          border: Border.all(
+                            color: Color(0x00000001),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () async {
+                  context.pushNamed(
+                    'LoockupCommonSearchScreen',
+                    queryParams: {
+                      'appBarTitle':
+                          serializeParam('Industry Type', ParamType.String),
+                      'loockupId': serializeParam(62, ParamType.int),
+                      'subscribId': serializeParam(2, ParamType.int),
+                      'languageId': serializeParam(2, ParamType.int),
+                    }.withoutNulls,
+                  );
+                },
+                child: Container(
+                  height: 80,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                        child: TextFormField(
+                          controller: industryTypeTextFieldController,
+                          autofocus: true,
+                          readOnly: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: FFLocalizations.of(context).getText(
+                              'g825trnz' /* industry Type */,
+                            ),
+                            hintText: FFLocalizations.of(context).getText(
+                              '39bfp7o0' /* industry Type */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context).bodyText2,
                             enabledBorder: OutlineInputBorder(
@@ -295,12 +390,14 @@ class _ActivityFilterBottomSheetWidgetState
                             child: FFButtonWidget(
                               onPressed: () async {
                                 setState(() {
-                                  activityStatusTextFieldController?.clear();
+                                  contactTypeTextFieldController?.clear();
+                                  industoryTextFieldController?.clear();
+                                  industryTypeTextFieldController?.clear();
                                 });
                                 Navigator.pop(context);
                               },
                               text: FFLocalizations.of(context).getText(
-                                '4e8j1n63' /* Reset */,
+                                'hx9ueoaj' /* Reset */,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,
@@ -346,7 +443,7 @@ class _ActivityFilterBottomSheetWidgetState
                                 Navigator.pop(context);
                               },
                               text: FFLocalizations.of(context).getText(
-                                'vez3x67e' /* Apply */,
+                                'r6pygq4m' /* Apply */,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,

@@ -29,11 +29,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) => appStateNotifier.showSplashImage
-          ? Container(
-              color: Colors.transparent,
-              child: Image.asset(
-                'assets/images/Rims.png',
-                fit: BoxFit.cover,
+          ? Builder(
+              builder: (context) => Container(
+                color: Colors.transparent,
+                child: Image.asset(
+                  'assets/images/Rims.png',
+                  fit: BoxFit.cover,
+                ),
               ),
             )
           : LoginScreenWidget(),
@@ -42,11 +44,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.showSplashImage
-              ? Container(
-                  color: Colors.transparent,
-                  child: Image.asset(
-                    'assets/images/Rims.png',
-                    fit: BoxFit.cover,
+              ? Builder(
+                  builder: (context) => Container(
+                    color: Colors.transparent,
+                    child: Image.asset(
+                      'assets/images/Rims.png',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
               : LoginScreenWidget(),
@@ -102,6 +106,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ActivityDetailsScreenWidget(
                 id: params.getParam('id', ParamType.int),
               ),
+            ),
+            FFRoute(
+              name: 'AddPropertyScreen',
+              path: 'addPropertyScreen',
+              builder: (context, params) => AddPropertyScreenWidget(),
             ),
             FFRoute(
               name: 'MyAccountScreen',
@@ -180,16 +189,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'AddUnitScreen',
-              path: 'addUnitScreen',
-              builder: (context, params) => AddUnitScreenWidget(),
-            ),
-            FFRoute(
               name: 'PropertyMasterSearchScreen',
               path: 'propertyMasterSearchScreen',
               builder: (context, params) => PropertyMasterSearchScreenWidget(
                 appBarTitle: params.getParam('appBarTitle', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'AddUnitScreen',
+              path: 'addUnitScreen',
+              builder: (context, params) => AddUnitScreenWidget(),
+            ),
+            FFRoute(
+              name: 'AllContactScreen',
+              path: 'allContactScreen',
+              builder: (context, params) => AllContactScreenWidget(),
             ),
             FFRoute(
               name: 'AllContactSearchScreen',
@@ -199,9 +213,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'AllContactScreen',
-              path: 'allContactScreen',
-              builder: (context, params) => AllContactScreenWidget(),
+              name: 'AddContactScreen',
+              path: 'addContactScreen',
+              builder: (context, params) => AddContactScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ContactDetailScreen',
+              path: 'contactDetailScreen',
+              builder: (context, params) => ContactDetailScreenWidget(
+                contactId: params.getParam('contactId', ParamType.int),
+              ),
+            ),
+            FFRoute(
+              name: 'AllPropertiesScreen',
+              path: 'allPropertiesScreen',
+              builder: (context, params) => AllPropertiesScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

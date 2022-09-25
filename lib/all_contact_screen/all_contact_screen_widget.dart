@@ -1,5 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
-import '../components/activity_filter_bottom_sheet_widget.dart';
+import '../components/contact_filter_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -80,11 +80,16 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
         actions: [
           Align(
             alignment: AlignmentDirectional(0, 0),
-            child: Image.asset(
-              'assets/images/group_3445.png',
-              width: 90,
-              height: 60,
-              fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () async {
+                context.pushNamed('AddContactScreen');
+              },
+              child: Image.asset(
+                'assets/images/group_3445.png',
+                width: 90,
+                height: 60,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],
@@ -180,7 +185,7 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
                           builder: (context) {
                             return Padding(
                               padding: MediaQuery.of(context).viewInsets,
-                              child: ActivityFilterBottomSheetWidget(),
+                              child: ContactFilterBottomSheetWidget(),
                             );
                           },
                         ).then((value) => setState(() {}));
@@ -270,116 +275,131 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
                               return Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     15, 10, 15, 10),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Image.network(
-                                            'https://picsum.photos/seed/790/600',
-                                            width: 60,
-                                            height: 60,
-                                            fit: BoxFit.cover,
+                                child: InkWell(
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'ContactDetailScreen',
+                                      queryParams: {
+                                        'contactId': serializeParam(
+                                            getJsonField(
+                                              allContactItemItem,
+                                              r'''$.contactId''',
+                                            ),
+                                            ParamType.int),
+                                      }.withoutNulls,
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.network(
+                                              'https://picsum.photos/seed/790/600',
+                                              width: 60,
+                                              height: 60,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                getJsonField(
-                                                  allContactItemItem,
-                                                  r'''$.firstName''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1,
-                                              ),
-                                              Text(
-                                                getJsonField(
-                                                  allContactItemItem,
-                                                  r'''$.mobile''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFFAAAAAA),
-                                                        ),
-                                              ),
-                                              Text(
-                                                getJsonField(
-                                                  allContactItemItem,
-                                                  r'''$.email''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFFAAAAAA),
-                                                        ),
-                                              ),
-                                            ],
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    15, 0, 0, 0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  getJsonField(
+                                                    allContactItemItem,
+                                                    r'''$.firstName''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1,
+                                                ),
+                                                Text(
+                                                  getJsonField(
+                                                    allContactItemItem,
+                                                    r'''$.mobile''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFFAAAAAA),
+                                                      ),
+                                                ),
+                                                Text(
+                                                  getJsonField(
+                                                    allContactItemItem,
+                                                    r'''$.email''',
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFFAAAAAA),
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Expanded(
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              Text(
-                                                getJsonField(
-                                                  allContactItemItem,
-                                                  r'''$.contactTypeName''',
-                                                ).toString(),
-                                                textAlign: TextAlign.end,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color:
-                                                              Color(0xFFE11113),
-                                                        ),
-                                              ),
-                                            ],
+                                          Expanded(
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Text(
+                                                  getJsonField(
+                                                    allContactItemItem,
+                                                    r'''$.contactTypeName''',
+                                                  ).toString(),
+                                                  textAlign: TextAlign.end,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFFE11113),
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 15, 0, 0),
-                                      child: Container(
-                                        width: double.infinity,
-                                        height: 2,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFF3F3F3),
-                                          border: Border.all(
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 15, 0, 0),
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 2,
+                                          decoration: BoxDecoration(
                                             color: Color(0xFFF3F3F3),
+                                            border: Border.all(
+                                              color: Color(0xFFF3F3F3),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               );
                             },

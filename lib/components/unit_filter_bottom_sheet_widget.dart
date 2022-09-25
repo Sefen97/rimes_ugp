@@ -9,14 +9,16 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class UnitFilterWidget extends StatefulWidget {
-  const UnitFilterWidget({Key? key}) : super(key: key);
+class UnitFilterBottomSheetWidget extends StatefulWidget {
+  const UnitFilterBottomSheetWidget({Key? key}) : super(key: key);
 
   @override
-  _UnitFilterWidgetState createState() => _UnitFilterWidgetState();
+  _UnitFilterBottomSheetWidgetState createState() =>
+      _UnitFilterBottomSheetWidgetState();
 }
 
-class _UnitFilterWidgetState extends State<UnitFilterWidget> {
+class _UnitFilterBottomSheetWidgetState
+    extends State<UnitFilterBottomSheetWidget> {
   DateTime? datePicked1;
   TextEditingController? dateFromTextFieldController1;
   DateTime? datePicked2;
@@ -85,8 +87,8 @@ class _UnitFilterWidgetState extends State<UnitFilterWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                 child: Container(
-                  width: 50,
-                  height: 5,
+                  width: 80,
+                  height: 10,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).lineColor,
                     borderRadius: BorderRadius.circular(8),

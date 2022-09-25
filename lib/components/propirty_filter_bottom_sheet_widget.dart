@@ -5,45 +5,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ActivityFilterBottomSheetWidget extends StatefulWidget {
-  const ActivityFilterBottomSheetWidget({
+class PropirtyFilterBottomSheetWidget extends StatefulWidget {
+  const PropirtyFilterBottomSheetWidget({
     Key? key,
-    this.type,
-    this.activityStatus,
+    this.community,
+    this.propertyType,
   }) : super(key: key);
 
-  final String? type;
-  final String? activityStatus;
+  final String? community;
+  final String? propertyType;
 
   @override
-  _ActivityFilterBottomSheetWidgetState createState() =>
-      _ActivityFilterBottomSheetWidgetState();
+  _PropirtyFilterBottomSheetWidgetState createState() =>
+      _PropirtyFilterBottomSheetWidgetState();
 }
 
-class _ActivityFilterBottomSheetWidgetState
-    extends State<ActivityFilterBottomSheetWidget> {
-  TextEditingController? activityStatusTextFieldController;
-  TextEditingController? typTextFieldController;
+class _PropirtyFilterBottomSheetWidgetState
+    extends State<PropirtyFilterBottomSheetWidget> {
+  TextEditingController? communityTextFieldController;
+  TextEditingController? propertyTypeTextFieldController;
 
   @override
   void initState() {
     super.initState();
-    activityStatusTextFieldController = TextEditingController(
-        text: valueOrDefault<String>(
-      widget.activityStatus,
-      'Activity Status',
-    ));
-    typTextFieldController = TextEditingController(
-        text: valueOrDefault<String>(
-      widget.type,
-      'Type Here',
-    ));
+    communityTextFieldController =
+        TextEditingController(text: widget.community);
+    propertyTypeTextFieldController =
+        TextEditingController(text: widget.propertyType);
   }
 
   @override
   void dispose() {
-    activityStatusTextFieldController?.dispose();
-    typTextFieldController?.dispose();
+    communityTextFieldController?.dispose();
+    propertyTypeTextFieldController?.dispose();
     super.dispose();
   }
 
@@ -88,106 +82,14 @@ class _ActivityFilterBottomSheetWidgetState
                   ),
                 ),
               ),
-              Container(
-                height: 80,
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                      child: TextFormField(
-                        controller: typTextFieldController,
-                        autofocus: true,
-                        readOnly: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            'x1y4xxt3' /* Type */,
-                          ),
-                          hintText: FFLocalizations.of(context).getText(
-                            'ufukrab5' /* Type Here */,
-                          ),
-                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x210A0A0A),
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0x210A0A0A),
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).customColor3,
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).customColor3,
-                              width: 2,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(4.0),
-                              topRight: Radius.circular(4.0),
-                            ),
-                          ),
-                          contentPadding:
-                              EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyText1,
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () async {
-                        context.pushNamed(
-                          'LoockupCommonSearchScreen',
-                          queryParams: {
-                            'appBarTitle': serializeParam(
-                                'Activity Type', ParamType.String),
-                            'loockupId': serializeParam(2076, ParamType.int),
-                            'subscribId': serializeParam(2, ParamType.int),
-                            'languageId': serializeParam(2, ParamType.int),
-                          }.withoutNulls,
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Color(0x00000001),
-                          border: Border.all(
-                            color: Color(0x00000001),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               InkWell(
                 onTap: () async {
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
                       'appBarTitle':
-                          serializeParam('Activity Status', ParamType.String),
-                      'loockupId': serializeParam(2075, ParamType.int),
+                          serializeParam('Community', ParamType.String),
+                      'loockupId': serializeParam(69, ParamType.int),
                       'subscribId': serializeParam(2, ParamType.int),
                       'languageId': serializeParam(2, ParamType.int),
                     }.withoutNulls,
@@ -200,16 +102,16 @@ class _ActivityFilterBottomSheetWidgetState
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                         child: TextFormField(
-                          controller: activityStatusTextFieldController,
+                          controller: communityTextFieldController,
                           autofocus: true,
                           readOnly: true,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: FFLocalizations.of(context).getText(
-                              't1xwmc1z' /* Activity Status */,
+                              'ik7xslba' /* Community */,
                             ),
                             hintText: FFLocalizations.of(context).getText(
-                              'v25ntzij' /* Status */,
+                              '2e513kir' /* Community */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context).bodyText2,
                             enabledBorder: OutlineInputBorder(
@@ -274,6 +176,103 @@ class _ActivityFilterBottomSheetWidgetState
                   ),
                 ),
               ),
+              InkWell(
+                onTap: () async {
+                  context.pushNamed(
+                    'LoockupCommonSearchScreen',
+                    queryParams: {
+                      'appBarTitle':
+                          serializeParam('Property Type', ParamType.String),
+                      'loockupId': serializeParam(2077, ParamType.int),
+                      'subscribId': serializeParam(2, ParamType.int),
+                      'languageId': serializeParam(2, ParamType.int),
+                    }.withoutNulls,
+                  );
+                },
+                child: Container(
+                  height: 80,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                        child: TextFormField(
+                          controller: propertyTypeTextFieldController,
+                          autofocus: true,
+                          readOnly: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: FFLocalizations.of(context).getText(
+                              't4zj0ou6' /* Property Type  */,
+                            ),
+                            hintText: FFLocalizations.of(context).getText(
+                              'a44p3qpa' /* Property Type */,
+                            ),
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x210A0A0A),
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor3,
+                                width: 2,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            contentPadding:
+                                EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          ),
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Color(0x00000001),
+                            border: Border.all(
+                              color: Color(0x00000001),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 0),
                 child: Row(
@@ -295,12 +294,13 @@ class _ActivityFilterBottomSheetWidgetState
                             child: FFButtonWidget(
                               onPressed: () async {
                                 setState(() {
-                                  activityStatusTextFieldController?.clear();
+                                  communityTextFieldController?.clear();
+                                  propertyTypeTextFieldController?.clear();
                                 });
                                 Navigator.pop(context);
                               },
                               text: FFLocalizations.of(context).getText(
-                                '4e8j1n63' /* Reset */,
+                                'o0s75800' /* Reset */,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,
@@ -346,7 +346,7 @@ class _ActivityFilterBottomSheetWidgetState
                                 Navigator.pop(context);
                               },
                               text: FFLocalizations.of(context).getText(
-                                'vez3x67e' /* Apply */,
+                                'mhfdu9px' /* Apply */,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,

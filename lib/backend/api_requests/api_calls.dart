@@ -22,8 +22,8 @@ class RimesApiGroup {
   static LeadCommentsCall leadCommentsCall = LeadCommentsCall();
   static ActivityDetailsCall activityDetailsCall = ActivityDetailsCall();
   static AllPropertiesCall allPropertiesCall = AllPropertiesCall();
-  static LookuopAllEmployeesCall lookuopAllEmployeesCall =
-      LookuopAllEmployeesCall();
+  static LookoupAllEmployeesCall lookoupAllEmployeesCall =
+      LookoupAllEmployeesCall();
   static AddLeadCommintCall addLeadCommintCall = AddLeadCommintCall();
   static SalesLeadRequestCall salesLeadRequestCall = SalesLeadRequestCall();
   static AllCitiesCall allCitiesCall = AllCitiesCall();
@@ -33,6 +33,7 @@ class RimesApiGroup {
   static AllContactCall allContactCall = AllContactCall();
   static PropertyGetCall propertyGetCall = PropertyGetCall();
   static AttachGetCall attachGetCall = AttachGetCall();
+  static ContactGetCall contactGetCall = ContactGetCall();
 }
 
 class LoginRequestCall {
@@ -92,7 +93,7 @@ class AllActivityRequestCall {
     "direction": "",
     "searchValue": "",
     "skip": 0,
-    "pageSize": 10
+    "pageSize": 1000
   },
   "typeId_search": 0,
   "userId": ${userId},
@@ -223,7 +224,7 @@ class LookuopCommonCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'LookuopCommon',
-      apiUrl: '${RimesApiGroup.baseUrl}/api/lookup/common/all/?',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/common/all/?',
       callType: ApiCallType.GET,
       headers: {
         ...RimesApiGroup.headers,
@@ -354,14 +355,14 @@ class AllPropertiesCall {
   }
 }
 
-class LookuopAllEmployeesCall {
+class LookoupAllEmployeesCall {
   Future<ApiCallResponse> call({
     int? accessTypeId,
     int? userId,
     int? subscriptioId,
   }) {
     return ApiManager.instance.makeApiCall(
-      callName: 'LookuopAllEmployees',
+      callName: 'LookoupAllEmployees',
       apiUrl: '${RimesApiGroup.baseUrl}api/lookup/employees/all/?',
       callType: ApiCallType.GET,
       headers: {
@@ -503,7 +504,7 @@ class AllCommintyMobileCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'AllCommintyMobile',
-      apiUrl: '${RimesApiGroup.baseUrl}/api/lookup/unitcommunity/mobile/all?',
+      apiUrl: '${RimesApiGroup.baseUrl}api/lookup/unitcommunity/mobile/all?',
       callType: ApiCallType.GET,
       headers: {
         ...RimesApiGroup.headers,
@@ -700,6 +701,29 @@ class AttachGetCall {
       params: {},
       body: body,
       bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class ContactGetCall {
+  Future<ApiCallResponse> call({
+    int? contactId,
+    int? languageId,
+    int? subscriberId,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'ContactGet',
+      apiUrl: '${RimesApiGroup.baseUrl}api/contact/get',
+      callType: ApiCallType.GET,
+      headers: {
+        ...RimesApiGroup.headers,
+      },
+      params: {
+        'contactId': contactId,
+        'languageId': languageId,
+        'subscriberId': subscriberId,
+      },
       returnBody: true,
     );
   }

@@ -7,14 +7,16 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LeadFilterWidget extends StatefulWidget {
-  const LeadFilterWidget({Key? key}) : super(key: key);
+class LeadFilterBottomSheetWidget extends StatefulWidget {
+  const LeadFilterBottomSheetWidget({Key? key}) : super(key: key);
 
   @override
-  _LeadFilterWidgetState createState() => _LeadFilterWidgetState();
+  _LeadFilterBottomSheetWidgetState createState() =>
+      _LeadFilterBottomSheetWidgetState();
 }
 
-class _LeadFilterWidgetState extends State<LeadFilterWidget> {
+class _LeadFilterBottomSheetWidgetState
+    extends State<LeadFilterBottomSheetWidget> {
   DateTime? datePicked1;
   TextEditingController? dateFromTextFieldController;
   DateTime? datePicked2;
@@ -73,8 +75,8 @@ class _LeadFilterWidgetState extends State<LeadFilterWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
               child: Container(
-                width: 50,
-                height: 5,
+                width: 80,
+                height: 10,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).lineColor,
                   borderRadius: BorderRadius.circular(8),
