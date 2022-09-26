@@ -1,10 +1,8 @@
-import '../../flutter_flow/flutter_flow_util.dart';
 
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
-const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 /// Start RimesApi Group Code
 
@@ -12,8 +10,8 @@ class RimesApiGroup {
   static String baseUrl = 'http://45.35.169.130:8765/CRMRealEstateNew_Test/';
   static Map<String, String> headers = {};
   static LoginRequestCall loginRequestCall = LoginRequestCall();
-  static AdmainDashboardRequestCall admainDashboardRequestCall =
-      AdmainDashboardRequestCall();
+  static AdminDashboardRequestCall admainDashboardRequestCall =
+      AdminDashboardRequestCall();
   static AllActivityRequestCall allActivityRequestCall =
       AllActivityRequestCall();
   static AllLeadsCall allLeadsCall = AllLeadsCall();
@@ -43,8 +41,8 @@ class LoginRequestCall {
   }) {
     final body = '''
 {
-  "email": "${email}",
-  "password": "${password}"
+  "email": "$email",
+  "password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'LoginRequest',
@@ -61,7 +59,7 @@ class LoginRequestCall {
   }
 }
 
-class AdmainDashboardRequestCall {
+class AdminDashboardRequestCall {
   Future<ApiCallResponse> call({
     int? userId,
   }) {
@@ -96,7 +94,7 @@ class AllActivityRequestCall {
     "pageSize": 1000
   },
   "typeId_search": 0,
-  "userId": ${userId},
+  "userId": $userId,
   "languageId": 0,
   "accessTypeId": 1,
   "employeeId_search": 0,
@@ -146,7 +144,7 @@ class AllLeadsCall {
     "direction": "",
     "searchValue": "",
     "skip": 0,
-    "pageSize": ${pageSize}
+    "pageSize": $pageSize
   },
   "contactTypeId_search": 0,
   "ratingId_search": 0,
@@ -160,7 +158,7 @@ class AllLeadsCall {
   "subCommunity": 0,
   "category": 0,
   "type": 0,
-  "userId": ${userId},
+  "userId": $userId,
   "accessTypeId": 1,
   "languageId": 0,
   "building": 0,
@@ -171,7 +169,7 @@ class AllLeadsCall {
   "area": 0,
   "price": 0,
   "name": "",
-  "subscriberId": ${subscriberId},
+  "subscriberId": $subscriberId,
   "limit": 0,
   "leadType": 0,
   "team": [],
@@ -248,10 +246,10 @@ class LeadCommentsCall {
   }) {
     final body = '''
 {
-  "userId": ${userId},
-  "subscriberId": ${subscriberId},
-  "id": ${id},
-  "accessTypeId": ${accessTypeId},
+  "userId": $userId,
+  "subscriberId": $subscriberId,
+  "id": $id,
+  "accessTypeId": $accessTypeId,
   "team": [
     0
   ]
@@ -280,10 +278,10 @@ class ActivityDetailsCall {
   }) {
     final body = '''
 {
-  "userId": ${userId},
-  "subscriberId": ${subscriberId},
-  "id": ${id},
-  "languageId": ${languageId}
+  "userId": $userId,
+  "subscriberId": $subscriberId,
+  "id": $id,
+  "languageId": $languageId
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ActivityDetails',
@@ -316,11 +314,11 @@ class AllPropertiesCall {
     "direction": "",
     "searchValue": "",
     "skip": 0,
-    "pageSize": ${pageSize}
+    "pageSize": $pageSize
   },
-  "id": ${id},
-  "subscriberId": ${subscriberId},
-  "userId": ${userId},
+  "id": $id,
+  "subscriberId": $subscriberId,
+  "userId": $userId,
   "languageId": 1,
   "accessTypeId": 1,
   "availablity": 0,
@@ -388,11 +386,11 @@ class AddLeadCommintCall {
   }) {
     final body = '''
 {
-  "userId": ${userId},
-  "subscriberId": ${subscriberId},
-  "comment": "${comment}",
-  "salesLeadId": ${salesLeadId},
-  "commentId": ${commentId}
+  "userId": $userId,
+  "subscriberId": $subscriberId,
+  "comment": "$comment",
+  "salesLeadId": $salesLeadId,
+  "commentId": $commentId
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AddLeadCommint',
@@ -424,7 +422,7 @@ class SalesLeadRequestCall {
     "direction": "",
     "searchValue": "",
     "skip": 0,
-    "pageSize": ${pageSize}
+    "pageSize": $pageSize
   },
   "contactTypeId_search": 0,
   "ratingId_search": 0,
@@ -438,7 +436,7 @@ class SalesLeadRequestCall {
   "subCommunity": 0,
   "category": 0,
   "type": 0,
-  "userId": ${userId},
+  "userId": $userId,
   "accessTypeId": 0,
   "languageId": 0,
   "building": 0,
@@ -449,7 +447,7 @@ class SalesLeadRequestCall {
   "area": 0,
   "price": 0,
   "name": "",
-  "subscriberId": ${subscriberId},
+  "subscriberId": $subscriberId,
   "limit": 0,
   "leadType": 0,
   "team": [],
@@ -558,19 +556,19 @@ class AllPropertyMasterCall {
     "direction": "",
     "searchValue": "",
     "skip": 0,
-    "pageSize": ${pageSize}
+    "pageSize": $pageSize
   },
   "masterPropId": 0,
   "masterPropName": "",
   "masterPropCommunity": 0,
-  "masterPropType": ${masterPropType},
-  "subscriberId": ${subscriberId},
-  "languageId": ${languageId},
+  "masterPropType": $masterPropType,
+  "subscriberId": $subscriberId,
+  "languageId": $languageId,
   "employeeId": 0,
   "referedBy": 0,
-  "userId": ${userId},
+  "userId": $userId,
   "defaultPropertyMasterCode": 0,
-  "accessTypeId": ${accessTypeId},
+  "accessTypeId": $accessTypeId,
   "team": [],
   "dateType": 0,
   "fromDate_report": "2021-09-22T09:19:26.174Z",
@@ -656,11 +654,11 @@ class PropertyGetCall {
   }) {
     final body = '''
 {
-  "userId": ${userId},
-  "languageId":${languageId},
-  "subscriberId":${subscriberId} ,
-  "accessTypeId":${accessTypeId} ,
-  "id":${id}
+  "userId": $userId,
+  "languageId":$languageId,
+  "subscriberId":$subscriberId ,
+  "accessTypeId":$accessTypeId ,
+  "id":$id
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'PropertyGet',
@@ -686,10 +684,10 @@ class AttachGetCall {
   }) {
     final body = '''
 {
-  "userId": ${userId},
-  "subscriberId":${subscriberId},
-  "type":${type},
-  "id":${id}
+  "userId": $userId,
+  "subscriberId":$subscriberId,
+  "type":$type,
+  "id":$id
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AttachGet',
