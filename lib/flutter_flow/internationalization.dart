@@ -745,17 +745,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // SalesLeadSearchScreen
-  {
-    'x7foek7v': {
-      'en': 'search',
-      'ar': 'بحث',
-    },
-    'wiz0kpmk': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
   // AddLeadScreen
   {
     '25lqyfwu': {
@@ -955,6 +944,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
     },
     'imwdwyck': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
+  // SalesLeadSearchScreen
+  {
+    'x7foek7v': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'wiz0kpmk': {
       'en': 'Home',
       'ar': 'مسكن',
     },

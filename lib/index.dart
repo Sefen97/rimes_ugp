@@ -25,9 +25,9 @@ export 'property_search_screen/property_search_screen_widget.dart'
     show PropertySearchScreenWidget;
 export 'lookuop_all_employees_search_screen/lookuop_all_employees_search_screen_widget.dart'
     show LookuopAllEmployeesSearchScreenWidget;
+export 'add_lead_screen/add_lead_screen_widget.dart' show AddLeadScreenWidget;
 export 'sales_lead_search_screen/sales_lead_search_screen_widget.dart'
     show SalesLeadSearchScreenWidget;
-export 'add_lead_screen/add_lead_screen_widget.dart' show AddLeadScreenWidget;
 export 'unit_details_screen/unit_details_screen_widget.dart'
     show UnitDetailsScreenWidget;
 export 'property_master_search_screen/property_master_search_screen_widget.dart'
