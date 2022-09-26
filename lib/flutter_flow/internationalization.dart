@@ -1303,13 +1303,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
-  // CustomBottomSheet
-  {
-    'jaaxdoyw': {
-      'en': 'Close',
-      'ar': 'قريب',
-    },
-  },
   // ActivityFilterBottomSheet
   {
     'x1y4xxt3': {

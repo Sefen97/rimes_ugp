@@ -1,5 +1,4 @@
 import '../backend/api_requests/api_calls.dart';
-import '../components/custom_bottom_sheet_widget.dart';
 import '../components/lead_filter_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -396,51 +395,33 @@ class _LeadsScreenWidgetState extends State<LeadsScreenWidget> {
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(1, 10, 10, 10),
-                              child: InkWell(
-                                onTap: () async {
-                                  showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.of(context).viewInsets,
-                                        child: CustomBottomSheetWidget(
-                                          meassage: 'It\'s Leads Screen',
-                                        ),
-                                      );
-                                    },
-                                  ).then((value) => setState(() {}));
-                                },
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Image.asset(
-                                        'assets/images/iconly_bold_info_square.png',
-                                        height: 30,
-                                        fit: BoxFit.cover,
-                                      ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Image.asset(
+                                      'assets/images/iconly_bold_info_square.png',
+                                      height: 30,
+                                      fit: BoxFit.cover,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15, 0, 0, 0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'm11075be' /* How it work */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF5B5B5B),
-                                            ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        15, 0, 0, 0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'm11075be' /* How it work */,
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF5B5B5B),
+                                          ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             Padding(
