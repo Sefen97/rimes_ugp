@@ -1,3 +1,5 @@
+import 'package:rimes_ugp/select_item_class.dart';
+
 import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -30,6 +32,7 @@ class _SalesLeadSearchScreenWidgetState
   Completer<ApiCallResponse>? _apiRequestCompleter;
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  ItemSelected? itemSelected;
 
   @override
   void initState() {
@@ -207,8 +210,14 @@ class _SalesLeadSearchScreenWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
                                     child: InkWell(
-                                      onTap: () async {
-                                        context.pop();
+                                      onTap: ()  {
+                                        Navigator.of(context).pop(itemSelected=ItemSelected(id:  getJsonField(
+                                          salesLeadResponseItem,
+                                          r'''$.employeeId''',
+                                        ), name:  getJsonField(
+                                          salesLeadResponseItem,
+                                          r'''$.employeeName''',
+                                        ).toString(),));
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,

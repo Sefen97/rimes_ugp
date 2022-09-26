@@ -1,3 +1,5 @@
+import 'package:rimes_ugp/select_item_class.dart';
+
 import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -26,6 +28,7 @@ class _LookuopAllEmployeesSearchScreenWidgetState
   Completer<ApiCallResponse>? _apiRequestCompleter;
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  ItemSelected? itemSelected;
 
   @override
   void initState() {
@@ -206,8 +209,14 @@ class _LookuopAllEmployeesSearchScreenWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
                                     child: InkWell(
-                                      onTap: () async {
-                                        context.pop();
+                                      onTap: ()  {
+                                        Navigator.of(context).pop(itemSelected=ItemSelected(id:  getJsonField(
+                                          allEmployeeResponseItem,
+                                          r'''$.employeeId''',
+                                        ), name:  getJsonField(
+                                          allEmployeeResponseItem,
+                                          r'''$.firstName''',
+                                        ).toString(),));
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,

@@ -1,3 +1,5 @@
+import 'package:rimes_ugp/select_item_class.dart';
+
 import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -29,6 +31,7 @@ class _LoockupCommonSearchScreenWidgetState
     extends State<LoockupCommonSearchScreenWidget> {
   Completer<ApiCallResponse>? _apiRequestCompleter;
   TextEditingController? textController;
+  ItemSelected? itemSelected;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -43,6 +46,7 @@ class _LoockupCommonSearchScreenWidgetState
     super.dispose();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +58,7 @@ class _LoockupCommonSearchScreenWidgetState
           alignment: AlignmentDirectional(0, 0),
           child: InkWell(
             onTap: () async {
-              context.pop();
+             Navigator.pop(context);
             },
             child: Image.asset(
               'assets/images/group_3436.png',
@@ -206,8 +210,17 @@ class _LoockupCommonSearchScreenWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
                                     child: InkWell(
-                                      onTap: () async {
-                                        context.pop();
+                                      onTap: ()  {
+
+                                        Navigator.of(context).pop(itemSelected=ItemSelected(
+                                            id:   getJsonField(
+                                              loockupResponseItem,
+                                              r'''$.id''',
+                                            ), name:     getJsonField(
+                                          loockupResponseItem,
+                                          r'''$.name''',
+                                        ).toString()));
+
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -299,3 +312,4 @@ class _LoockupCommonSearchScreenWidgetState
     }
   }
 }
+

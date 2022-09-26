@@ -1,3 +1,5 @@
+import 'package:rimes_ugp/index.dart';
+
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -23,34 +25,28 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
   DateTime? datePicked;
   TextEditingController? dateTextFieldController;
   String? radioButtonValue;
-  TextEditingController? typeTextFieldController1;
-  TextEditingController? reletedTextFieldController;
-  TextEditingController? assignToTextFieldController;
-  TextEditingController? typeTextFieldController2;
-  TextEditingController? remarkTextFieldController;
+  TextEditingController typeTextFieldController1 = TextEditingController();
+  TextEditingController reletedTextFieldController = TextEditingController();
+  TextEditingController assignToTextFieldController = TextEditingController();
+  TextEditingController typeTextFieldController2 = TextEditingController();
+  TextEditingController remarkTextFieldController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    assignToTextFieldController = TextEditingController();
-    reletedTextFieldController = TextEditingController();
-    typeTextFieldController1 = TextEditingController(text: widget.typeName);
-    dateTextFieldController =
-        TextEditingController(text: dateTimeFormat('d/M/y', datePicked));
-    typeTextFieldController2 = TextEditingController();
-    remarkTextFieldController = TextEditingController();
+    dateTextFieldController = TextEditingController(text: dateTimeFormat('d/M/y', datePicked));
   }
 
   @override
   void dispose() {
-    assignToTextFieldController?.dispose();
-    reletedTextFieldController?.dispose();
-    typeTextFieldController1?.dispose();
-    dateTextFieldController?.dispose();
-    typeTextFieldController2?.dispose();
-    remarkTextFieldController?.dispose();
+    assignToTextFieldController.dispose();
+    reletedTextFieldController.dispose();
+    typeTextFieldController1.dispose();
+    dateTextFieldController!.dispose();
+    typeTextFieldController2.dispose();
+    remarkTextFieldController.dispose();
     super.dispose();
   }
 
@@ -107,16 +103,19 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 24),
                       child: InkWell(
                         onTap: () async {
-                          context.pushNamed(
-                            'LoockupCommonSearchScreen',
-                            queryParams: {
-                              'appBarTitle': serializeParam(
-                                  'Activity Type', ParamType.String),
-                              'loockupId': serializeParam(2076, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
-                            }.withoutNulls,
-                          );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      LoockupCommonSearchScreenWidget(
+                                        appBarTitle: "Activity Type",
+                                        languageId: 2,
+                                        loockupId: 2076,
+                                        subscribId: 2,
+                                      ))).then((value) {
+                            print("test value $value");
+                            typeTextFieldController1.text = value.name;
+                          });
                         },
                         child: Stack(
                           children: [
@@ -260,15 +259,18 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
                       child: InkWell(
-                        onTap: () async {
-                          context.pushNamed(
-                            'PropertySearchScreen',
-                            queryParams: {
-                              'appBarTitle': serializeParam(
-                                  'Related To', ParamType.String),
-                              'id': serializeParam(0, ParamType.int),
-                            }.withoutNulls,
-                          );
+                        onTap: ()  {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      PropertySearchScreenWidget(
+                                        id: 0,
+                                        appBarTitle: "Related To",
+                                      ))).then((value) {
+                            reletedTextFieldController.text = value.name;
+
+                          });
                         },
                         child: Stack(
                           children: [
@@ -359,14 +361,18 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
                       child: InkWell(
                         onTap: () async {
-                          context.pushNamed(
-                            'LookuopAllEmployeesSearchScreen',
-                            queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Assign To', ParamType.String),
-                              'userId': serializeParam(10, ParamType.int),
-                            }.withoutNulls,
-                          );
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      LookuopAllEmployeesSearchScreenWidget(
+                                        userId: 10,
+                                        appBarTitle: "Related To",
+                                      ))).then((value) {
+                            assignToTextFieldController.text = value.name;
+
+                          });
                         },
                         child: Stack(
                           children: [
@@ -459,7 +465,10 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                             context,
                             showTitleActions: true,
                             onConfirm: (date) {
-                              setState(() => datePicked = date);
+                              setState(() {
+                                 datePicked = date;
+                                dateTextFieldController!.text = dateTimeFormat('d/M/y', datePicked);
+                              });
                             },
                             currentTime: getCurrentTimestamp,
                             minTime: DateTime(0, 0, 0),
@@ -475,18 +484,19 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                           children: [
                             TextFormField(
                               controller: dateTextFieldController,
-                              onChanged: (_) => EasyDebounce.debounce(
-                                'dateTextFieldController',
-                                Duration(milliseconds: 200),
-                                () => setState(() {}),
-                              ),
+                              onChanged: (_) {
+                                setState(() {
+                                  EasyDebounce.debounce(
+                                    'dateTextFieldController',
+                                    Duration(milliseconds: 100),(){},
+                                  );
+                                });
+
+                              },
                               readOnly: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: valueOrDefault<String>(
-                                  dateTimeFormat('d/M/y', datePicked),
-                                  'Date Time',
-                                ),
+                                labelText: "Date Time",
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -566,16 +576,18 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
                       child: InkWell(
                         onTap: () async {
-                          context.pushNamed(
-                            'LoockupCommonSearchScreen',
-                            queryParams: {
-                              'appBarTitle': serializeParam(
-                                  'Activity Status', ParamType.String),
-                              'loockupId': serializeParam(2075, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(1, ParamType.int),
-                            }.withoutNulls,
-                          );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      LoockupCommonSearchScreenWidget(
+                                        appBarTitle: "Activity Status",
+                                        languageId: 2,
+                                        loockupId: 2075,
+                                        subscribId: 2,
+                                      ))).then((value) {
+                            typeTextFieldController2.text = value.name;
+                          });
                         },
                         child: Stack(
                           children: [

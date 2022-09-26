@@ -1,3 +1,5 @@
+import 'package:rimes_ugp/select_item_class.dart';
+
 import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -26,7 +28,7 @@ class _PropertySearchScreenWidgetState
   Completer<ApiCallResponse>? _apiRequestCompleter;
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+ItemSelected? itemSelected;
   @override
   void initState() {
     super.initState();
@@ -203,8 +205,14 @@ class _PropertySearchScreenWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 0, 0, 5),
                                     child: InkWell(
-                                      onTap: () async {
-                                        context.pop();
+                                      onTap: ()  {
+                                        Navigator.of(context).pop(itemSelected=ItemSelected(id:  getJsonField(
+                                          propertyResponseItem,
+                                          r'''$.propertyId''',
+                                        ), name:  getJsonField(
+                                          propertyResponseItem,
+                                          r'''$.propertyCode''',
+                                        ).toString(),));
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
