@@ -167,6 +167,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
+              name: 'AddLeadScreen',
+              path: 'addLeadScreen',
+              builder: (context, params) => AddLeadScreenWidget(),
+            ),
+            FFRoute(
               name: 'SalesLeadSearchScreen',
               path: 'salesLeadSearchScreen',
               builder: (context, params) => SalesLeadSearchScreenWidget(
@@ -175,11 +180,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 userId: params.getParam('userId', ParamType.int),
                 pageSize: params.getParam('pageSize', ParamType.int),
               ),
-            ),
-            FFRoute(
-              name: 'AddLeadScreen',
-              path: 'addLeadScreen',
-              builder: (context, params) => AddLeadScreenWidget(),
             ),
             FFRoute(
               name: 'UnitDetailsScreen',
