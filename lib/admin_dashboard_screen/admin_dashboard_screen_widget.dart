@@ -1418,6 +1418,7 @@ class _AdminDashboardScreenWidgetState
                                             BorderRadius.circular(0),
                                         groupSpace: 66,
                                         chartStylingInfo: ChartStylingInfo(
+                                          enableTooltip: true,
                                           backgroundColor: Colors.white,
                                           showBorder: false,
                                         ),
