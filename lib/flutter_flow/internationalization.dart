@@ -149,15 +149,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'All leads',
       'ar': 'كل الخيوط',
     },
-    'wmejlxkp': {
+    '8mrpip0m': {
       'en': 'Converted',
       'ar': '',
     },
-    'so14j1ae': {
+    'ntvs1khl': {
       'en': 'Pending',
       'ar': '',
     },
-    'bypxpgia': {
+    't984yitv': {
       'en': 'Reject',
       'ar': '',
     },
@@ -165,11 +165,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'AllUnits',
       'ar': 'جميع الوحدات',
     },
-    '56d5385i': {
+    'dct7m1ag': {
       'en': 'Reserved',
       'ar': '',
     },
-    'cwklycul': {
+    'gbg1oshb': {
       'en': 'Avalible',
       'ar': '',
     },

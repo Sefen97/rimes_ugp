@@ -1193,7 +1193,7 @@ class _AdminDashboardScreenWidgetState
                                                                         0,
                                                                         0,
                                                                         50,
-                                                                        15),
+                                                                        0),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
