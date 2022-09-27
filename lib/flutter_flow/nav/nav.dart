@@ -182,17 +182,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'UnitDetailsScreen',
-              path: 'unitDetailsScreen',
-              builder: (context, params) => UnitDetailsScreenWidget(
-                id: params.getParam('id', ParamType.int),
-              ),
-            ),
-            FFRoute(
               name: 'PropertyMasterSearchScreen',
               path: 'propertyMasterSearchScreen',
               builder: (context, params) => PropertyMasterSearchScreenWidget(
                 appBarTitle: params.getParam('appBarTitle', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'UnitDetailsScreen',
+              path: 'unitDetailsScreen',
+              builder: (context, params) => UnitDetailsScreenWidget(
+                id: params.getParam('id', ParamType.int),
               ),
             ),
             FFRoute(

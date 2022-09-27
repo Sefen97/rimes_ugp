@@ -82,7 +82,7 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Form(
             key: formKey,
-            autovalidateMode: AutovalidateMode.disabled,
+            autovalidateMode: AutovalidateMode.always,
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 0),
               child: SingleChildScrollView(

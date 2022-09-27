@@ -149,15 +149,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'All leads',
       'ar': 'كل الخيوط',
     },
-    'vpzvvu6q': {
+    'z2vp5o59': {
       'en': 'Converted',
       'ar': '',
     },
-    'qaa1k53h': {
+    'zgnwdlh4': {
       'en': 'Pending',
       'ar': '',
     },
-    'gbhb2smv': {
+    'lcougat9': {
       'en': 'Reject',
       'ar': '',
     },
@@ -165,11 +165,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'AllUnits',
       'ar': 'جميع الوحدات',
     },
-    'x85cdwqf': {
+    'kor0f3du': {
       'en': 'Reserved',
       'ar': '',
     },
-    'c7fk0ro1': {
+    'pft6wxm2': {
       'en': 'Avalible',
       'ar': '',
     },
@@ -979,6 +979,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسكن',
     },
   },
+  // PropertyMasterSearchScreen
+  {
+    '9sas7zey': {
+      'en': 'search',
+      'ar': 'بحث',
+    },
+    'oueee1lb': {
+      'en': 'Home',
+      'ar': 'مسكن',
+    },
+  },
   // UnitDetailsScreen
   {
     'vsemrqmi': {
@@ -1002,17 +1013,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أرفق ملف',
     },
     'sbxgd2xz': {
-      'en': 'Home',
-      'ar': 'مسكن',
-    },
-  },
-  // PropertyMasterSearchScreen
-  {
-    '9sas7zey': {
-      'en': 'search',
-      'ar': 'بحث',
-    },
-    'oueee1lb': {
       'en': 'Home',
       'ar': 'مسكن',
     },

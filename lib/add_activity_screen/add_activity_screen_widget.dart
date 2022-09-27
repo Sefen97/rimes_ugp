@@ -97,7 +97,7 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Form(
             key: formKey,
-            autovalidateMode: AutovalidateMode.disabled,
+            autovalidateMode: AutovalidateMode.always,
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
               child: SingleChildScrollView(
