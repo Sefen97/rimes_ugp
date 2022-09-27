@@ -21,9 +21,9 @@ class _AdminDashboardScreenWidgetState
   @override
   Widget build(BuildContext context) {
     final pieChartColorsList = [
-      Color(0xFFD354E3),
-      Color(0xFF9418A8),
-      Color(0xFF00335A)
+      Color(0xFF232D51),
+      Color(0xFFF5AF19),
+      Color(0xFFE11B33)
     ];
     return Scaffold(
       key: scaffoldKey,
@@ -946,7 +946,7 @@ class _AdminDashboardScreenWidgetState
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: Color(
-                                                                      0xFF9418A8),
+                                                                    0xFF232D51),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -993,7 +993,7 @@ class _AdminDashboardScreenWidgetState
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: Color(
-                                                                      0xFFD354E3),
+                                                                    0xFFF5AF19),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -1042,7 +1042,7 @@ class _AdminDashboardScreenWidgetState
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Color(
-                                                                0xFF00335A),
+                                                              0xFFE11B33),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
@@ -1260,7 +1260,7 @@ class _AdminDashboardScreenWidgetState
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: Color(
-                                                                      0xFF9418A8),
+                                                                      0xFF232D51),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -1307,7 +1307,7 @@ class _AdminDashboardScreenWidgetState
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: Color(
-                                                                      0xFFD354E3),
+                                                                      0xFFF5AF19),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
