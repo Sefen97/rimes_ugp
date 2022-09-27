@@ -887,10 +887,14 @@ class _AdminDashboardScreenWidgetState
                                                                   .of(context)
                                                               .secondaryBackground,
                                                         ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1, -1),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0,
+                                                                      0,
+                                                                      50,
+                                                                      60),
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -955,7 +959,7 @@ class _AdminDashboardScreenWidgetState
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5,
-                                                                            0,
+                                                                            100,
                                                                             5,
                                                                             0),
                                                                     borderWidth:
@@ -1084,99 +1088,103 @@ class _AdminDashboardScreenWidgetState
                                                     alignment:
                                                         AlignmentDirectional(
                                                             -1, -1),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      height: double.infinity,
-                                                      child: Stack(
-                                                        children: [
-                                                          FlutterFlowPieChart(
-                                                            data:
-                                                                FFPieChartData(
-                                                              values: FFAppState()
-                                                                  .pieChartUnitValue,
-                                                              colors:
-                                                                  pieChartColorsList,
-                                                              radius: [40],
-                                                            ),
-                                                            donutHoleRadius: 0,
-                                                            donutHoleColor:
-                                                                Colors.white,
-                                                            sectionLabelType:
-                                                                PieChartSectionLabelType
-                                                                    .value,
-                                                            sectionLabelStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .title3
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBtnText,
-                                                                      fontSize:
-                                                                          13,
-                                                                    ),
-                                                          ),
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    -1, -1),
-                                                            child:
-                                                                FlutterFlowChartLegendWidget(
-                                                              entries: FFAppState()
-                                                                  .pieChartUnitName
-                                                                  .asMap()
-                                                                  .entries
-                                                                  .map(
-                                                                    (label) =>
-                                                                        LegendEntry(
-                                                                      pieChartColorsList[label
-                                                                              .key %
-                                                                          pieChartColorsList
-                                                                              .length],
-                                                                      label
-                                                                          .value,
-                                                                    ),
-                                                                  )
-                                                                  .toList(),
-                                                              width: double
-                                                                  .infinity,
-                                                              height: double
-                                                                  .infinity,
-                                                              textStyle:
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0, 0, 50, 60),
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: double.infinity,
+                                                        child: Stack(
+                                                          children: [
+                                                            FlutterFlowPieChart(
+                                                              data:
+                                                                  FFPieChartData(
+                                                                values: FFAppState()
+                                                                    .pieChartUnitValue,
+                                                                colors:
+                                                                    pieChartColorsList,
+                                                                radius: [40],
+                                                              ),
+                                                              donutHoleRadius:
+                                                                  0,
+                                                              donutHoleColor:
+                                                                  Colors.white,
+                                                              sectionLabelType:
+                                                                  PieChartSectionLabelType
+                                                                      .value,
+                                                              sectionLabelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyText1,
-                                                              textPadding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          0,
-                                                                          0),
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          5,
-                                                                          0),
-                                                              borderWidth: 0,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0),
-                                                              borderColor: Color(
-                                                                  0x00000001),
-                                                              indicatorSize: 10,
-                                                              indicatorBorderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          5),
+                                                                      .title3
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBtnText,
+                                                                        fontSize:
+                                                                            13,
+                                                                      ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                            Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1, -1),
+                                                              child:
+                                                                  FlutterFlowChartLegendWidget(
+                                                                entries: FFAppState()
+                                                                    .pieChartUnitName
+                                                                    .asMap()
+                                                                    .entries
+                                                                    .map(
+                                                                      (label) =>
+                                                                          LegendEntry(
+                                                                        pieChartColorsList[label.key %
+                                                                            pieChartColorsList.length],
+                                                                        label
+                                                                            .value,
+                                                                      ),
+                                                                    )
+                                                                    .toList(),
+                                                                width: double
+                                                                    .infinity,
+                                                                height: double
+                                                                    .infinity,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1,
+                                                                textPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5,
+                                                                            100,
+                                                                            5,
+                                                                            0),
+                                                                borderWidth: 0,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0),
+                                                                borderColor: Color(
+                                                                    0x00000001),
+                                                                indicatorSize:
+                                                                    10,
+                                                                indicatorBorderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
