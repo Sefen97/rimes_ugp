@@ -38,6 +38,7 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
     totalAreaTextFieldController = TextEditingController();
     cityTextFieldController = TextEditingController();
     communityTextFieldController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

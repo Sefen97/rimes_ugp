@@ -32,6 +32,7 @@ class _PropirtyFilterBottomSheetWidgetState
         TextEditingController(text: widget.community);
     propertyTypeTextFieldController =
         TextEditingController(text: widget.propertyType);
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

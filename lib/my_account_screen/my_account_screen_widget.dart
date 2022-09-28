@@ -21,6 +21,7 @@ class _MyAccountScreenWidgetState extends State<MyAccountScreenWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

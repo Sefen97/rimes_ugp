@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -48,6 +49,7 @@ class _UnitFilterBottomSheetWidgetState
         TextEditingController(text: dateTimeFormat('d/M/y', datePicked2));
     dateFromTextFieldController2 =
         TextEditingController(text: dateTimeFormat('d/M/y', datePicked3));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -737,22 +739,42 @@ class _UnitFilterBottomSheetWidgetState
                               InkWell(
                                 onTap: () async {
                                   // DateFromTimePiker
-                                  await DatePicker.showDatePicker(
-                                    context,
-                                    showTitleActions: true,
-                                    onConfirm: (date) {
-                                      setState(() => datePicked1 = date);
-                                    },
-                                    currentTime: getCurrentTimestamp,
-                                    minTime: DateTime(0, 0, 0),
-                                    locale: LocaleType.values.firstWhere(
-                                      (l) =>
-                                          l.name ==
-                                          FFLocalizations.of(context)
-                                              .languageCode,
-                                      orElse: () => LocaleType.en,
-                                    ),
-                                  );
+                                  if (kIsWeb) {
+                                    final _datePicked1Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                    );
+
+                                    if (_datePicked1Date != null) {
+                                      setState(
+                                        () => datePicked1 = DateTime(
+                                          _datePicked1Date.year,
+                                          _datePicked1Date.month,
+                                          _datePicked1Date.day,
+                                        ),
+                                      );
+                                    }
+                                  } else {
+                                    await DatePicker.showDatePicker(
+                                      context,
+                                      showTitleActions: true,
+                                      onConfirm: (date) {
+                                        setState(() => datePicked1 = date);
+                                      },
+                                      currentTime: getCurrentTimestamp,
+                                      minTime: DateTime(0, 0, 0),
+                                      locale: LocaleType.values.firstWhere(
+                                        (l) =>
+                                            l.name ==
+                                            FFLocalizations.of(context)
+                                                .languageCode,
+                                        orElse: () => LocaleType.en,
+                                      ),
+                                    );
+                                  }
                                 },
                                 child: Container(
                                   width: 200,
@@ -840,22 +862,42 @@ class _UnitFilterBottomSheetWidgetState
                               InkWell(
                                 onTap: () async {
                                   // DateToTimePiker
-                                  await DatePicker.showDatePicker(
-                                    context,
-                                    showTitleActions: true,
-                                    onConfirm: (date) {
-                                      setState(() => datePicked2 = date);
-                                    },
-                                    currentTime: getCurrentTimestamp,
-                                    minTime: DateTime(0, 0, 0),
-                                    locale: LocaleType.values.firstWhere(
-                                      (l) =>
-                                          l.name ==
-                                          FFLocalizations.of(context)
-                                              .languageCode,
-                                      orElse: () => LocaleType.en,
-                                    ),
-                                  );
+                                  if (kIsWeb) {
+                                    final _datePicked2Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                    );
+
+                                    if (_datePicked2Date != null) {
+                                      setState(
+                                        () => datePicked2 = DateTime(
+                                          _datePicked2Date.year,
+                                          _datePicked2Date.month,
+                                          _datePicked2Date.day,
+                                        ),
+                                      );
+                                    }
+                                  } else {
+                                    await DatePicker.showDatePicker(
+                                      context,
+                                      showTitleActions: true,
+                                      onConfirm: (date) {
+                                        setState(() => datePicked2 = date);
+                                      },
+                                      currentTime: getCurrentTimestamp,
+                                      minTime: DateTime(0, 0, 0),
+                                      locale: LocaleType.values.firstWhere(
+                                        (l) =>
+                                            l.name ==
+                                            FFLocalizations.of(context)
+                                                .languageCode,
+                                        orElse: () => LocaleType.en,
+                                      ),
+                                    );
+                                  }
                                 },
                                 child: Container(
                                   width: 200,
@@ -951,22 +993,42 @@ class _UnitFilterBottomSheetWidgetState
                               InkWell(
                                 onTap: () async {
                                   // DateFromTimePiker
-                                  await DatePicker.showDatePicker(
-                                    context,
-                                    showTitleActions: true,
-                                    onConfirm: (date) {
-                                      setState(() => datePicked3 = date);
-                                    },
-                                    currentTime: getCurrentTimestamp,
-                                    minTime: DateTime(0, 0, 0),
-                                    locale: LocaleType.values.firstWhere(
-                                      (l) =>
-                                          l.name ==
-                                          FFLocalizations.of(context)
-                                              .languageCode,
-                                      orElse: () => LocaleType.en,
-                                    ),
-                                  );
+                                  if (kIsWeb) {
+                                    final _datePicked3Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                    );
+
+                                    if (_datePicked3Date != null) {
+                                      setState(
+                                        () => datePicked3 = DateTime(
+                                          _datePicked3Date.year,
+                                          _datePicked3Date.month,
+                                          _datePicked3Date.day,
+                                        ),
+                                      );
+                                    }
+                                  } else {
+                                    await DatePicker.showDatePicker(
+                                      context,
+                                      showTitleActions: true,
+                                      onConfirm: (date) {
+                                        setState(() => datePicked3 = date);
+                                      },
+                                      currentTime: getCurrentTimestamp,
+                                      minTime: DateTime(0, 0, 0),
+                                      locale: LocaleType.values.firstWhere(
+                                        (l) =>
+                                            l.name ==
+                                            FFLocalizations.of(context)
+                                                .languageCode,
+                                        orElse: () => LocaleType.en,
+                                      ),
+                                    );
+                                  }
                                 },
                                 child: Container(
                                   width: double.infinity,

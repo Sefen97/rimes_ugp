@@ -36,6 +36,7 @@ class _ContactFilterBottomSheetWidgetState
     industoryTextFieldController = TextEditingController(text: widget.industry);
     industryTypeTextFieldController =
         TextEditingController(text: widget.industryType);
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

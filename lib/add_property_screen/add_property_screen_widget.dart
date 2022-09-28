@@ -38,6 +38,7 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
     subCommunityTextFieldController = TextEditingController();
     ploatNumberTextFieldController = TextEditingController();
     noteTextFieldController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

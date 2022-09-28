@@ -26,6 +26,7 @@ class _VerifyScreenWidgetState extends State<VerifyScreenWidget> {
   void initState() {
     super.initState();
     pinCodeController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

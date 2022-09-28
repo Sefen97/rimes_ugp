@@ -25,6 +25,7 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

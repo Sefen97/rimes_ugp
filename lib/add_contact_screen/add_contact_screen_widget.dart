@@ -30,6 +30,7 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
     emailAddressTextFieldController = TextEditingController();
     nationaltyTextFieldController = TextEditingController();
     contactTypeTextFieldController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

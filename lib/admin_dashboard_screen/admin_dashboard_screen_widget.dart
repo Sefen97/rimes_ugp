@@ -20,6 +20,13 @@ class _AdminDashboardScreenWidgetState
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     final pieChartColorsList = [
       Color(0xFFD354E3),
@@ -963,7 +970,11 @@ class _AdminDashboardScreenWidgetState
                                                                             0,
                                                                             0),
                                                                 child: Text(
-                                                                  'Converted',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '2hlk946m' /* Converted */,
+                                                                  ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyText1
@@ -1010,7 +1021,11 @@ class _AdminDashboardScreenWidgetState
                                                                             0,
                                                                             0),
                                                                 child: Text(
-                                                                  'Pending',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '1cm7i5ap' /* Pending */,
+                                                                  ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyText1
@@ -1056,7 +1071,11 @@ class _AdminDashboardScreenWidgetState
                                                                   .fromSTEB(2,
                                                                       0, 0, 0),
                                                           child: Text(
-                                                            'Reject',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'ohmyq1e6' /* Reject */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyText1
@@ -1277,7 +1296,11 @@ class _AdminDashboardScreenWidgetState
                                                                             0,
                                                                             0),
                                                                 child: Text(
-                                                                  'Reserved',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '0u4dsp6d' /* Reserved */,
+                                                                  ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyText1
@@ -1324,7 +1347,11 @@ class _AdminDashboardScreenWidgetState
                                                                             0,
                                                                             0),
                                                                 child: Text(
-                                                                  'Avalible',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'oqwabpnr' /* Avalible */,
+                                                                  ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyText1

@@ -38,6 +38,7 @@ class _ActivityFilterBottomSheetWidgetState
       widget.type,
       'Type Here',
     ));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

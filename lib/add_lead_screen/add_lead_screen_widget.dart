@@ -47,6 +47,7 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
     piriortyTextFieldController = TextEditingController();
     leadSourceTextFieldController = TextEditingController();
     contactTextFieldController2 = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

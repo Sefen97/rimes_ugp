@@ -30,6 +30,7 @@ class _AddLeadCommentBottomSheetWidgetState
   void initState() {
     super.initState();
     shortBioController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

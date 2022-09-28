@@ -22,6 +22,7 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
