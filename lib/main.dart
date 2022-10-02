@@ -1,13 +1,15 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'flutter_flow/flutter_flow_theme.dart';
-import 'flutter_flow/flutter_flow_util.dart';
-import 'flutter_flow/internationalization.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'flutter_flow/nav/nav.dart';
-import 'index.dart';
+import 'package:rimes_ugp/ui/activity_screen/activity_screen_widget.dart';
+import 'package:rimes_ugp/ui/admin_dashboard_screen/admin_dashboard_screen_widget.dart';
+import 'package:rimes_ugp/ui/flutter_flow/flutter_flow_theme.dart';
+import 'package:rimes_ugp/ui/flutter_flow/internationalization.dart';
+import 'package:rimes_ugp/ui/flutter_flow/nav/nav.dart';
+import 'package:rimes_ugp/ui/leads_screen/leads_screen_widget.dart';
+import 'package:rimes_ugp/ui/more_screen/more_screen_widget.dart';
+import 'package:rimes_ugp/ui/units_screen/units_screen_widget.dart';
+
+import 'app_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +49,7 @@ class _MyAppState extends State<MyApp> {
 
   void setLocale(String language) =>
       setState(() => _locale = createLocale(language));
+
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
       });
