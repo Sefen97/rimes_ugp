@@ -8,7 +8,6 @@ import '../components/activity_filter_bottom_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_language_selector.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -27,7 +26,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
 
   @override
   void initState() {
-    activityBloc.add(GetAllActivityEvent());
+    activityBloc.add(GetAllActivityEvent(userId: FFAppState().userId));
     super.initState();
   }
 
@@ -557,11 +556,9 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                   10, 10, 10, 10),
                               child: TextFormField(
                                 controller: textController,
-                                onChanged: (_) => EasyDebounce.debounce(
-                                  'textController',
-                                  Duration(milliseconds: 2000),
-                                  () => setState(() {}),
-                                ),
+                                onChanged: (value) => activityBloc.add(
+                                    GetAllActivityFilterEvent(
+                                        text: textController.text)),
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   isDense: true,
@@ -607,7 +604,7 @@ class _ActivityScreenWidgetState extends State<ActivityScreenWidget> {
                                       ? InkWell(
                                           onTap: () async {
                                             textController.clear();
-                                            setState(() {});
+                                            activityBloc.add(GetAllActivityFilterEvent(text: ''));
                                           },
                                           child: Icon(
                                             Icons.clear,
