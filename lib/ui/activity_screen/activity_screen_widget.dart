@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rimes_ugp/bloc/activity_bloc.dart';
+import 'package:rimes_ugp/bloc/all_activity_bloc/activity_bloc.dart';
 import 'package:rimes_ugp/ui/side_menu_widget/side_menu_widget.dart';
 
 import '../../api/modle/activity_response/Result.dart';

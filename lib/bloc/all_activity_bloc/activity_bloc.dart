@@ -1,14 +1,13 @@
 import 'dart:async';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../api/modle/activity_response/Activity_response.dart';
-import '../api/modle/activity_response/Result.dart';
-import '../backend/api_requests/api_calls.dart';
+import '../../api/modle/activity_response/Activity_response.dart';
+import '../../api/modle/activity_response/Result.dart';
+import '../../backend/api_requests/api_calls.dart';
 
 part 'activity_event.dart';
-
 part 'activity_state.dart';
 
 class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
@@ -43,9 +42,9 @@ class ActivityBloc extends Bloc<ActivityEvent, ActivityState> {
     event.text = event.text!.trim().toLowerCase();
     listFilter = listFilter
         .where((element) =>
-            element.typeName!.toLowerCase().contains(event.text!) ||
-            element.typeId.toString().toLowerCase().contains(event.text!) ||
-            element.activityStatusName!.toLowerCase().contains(event.text!))
+    element.typeName!.toLowerCase().contains(event.text!) ||
+        element.typeId.toString().toLowerCase().contains(event.text!) ||
+        element.activityStatusName!.toLowerCase().contains(event.text!))
         .toList();
     emit(ActivitySuccessState(activityResponse: listFilter));
   }
