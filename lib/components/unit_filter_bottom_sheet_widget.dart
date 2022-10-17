@@ -4,7 +4,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -43,13 +42,24 @@ class _UnitFilterBottomSheetWidgetState
     categoryTextFieldController = TextEditingController();
     cityFromTextFieldController = TextEditingController();
     statusTypeTextFieldController = TextEditingController();
-    dateFromTextFieldController1 =
-        TextEditingController(text: dateTimeFormat('d/M/y', datePicked1));
-    dateToTextFieldController =
-        TextEditingController(text: dateTimeFormat('d/M/y', datePicked2));
-    dateFromTextFieldController2 =
-        TextEditingController(text: dateTimeFormat('d/M/y', datePicked3));
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    dateFromTextFieldController1 = TextEditingController(
+        text: dateTimeFormat(
+      'd/M/y',
+      datePicked1,
+      locale: FFLocalizations.of(context).languageCode,
+    ));
+    dateToTextFieldController = TextEditingController(
+        text: dateTimeFormat(
+      'd/M/y',
+      datePicked2,
+      locale: FFLocalizations.of(context).languageCode,
+    ));
+    dateFromTextFieldController2 = TextEditingController(
+        text: dateTimeFormat(
+      'd/M/y',
+      datePicked3,
+      locale: FFLocalizations.of(context).languageCode,
+    ));
   }
 
   @override
@@ -104,11 +114,22 @@ class _UnitFilterBottomSheetWidgetState
                     context.pushNamed(
                       'LoockupCommonSearchScreen',
                       queryParams: {
-                        'appBarTitle':
-                            serializeParam('Availbilty', ParamType.String),
-                        'loockupId': serializeParam(39, ParamType.int),
-                        'subscribId': serializeParam(2, ParamType.int),
-                        'languageId': serializeParam(2, ParamType.int),
+                        'appBarTitle': serializeParam(
+                          'Availbilty',
+                          ParamType.String,
+                        ),
+                        'loockupId': serializeParam(
+                          39,
+                          ParamType.int,
+                        ),
+                        'subscribId': serializeParam(
+                          2,
+                          ParamType.int,
+                        ),
+                        'languageId': serializeParam(
+                          2,
+                          ParamType.int,
+                        ),
                       }.withoutNulls,
                     );
                   },
@@ -197,8 +218,10 @@ class _UnitFilterBottomSheetWidgetState
                     context.pushNamed(
                       'PropertyMasterSearchScreen',
                       queryParams: {
-                        'appBarTitle':
-                            serializeParam('Property', ParamType.String),
+                        'appBarTitle': serializeParam(
+                          'Property',
+                          ParamType.String,
+                        ),
                       }.withoutNulls,
                     );
                   },
@@ -287,10 +310,22 @@ class _UnitFilterBottomSheetWidgetState
                     context.pushNamed(
                       'LoockupCommonSearchScreen',
                       queryParams: {
-                        'appBarTitle': serializeParam('Type', ParamType.String),
-                        'loockupId': serializeParam(2077, ParamType.int),
-                        'subscribId': serializeParam(2, ParamType.int),
-                        'languageId': serializeParam(2, ParamType.int),
+                        'appBarTitle': serializeParam(
+                          'Type',
+                          ParamType.String,
+                        ),
+                        'loockupId': serializeParam(
+                          2077,
+                          ParamType.int,
+                        ),
+                        'subscribId': serializeParam(
+                          2,
+                          ParamType.int,
+                        ),
+                        'languageId': serializeParam(
+                          2,
+                          ParamType.int,
+                        ),
                       }.withoutNulls,
                     );
                   },
@@ -478,11 +513,22 @@ class _UnitFilterBottomSheetWidgetState
                           context.pushNamed(
                             'LoockupCommonSearchScreen',
                             queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Category', ParamType.String),
-                              'loockupId': serializeParam(37, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                              'appBarTitle': serializeParam(
+                                'Category',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                37,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -569,11 +615,22 @@ class _UnitFilterBottomSheetWidgetState
                     context.pushNamed(
                       'LoockupCommonSearchScreen',
                       queryParams: {
-                        'appBarTitle':
-                            serializeParam('Status', ParamType.String),
-                        'loockupId': serializeParam(39, ParamType.int),
-                        'subscribId': serializeParam(2, ParamType.int),
-                        'languageId': serializeParam(2, ParamType.int),
+                        'appBarTitle': serializeParam(
+                          'Status',
+                          ParamType.String,
+                        ),
+                        'loockupId': serializeParam(
+                          39,
+                          ParamType.int,
+                        ),
+                        'subscribId': serializeParam(
+                          2,
+                          ParamType.int,
+                        ),
+                        'languageId': serializeParam(
+                          2,
+                          ParamType.int,
+                        ),
                       }.withoutNulls,
                     );
                   },
@@ -681,7 +738,12 @@ class _UnitFilterBottomSheetWidgetState
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: valueOrDefault<String>(
-                                    dateTimeFormat('d/M/y', datePicked1),
+                                    dateTimeFormat(
+                                      'd/M/y',
+                                      datePicked1,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'Avilable From',
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
@@ -692,7 +754,12 @@ class _UnitFilterBottomSheetWidgetState
                                             .secondaryText,
                                       ),
                                   hintText: valueOrDefault<String>(
-                                    dateTimeFormat('d/M/y', datePicked1),
+                                    dateTimeFormat(
+                                      'd/M/y',
+                                      datePicked1,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'Avilable From',
                                   ),
                                   hintStyle:
@@ -739,42 +806,22 @@ class _UnitFilterBottomSheetWidgetState
                               InkWell(
                                 onTap: () async {
                                   // DateFromTimePiker
-                                  if (kIsWeb) {
-                                    final _datePicked1Date =
-                                        await showDatePicker(
-                                      context: context,
-                                      initialDate: getCurrentTimestamp,
-                                      firstDate: DateTime(1900),
-                                      lastDate: DateTime(2050),
-                                    );
-
-                                    if (_datePicked1Date != null) {
-                                      setState(
-                                        () => datePicked1 = DateTime(
-                                          _datePicked1Date.year,
-                                          _datePicked1Date.month,
-                                          _datePicked1Date.day,
-                                        ),
-                                      );
-                                    }
-                                  } else {
-                                    await DatePicker.showDatePicker(
-                                      context,
-                                      showTitleActions: true,
-                                      onConfirm: (date) {
-                                        setState(() => datePicked1 = date);
-                                      },
-                                      currentTime: getCurrentTimestamp,
-                                      minTime: DateTime(0, 0, 0),
-                                      locale: LocaleType.values.firstWhere(
-                                        (l) =>
-                                            l.name ==
-                                            FFLocalizations.of(context)
-                                                .languageCode,
-                                        orElse: () => LocaleType.en,
-                                      ),
-                                    );
-                                  }
+                                  await DatePicker.showDatePicker(
+                                    context,
+                                    showTitleActions: true,
+                                    onConfirm: (date) {
+                                      setState(() => datePicked1 = date);
+                                    },
+                                    currentTime: getCurrentTimestamp,
+                                    minTime: DateTime(0, 0, 0),
+                                    locale: LocaleType.values.firstWhere(
+                                      (l) =>
+                                          l.name ==
+                                          FFLocalizations.of(context)
+                                              .languageCode,
+                                      orElse: () => LocaleType.en,
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   width: 200,
@@ -804,7 +851,12 @@ class _UnitFilterBottomSheetWidgetState
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: valueOrDefault<String>(
-                                    dateTimeFormat('d/M/y', datePicked2),
+                                    dateTimeFormat(
+                                      'd/M/y',
+                                      datePicked2,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'Avilable To',
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
@@ -815,7 +867,12 @@ class _UnitFilterBottomSheetWidgetState
                                             .secondaryText,
                                       ),
                                   hintText: valueOrDefault<String>(
-                                    dateTimeFormat('d/M/y', datePicked2),
+                                    dateTimeFormat(
+                                      'd/M/y',
+                                      datePicked2,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'Avilable To',
                                   ),
                                   hintStyle:
@@ -862,42 +919,22 @@ class _UnitFilterBottomSheetWidgetState
                               InkWell(
                                 onTap: () async {
                                   // DateToTimePiker
-                                  if (kIsWeb) {
-                                    final _datePicked2Date =
-                                        await showDatePicker(
-                                      context: context,
-                                      initialDate: getCurrentTimestamp,
-                                      firstDate: DateTime(1900),
-                                      lastDate: DateTime(2050),
-                                    );
-
-                                    if (_datePicked2Date != null) {
-                                      setState(
-                                        () => datePicked2 = DateTime(
-                                          _datePicked2Date.year,
-                                          _datePicked2Date.month,
-                                          _datePicked2Date.day,
-                                        ),
-                                      );
-                                    }
-                                  } else {
-                                    await DatePicker.showDatePicker(
-                                      context,
-                                      showTitleActions: true,
-                                      onConfirm: (date) {
-                                        setState(() => datePicked2 = date);
-                                      },
-                                      currentTime: getCurrentTimestamp,
-                                      minTime: DateTime(0, 0, 0),
-                                      locale: LocaleType.values.firstWhere(
-                                        (l) =>
-                                            l.name ==
-                                            FFLocalizations.of(context)
-                                                .languageCode,
-                                        orElse: () => LocaleType.en,
-                                      ),
-                                    );
-                                  }
+                                  await DatePicker.showDatePicker(
+                                    context,
+                                    showTitleActions: true,
+                                    onConfirm: (date) {
+                                      setState(() => datePicked2 = date);
+                                    },
+                                    currentTime: getCurrentTimestamp,
+                                    minTime: DateTime(0, 0, 0),
+                                    locale: LocaleType.values.firstWhere(
+                                      (l) =>
+                                          l.name ==
+                                          FFLocalizations.of(context)
+                                              .languageCode,
+                                      orElse: () => LocaleType.en,
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   width: 200,
@@ -935,7 +972,12 @@ class _UnitFilterBottomSheetWidgetState
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: valueOrDefault<String>(
-                                    dateTimeFormat('d/M/y', datePicked3),
+                                    dateTimeFormat(
+                                      'd/M/y',
+                                      datePicked3,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'Listen To',
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
@@ -946,7 +988,12 @@ class _UnitFilterBottomSheetWidgetState
                                             .secondaryText,
                                       ),
                                   hintText: valueOrDefault<String>(
-                                    dateTimeFormat('d/M/y', datePicked3),
+                                    dateTimeFormat(
+                                      'd/M/y',
+                                      datePicked3,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
                                     'Listen To',
                                   ),
                                   hintStyle:
@@ -993,42 +1040,22 @@ class _UnitFilterBottomSheetWidgetState
                               InkWell(
                                 onTap: () async {
                                   // DateFromTimePiker
-                                  if (kIsWeb) {
-                                    final _datePicked3Date =
-                                        await showDatePicker(
-                                      context: context,
-                                      initialDate: getCurrentTimestamp,
-                                      firstDate: DateTime(1900),
-                                      lastDate: DateTime(2050),
-                                    );
-
-                                    if (_datePicked3Date != null) {
-                                      setState(
-                                        () => datePicked3 = DateTime(
-                                          _datePicked3Date.year,
-                                          _datePicked3Date.month,
-                                          _datePicked3Date.day,
-                                        ),
-                                      );
-                                    }
-                                  } else {
-                                    await DatePicker.showDatePicker(
-                                      context,
-                                      showTitleActions: true,
-                                      onConfirm: (date) {
-                                        setState(() => datePicked3 = date);
-                                      },
-                                      currentTime: getCurrentTimestamp,
-                                      minTime: DateTime(0, 0, 0),
-                                      locale: LocaleType.values.firstWhere(
-                                        (l) =>
-                                            l.name ==
-                                            FFLocalizations.of(context)
-                                                .languageCode,
-                                        orElse: () => LocaleType.en,
-                                      ),
-                                    );
-                                  }
+                                  await DatePicker.showDatePicker(
+                                    context,
+                                    showTitleActions: true,
+                                    onConfirm: (date) {
+                                      setState(() => datePicked3 = date);
+                                    },
+                                    currentTime: getCurrentTimestamp,
+                                    minTime: DateTime(0, 0, 0),
+                                    locale: LocaleType.values.firstWhere(
+                                      (l) =>
+                                          l.name ==
+                                          FFLocalizations.of(context)
+                                              .languageCode,
+                                      orElse: () => LocaleType.en,
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   width: double.infinity,

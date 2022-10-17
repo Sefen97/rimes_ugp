@@ -37,7 +37,6 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
     textController1 = TextEditingController();
     textController2 = TextEditingController();
     passwordVisibility = false;
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

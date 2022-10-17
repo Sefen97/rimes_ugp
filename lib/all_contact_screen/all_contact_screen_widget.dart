@@ -22,7 +22,6 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -35,6 +34,7 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).btnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: true,
@@ -97,7 +97,6 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).btnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -282,11 +281,12 @@ class _AllContactScreenWidgetState extends State<AllContactScreenWidget> {
                                       'ContactDetailScreen',
                                       queryParams: {
                                         'contactId': serializeParam(
-                                            getJsonField(
-                                              allContactItemItem,
-                                              r'''$.contactId''',
-                                            ),
-                                            ParamType.int),
+                                          getJsonField(
+                                            allContactItemItem,
+                                            r'''$.contactId''',
+                                          ),
+                                          ParamType.int,
+                                        ),
                                       }.withoutNulls,
                                     );
                                   },

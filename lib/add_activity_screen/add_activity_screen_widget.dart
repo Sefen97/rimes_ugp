@@ -3,7 +3,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -40,11 +39,14 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
     assignToTextFieldController = TextEditingController();
     reletedTextFieldController = TextEditingController();
     typeTextFieldController1 = TextEditingController(text: widget.typeName);
-    dateTextFieldController =
-        TextEditingController(text: dateTimeFormat('d/M/y', datePicked));
+    dateTextFieldController = TextEditingController(
+        text: dateTimeFormat(
+      'd/M/y',
+      datePicked,
+      locale: FFLocalizations.of(context).languageCode,
+    ));
     typeTextFieldController2 = TextEditingController();
     remarkTextFieldController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -62,6 +64,7 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
@@ -93,7 +96,6 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -115,10 +117,21 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                             'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Activity Type', ParamType.String),
-                              'loockupId': serializeParam(2076, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                                'Activity Type',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                2076,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -230,9 +243,8 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                           initialValue: FFLocalizations.of(context).getText(
                             '2jth2lhu' /* [pickTo 0] */,
                           ),
-                          onChanged: (value) {
-                            setState(() => radioButtonValue = value);
-                          },
+                          onChanged: (val) =>
+                              setState(() => radioButtonValue = val),
                           optionHeight: 40,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyText1.override(
@@ -269,8 +281,13 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                             'PropertySearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Related To', ParamType.String),
-                              'id': serializeParam(0, ParamType.int),
+                                'Related To',
+                                ParamType.String,
+                              ),
+                              'id': serializeParam(
+                                0,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -366,9 +383,14 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                           context.pushNamed(
                             'LookuopAllEmployeesSearchScreen',
                             queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Assign To', ParamType.String),
-                              'userId': serializeParam(10, ParamType.int),
+                              'appBarTitle': serializeParam(
+                                'Assign To',
+                                ParamType.String,
+                              ),
+                              'userId': serializeParam(
+                                10,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -459,40 +481,21 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                       child: InkWell(
                         onTap: () async {
                           // DateTimePiker
-                          if (kIsWeb) {
-                            final _datePickedDate = await showDatePicker(
-                              context: context,
-                              initialDate: getCurrentTimestamp,
-                              firstDate: DateTime(1900),
-                              lastDate: DateTime(2050),
-                            );
-
-                            if (_datePickedDate != null) {
-                              setState(
-                                () => datePicked = DateTime(
-                                  _datePickedDate.year,
-                                  _datePickedDate.month,
-                                  _datePickedDate.day,
-                                ),
-                              );
-                            }
-                          } else {
-                            await DatePicker.showDatePicker(
-                              context,
-                              showTitleActions: true,
-                              onConfirm: (date) {
-                                setState(() => datePicked = date);
-                              },
-                              currentTime: getCurrentTimestamp,
-                              minTime: DateTime(0, 0, 0),
-                              locale: LocaleType.values.firstWhere(
-                                (l) =>
-                                    l.name ==
-                                    FFLocalizations.of(context).languageCode,
-                                orElse: () => LocaleType.en,
-                              ),
-                            );
-                          }
+                          await DatePicker.showDatePicker(
+                            context,
+                            showTitleActions: true,
+                            onConfirm: (date) {
+                              setState(() => datePicked = date);
+                            },
+                            currentTime: getCurrentTimestamp,
+                            minTime: DateTime(0, 0, 0),
+                            locale: LocaleType.values.firstWhere(
+                              (l) =>
+                                  l.name ==
+                                  FFLocalizations.of(context).languageCode,
+                              orElse: () => LocaleType.en,
+                            ),
+                          );
                         },
                         child: Stack(
                           children: [
@@ -507,7 +510,12 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: valueOrDefault<String>(
-                                  dateTimeFormat('d/M/y', datePicked),
+                                  dateTimeFormat(
+                                    'd/M/y',
+                                    datePicked,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
                                   'Date Time',
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
@@ -518,7 +526,12 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                                           .secondaryText,
                                     ),
                                 hintText: valueOrDefault<String>(
-                                  dateTimeFormat('d/M/y', datePicked),
+                                  dateTimeFormat(
+                                    'd/M/y',
+                                    datePicked,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
                                   'Date Time',
                                 ),
                                 hintStyle:
@@ -593,10 +606,21 @@ class _AddActivityScreenWidgetState extends State<AddActivityScreenWidget> {
                             'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Activity Status', ParamType.String),
-                              'loockupId': serializeParam(2075, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(1, ParamType.int),
+                                'Activity Status',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                2075,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                1,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },

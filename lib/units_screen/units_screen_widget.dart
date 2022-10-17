@@ -25,7 +25,6 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -38,68 +37,6 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-        automaticallyImplyLeading: true,
-        leading: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-          child: InkWell(
-            onTap: () async {
-              scaffoldKey.currentState!.openDrawer();
-            },
-            child: Image.asset(
-              'assets/images/group_3426.png',
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              FFLocalizations.of(context).getText(
-                'zs175pxp' /* All Units */,
-              ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Poppins',
-                    color: Color(0xFF5B5B5B),
-                    fontSize: 17,
-                  ),
-            ),
-            Text(
-              FFLocalizations.of(context).getText(
-                'bphk5jnw' /*  (10) */,
-              ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Poppins',
-                    color: Color(0xFFE11B33),
-                    fontSize: 17,
-                  ),
-            ),
-          ],
-        ),
-        actions: [
-          Align(
-            alignment: AlignmentDirectional(0, 0),
-            child: InkWell(
-              onTap: () async {
-                context.pushNamed('AddUnitScreen');
-              },
-              child: Image.asset(
-                'assets/images/group_3445.png',
-                width: 90,
-                height: 60,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ],
-        centerTitle: true,
-        elevation: 0,
-      ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       drawer: Drawer(
         elevation: 16,
@@ -531,6 +468,68 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
           ),
         ),
       ),
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        automaticallyImplyLeading: true,
+        leading: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+          child: InkWell(
+            onTap: () async {
+              scaffoldKey.currentState!.openDrawer();
+            },
+            child: Image.asset(
+              'assets/images/group_3426.png',
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        title: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              FFLocalizations.of(context).getText(
+                'zs175pxp' /* All Units */,
+              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Poppins',
+                    color: Color(0xFF5B5B5B),
+                    fontSize: 17,
+                  ),
+            ),
+            Text(
+              FFLocalizations.of(context).getText(
+                'bphk5jnw' /*  (10) */,
+              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Poppins',
+                    color: Color(0xFFE11B33),
+                    fontSize: 17,
+                  ),
+            ),
+          ],
+        ),
+        actions: [
+          Align(
+            alignment: AlignmentDirectional(0, 0),
+            child: InkWell(
+              onTap: () async {
+                context.pushNamed('AddUnitScreen');
+              },
+              child: Image.asset(
+                'assets/images/group_3445.png',
+                width: 90,
+                height: 60,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ],
+        centerTitle: true,
+        elevation: 0,
+      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -557,9 +556,7 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
                     initialValue: FFLocalizations.of(context).getText(
                       '09j9uje7' /* All */,
                     ),
-                    onChanged: (value) {
-                      setState(() => radioButtonValue = value);
-                    },
+                    onChanged: (val) => setState(() => radioButtonValue = val),
                     optionHeight: 30,
                     textStyle: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Poppins',
@@ -767,11 +764,12 @@ class _UnitsScreenWidgetState extends State<UnitsScreenWidget> {
                                       'UnitDetailsScreen',
                                       queryParams: {
                                         'id': serializeParam(
-                                            getJsonField(
-                                              allUnitsResponseItem,
-                                              r'''$.propertyId''',
-                                            ),
-                                            ParamType.int),
+                                          getJsonField(
+                                            allUnitsResponseItem,
+                                            r'''$.propertyId''',
+                                          ),
+                                          ParamType.int,
+                                        ),
                                       }.withoutNulls,
                                     );
                                   },

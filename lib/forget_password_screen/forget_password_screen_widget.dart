@@ -23,7 +23,6 @@ class _ForgetPasswordScreenWidgetState
   void initState() {
     super.initState();
     textController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,6 +35,7 @@ class _ForgetPasswordScreenWidgetState
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
@@ -67,7 +67,6 @@ class _ForgetPasswordScreenWidgetState
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -207,7 +206,9 @@ class _ForgetPasswordScreenWidgetState
                             'VerifyScreen',
                             queryParams: {
                               'emailAddress': serializeParam(
-                                  textController!.text, ParamType.String),
+                                textController!.text,
+                                ParamType.String,
+                              ),
                             }.withoutNulls,
                           );
                         },

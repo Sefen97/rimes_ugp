@@ -47,7 +47,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
     piriortyTextFieldController = TextEditingController();
     leadSourceTextFieldController = TextEditingController();
     contactTextFieldController2 = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -70,6 +69,7 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
@@ -101,7 +101,6 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -129,9 +128,8 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                         initialValue: FFLocalizations.of(context).getText(
                           'dxxoi6eo' /* Rent */,
                         ),
-                        onChanged: (value) {
-                          setState(() => radioButtonValue = value);
-                        },
+                        onChanged: (val) =>
+                            setState(() => radioButtonValue = val),
                         optionHeight: 30,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
@@ -164,11 +162,22 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                           context.pushNamed(
                             'SalesLeadSearchScreen',
                             queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Contact', ParamType.String),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'userId': serializeParam(10, ParamType.int),
-                              'pageSize': serializeParam(500, ParamType.int),
+                              'appBarTitle': serializeParam(
+                                'Contact',
+                                ParamType.String,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'userId': serializeParam(
+                                10,
+                                ParamType.int,
+                              ),
+                              'pageSize': serializeParam(
+                                500,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -265,10 +274,21 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                             'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Lead Status', ParamType.String),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'loockupId': serializeParam(25, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                                'Lead Status',
+                                ParamType.String,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'loockupId': serializeParam(
+                                25,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -364,9 +384,14 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                           context.pushNamed(
                             'PropertySearchScreen',
                             queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Unit', ParamType.String),
-                              'id': serializeParam(0, ParamType.int),
+                              'appBarTitle': serializeParam(
+                                'Unit',
+                                ParamType.String,
+                              ),
+                              'id': serializeParam(
+                                0,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -817,11 +842,22 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                           context.pushNamed(
                             'LoockupCommonSearchScreen',
                             queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Rate', ParamType.String),
-                              'loockupId': serializeParam(25, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                              'appBarTitle': serializeParam(
+                                'Rate',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                25,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -917,11 +953,22 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                           context.pushNamed(
                             'LoockupCommonSearchScreen',
                             queryParams: {
-                              'appBarTitle':
-                                  serializeParam('Pirority', ParamType.String),
-                              'loockupId': serializeParam(23, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                              'appBarTitle': serializeParam(
+                                'Pirority',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                23,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -1018,10 +1065,21 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                             'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Lead Source', ParamType.String),
-                              'loockupId': serializeParam(24, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                                'Lead Source',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                24,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -1118,8 +1176,13 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                             'LookuopAllEmployeesSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Assigment To', ParamType.String),
-                              'userId': serializeParam(10, ParamType.int),
+                                'Assigment To',
+                                ParamType.String,
+                              ),
+                              'userId': serializeParam(
+                                10,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -1290,13 +1353,21 @@ class _AddLeadScreenWidgetState extends State<AddLeadScreenWidget> {
                                 'LoockupCommonSearchScreen',
                                 queryParams: {
                                   'appBarTitle': serializeParam(
-                                      'Contact Type', ParamType.String),
-                                  'loockupId':
-                                      serializeParam(10, ParamType.int),
-                                  'subscribId':
-                                      serializeParam(2, ParamType.int),
-                                  'languageId':
-                                      serializeParam(2, ParamType.int),
+                                    'Contact Type',
+                                    ParamType.String,
+                                  ),
+                                  'loockupId': serializeParam(
+                                    10,
+                                    ParamType.int,
+                                  ),
+                                  'subscribId': serializeParam(
+                                    2,
+                                    ParamType.int,
+                                  ),
+                                  'languageId': serializeParam(
+                                    2,
+                                    ParamType.int,
+                                  ),
                                 }.withoutNulls,
                               );
                             },

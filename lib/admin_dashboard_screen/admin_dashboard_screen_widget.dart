@@ -20,13 +20,6 @@ class _AdminDashboardScreenWidgetState
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  void initState() {
-    super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
-  }
-
-  @override
   Widget build(BuildContext context) {
     final pieChartColorsList = [
       Color(0xFFD354E3),
@@ -35,48 +28,6 @@ class _AdminDashboardScreenWidgetState
     ];
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-        automaticallyImplyLeading: false,
-        leading: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-          child: InkWell(
-            onTap: () async {
-              scaffoldKey.currentState!.openDrawer();
-            },
-            child: Image.asset(
-              'assets/images/group_3426.png',
-              width: double.infinity,
-              height: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        title: Text(
-          FFLocalizations.of(context).getText(
-            'dax1mh3h' /* Dashboard */,
-          ),
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: Color(0xFF5B5B5B),
-                fontSize: 22,
-              ),
-        ),
-        actions: [
-          Align(
-            alignment: AlignmentDirectional(0, 0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
-              child: Image.asset(
-                'assets/images/fi_rr_bell.png',
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-        ],
-        centerTitle: true,
-        elevation: 0,
-      ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       drawer: Container(
         width: 317,
@@ -512,6 +463,48 @@ class _AdminDashboardScreenWidgetState
             ),
           ),
         ),
+      ),
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        automaticallyImplyLeading: false,
+        leading: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+          child: InkWell(
+            onTap: () async {
+              scaffoldKey.currentState!.openDrawer();
+            },
+            child: Image.asset(
+              'assets/images/group_3426.png',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        title: Text(
+          FFLocalizations.of(context).getText(
+            'dax1mh3h' /* Dashboard */,
+          ),
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Poppins',
+                color: Color(0xFF5B5B5B),
+                fontSize: 22,
+              ),
+        ),
+        actions: [
+          Align(
+            alignment: AlignmentDirectional(0, 0),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+              child: Image.asset(
+                'assets/images/fi_rr_bell.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ],
+        centerTitle: true,
+        elevation: 0,
       ),
       body: SafeArea(
         child: GestureDetector(

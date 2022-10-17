@@ -30,7 +30,6 @@ class _AddLeadCommentBottomSheetWidgetState
   void initState() {
     super.initState();
     shortBioController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -185,9 +184,13 @@ class _AddLeadCommentBottomSheetWidgetState
                             'LeadDetailsScreen',
                             queryParams: {
                               'leadName': serializeParam(
-                                  widget.leadName, ParamType.String),
-                              'leadId':
-                                  serializeParam(widget.id, ParamType.int),
+                                widget.leadName,
+                                ParamType.String,
+                              ),
+                              'leadId': serializeParam(
+                                widget.id,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
 

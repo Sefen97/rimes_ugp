@@ -32,7 +32,6 @@ class _PropirtyFilterBottomSheetWidgetState
         TextEditingController(text: widget.community);
     propertyTypeTextFieldController =
         TextEditingController(text: widget.propertyType);
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -88,11 +87,22 @@ class _PropirtyFilterBottomSheetWidgetState
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
-                      'appBarTitle':
-                          serializeParam('Community', ParamType.String),
-                      'loockupId': serializeParam(69, ParamType.int),
-                      'subscribId': serializeParam(2, ParamType.int),
-                      'languageId': serializeParam(2, ParamType.int),
+                      'appBarTitle': serializeParam(
+                        'Community',
+                        ParamType.String,
+                      ),
+                      'loockupId': serializeParam(
+                        69,
+                        ParamType.int,
+                      ),
+                      'subscribId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
+                      'languageId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
                     }.withoutNulls,
                   );
                 },
@@ -182,11 +192,22 @@ class _PropirtyFilterBottomSheetWidgetState
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
-                      'appBarTitle':
-                          serializeParam('Property Type', ParamType.String),
-                      'loockupId': serializeParam(2077, ParamType.int),
-                      'subscribId': serializeParam(2, ParamType.int),
-                      'languageId': serializeParam(2, ParamType.int),
+                      'appBarTitle': serializeParam(
+                        'Property Type',
+                        ParamType.String,
+                      ),
+                      'loockupId': serializeParam(
+                        2077,
+                        ParamType.int,
+                      ),
+                      'subscribId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
+                      'languageId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
                     }.withoutNulls,
                   );
                 },

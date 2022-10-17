@@ -23,7 +23,6 @@ class _AllPropertiesScreenWidgetState extends State<AllPropertiesScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,6 +35,7 @@ class _AllPropertiesScreenWidgetState extends State<AllPropertiesScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).btnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: true,
@@ -98,7 +98,6 @@ class _AllPropertiesScreenWidgetState extends State<AllPropertiesScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).btnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),

@@ -38,7 +38,6 @@ class _ActivityFilterBottomSheetWidgetState
       widget.type,
       'Type Here',
     ));
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -160,10 +159,21 @@ class _ActivityFilterBottomSheetWidgetState
                           'LoockupCommonSearchScreen',
                           queryParams: {
                             'appBarTitle': serializeParam(
-                                'Activity Type', ParamType.String),
-                            'loockupId': serializeParam(2076, ParamType.int),
-                            'subscribId': serializeParam(2, ParamType.int),
-                            'languageId': serializeParam(2, ParamType.int),
+                              'Activity Type',
+                              ParamType.String,
+                            ),
+                            'loockupId': serializeParam(
+                              2076,
+                              ParamType.int,
+                            ),
+                            'subscribId': serializeParam(
+                              2,
+                              ParamType.int,
+                            ),
+                            'languageId': serializeParam(
+                              2,
+                              ParamType.int,
+                            ),
                           }.withoutNulls,
                         );
                       },
@@ -186,11 +196,22 @@ class _ActivityFilterBottomSheetWidgetState
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
-                      'appBarTitle':
-                          serializeParam('Activity Status', ParamType.String),
-                      'loockupId': serializeParam(2075, ParamType.int),
-                      'subscribId': serializeParam(2, ParamType.int),
-                      'languageId': serializeParam(2, ParamType.int),
+                      'appBarTitle': serializeParam(
+                        'Activity Status',
+                        ParamType.String,
+                      ),
+                      'loockupId': serializeParam(
+                        2075,
+                        ParamType.int,
+                      ),
+                      'subscribId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
+                      'languageId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
                     }.withoutNulls,
                   );
                 },

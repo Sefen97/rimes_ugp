@@ -36,7 +36,6 @@ class _ContactFilterBottomSheetWidgetState
     industoryTextFieldController = TextEditingController(text: widget.industry);
     industryTypeTextFieldController =
         TextEditingController(text: widget.industryType);
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -93,11 +92,22 @@ class _ContactFilterBottomSheetWidgetState
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
-                      'appBarTitle':
-                          serializeParam('Contact Type', ParamType.String),
-                      'loockupId': serializeParam(10, ParamType.int),
-                      'subscribId': serializeParam(2, ParamType.int),
-                      'languageId': serializeParam(2, ParamType.int),
+                      'appBarTitle': serializeParam(
+                        'Contact Type',
+                        ParamType.String,
+                      ),
+                      'loockupId': serializeParam(
+                        10,
+                        ParamType.int,
+                      ),
+                      'subscribId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
+                      'languageId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
                     }.withoutNulls,
                   );
                 },
@@ -187,11 +197,22 @@ class _ContactFilterBottomSheetWidgetState
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
-                      'appBarTitle':
-                          serializeParam('Industry', ParamType.String),
-                      'loockupId': serializeParam(61, ParamType.int),
-                      'subscribId': serializeParam(2, ParamType.int),
-                      'languageId': serializeParam(2, ParamType.int),
+                      'appBarTitle': serializeParam(
+                        'Industry',
+                        ParamType.String,
+                      ),
+                      'loockupId': serializeParam(
+                        61,
+                        ParamType.int,
+                      ),
+                      'subscribId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
+                      'languageId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
                     }.withoutNulls,
                   );
                 },
@@ -281,11 +302,22 @@ class _ContactFilterBottomSheetWidgetState
                   context.pushNamed(
                     'LoockupCommonSearchScreen',
                     queryParams: {
-                      'appBarTitle':
-                          serializeParam('Industry Type', ParamType.String),
-                      'loockupId': serializeParam(62, ParamType.int),
-                      'subscribId': serializeParam(2, ParamType.int),
-                      'languageId': serializeParam(2, ParamType.int),
+                      'appBarTitle': serializeParam(
+                        'Industry Type',
+                        ParamType.String,
+                      ),
+                      'loockupId': serializeParam(
+                        62,
+                        ParamType.int,
+                      ),
+                      'subscribId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
+                      'languageId': serializeParam(
+                        2,
+                        ParamType.int,
+                      ),
                     }.withoutNulls,
                   );
                 },

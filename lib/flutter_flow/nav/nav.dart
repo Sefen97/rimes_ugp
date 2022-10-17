@@ -8,6 +8,8 @@ import '../flutter_flow_theme.dart';
 
 import '../../index.dart';
 import '../../main.dart';
+import '../lat_lng.dart';
+import '../place.dart';
 import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -38,7 +40,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : NavBarPage(),
+          : LoginScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -53,7 +55,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : NavBarPage(),
+              : LoginScreenWidget(),
           routes: [
             FFRoute(
               name: 'ForgetPasswordScreen',
@@ -286,7 +288,11 @@ class FFParameters {
         ),
       ).onError((_, __) => [false]).then((v) => v.every((e) => e));
 
-  dynamic getParam(String paramName, ParamType type) {
+  dynamic getParam<T>(
+    String paramName,
+    ParamType type, [
+    bool isList = false,
+  ]) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
     }
@@ -299,7 +305,11 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam(param, type);
+    return deserializeParam<T>(
+      param,
+      type,
+      isList,
+    );
   }
 }
 

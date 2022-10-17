@@ -38,7 +38,6 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
     totalAreaTextFieldController = TextEditingController();
     cityTextFieldController = TextEditingController();
     communityTextFieldController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -57,6 +56,7 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
@@ -88,7 +88,6 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -115,9 +114,8 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
                       initialValue: FFLocalizations.of(context).getText(
                         'w8z6cfba' /* Sale */,
                       ),
-                      onChanged: (value) {
-                        setState(() => radioButtonValue = value);
-                      },
+                      onChanged: (val) =>
+                          setState(() => radioButtonValue = val),
                       optionHeight: 30,
                       textStyle:
                           FlutterFlowTheme.of(context).bodyText1.override(
@@ -148,9 +146,14 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
                         context.pushNamed(
                           'PropertySearchScreen',
                           queryParams: {
-                            'appBarTitle':
-                                serializeParam('Property', ParamType.String),
-                            'id': serializeParam(0, ParamType.int),
+                            'appBarTitle': serializeParam(
+                              'Property',
+                              ParamType.String,
+                            ),
+                            'id': serializeParam(
+                              0,
+                              ParamType.int,
+                            ),
                           }.withoutNulls,
                         );
                       },
@@ -246,8 +249,10 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
                         context.pushNamed(
                           'AllContactSearchScreen',
                           queryParams: {
-                            'appBarTitle':
-                                serializeParam('Contact', ParamType.String),
+                            'appBarTitle': serializeParam(
+                              'Contact',
+                              ParamType.String,
+                            ),
                           }.withoutNulls,
                         );
                       },
@@ -343,11 +348,22 @@ class _AddUnitScreenWidgetState extends State<AddUnitScreenWidget> {
                         context.pushNamed(
                           'LoockupCommonSearchScreen',
                           queryParams: {
-                            'appBarTitle':
-                                serializeParam('Category', ParamType.String),
-                            'loockupId': serializeParam(37, ParamType.int),
-                            'subscribId': serializeParam(2, ParamType.int),
-                            'languageId': serializeParam(2, ParamType.int),
+                            'appBarTitle': serializeParam(
+                              'Category',
+                              ParamType.String,
+                            ),
+                            'loockupId': serializeParam(
+                              37,
+                              ParamType.int,
+                            ),
+                            'subscribId': serializeParam(
+                              2,
+                              ParamType.int,
+                            ),
+                            'languageId': serializeParam(
+                              2,
+                              ParamType.int,
+                            ),
                           }.withoutNulls,
                         );
                       },

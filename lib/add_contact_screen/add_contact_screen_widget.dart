@@ -30,7 +30,6 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
     emailAddressTextFieldController = TextEditingController();
     nationaltyTextFieldController = TextEditingController();
     contactTypeTextFieldController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -46,6 +45,7 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).white,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
@@ -77,7 +77,6 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -111,9 +110,8 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
                         initialValue: FFLocalizations.of(context).getText(
                           'i9balv33' /* Mr */,
                         ),
-                        onChanged: (value) {
-                          setState(() => radioButtonValue = value);
-                        },
+                        onChanged: (val) =>
+                            setState(() => radioButtonValue = val),
                         optionHeight: 30,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
@@ -291,10 +289,21 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
                             'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Nationalty', ParamType.String),
-                              'loockupId': serializeParam(2, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                                'Nationalty',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },
@@ -382,10 +391,21 @@ class _AddContactScreenWidgetState extends State<AddContactScreenWidget> {
                             'LoockupCommonSearchScreen',
                             queryParams: {
                               'appBarTitle': serializeParam(
-                                  'Contact Type', ParamType.String),
-                              'loockupId': serializeParam(10, ParamType.int),
-                              'subscribId': serializeParam(2, ParamType.int),
-                              'languageId': serializeParam(2, ParamType.int),
+                                'Contact Type',
+                                ParamType.String,
+                              ),
+                              'loockupId': serializeParam(
+                                10,
+                                ParamType.int,
+                              ),
+                              'subscribId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
+                              'languageId': serializeParam(
+                                2,
+                                ParamType.int,
+                              ),
                             }.withoutNulls,
                           );
                         },

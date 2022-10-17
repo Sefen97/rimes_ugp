@@ -38,7 +38,6 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
     subCommunityTextFieldController = TextEditingController();
     ploatNumberTextFieldController = TextEditingController();
     noteTextFieldController = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -57,6 +56,7 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).white,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
@@ -88,7 +88,6 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -179,10 +178,21 @@ class _AddPropertyScreenWidgetState extends State<AddPropertyScreenWidget> {
                           'LoockupCommonSearchScreen',
                           queryParams: {
                             'appBarTitle': serializeParam(
-                                'Property Type', ParamType.String),
-                            'loockupId': serializeParam(2077, ParamType.int),
-                            'subscribId': serializeParam(2, ParamType.int),
-                            'languageId': serializeParam(2, ParamType.int),
+                              'Property Type',
+                              ParamType.String,
+                            ),
+                            'loockupId': serializeParam(
+                              2077,
+                              ParamType.int,
+                            ),
+                            'subscribId': serializeParam(
+                              2,
+                              ParamType.int,
+                            ),
+                            'languageId': serializeParam(
+                              2,
+                              ParamType.int,
+                            ),
                           }.withoutNulls,
                         );
                       },
